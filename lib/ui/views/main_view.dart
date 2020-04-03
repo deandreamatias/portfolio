@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/ui/shared/portfolio_icons.dart';
 
 import 'home.dart';
 
@@ -14,10 +15,28 @@ class _MainViewState extends State<MainView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  FlatButton(onPressed: () => print('object'), child: Text('deandreamatias'),),
+        title: FlatButton(
+          onPressed: () => print('object'),
+          child: Text(
+            'deandreamatias',
+            style: TextStyle(fontFamily: 'Sniglet'),
+          ),
+        ),
         actions: <Widget>[
-          FlatButton(onPressed: () => print('object'), child: Text('podcast'),),
-          IconButton(icon: Icon(Icons.edit_attributes), onPressed: () => print('object'),)
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12.0),
+            child: FlatButton(
+              onPressed: () => print('object'),
+              child: Text(
+                'podcast',
+                style: TextStyle(fontFamily: 'Sniglet'),
+              ),
+            ),
+          ),
+          IconButton(
+            icon: Icon(CustomIcons.options),
+            onPressed: () => print('object'),
+          )
         ],
       ),
       body: HomeView(),

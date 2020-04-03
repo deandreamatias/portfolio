@@ -30,3 +30,6 @@ flutter:
     - family: Asap
       fonts:
         - asset: assets/fonts/asap.ttf
+    - family: portfolio
+      fonts:
+        - asset: assets/fonts/portfolio.ttf

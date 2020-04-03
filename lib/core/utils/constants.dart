@@ -7,4 +7,5 @@ class Assets {
   static const String ANDROID = 'assets/img/android.png';
   static const String FLUTTER = 'assets/img/flutter.png';
   static const String GIT = 'assets/img/git.png';
+  static const String PROFILE = 'assets/img/profile.jpg';
 }

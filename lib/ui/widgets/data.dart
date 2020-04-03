@@ -1,7 +1,55 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/utils/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../../core/utils/constants.dart';
+import '../shared/portfolio_icons.dart';
+import '../shared/styles.dart';
+
+class ProfileWidget extends StatelessWidget {
+  const ProfileWidget({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Expanded(
+              child: Text(
+                'Hi, I\'m Matias de Andrea',
+                textAlign: TextAlign.center,
+                maxLines: 3,
+              ),
+            ),
+            Container(
+              child: CircleAvatar(
+                backgroundImage: AssetImage(Assets.PROFILE),
+              ),
+              width: 70.0,
+              height: 70.0,
+              padding: const EdgeInsets.all(2.0), // borde width
+              decoration: const BoxDecoration(
+                color: ACCENT,
+                shape: BoxShape.circle,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 16.0),
+        Flexible(
+          fit: FlexFit.loose,
+          child: Text(
+            'And also a creative and dynamic developer.\nI really like work with mobile applications, developing UI/UX and software.',
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ],
+    );
+  }
+}
 class ContactWidget extends StatelessWidget {
   const ContactWidget({Key key}) : super(key: key);
 
@@ -10,7 +58,8 @@ class ContactWidget extends StatelessWidget {
     return Column(
       children: <Widget>[
         Text('Let\'s talk?'),
-        FlatButton(
+        SizedBox(height: 8.0),
+        RaisedButton(
           onPressed: () async {
             const String url = 'malito:deandreamatias@gmail.com';
             if (await canLaunch(url)) {
@@ -20,7 +69,7 @@ class ContactWidget extends StatelessWidget {
               throw 'Could not launch $url';
             }
           },
-          child: Text('Email'),
+          child: Text('Send a email'),
         ),
       ],
     );
@@ -38,7 +87,7 @@ class SkillsWidget extends StatelessWidget {
           'My loved technologies and tools are',
           textAlign: TextAlign.center,
         ),
-        SizedBox(height: 16.0),
+        const SizedBox(height: 16.0),
         Container(
           height: 24.0,
           child: Row(
@@ -63,7 +112,7 @@ class GithubWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: <Widget>[
-        FlatButton.icon(
+        RaisedButton.icon(
           onPressed: () async {
             const String url = 'https://github.com/deandreamatias';
             if (await canLaunch(url)) {
@@ -73,9 +122,13 @@ class GithubWidget extends StatelessWidget {
               throw 'Could not launch $url';
             }
           },
-          icon: Icon(Icons.developer_mode),
-          label: Text('Github'),
+          icon: Icon(CustomIcons.github),
+          label: Text(
+            'Github',
+            style: TextStyle(fontFamily: 'Sniglet'),
+          ),
         ),
+        SizedBox(width: 12),
         Flexible(
           fit: FlexFit.loose,
           child: SingleChildScrollView(
@@ -109,65 +162,30 @@ class LanguagesWidget extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(height: 16.0),
+        const SizedBox(height: 16.0),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Text(
               'Spanish: Native',
               textAlign: TextAlign.center,
+              style: TextStyle(fontFamily: 'Sniglet'),
             ),
             Text(
               'Portuguese: C2',
               textAlign: TextAlign.center,
+              style: TextStyle(fontFamily: 'Sniglet'),
             ),
           ],
         ),
-        SizedBox(height: 8.0),
+        const SizedBox(height: 8.0),
         Text(
           'English: A2',
           textAlign: TextAlign.center,
+          style: TextStyle(fontFamily: 'Sniglet'),
         ),
       ],
     );
   }
 }
 
-class ProfileWidget extends StatelessWidget {
-  const ProfileWidget({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Expanded(
-              child: Text(
-                'Hi, I\'m Matias de Andrea',
-                textAlign: TextAlign.center,
-                maxLines: 3,
-              ),
-            ),
-            CircleAvatar(
-              child: Image.asset(Assets.ANDROID),
-            )
-          ],
-        ),
-        SizedBox(
-          height: 16.0,
-        ),
-        Flexible(
-          fit: FlexFit.loose,
-          child: Text(
-            'And also a creative and dynamic developer.\nI really like work with mobile applications, developing UI/UX and software.',
-            textAlign: TextAlign.center,
-          ),
-        ),
-      ],
-    );
-  }
-}

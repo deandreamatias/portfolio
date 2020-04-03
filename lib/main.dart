@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'core/utils/constants.dart';
 import 'ui/router.dart';
+import 'ui/shared/styles.dart';
 
 
 void main() {
@@ -12,13 +13,10 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: true,
+        debugShowCheckedModeBanner: false,
         title: 'deandreamatias',
         themeMode: ThemeMode.dark,
-        theme: ThemeData(
-          fontFamily: 'Asap',
-          primarySwatch: Colors.red,
-        ),
+        theme: themeDark,
         initialRoute: RoutePaths.MAIN,
         onGenerateRoute: Router.generateRoute,
       );

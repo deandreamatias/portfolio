@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/ui/shared/portfolio_icons.dart';
 import 'package:portfolio/ui/widgets/card.dart';
 import 'package:portfolio/ui/widgets/data.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -17,37 +18,57 @@ class _HomeViewState extends State<HomeView> {
       builder: (BuildContext context, SizingInformation sizingInformation) {
         switch (sizingInformation.deviceScreenType) {
           case DeviceScreenType.Desktop:
-            return Center(
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        CardWidget(
+                          child: ProfileWidget(),
+                        ),
+                        CardWidget(
+                          child: LanguagesWidget(),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        CardWidget(
+                          child: GithubWidget(),
+                        ),
+                        CardWidget(
+                          child: SkillsWidget(),
+                        ),
+                        CardWidget(
+                          child: ContactWidget(),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Column(
                     children: <Widget>[
-                      CardWidget(
-                        child: ProfileWidget(),
-                      ),
-                      CardWidget(
-                        child: LanguagesWidget(),
-                      ),
+                      Text('Valencia, Spain'),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          IconButton(icon: Icon(CustomIcons.linkedin)),
+                          IconButton(icon: Icon(CustomIcons.github)),
+                          IconButton(icon: Icon(CustomIcons.behance)),
+                          IconButton(icon: Icon(CustomIcons.twitter)),
+                        ],
+                      )
                     ],
                   ),
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      CardWidget(
-                        child: GithubWidget(),
-                      ),
-                      CardWidget(
-                        child: SkillsWidget(),
-                      ),
-                      CardWidget(
-                        child: ContactWidget(),
-                      ),
-                    ],
-                  )
-                ],
-              ),
+                )
+              ],
             );
             break;
           case DeviceScreenType.Tablet:
