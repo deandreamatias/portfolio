@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../shared/portfolio_icons.dart';
+import '../widgets/footer.dart';
 import 'home.dart';
 import 'podcast.dart';
 
@@ -88,52 +88,10 @@ class _MainViewState extends State<MainView> {
           Expanded(child: home ? HomeView() : PodcastView()),
           Align(
             alignment: Alignment.bottomCenter,
-            child: Column(
-              children: <Widget>[
-                const SizedBox(height: 8.0),
-                Text('Valencia, Spain'),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    IconButton(
-                      icon: Icon(CustomIcons.linkedin),
-                      onPressed: () => _navigateLink(
-                          'https://www.linkedin.com/in/deandreamatias/?locale=en_US'),
-                    ),
-                    const SizedBox(width: 16.0),
-                    IconButton(
-                      icon: Icon(CustomIcons.github),
-                      onPressed: () =>
-                          _navigateLink('https://github.com/deandreamatias'),
-                    ),
-                    const SizedBox(width: 16.0),
-                    IconButton(
-                      icon: Icon(CustomIcons.behance),
-                      onPressed: () => _navigateLink(
-                          'https://www.behance.net/deandreamatias'),
-                    ),
-                    const SizedBox(width: 16.0),
-                    IconButton(
-                      icon: Icon(CustomIcons.twitter),
-                      onPressed: () =>
-                          _navigateLink('https://twitter.com/deandreamatias'),
-                    ),
-                  ],
-                )
-              ],
-            ),
+            child: const Footer(),
           )
         ],
       ),
     );
-  }
-}
-
-Future<void> _navigateLink(String url) async {
-  if (await canLaunch(url)) {
-    await launch(url);
-    print('Launched');
-  } else {
-    throw 'Could not launch $url';
   }
 }
