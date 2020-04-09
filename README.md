@@ -1,16 +1,39 @@
-# portfolio
+## Personal portfolio
 
-A new Flutter project.
+[![Releases](https://img.shields.io/github/v/release/deandreamatias/portfolio)](https://github.com/deandreamatias/portfolio/releases)
 
-## Getting Started
+### About the project
 
-This project is a starting point for a Flutter application.
+I made this portofolio to experiment with Flutter web and have a place to share the references link to my podcast.
 
-A few resources to get you started if this is your first Flutter project:
+This project has been built using the [Flutter](https://flutter.dev/) framework, which allows to build an app for mobile, desktop & web, from a single codebase.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Build and run
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+First, clone the repository with the 'git clone' command, or just download the zip.
+
+```
+$ git clone git@github.com:deandreamatias/portoflio.git
+```
+
+Then, download either Android Studio or Visual Studio Code, with their respective [Flutter editor plugins](https://flutter.dev/docs/get-started/editor). For more information about Flutter installation procedure, check the [official install guide](https://flutter.dev/docs/get-started/install).
+
+Install dependencies from pubspec.yaml by running `flutter packages get` from the project root (see [using packages documentation](https://flutter.dev/docs/development/packages-and-plugins/using-packages#adding-a-package-dependency-to-an-app) for details and how to do this in the editor).
+
+Get your API Key from TMDB (see [this FAQ](https://www.themoviedb.org/faq/api) for more details) and paste in file `config/env.dart`
+
+Run in debug mode :)
+
+## Built with
+
+- [Flutter](https://flutter.dev/) - Beautiful native apps in record time.
+- [Android Studio](https://developer.android.com/studio/index.html/) - Tools for building apps for Android devices.
+- [Visual Studio Code](https://code.visualstudio.com/) - Code editing. Redefined.
+
+## Author
+
+- **Matias de Andrea** - Mobile developer and UI/UX designer: [GitHub](https://github.com/deandreamatias), [Twitter](https://twitter.com/deandreamatias) & [Behance](https://www.behance.net/deandreamatias).
+
+## License
+
+This project is licensed under the GNU GPL v3 License - see the [LICENSE](LICENSE) file for details.
