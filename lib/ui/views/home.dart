@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
+import 'package:portfolio/core/utils/constants.dart';
 import '../widgets/card.dart';
 import '../widgets/data.dart';
+import '../widgets/header.dart';
 
 class HomeView extends StatefulWidget {
   HomeView({Key key}) : super(key: key);
@@ -25,7 +27,12 @@ class _HomeViewState extends State<HomeView> {
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     CardWidget(
-                      child: ProfileWidget(),
+                      child: HeaderWidget(
+                        title: 'Hi, I\'m Matias de Andrea',
+                        subtitle:
+                            'And also a creative and dynamic developer.\nI really like work with mobile applications, developing UI/UX and software.',
+                        image: 'https://twitter.com/deandreamatias/photo',
+                      ),
                     ),
                     CardWidget(
                       child: LanguagesWidget(),
@@ -58,7 +65,12 @@ class _HomeViewState extends State<HomeView> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     CardWidget(
-                      child: ProfileWidget(),
+                      child: HeaderWidget(
+                        title: 'Hi, I\'m Matias de Andrea',
+                        subtitle:
+                            'And also a creative and dynamic developer.\nI really like work with mobile applications, developing UI/UX and software.',
+                        image: Assets.PROFILE,
+                      ),
                     ),
                     CardWidget(
                       child: GithubWidget(),

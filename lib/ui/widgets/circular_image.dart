@@ -14,7 +14,7 @@ class CircularImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: CircleAvatar(
-        backgroundImage: AssetImage(image),
+        backgroundImage: NetworkImage(image),
       ),
       width: 70.0,
       height: 70.0,
