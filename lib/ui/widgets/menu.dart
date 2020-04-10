@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/utils/constants.dart';
-import 'package:portfolio/ui/views/home.dart';
-import 'package:portfolio/ui/views/podcast.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 
 import '../shared/portfolio_icons.dart';
+import '../views/home.dart';
+import '../views/podcast.dart';
 
 enum MenuItems { en, es, pt }
 
 class MenuWidget extends StatelessWidget {
-  const MenuWidget({
-    Key key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -19,8 +15,8 @@ class MenuWidget extends StatelessWidget {
         onPressed: () =>
             Navigator.of(context).pushReplacementNamed(HomeView.route),
         child: Text(
-          'deandreamatias',
-          style: TextStyle(fontFamily: 'Sniglet'),
+          translate('menu.home'),
+          style: const TextStyle(fontFamily: 'Sniglet'),
         ),
       ),
       actions: <Widget>[
@@ -30,35 +26,45 @@ class MenuWidget extends StatelessWidget {
             onPressed: () =>
                 Navigator.of(context).pushReplacementNamed(PodcastView.route),
             child: Text(
-              'podcast',
-              style: TextStyle(fontFamily: 'Sniglet'),
+              translate('menu.podcast'),
+              style: const TextStyle(fontFamily: 'Sniglet'),
             ),
           ),
         ),
-        IconButton(icon: Icon(Icons.navigation), onPressed: null),
         PopupMenuButton<MenuItems>(
           icon: Icon(CustomIcons.options),
-          tooltip: 'Options',
-          onSelected: (MenuItems value) async {
+          tooltip: translate('menu.options.description'),
+          onSelected: (MenuItems value) {
             switch (value) {
               case MenuItems.es:
+                changeLocale(context, 'es');
                 break;
               case MenuItems.pt:
+                changeLocale(context, 'pt');
                 break;
               default:
+                changeLocale(context, 'en');
             }
           },
           itemBuilder: (BuildContext context) =>
               <CheckedPopupMenuItem<MenuItems>>[
             CheckedPopupMenuItem<MenuItems>(
-                value: MenuItems.en, checked: true, child: Text('English')),
-            const CheckedPopupMenuItem<MenuItems>(
-              value: MenuItems.es,
-              child: Text('Spanish'),
+              value: MenuItems.en,
+              checked: LocalizedApp.of(context).delegate.currentLocale ==
+                  const Locale('en'),
+              child: Text(translate('menu.options.english')),
             ),
-            const CheckedPopupMenuItem<MenuItems>(
+            CheckedPopupMenuItem<MenuItems>(
+              value: MenuItems.es,
+              checked: LocalizedApp.of(context).delegate.currentLocale ==
+                  const Locale('es'),
+              child: Text(translate('menu.options.spanish')),
+            ),
+            CheckedPopupMenuItem<MenuItems>(
               value: MenuItems.pt,
-              child: Text('Portuguese'),
+              checked: LocalizedApp.of(context).delegate.currentLocale ==
+                  const Locale('pt'),
+              child: Text(translate('menu.options.portuguese')),
             ),
           ],
         ),

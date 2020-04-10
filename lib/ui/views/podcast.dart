@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:eof_podcast_feed/eof_podcast_feed.dart';
 
@@ -10,16 +11,15 @@ import '../widgets/header.dart';
 import '../widgets/menu.dart';
 
 class PodcastView extends StatelessWidget {
-  PodcastView({Key key}) : super(key: key);
   static const String route = '/podcast';
-  double childAspectRatio = 1.0;
-  double maxCrossAxisExtent = 500.0;
 
   @override
   Widget build(BuildContext context) {
+    double childAspectRatio = 1.0;
+    double maxCrossAxisExtent = 500.0;
     return Scaffold(
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(56.0),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(56.0),
         child: MenuWidget(),
       ),
       body: FutureBuilder<EOFPodcast>(
@@ -67,9 +67,8 @@ class PodcastView extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
                             HeaderWidget(
-                              title: 'Hi, this is Universo Flutter',
-                              subtitle:
-                                  'This is my podcast about Flutter and the main language is portuguese',
+                              title: translate('podcast.title'),
+                              subtitle: translate('podcast.subtitle'),
                               image: snapshot.data.podcastCoverUrl,
                               streaming: true,
                             ),
@@ -80,12 +79,11 @@ class PodcastView extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
                             HeaderWidget(
-                              title: 'Hi, this is Universo Flutter',
-                              subtitle:
-                                  'This is my podcast about Flutter and the main language is portuguese',
+                              title: translate('podcast.title'),
+                              subtitle: translate('podcast.subtitle'),
                               image: snapshot.data.podcastCoverUrl,
                             ),
-                            const StreamingWidget(),
+                            StreamingWidget(),
                           ],
                         ),
                         desktop: Row(
@@ -93,12 +91,11 @@ class PodcastView extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
                             HeaderWidget(
-                              title: 'Hi, this is Universo Flutter',
-                              subtitle:
-                                  'This is my podcast about Flutter and the main language is portuguese',
+                              title: translate('podcast.title'),
+                              subtitle: translate('podcast.subtitle'),
                               image: snapshot.data.podcastCoverUrl,
                             ),
-                            const StreamingWidget(),
+                            StreamingWidget(),
                           ],
                         ),
                       ),
@@ -119,7 +116,7 @@ class PodcastView extends StatelessWidget {
                       ),
                       Align(
                         alignment: Alignment.bottomCenter,
-                        child: const Footer(),
+                        child: Footer(),
                       )
                     ],
                   );
@@ -127,7 +124,7 @@ class PodcastView extends StatelessWidget {
               );
               break;
             default:
-              return Center(child: Text('Error to load data'));
+              return const Center(child: Text('Error to load data'));
           }
         },
       ),

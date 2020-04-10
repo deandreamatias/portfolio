@@ -1,13 +1,13 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 
 import '../../core/utils/constants.dart';
 import '../../core/utils/navigate_links.dart';
 import '../shared/portfolio_icons.dart';
 
 class SkillsWidget extends StatelessWidget {
-  const SkillsWidget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class SkillsWidget extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Text(
-                'My loved technologies and tools are',
+                translate('home.skills.title'),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 16.0),
@@ -44,7 +44,6 @@ class SkillsWidget extends StatelessWidget {
 }
 
 class GithubWidget extends StatelessWidget {
-  const GithubWidget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -59,17 +58,17 @@ class GithubWidget extends StatelessWidget {
                 onPressed: () => openLink('https://github.com/deandreamatias'),
                 icon: Icon(CustomIcons.github),
                 label: Text(
-                  'Github',
-                  style: TextStyle(fontFamily: 'Sniglet'),
+                  translate('home.github.button'),
+                  style: const TextStyle(fontFamily: 'Sniglet'),
                 ),
               ),
-              SizedBox(width: 12),
+              const SizedBox(width: 12),
               Flexible(
                 fit: FlexFit.loose,
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
                   child: Text(
-                    'Open source projects are awesome and sometimes I contribute to them.',
+                    translate('home.github.title'),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -83,7 +82,6 @@ class GithubWidget extends StatelessWidget {
 }
 
 class LanguagesWidget extends StatelessWidget {
-  const LanguagesWidget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +98,7 @@ class LanguagesWidget extends StatelessWidget {
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
                   child: Text(
-                    'I has the privilege to live in some places and learn some languages',
+                    translate('home.languages.title'),
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -110,22 +108,22 @@ class LanguagesWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Text(
-                    'Spanish: Native',
+                    translate('home.languages.spanish'),
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontFamily: 'Sniglet'),
+                    style: const TextStyle(fontFamily: 'Sniglet'),
                   ),
                   Text(
-                    'Portuguese: C2',
+                    translate('home.languages.portuguese'),
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontFamily: 'Sniglet'),
+                    style: const TextStyle(fontFamily: 'Sniglet'),
                   ),
                 ],
               ),
               const SizedBox(height: 8.0),
               Text(
-                'English: A2',
+                translate('home.languages.english'),
                 textAlign: TextAlign.center,
-                style: TextStyle(fontFamily: 'Sniglet'),
+                style: const TextStyle(fontFamily: 'Sniglet'),
               ),
             ],
           ),
@@ -136,7 +134,6 @@ class LanguagesWidget extends StatelessWidget {
 }
 
 class ContactWidget extends StatelessWidget {
-  const ContactWidget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -147,24 +144,24 @@ class ContactWidget extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: <Widget>[
-              Text('Let\'s talk?'),
-              SizedBox(height: 8.0),
+              Text(translate('home.contact.title')),
+              const SizedBox(height: 8.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   RaisedButton(
                     onPressed: () => openApp('mailto:deandreamatias@gmail.com'),
                     child: Text(
-                      'Email',
-                      style: TextStyle(fontFamily: 'Sniglet'),
+                      translate('home.contact.button_email'),
+                      style: const TextStyle(fontFamily: 'Sniglet'),
                     ),
                   ),
                   RaisedButton(
                     onPressed: () => openLink(
                         'https://www.linkedin.com/in/deandreamatias/?locale=en_US'),
                     child: Text(
-                      'LinkedIn',
-                      style: TextStyle(fontFamily: 'Sniglet'),
+                      translate('home.contact.button_linkedin'),
+                      style: const TextStyle(fontFamily: 'Sniglet'),
                     ),
                   ),
                 ],
@@ -178,7 +175,6 @@ class ContactWidget extends StatelessWidget {
 }
 
 class StreamingWidget extends StatelessWidget {
-  const StreamingWidget({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -190,7 +186,7 @@ class StreamingWidget extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Text(
-                'You can find in this platfroms',
+                translate('podcast.streaming.title'),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 16.0),

@@ -9,19 +9,21 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   responsive_builder: ^0.1.5
   url_launcher: ^5.4.2
+  flutter_html: ^0.11.1
+  flutter_translate: ^1.6.0
   eof_podcast_feed:
     git: git@github.com:deandreamatias/dart-eof-podcast-feed.git
-  just_audio: ^0.1.3
-  flutter_html: ^0.11.1
-  cupertino_icons: ^0.1.3
 
 flutter:
   uses-material-design: true
 
   assets:
     - assets/img/
+    - assets/i18n/
   fonts:
     - family: Sniglet
       fonts:

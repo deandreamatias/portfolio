@@ -1,0 +1,53 @@
+{
+    "home": {
+        "header": {
+            "title": "Hi, I'm Matias de Andrea",
+            "subtitle": "a creative and dynamic developer.\nI really like work with mobile applications, developing UI/UX and software"
+        },
+        "skills": {
+            "title": "My loved technologies and tools are"
+        },
+        "github": {
+            "title": "Open source projects are awesome and sometimes I contribute to them",
+            "button": "Github"
+        },
+        "languages": {
+            "title": "I has the privilege to live in some places and learn some languages",
+            "spanish": "Spanish: Native",
+            "portuguese": "Portuguese: C2",
+            "english": "English: A2"
+        },
+        "contact": {
+            "title": "Let's talk?",
+            "button_email": "Email",
+            "button_linkedin": "LinkedIn"
+        }
+    },
+    "podcast": {
+        "title":"Hi, this is Universo Flutter",
+        "subtitle": "my podcast about Flutter, in portuguese language",
+        "streaming": {
+            "title": "You can find in this platforms",
+            "button_streaming": "Streaming options"
+        }
+    },
+    "menu": {
+        "home": "deandreamatias",
+        "podcast": "podcast",
+        "options": {
+            "description": "Options",
+            "english": "English",
+            "spanish": "Spanish",
+            "portuguese": "Portuguese"
+        }
+    },
+    "footer": {
+        "local": "Valencia, Spain",
+        "buttons": {
+            "linkedin": "LinkedIn",
+            "github": "Github",
+            "behance": "Behance",
+            "twitter": "Twitter"
+        }
+    }
+}

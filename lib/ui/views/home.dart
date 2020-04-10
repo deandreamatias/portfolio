@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import '../../core/utils/constants.dart';
@@ -8,7 +9,6 @@ import '../widgets/header.dart';
 import '../widgets/menu.dart';
 
 class HomeView extends StatefulWidget {
-  HomeView({Key key}) : super(key: key);
   static const String route = '/';
 
   @override
@@ -19,8 +19,8 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const PreferredSize(
-        preferredSize: Size.fromHeight(56.0),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(56.0),
         child: MenuWidget(),
       ),
       body: Column(
@@ -39,58 +39,51 @@ class _HomeViewState extends State<HomeView> {
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
                             HeaderWidget(
-                              title: 'Hi, I\'m Matias de Andrea',
-                              subtitle:
-                                  'And also a creative and dynamic developer.\nI really like work with mobile applications, developing UI/UX and software.',
-                              image: Urls.PROFILE,
+                              title: translate('home.header.title'),
+                              subtitle: translate('home.header.subtitle'),
+                              image: Assets.PROFILE,
                             ),
-                            const LanguagesWidget(),
+                            LanguagesWidget(),
                           ],
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
-                            const GithubWidget(),
-                            const SkillsWidget(),
-                            const ContactWidget(),
+                            GithubWidget(),
+                            SkillsWidget(),
+                            ContactWidget(),
                           ],
                         )
                       ],
                     );
                     break;
-                  case DeviceScreenType.Tablet:
-                  case DeviceScreenType.Mobile:
+                  default:
                     return SingleChildScrollView(
-                      padding: EdgeInsets.all(16.0),
+                      padding: const EdgeInsets.all(16.0),
                       child: Center(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             HeaderWidget(
-                              title: 'Hi, I\'m Matias de Andrea',
-                              subtitle:
-                                  'And also a creative and dynamic developer.\nI really like work with mobile applications, developing UI/UX and software.',
+                              title: translate('home.header.title'),
+                              subtitle: translate('home.header.subtitle'),
                               image: Assets.PROFILE,
                             ),
-                            const GithubWidget(),
-                            const SkillsWidget(),
-                            const LanguagesWidget(),
-                            const ContactWidget(),
+                            GithubWidget(),
+                            SkillsWidget(),
+                            LanguagesWidget(),
+                            ContactWidget(),
                           ],
                         ),
                       ),
                     );
-                    break;
-                  default:
-                    // TODO: Remove
-                    return Container(color: Colors.purple);
                 }
               },
             ),
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: const Footer(),
+            child: Footer(),
           )
         ],
       ),

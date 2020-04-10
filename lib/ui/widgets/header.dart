@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/data/streamigs.dart';
-import 'package:portfolio/core/utils/navigate_links.dart';
+import 'package:flutter_translate/flutter_translate.dart';
 
+import '../../core/data/streamigs.dart';
+import '../../core/utils/navigate_links.dart';
 import 'circular_image.dart';
 
 class HeaderWidget extends StatelessWidget {
@@ -38,6 +39,7 @@ class HeaderWidget extends StatelessWidget {
                       maxLines: 3,
                     ),
                   ),
+                  const SizedBox(width: 8.0,),
                   CircularImage(image: image),
                 ],
               ),
@@ -58,6 +60,7 @@ class HeaderWidget extends StatelessWidget {
                       child: Flexible(
                         flex: 1,
                         child: IconButton(
+                          tooltip: translate('podcast.streaming.button_streaming'),
                           icon: Icon(Icons.audiotrack),
                           onPressed: () => showModalBottomSheet<Container>(
                             isScrollControlled: true,
@@ -73,7 +76,7 @@ class HeaderWidget extends StatelessWidget {
                                   physics: const BouncingScrollPhysics(),
                                   padding: const EdgeInsets.all(16.0),
                                   itemCount: streamings.length,
-                                  itemBuilder: (context, index) => 
+                                  itemBuilder: (BuildContext context, int index) => 
                                     ListTile(
                                       title: Text(streamings[index].title),
                                       onTap: () => openApp(streamings[index].url),

@@ -29,7 +29,7 @@ final ThemeData themeDark = ThemeData(
     brightness: Brightness.dark,
   ),
   scaffoldBackgroundColor: BACKGROUND,
-  bottomSheetTheme: BottomSheetThemeData(
+  bottomSheetTheme: const BottomSheetThemeData(
     backgroundColor: PRIMARY
   ),
   cardTheme: const CardTheme(
