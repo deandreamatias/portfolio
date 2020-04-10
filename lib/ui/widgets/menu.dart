@@ -16,11 +16,8 @@ class MenuWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: FlatButton(
-        // TODO: Fix back button in second time
-        onPressed: () => Navigator.of(context).pushNamedAndRemoveUntil(
-          HomeView.route,
-          ModalRoute.withName(HomeView.route),
-        ),
+        onPressed: () =>
+            Navigator.of(context).pushReplacementNamed(HomeView.route),
         child: Text(
           'deandreamatias',
           style: TextStyle(fontFamily: 'Sniglet'),
@@ -30,10 +27,8 @@ class MenuWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 12.0),
           child: FlatButton(
-            onPressed: () => Navigator.of(context).pushNamedAndRemoveUntil(
-              PodcastView.route,
-              ModalRoute.withName(HomeView.route),
-            ),
+            onPressed: () =>
+                Navigator.of(context).pushReplacementNamed(PodcastView.route),
             child: Text(
               'podcast',
               style: TextStyle(fontFamily: 'Sniglet'),
