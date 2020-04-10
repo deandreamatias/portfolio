@@ -7,14 +7,15 @@ about: Something is crashing or not working as intended
 ## Environment
 
 **App version:**  <!-- Add branch if necessary -->  
-**Android version:**  <!-- If customize ROM, write which -->  
-**Device information:**  <!-- Manufacturer and model -->  
+**Browser information:**  <!-- Name of browser and version -->  
+**Device type:**  <!-- Desktop, Mobile, Tablet or other -->  
+**Device details:**  <!-- Manufacturer, model, OS with version -->  
 
 ## Description
 
-**Expected behavior:** 
+**Expected behavior:**
 
-**Current behavior:** 
+**Current behavior:**
 
 ## Steps to reproduce
 
