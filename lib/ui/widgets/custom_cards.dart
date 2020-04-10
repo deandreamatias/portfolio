@@ -1,9 +1,9 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/utils/constants.dart';
+import '../../core/utils/navigate_links.dart';
 import '../shared/portfolio_icons.dart';
 
 class SkillsWidget extends StatelessWidget {
@@ -56,15 +56,7 @@ class GithubWidget extends StatelessWidget {
           child: Row(
             children: <Widget>[
               RaisedButton.icon(
-                onPressed: () async {
-                  const String url = 'https://github.com/deandreamatias';
-                  if (await canLaunch(url)) {
-                    await launch(url);
-                    print('Launched');
-                  } else {
-                    throw 'Could not launch $url';
-                  }
-                },
+                onPressed: () => openLink('https://github.com/deandreamatias'),
                 icon: Icon(CustomIcons.github),
                 label: Text(
                   'Github',
@@ -161,28 +153,15 @@ class ContactWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   RaisedButton(
-                    onPressed: () async {
-                      const String url = 'mailto:deandreamatias@gmail.com';
-                      try {
-                        await launch(url);
-                      } catch (e) {
-                        throw 'Could not launch $url';
-                      }
-                    },
+                    onPressed: () => openApp('mailto:deandreamatias@gmail.com'),
                     child: Text(
                       'Email',
                       style: TextStyle(fontFamily: 'Sniglet'),
                     ),
                   ),
                   RaisedButton(
-                    onPressed: () async {
-                      const String url = 'https://www.linkedin.com/in/deandreamatias/?locale=en_US';
-                      try {
-                        await launch(url);
-                      } catch (e) {
-                        throw 'Could not launch $url';
-                      }
-                    },
+                    onPressed: () => openLink(
+                        'https://www.linkedin.com/in/deandreamatias/?locale=en_US'),
                     child: Text(
                       'LinkedIn',
                       style: TextStyle(fontFamily: 'Sniglet'),

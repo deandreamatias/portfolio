@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/core/data/streamigs.dart';
+import 'package:portfolio/core/utils/navigate_links.dart';
 
 import 'circular_image.dart';
 
@@ -56,7 +58,32 @@ class HeaderWidget extends StatelessWidget {
                       child: Flexible(
                         flex: 1,
                         child: IconButton(
-                            icon: Icon(Icons.audiotrack), onPressed: null),
+                          icon: Icon(Icons.audiotrack),
+                          onPressed: () => showModalBottomSheet<Container>(
+                            isScrollControlled: true,
+                            shape: const RoundedRectangleBorder(
+                              borderRadius: BorderRadiusDirectional.vertical(
+                                  top: Radius.circular(30.0)),
+                            ),
+                            context: context,
+                            builder: (BuildContext context) {
+                              return Container(
+                                height: 320,
+                                child: ListView.builder(
+                                  physics: const BouncingScrollPhysics(),
+                                  padding: const EdgeInsets.all(16.0),
+                                  itemCount: streamings.length,
+                                  itemBuilder: (context, index) => 
+                                    ListTile(
+                                      title: Text(streamings[index].title),
+                                      onTap: () => openApp(streamings[index].url),
+                                      leading: Icon(Icons.audiotrack),
+                                    ),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
                       ),
                     )
                   ],

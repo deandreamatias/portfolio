@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
-import 'package:portfolio/ui/shared/portfolio_icons.dart';
-import 'package:url_launcher/url_launcher.dart';
+
+import '../../core/utils/navigate_links.dart';
+import '../shared/portfolio_icons.dart';
 
 class Footer extends StatelessWidget {
   const Footer({
@@ -19,39 +19,30 @@ class Footer extends StatelessWidget {
           children: <Widget>[
             IconButton(
               icon: Icon(CustomIcons.linkedin),
-              onPressed: () => _navigateLink(
+              onPressed: () => openLink(
                   'https://www.linkedin.com/in/deandreamatias/?locale=en_US'),
             ),
             const SizedBox(width: 16.0),
             IconButton(
               icon: Icon(CustomIcons.github),
               onPressed: () =>
-                  _navigateLink('https://github.com/deandreamatias'),
+                  openLink('https://github.com/deandreamatias'),
             ),
             const SizedBox(width: 16.0),
             IconButton(
               icon: Icon(CustomIcons.behance),
-              onPressed: () => _navigateLink(
+              onPressed: () => openLink(
                   'https://www.behance.net/deandreamatias'),
             ),
             const SizedBox(width: 16.0),
             IconButton(
               icon: Icon(CustomIcons.twitter),
               onPressed: () =>
-                  _navigateLink('https://twitter.com/deandreamatias'),
+                  openLink('https://twitter.com/deandreamatias'),
             ),
           ],
         )
       ],
     );
-  }
-}
-
-Future<void> _navigateLink(String url) async {
-  if (await canLaunch(url)) {
-    await launch(url);
-    print('Launched');
-  } else {
-    throw 'Could not launch $url';
   }
 }
