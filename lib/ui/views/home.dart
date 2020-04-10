@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-import 'package:portfolio/ui/widgets/menu.dart';
-import 'package:portfolio/core/utils/constants.dart';
-import 'package:portfolio/ui/widgets/footer.dart';
-import '../widgets/card.dart';
-import '../widgets/data.dart';
+import '../../core/utils/constants.dart';
+import '../widgets/custom_cards.dart';
+import '../widgets/footer.dart';
 import '../widgets/header.dart';
+import '../widgets/menu.dart';
 
 class HomeView extends StatefulWidget {
   HomeView({Key key}) : super(key: key);
@@ -39,31 +38,21 @@ class _HomeViewState extends State<HomeView> {
                         Column(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
-                            CardWidget(
-                              child: HeaderWidget(
-                                title: 'Hi, I\'m Matias de Andrea',
-                                subtitle:
-                                    'And also a creative and dynamic developer.\nI really like work with mobile applications, developing UI/UX and software.',
-                                image: Urls.PROFILE,
-                              ),
+                            HeaderWidget(
+                              title: 'Hi, I\'m Matias de Andrea',
+                              subtitle:
+                                  'And also a creative and dynamic developer.\nI really like work with mobile applications, developing UI/UX and software.',
+                              image: Urls.PROFILE,
                             ),
-                            CardWidget(
-                              child: LanguagesWidget(),
-                            ),
+                            const LanguagesWidget(),
                           ],
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
-                            CardWidget(
-                              child: GithubWidget(),
-                            ),
-                            CardWidget(
-                              child: SkillsWidget(),
-                            ),
-                            CardWidget(
-                              child: ContactWidget(),
-                            ),
+                            const GithubWidget(),
+                            const SkillsWidget(),
+                            const ContactWidget(),
                           ],
                         )
                       ],
@@ -77,26 +66,16 @@ class _HomeViewState extends State<HomeView> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            CardWidget(
-                              child: HeaderWidget(
-                                title: 'Hi, I\'m Matias de Andrea',
-                                subtitle:
-                                    'And also a creative and dynamic developer.\nI really like work with mobile applications, developing UI/UX and software.',
-                                image: Assets.PROFILE,
-                              ),
+                            HeaderWidget(
+                              title: 'Hi, I\'m Matias de Andrea',
+                              subtitle:
+                                  'And also a creative and dynamic developer.\nI really like work with mobile applications, developing UI/UX and software.',
+                              image: Assets.PROFILE,
                             ),
-                            CardWidget(
-                              child: GithubWidget(),
-                            ),
-                            CardWidget(
-                              child: SkillsWidget(),
-                            ),
-                            CardWidget(
-                              child: LanguagesWidget(),
-                            ),
-                            CardWidget(
-                              child: ContactWidget(),
-                            ),
+                            const GithubWidget(),
+                            const SkillsWidget(),
+                            const LanguagesWidget(),
+                            const ContactWidget(),
                           ],
                         ),
                       ),

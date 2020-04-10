@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:eof_podcast_feed/eof_podcast_feed.dart';
 
-import 'package:portfolio/ui/widgets/footer.dart';
-import 'package:portfolio/ui/widgets/menu.dart';
-import 'package:portfolio/ui/widgets/episode.dart';
-import 'package:portfolio/ui/widgets/header.dart';
-import 'package:portfolio/ui/widgets/card.dart';
-import 'package:portfolio/core/utils/constants.dart';
+import '../../core/utils/constants.dart';
+import '../widgets/custom_cards.dart';
+import '../widgets/episode.dart';
+import '../widgets/footer.dart';
+import '../widgets/header.dart';
+import '../widgets/menu.dart';
 
 class PodcastView extends StatelessWidget {
   PodcastView({Key key}) : super(key: key);
@@ -62,12 +62,44 @@ class PodcastView extends StatelessWidget {
                   return Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      CardWidget(
-                        child: HeaderWidget(
-                          title: 'Hi, this is Universo Flutter',
-                          subtitle:
-                              'This is my podcast about Flutter and the main language is portuguese',
-                          image: snapshot.data.podcastCoverUrl,
+                      ScreenTypeLayout(
+                        mobile: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            HeaderWidget(
+                              title: 'Hi, this is Universo Flutter',
+                              subtitle:
+                                  'This is my podcast about Flutter and the main language is portuguese',
+                              image: snapshot.data.podcastCoverUrl,
+                              streaming: true,
+                            ),
+                          ],
+                        ),
+                        tablet: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            HeaderWidget(
+                              title: 'Hi, this is Universo Flutter',
+                              subtitle:
+                                  'This is my podcast about Flutter and the main language is portuguese',
+                              image: snapshot.data.podcastCoverUrl,
+                            ),
+                            const StreamingWidget(),
+                          ],
+                        ),
+                        desktop: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            HeaderWidget(
+                              title: 'Hi, this is Universo Flutter',
+                              subtitle:
+                                  'This is my podcast about Flutter and the main language is portuguese',
+                              image: snapshot.data.podcastCoverUrl,
+                            ),
+                            const StreamingWidget(),
+                          ],
                         ),
                       ),
                       Expanded(

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-const Color PRIMARY = Color(0xFF333333);
+const Color PRIMARY = Color(0xFF222222);
 const Color ACCENT = Color(0xFF7E008E);
+const Color BACKGROUND = Color(0xFF333333);
 
 final ThemeData themeDark = ThemeData(
   fontFamily: 'Asap',
@@ -13,22 +14,31 @@ final ThemeData themeDark = ThemeData(
     onSecondary: Colors.white,
     onError: Colors.white,
     onBackground: Colors.black,
-    background: Colors.white,
+    background: BACKGROUND,
     primaryVariant: Colors.orange,
     secondaryVariant: Colors.deepOrange,
     surface: Colors.white,
     onSurface: Colors.black,
     brightness: Brightness.dark,
   ),
-  backgroundColor: PRIMARY,
+  backgroundColor: BACKGROUND,
   primaryColorDark: PRIMARY,
   appBarTheme: const AppBarTheme(
     elevation: 0.0,
-    color: PRIMARY,
+    color: BACKGROUND,
     brightness: Brightness.dark,
   ),
-  scaffoldBackgroundColor: PRIMARY,
-  cardColor: const Color(0xFF222222),
+  scaffoldBackgroundColor: BACKGROUND,
+  bottomSheetTheme: BottomSheetThemeData(
+    backgroundColor: PRIMARY
+  ),
+  cardTheme: const CardTheme(
+    color:  PRIMARY,
+    margin: EdgeInsets.all(12.0),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(Radius.circular(30.0)),
+    ),
+  ),
   brightness: Brightness.dark,
   primaryColor: PRIMARY,
   accentColor: ACCENT,
