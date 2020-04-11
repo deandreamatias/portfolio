@@ -3,6 +3,7 @@ import 'package:flutter_translate/flutter_translate.dart';
 
 import '../../core/data/streamigs.dart';
 import '../../core/utils/navigate_links.dart';
+import '../shared/portfolio_icons.dart';
 import 'circular_image.dart';
 
 class HeaderWidget extends StatelessWidget {
@@ -64,7 +65,7 @@ class HeaderWidget extends StatelessWidget {
                         child: IconButton(
                           tooltip:
                               translate('podcast.streaming.button_streaming'),
-                          icon: const Icon(Icons.audiotrack),
+                          icon: const Icon(CustomIcons.headphones),
                           onPressed: () => showModalBottomSheet<Container>(
                             isScrollControlled: true,
                             shape: const RoundedRectangleBorder(
