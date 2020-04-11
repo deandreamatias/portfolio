@@ -1,23 +1,11 @@
 {
-    "name": "portfolio",
-    "short_name": "portfolio",
+    "name": "deandreamatias",
+    "short_name": "deandreamatias",
     "start_url": ".",
     "display": "minimal-ui",
-    "background_color": "#0175C2",
+    "background_color": "#333333",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Portfolio of deandreamatias - Matias de Andrea is a creative and dynamic developer. Work with mobile applications, developing UI/UX and software with Flutter",
     "orientation": "portrait-primary",
-    "prefer_related_applications": false,
-    "icons": [
-        {
-            "src": "icons/Icon-192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "icons/Icon-512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ]
+    "prefer_related_applications": false
 }
