@@ -3,12 +3,12 @@ import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:flutter_translate/flutter_translate.dart';
 
+import '../../core/data/streamigs.dart';
 import '../../core/utils/constants.dart';
 import '../../core/utils/navigate_links.dart';
 import '../shared/portfolio_icons.dart';
 
 class SkillsWidget extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -44,7 +44,6 @@ class SkillsWidget extends StatelessWidget {
 }
 
 class GithubWidget extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -56,7 +55,7 @@ class GithubWidget extends StatelessWidget {
             children: <Widget>[
               RaisedButton.icon(
                 onPressed: () => openLink('https://github.com/deandreamatias'),
-                icon: Icon(CustomIcons.github),
+                icon: const Icon(CustomIcons.github),
                 label: Text(
                   translate('home.github.button'),
                   style: const TextStyle(fontFamily: 'Sniglet'),
@@ -82,7 +81,6 @@ class GithubWidget extends StatelessWidget {
 }
 
 class LanguagesWidget extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -134,7 +132,6 @@ class LanguagesWidget extends StatelessWidget {
 }
 
 class ContactWidget extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -175,7 +172,6 @@ class ContactWidget extends StatelessWidget {
 }
 
 class StreamingWidget extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -184,37 +180,33 @@ class StreamingWidget extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Text(
                 translate('podcast.streaming.title'),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(height: 16.0),
-              Container(
-                height: 24.0,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Image.asset(Assets.FLUTTER),
-                    Image.asset(Assets.ANDROID),
-                    Image.asset(Assets.GIT),
-                    Image.asset(Assets.ADOBEXD),
-                  ],
+              ConstrainedBox(
+                constraints: const BoxConstraints(
+                  minHeight: 70,
+                  maxHeight: 80,
                 ),
-              ),
-              const SizedBox(height: 8.0),
-              Container(
-                height: 24.0,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Image.asset(Assets.FLUTTER),
-                    Image.asset(Assets.ANDROID),
-                    Image.asset(Assets.GIT),
-                    Image.asset(Assets.ADOBEXD),
-                  ],
+                child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 5,
+                    childAspectRatio: 1.0,
+                    crossAxisSpacing: 8.0,
+                    mainAxisSpacing: 8.0,
+                  ),
+                  padding: const EdgeInsets.only(top: 4.0),
+                  itemCount: streamings.length,
+                  itemBuilder: (BuildContext context, int index) => IconButton(
+                    icon: Image.asset(streamings[index].image),
+                    onPressed: () => openLink(streamings[index].url),
+                    tooltip: streamings[index].title,
+                  ),
                 ),
-              ),
+              )
             ],
           ),
         ),

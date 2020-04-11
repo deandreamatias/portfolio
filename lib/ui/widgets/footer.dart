@@ -16,28 +16,28 @@ class Footer extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             IconButton(
-              icon: Icon(CustomIcons.linkedin),
+              icon: const Icon(CustomIcons.linkedin),
               tooltip: translate('footer.buttons.linkedin'),
               onPressed: () => openLink(
                   'https://www.linkedin.com/in/deandreamatias/?locale=en_US'),
             ),
             const SizedBox(width: 16.0),
             IconButton(
-              icon: Icon(CustomIcons.github),
+              icon: const Icon(CustomIcons.github),
               tooltip: translate('footer.buttons.github'),
               onPressed: () =>
                   openLink('https://github.com/deandreamatias'),
             ),
             const SizedBox(width: 16.0),
             IconButton(
-              icon: Icon(CustomIcons.behance),
+              icon: const Icon(CustomIcons.behance),
               tooltip: translate('footer.buttons.behance'),
               onPressed: () => openLink(
                   'https://www.behance.net/deandreamatias'),
             ),
             const SizedBox(width: 16.0),
             IconButton(
-              icon: Icon(CustomIcons.twitter),
+              icon: const Icon(CustomIcons.twitter),
               tooltip: translate('footer.buttons.twitter'),
               onPressed: () =>
                   openLink('https://twitter.com/deandreamatias'),

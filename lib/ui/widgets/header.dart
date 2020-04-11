@@ -64,7 +64,7 @@ class HeaderWidget extends StatelessWidget {
                         child: IconButton(
                           tooltip:
                               translate('podcast.streaming.button_streaming'),
-                          icon: Icon(Icons.audiotrack),
+                          icon: const Icon(Icons.audiotrack),
                           onPressed: () => showModalBottomSheet<Container>(
                             isScrollControlled: true,
                             shape: const RoundedRectangleBorder(
@@ -84,7 +84,7 @@ class HeaderWidget extends StatelessWidget {
                                           ListTile(
                                     title: Text(streamings[index].title),
                                     onTap: () => openApp(streamings[index].url),
-                                    leading: Icon(Icons.audiotrack),
+                                    leading: Image.asset(streamings[index].image),
                                   ),
                                 ),
                               );
