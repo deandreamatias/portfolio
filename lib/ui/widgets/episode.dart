@@ -19,8 +19,9 @@ class EpisodeWidget extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                Flexible(flex: 4, child: Text(episode.title)),
-                Flexible(flex: 1, child: CircularImage(image: episode.cover)),
+                Expanded(child: Text(episode.title)),
+                const SizedBox(width: 8),
+                CircularImage(image: episode.cover),
               ],
             ),
             Expanded(

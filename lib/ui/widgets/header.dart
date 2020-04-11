@@ -39,7 +39,9 @@ class HeaderWidget extends StatelessWidget {
                       maxLines: 3,
                     ),
                   ),
-                  const SizedBox(width: 8.0,),
+                  const SizedBox(
+                    width: 8.0,
+                  ),
                   CircularImage(image: image),
                 ],
               ),
@@ -60,7 +62,8 @@ class HeaderWidget extends StatelessWidget {
                       child: Flexible(
                         flex: 1,
                         child: IconButton(
-                          tooltip: translate('podcast.streaming.button_streaming'),
+                          tooltip:
+                              translate('podcast.streaming.button_streaming'),
                           icon: Icon(Icons.audiotrack),
                           onPressed: () => showModalBottomSheet<Container>(
                             isScrollControlled: true,
@@ -76,12 +79,13 @@ class HeaderWidget extends StatelessWidget {
                                   physics: const BouncingScrollPhysics(),
                                   padding: const EdgeInsets.all(16.0),
                                   itemCount: streamings.length,
-                                  itemBuilder: (BuildContext context, int index) => 
-                                    ListTile(
-                                      title: Text(streamings[index].title),
-                                      onTap: () => openApp(streamings[index].url),
-                                      leading: Icon(Icons.audiotrack),
-                                    ),
+                                  itemBuilder:
+                                      (BuildContext context, int index) =>
+                                          ListTile(
+                                    title: Text(streamings[index].title),
+                                    onTap: () => openApp(streamings[index].url),
+                                    leading: Icon(Icons.audiotrack),
+                                  ),
                                 ),
                               );
                             },
