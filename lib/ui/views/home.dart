@@ -41,7 +41,7 @@ class _HomeViewState extends State<HomeView> {
                             HeaderWidget(
                               title: translate('home.header.title'),
                               subtitle: translate('home.header.subtitle'),
-                              image: Assets.PROFILE,
+                              image: Urls.PROFILE,
                             ),
                             LanguagesWidget(),
                           ],
