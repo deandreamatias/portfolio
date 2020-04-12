@@ -29,7 +29,7 @@ class App extends StatelessWidget {
         themeMode: ThemeMode.dark,
         theme: themeDark,
         initialRoute: '/',
-        routes: {
+        routes: <String, WidgetBuilder>{
           HomeView.route: (BuildContext context) => HomeView(),
           PodcastView.route: (BuildContext context) => PodcastView(),
         },

@@ -1,5 +1,5 @@
 name: portfolio
-description: deandreamatias portfolio
+description: deandreamatias
 
 version: 0.1.0+1
 
@@ -19,8 +19,6 @@ dependencies:
     git: git@github.com:deandreamatias/dart-eof-podcast-feed.git
 
 flutter:
-  uses-material-design: true
-
   assets:
     - assets/img/
     - assets/i18n/
