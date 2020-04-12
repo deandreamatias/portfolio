@@ -1,11 +1,24 @@
 {
-    "name": "deandreamatias",
+    "name": "deandreamatias website",
     "short_name": "deandreamatias",
-    "start_url": ".",
+    "start_url": "/",
+    "scope": "/",
     "display": "minimal-ui",
     "background_color": "#333333",
     "theme_color": "#0175C2",
-    "description": "Portfolio of deandreamatias - Matias de Andrea is a creative and dynamic developer. Work with mobile applications, developing UI/UX and software with Flutter",
+    "description": "deandreamatias website - Matias de Andrea is a creative and dynamic developer. Work with mobile applications, developing UI/UX and software with Flutter",
     "orientation": "portrait-primary",
-    "prefer_related_applications": false
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "favicon.png",
+            "sizes": "260x260",
+            "type": "image/png"
+        },
+        {
+            "src": "profile.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ]
 }
