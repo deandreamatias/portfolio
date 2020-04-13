@@ -25,7 +25,7 @@ class App extends StatelessWidget {
       state: LocalizationProvider.of(context).state,
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'deandreamatias',
+        title: 'deandreamatias - Mobile developer with Flutter',
         themeMode: ThemeMode.dark,
         theme: themeDark,
         initialRoute: '/',
