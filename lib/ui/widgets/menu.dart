@@ -46,25 +46,60 @@ class MenuWidget extends StatelessWidget {
                 changeLocale(context, 'en');
             }
           },
-          itemBuilder: (BuildContext context) =>
-              <CheckedPopupMenuItem<MenuItems>>[
-            CheckedPopupMenuItem<MenuItems>(
+          itemBuilder: (BuildContext context) => <PopupMenuItem<MenuItems>>[
+            PopupMenuItem<MenuItems>(
               value: MenuItems.en,
-              checked: LocalizedApp.of(context).delegate.currentLocale ==
-                  const Locale('en'),
-              child: Text(translate('menu.options.english')),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Visibility(
+                      visible:
+                          LocalizedApp.of(context).delegate.currentLocale ==
+                              const Locale('en'),
+                      child: const Icon(CustomIcons.checkmark),
+                    ),
+                    Text(translate('menu.options.english')),
+                  ],
+                ),
+              ),
             ),
-            CheckedPopupMenuItem<MenuItems>(
+            PopupMenuItem<MenuItems>(
               value: MenuItems.es,
-              checked: LocalizedApp.of(context).delegate.currentLocale ==
-                  const Locale('es'),
-              child: Text(translate('menu.options.spanish')),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Visibility(
+                      visible:
+                          LocalizedApp.of(context).delegate.currentLocale ==
+                              const Locale('es'),
+                      child: const Icon(CustomIcons.checkmark),
+                    ),
+                    Text(translate('menu.options.spanish')),
+                  ],
+                ),
+              ),
             ),
-            CheckedPopupMenuItem<MenuItems>(
+            PopupMenuItem<MenuItems>(
               value: MenuItems.pt,
-              checked: LocalizedApp.of(context).delegate.currentLocale ==
-                  const Locale('pt'),
-              child: Text(translate('menu.options.portuguese')),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Visibility(
+                      visible:
+                          LocalizedApp.of(context).delegate.currentLocale ==
+                              const Locale('pt'),
+                      child: const Icon(CustomIcons.checkmark),
+                    ),
+                    Text(translate('menu.options.portuguese')),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
