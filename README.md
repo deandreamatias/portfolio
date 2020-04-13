@@ -4,7 +4,7 @@
 
 ### About the project
 
-I made this portofolio to experiment with Flutter web and have a place to share the references link to my podcast.
+I made this portfolio to experiment with Flutter web and have a place to share the references link to my podcast.
 
 This project has been built using the [Flutter](https://flutter.dev/) framework, which allows to build an app for mobile, desktop & web, from a single codebase.
 
@@ -13,14 +13,12 @@ This project has been built using the [Flutter](https://flutter.dev/) framework,
 First, clone the repository with the 'git clone' command, or just download the zip.
 
 ```
-$ git clone git@github.com:deandreamatias/portoflio.git
+$ git clone git@github.com:deandreamatias/portfolio.git
 ```
 
 Then, download either Android Studio or Visual Studio Code, with their respective [Flutter editor plugins](https://flutter.dev/docs/get-started/editor). For more information about Flutter installation procedure, check the [official install guide](https://flutter.dev/docs/get-started/install).
 
 Install dependencies from pubspec.yaml by running `flutter packages get` from the project root (see [using packages documentation](https://flutter.dev/docs/development/packages-and-plugins/using-packages#adding-a-package-dependency-to-an-app) for details and how to do this in the editor).
-
-Get your API Key from TMDB (see [this FAQ](https://www.themoviedb.org/faq/api) for more details) and paste in file `config/env.dart`
 
 Run in debug mode :)
 
