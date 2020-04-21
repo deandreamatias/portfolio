@@ -19,6 +19,7 @@ class MenuWidget extends StatelessWidget {
           style: const TextStyle(fontFamily: 'Sniglet'),
         ),
       ),
+      automaticallyImplyLeading: false,
       actions: <Widget>[
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 12.0),
