@@ -6,11 +6,11 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
 <url>
-  <loc>http://deandreamatias.com/</loc>
+  <loc>https://deandreamatias.com/</loc>
   <lastmod>2020-04-11T22:07:49+00:00</lastmod>
 </url>
 <url>
-  <loc>http://deandreamatias.com/podcast</loc>
+  <loc>https://deandreamatias.com/#/podcast</loc>
   <lastmod>2020-04-11T22:07:49+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>1.00</priority>
