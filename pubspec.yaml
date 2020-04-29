@@ -12,7 +12,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   responsive_builder: ^0.1.5
-  url_launcher: ^5.4.2
+  url_launcher: ^5.4.5
   flutter_html: ^0.11.1
   flutter_translate: ^1.6.0
   eof_podcast_feed:

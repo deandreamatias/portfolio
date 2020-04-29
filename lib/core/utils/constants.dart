@@ -16,6 +16,6 @@ class Assets {
 }
 
 class Urls {
-  static const String PODCAST = 'https://anchor.fm/s/127cd640/podcast/rss'; 
-  static const String PROFILE = 'https://mir-s3-cdn-cf.behance.net/user/115/329aa2229454173.5c4cd1ef00101.jpg';
+  static const String PODCAST = 'https://anchor.fm/s/127cd640/podcast/rss';
+  static const String PROFILE = 'https://deandreamatias.com/profile.png';
 }

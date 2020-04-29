@@ -11,7 +11,7 @@ import '../widgets/header.dart';
 import '../widgets/menu.dart';
 
 class PodcastView extends StatelessWidget {
-  static const String route = '/podcast';
+  static const String route = '/universoflutter';
 
   @override
   Widget build(BuildContext context) {
