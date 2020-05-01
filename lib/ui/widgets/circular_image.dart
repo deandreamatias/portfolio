@@ -6,18 +6,21 @@ class CircularImage extends StatelessWidget {
   const CircularImage({
     Key key,
     @required this.image,
+    this.button,
   }) : super(key: key);
 
   final String image;
+  final Widget button;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 70,
+      width: 70,
       child: CircleAvatar(
         backgroundImage: NetworkImage(image),
+        child: button,
       ),
-      width: 70.0,
-      height: 70.0,
       padding: const EdgeInsets.all(2.0),
       decoration: const BoxDecoration(
         color: ACCENT,

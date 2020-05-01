@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_translate/flutter_translate.dart';
 
-import '../../core/data/streamigs.dart';
-import '../../core/utils/navigate_links.dart';
-import '../shared/portfolio_icons.dart';
 import 'circular_image.dart';
 
 class HeaderWidget extends StatelessWidget {
@@ -49,52 +45,9 @@ class HeaderWidget extends StatelessWidget {
               const SizedBox(height: 16.0),
               Flexible(
                 fit: FlexFit.loose,
-                child: Row(
-                  children: <Widget>[
-                    Flexible(
-                      flex: 4,
-                      child: Text(
-                        subtitle,
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    Visibility(
-                      visible: streaming,
-                      child: Flexible(
-                        flex: 1,
-                        child: IconButton(
-                          tooltip:
-                              translate('podcast.streaming.button_streaming'),
-                          icon: const Icon(CustomIcons.headphones),
-                          onPressed: () => showModalBottomSheet<Container>(
-                            isScrollControlled: true,
-                            shape: const RoundedRectangleBorder(
-                              borderRadius: BorderRadiusDirectional.vertical(
-                                  top: Radius.circular(30.0)),
-                            ),
-                            context: context,
-                            builder: (BuildContext context) {
-                              return Container(
-                                height: 320,
-                                child: ListView.builder(
-                                  physics: const BouncingScrollPhysics(),
-                                  padding: const EdgeInsets.all(16.0),
-                                  itemCount: streamings.length,
-                                  itemBuilder:
-                                      (BuildContext context, int index) =>
-                                          ListTile(
-                                    title: Text(streamings[index].title),
-                                    onTap: () => openApp(streamings[index].url),
-                                    leading: Image.asset(streamings[index].image),
-                                  ),
-                                ),
-                              );
-                            },
-                          ),
-                        ),
-                      ),
-                    )
-                  ],
+                child: Text(
+                  subtitle,
+                  textAlign: TextAlign.center,
                 ),
               ),
             ],

@@ -3,6 +3,10 @@ import 'package:flutter_translate/flutter_translate.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:eof_podcast_feed/eof_podcast_feed.dart';
 
+import 'package:portfolio/core/data/streamigs.dart';
+import 'package:portfolio/core/utils/navigate_links.dart';
+import 'package:portfolio/ui/shared/portfolio_icons.dart';
+import 'package:portfolio/ui/widgets/circular_image.dart';
 import '../../core/utils/constants.dart';
 import '../widgets/custom_cards.dart';
 import '../widgets/episode.dart';
@@ -17,6 +21,7 @@ class PodcastView extends StatelessWidget {
   Widget build(BuildContext context) {
     double childAspectRatio = 1.0;
     double maxCrossAxisExtent = 500.0;
+    double minHeight = 200;
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(56.0),
@@ -42,18 +47,22 @@ class PodcastView extends StatelessWidget {
                     case DeviceScreenType.Watch:
                       childAspectRatio = 1.0;
                       maxCrossAxisExtent = 400.0;
+                      minHeight = 120;
                       break;
                     case DeviceScreenType.Mobile:
                       childAspectRatio = 1.5;
                       maxCrossAxisExtent = 550.0;
+                      minHeight = 140;
                       break;
                     case DeviceScreenType.Tablet:
                       childAspectRatio = 1.25;
                       maxCrossAxisExtent = 550.0;
+                      minHeight = 200;
                       break;
                     case DeviceScreenType.Desktop:
                       childAspectRatio = 1.5;
                       maxCrossAxisExtent = 550.0;
+                      minHeight = 200;
                       break;
                     default:
                       childAspectRatio = 1.5;
@@ -62,56 +71,33 @@ class PodcastView extends StatelessWidget {
                   return Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      ScreenTypeLayout(
-                        mobile: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            HeaderWidget(
-                              title: translate('podcast.title'),
-                              subtitle: translate('podcast.subtitle'),
-                              image: snapshot.data.podcastCoverUrl,
-                              streaming: true,
-                            ),
-                          ],
-                        ),
-                        tablet: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            HeaderWidget(
-                              title: translate('podcast.title'),
-                              subtitle: translate('podcast.subtitle'),
-                              image: snapshot.data.podcastCoverUrl,
-                            ),
-                            StreamingWidget(),
-                          ],
-                        ),
-                        desktop: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            HeaderWidget(
-                              title: translate('podcast.title'),
-                              subtitle: translate('podcast.subtitle'),
-                              image: snapshot.data.podcastCoverUrl,
-                            ),
-                            StreamingWidget(),
-                          ],
-                        ),
-                      ),
                       Expanded(
-                        child: GridView.builder(
-                          gridDelegate:
-                              SliverGridDelegateWithMaxCrossAxisExtent(
-                            childAspectRatio: childAspectRatio,
-                            maxCrossAxisExtent: maxCrossAxisExtent,
-                          ),
+                        child: CustomScrollView(
                           physics: const BouncingScrollPhysics(),
-                          itemCount: snapshot.data.episodes.length,
-                          itemBuilder: (BuildContext context, int index) =>
-                              EpisodeWidget(
-                            episode: snapshot.data.episodes[index],
-                          ),
+                          slivers: <Widget>[
+                            SliverPersistentHeader(
+                              pinned: true,
+                              delegate: _SliverAppBarDelegate(
+                                maxHeight: minHeight,
+                                minHeight: minHeight,
+                                child: buildScreenTypeLayout(snapshot, context),
+                              ),
+                            ),
+                            SliverGrid(
+                              gridDelegate:
+                                  SliverGridDelegateWithMaxCrossAxisExtent(
+                                childAspectRatio: childAspectRatio,
+                                maxCrossAxisExtent: maxCrossAxisExtent,
+                              ),
+                              delegate: SliverChildBuilderDelegate(
+                                (BuildContext context, int index) =>
+                                    EpisodeWidget(
+                                  episode: snapshot.data.episodes[index],
+                                ),
+                                childCount: snapshot.data.episodes.length,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                       Align(
@@ -129,5 +115,124 @@ class PodcastView extends StatelessWidget {
         },
       ),
     );
+  }
+
+  Widget buildScreenTypeLayout(
+      AsyncSnapshot<EOFPodcast> snapshot, BuildContext context) {
+    return ScreenTypeLayout(
+      breakpoints: ScreenBreakpoints(
+        tablet: 600,
+        desktop: 900,
+        watch: 400,
+      ),
+      mobile: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Expanded(
+                child: Text(
+                  translate('podcast.title') +
+                      ', ' +
+                      translate('podcast.subtitle'),
+                  textAlign: TextAlign.center,
+                  maxLines: 2,
+                ),
+              ),
+              const SizedBox(
+                width: 8.0,
+              ),
+              CircularImage(
+                image: snapshot.data.podcastCoverUrl,
+                button: IconButton(
+                  tooltip: translate('podcast.streaming.button_streaming'),
+                  icon: const Icon(CustomIcons.headphones),
+                  onPressed: () => showModalBottomSheet<Container>(
+                    isScrollControlled: true,
+                    shape: const RoundedRectangleBorder(
+                      borderRadius: BorderRadiusDirectional.vertical(
+                          top: Radius.circular(30.0)),
+                    ),
+                    context: context,
+                    builder: (BuildContext context) {
+                      return Container(
+                        height: 320,
+                        child: ListView.builder(
+                          physics: const BouncingScrollPhysics(),
+                          padding: const EdgeInsets.all(16.0),
+                          itemCount: streamings.length,
+                          itemBuilder: (BuildContext context, int index) =>
+                              ListTile(
+                            title: Text(streamings[index].title),
+                            onTap: () => openApp(streamings[index].url),
+                            leading: Image.asset(streamings[index].image),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+      tablet: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          HeaderWidget(
+            title: translate('podcast.title'),
+            subtitle: translate('podcast.subtitle'),
+            image: snapshot.data.podcastCoverUrl,
+          ),
+          StreamingWidget(),
+        ],
+      ),
+      desktop: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          HeaderWidget(
+            title: translate('podcast.title'),
+            subtitle: translate('podcast.subtitle'),
+            image: snapshot.data.podcastCoverUrl,
+          ),
+          StreamingWidget(),
+        ],
+      ),
+    );
+  }
+}
+
+class _SliverAppBarDelegate extends SliverPersistentHeaderDelegate {
+  _SliverAppBarDelegate({
+    @required this.minHeight,
+    @required this.maxHeight,
+    @required this.child,
+  });
+
+  final double minHeight;
+  final double maxHeight;
+  final Widget child;
+
+  @override
+  double get minExtent => minHeight;
+
+  @override
+  double get maxExtent => maxHeight;
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return SizedBox.expand(child: child);
+  }
+
+  @override
+  bool shouldRebuild(_SliverAppBarDelegate oldDelegate) {
+    return maxHeight != oldDelegate.maxHeight ||
+        minHeight != oldDelegate.minHeight ||
+        child != oldDelegate.child;
   }
 }

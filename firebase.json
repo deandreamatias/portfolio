@@ -8,13 +8,13 @@
     ],
     "redirects": [
       {
-        "source": "http://www.deandreamatias.com/",
-        "destination": "https://deandreamatias.com/",
+        "source": "/universoflutter/",
+        "destination": "https://deandreamatias.com/#/universoflutter",
         "type": 301
       },
       {
-        "source": "https://www.deandreamatias.com/",
-        "destination": "https://deandreamatias.com/",
+        "source": "/podcast/",
+        "destination": "https://deandreamatias.com/#/universoflutter",
         "type": 301
       }
     ],
@@ -30,6 +30,15 @@
       },
       {
         "source": "**/*.@(jpg|jpeg|gif|png|webp)",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "max-age=7200"
+          }
+        ]
+      },
+      {
+        "source": "**/*.@(css|js)",
         "headers": [
           {
             "key": "Cache-Control",

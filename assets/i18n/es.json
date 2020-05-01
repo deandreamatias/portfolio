@@ -25,7 +25,7 @@
     },
     "podcast": {
         "title":"Hola, esto es Universo Flutter",
-        "subtitle": "mi podcast sobre Flutter, en portugués",
+        "subtitle": "mi podcast sobre Flutter en portugués",
         "streaming": {
             "title": "Puedes encontrarlo en estas plataformas",
             "button_streaming": "Opciones de plataformas"

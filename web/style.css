@@ -1,0 +1,25 @@
+body {
+    background-color: #222222;
+}
+.title {
+    color: white;
+    font-family: 'Asap', sans-serif;
+    font-size: 5em;
+    margin-bottom: 16px;
+}
+a {
+    color: white;
+    font-family: 'Sniglet', cursive;
+    font-size: 2em;
+}
+.container {
+    display: grid;
+    text-align: center;
+}
+.button {
+    background-color: #7E008E;
+    border-radius: 30px;
+    margin: auto;
+    padding: 16px;
+    text-decoration: none;
+}
