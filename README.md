@@ -1,6 +1,8 @@
 ## Personal portfolio
 
 [![Releases](https://img.shields.io/github/v/release/deandreamatias/portfolio)](https://github.com/deandreamatias/portfolio/releases)
+[![Website online](https://img.shields.io/website?up_message=online&url=https%3A%2F%2Fdeandreamatias.com)](https://deandreamatias.com)
+[![Paypal donate](https://img.shields.io/badge/paypal-donate-blue)](https://paypal.me/deandreamatias?locale.x=es_ES)
 
 ### About the project
 
@@ -30,7 +32,7 @@ Run in debug mode :)
 
 ## Author
 
-- **Matias de Andrea** - Mobile developer and UI/UX designer: [GitHub](https://github.com/deandreamatias), [Twitter](https://twitter.com/deandreamatias) & [Behance](https://www.behance.net/deandreamatias).
+- **Matias de Andrea** - Flutter developer and UI/UX designer: [GitHub](https://github.com/deandreamatias), [Twitter](https://twitter.com/deandreamatias) & [Behance](https://www.behance.net/deandreamatias).
 
 ## License
 
