@@ -16,6 +16,16 @@
         "source": "/podcast/",
         "destination": "https://deandreamatias.com/#/universoflutter",
         "type": 301
+      },
+      {
+        "source": "https://www.deandreamatias.com/",
+        "destination": "https://deandreamatias.com/",
+        "type": 301
+      },
+      {
+        "source": "http://www.deandreamatias.com/",
+        "destination": "https://deandreamatias.com/",
+        "type": 301
       }
     ],
     "headers": [
