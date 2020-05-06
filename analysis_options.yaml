@@ -60,7 +60,7 @@ linter:
     - avoid_classes_with_only_static_members
     # - avoid_double_and_int_checks # only useful when targeting JS runtime
     - avoid_empty_else
-    - avoid_equals_and_hash_code_on_mutable_classes
+    # - avoid_equals_and_hash_code_on_mutable_classes # not yet tested
     - avoid_field_initializers_in_const_classes
     - avoid_function_literals_in_foreach_calls
     # - avoid_implementing_value_types # not yet tested
@@ -106,7 +106,7 @@ linter:
     # - file_names # not yet tested
     # - flutter_style_todos
     - hash_and_equals
-    # - implementation_imports
+    - implementation_imports
     # - invariant_booleans # too many false positives: https://github.com/dart-lang/linter/issues/811
     - iterable_contains_unrelated_type
     # - join_return_with_assignment # not yet tested
@@ -193,7 +193,6 @@ linter:
     - unnecessary_overrides
     - unnecessary_parenthesis
     - unnecessary_statements
-    - unnecessary_string_interpolations
     - unnecessary_this
     - unrelated_type_equality_checks
     # - unsafe_html # not yet tested

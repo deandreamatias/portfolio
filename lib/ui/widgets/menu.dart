@@ -33,7 +33,7 @@ class MenuWidget extends StatelessWidget {
           ),
         ),
         PopupMenuButton<MenuItems>(
-          icon: const Icon(CustomIcons.globe),
+          icon: const Icon(CustomIcons.options),
           tooltip: translate('menu.options.description'),
           onSelected: (MenuItems value) {
             switch (value) {
