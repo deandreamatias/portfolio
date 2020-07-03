@@ -33,6 +33,9 @@ class MenuWidget extends StatelessWidget {
           ),
         ),
         PopupMenuButton<MenuItems>(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16.0),
+          ),
           icon: const Icon(CustomIcons.options),
           tooltip: translate('menu.options.description'),
           onSelected: (MenuItems value) {
