@@ -12,7 +12,6 @@ Connected to #???
 
 <!-- Required: steps to take to confirm this works as expected or other guidance for code, UX, and any other reviewers -->
 
-
 ## Screenshots or Videos
 
 <!-- Optional: to clearly demonstrate the feature or fix to help with testing and reviews -->
