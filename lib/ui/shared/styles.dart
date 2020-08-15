@@ -6,7 +6,7 @@ const Color BACKGROUND = Color(0xFF333333);
 
 final ThemeData themeDark = ThemeData(
   fontFamily: 'Asap',
-  colorScheme: ColorScheme(
+  colorScheme: const ColorScheme(
     primary: PRIMARY,
     onPrimary: Colors.white,
     secondary: ACCENT,
@@ -29,11 +29,9 @@ final ThemeData themeDark = ThemeData(
     brightness: Brightness.dark,
   ),
   scaffoldBackgroundColor: BACKGROUND,
-  bottomSheetTheme: const BottomSheetThemeData(
-    backgroundColor: PRIMARY
-  ),
+  bottomSheetTheme: const BottomSheetThemeData(backgroundColor: PRIMARY),
   cardTheme: const CardTheme(
-    color:  PRIMARY,
+    color: PRIMARY,
     margin: EdgeInsets.all(12.0),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -46,7 +44,8 @@ final ThemeData themeDark = ThemeData(
   buttonTheme: const ButtonThemeData(
     buttonColor: ACCENT,
     shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(30.0))),
+      borderRadius: BorderRadius.all(Radius.circular(30.0)),
+    ),
     textTheme: ButtonTextTheme.normal,
   ),
 );

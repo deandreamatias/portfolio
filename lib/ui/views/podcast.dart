@@ -36,7 +36,7 @@ class PodcastView extends StatelessWidget {
               break;
             case ConnectionState.done:
               return ResponsiveBuilder(
-                breakpoints: ScreenBreakpoints(
+                breakpoints: const ScreenBreakpoints(
                   tablet: 550,
                   desktop: 900,
                   watch: 400,
@@ -44,22 +44,22 @@ class PodcastView extends StatelessWidget {
                 builder: (BuildContext context,
                     SizingInformation sizingInformation) {
                   switch (sizingInformation.deviceScreenType) {
-                    case DeviceScreenType.Watch:
+                    case DeviceScreenType.watch:
                       childAspectRatio = 1.0;
                       maxCrossAxisExtent = 400.0;
                       minHeight = 120;
                       break;
-                    case DeviceScreenType.Mobile:
+                    case DeviceScreenType.mobile:
                       childAspectRatio = 1.5;
                       maxCrossAxisExtent = 550.0;
                       minHeight = 140;
                       break;
-                    case DeviceScreenType.Tablet:
+                    case DeviceScreenType.tablet:
                       childAspectRatio = 1.25;
                       maxCrossAxisExtent = 550.0;
                       minHeight = 200;
                       break;
-                    case DeviceScreenType.Desktop:
+                    case DeviceScreenType.desktop:
                       childAspectRatio = 1.5;
                       maxCrossAxisExtent = 550.0;
                       minHeight = 200;
@@ -120,7 +120,7 @@ class PodcastView extends StatelessWidget {
   Widget buildScreenTypeLayout(
       AsyncSnapshot<EOFPodcast> snapshot, BuildContext context) {
     return ScreenTypeLayout(
-      breakpoints: ScreenBreakpoints(
+      breakpoints: const ScreenBreakpoints(
         tablet: 600,
         desktop: 900,
         watch: 400,

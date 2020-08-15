@@ -31,7 +31,7 @@ class _HomeViewState extends State<HomeView> {
               builder:
                   (BuildContext context, SizingInformation sizingInformation) {
                 switch (sizingInformation.deviceScreenType) {
-                  case DeviceScreenType.Desktop:
+                  case DeviceScreenType.desktop:
                     return Row(
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
