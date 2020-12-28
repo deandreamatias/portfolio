@@ -1,10 +1,10 @@
-## Personal portfolio
+# Personal portfolio
 
 [![Releases](https://img.shields.io/github/v/release/deandreamatias/portfolio)](https://github.com/deandreamatias/portfolio/releases)
 [![Website online](https://img.shields.io/website?up_message=online&url=https%3A%2F%2Fdeandreamatias.com)](https://deandreamatias.com)
 [![Paypal donate](https://img.shields.io/badge/paypal-donate-blue)](https://paypal.me/deandreamatias)
 
-### About the project
+## About the project
 
 I made this portfolio to experiment with Flutter web and have a place to share the references link to my podcast.
 

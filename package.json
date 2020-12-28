@@ -1,0 +1,44 @@
+{
+  "name": "portfolio",
+  "version": "1.2.0",
+  "description": "portfolio of Matias de Andrea",
+  "main": "build/web/main.dart.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@node-minify/babel-minify": "^6.1.0",
+    "@node-minify/clean-css": "^6.1.0",
+    "@node-minify/core": "^6.1.0",
+    "@node-minify/html-minifier": "^6.1.0",
+    "@node-minify/jsonminify": "^6.1.0",
+    "compare-json": "^0.4.0",
+    "standard-version": "^9.0.0"
+  },
+  "scripts": {
+    "release": "standard-version",
+    "minimize": "node .tool/minimize.js",
+    "compare": "comparejson -e ./assets/i18n/*.json"
+  },
+  "standard-version": {
+    "skip": {
+      "commit": true,
+      "tag": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deandreamatias/portfolio.git"
+  },
+  "keywords": [
+    "app"
+  ],
+  "author": "Matias de Andrea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deandreamatias/portfolio/issues"
+  },
+  "homepage": "https://github.com/deandreamatias/portfolio#readme"
+}
