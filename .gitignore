@@ -96,3 +96,4 @@ unlinked_spec.ds
 .runtimeconfig.json
 .firebase/
 **/.well-known/brave-rewards-verification.txt
+lib/generated_plugin_registrant.dart
