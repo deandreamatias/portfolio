@@ -7,6 +7,7 @@
 ## About the project
 
 I made this portfolio to experiment with Flutter web and have a place to share the references link to my podcast.
+Public board project [here](https://trello.com/b/TUxLi2ik)
 
 This project has been built using the [Flutter](https://flutter.dev/) framework, which allows to build an app for mobile, desktop & web, from a single codebase.
 
