@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_translate/flutter_translate.dart';
+import 'package:portfolio/core/utils/constants.dart';
+import 'package:portfolio/core/utils/navigate_links.dart';
 
 import '../shared/portfolio_icons.dart';
 import '../views/home.dart';
-import '../views/podcast.dart';
 
 enum MenuItems { en, es, pt }
 
@@ -24,8 +25,7 @@ class MenuWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 12.0),
           child: FlatButton(
-            onPressed: () =>
-                Navigator.of(context).pushReplacementNamed(PodcastView.route),
+            onPressed: () => openLink(Urls.PODCAST),
             child: Text(
               translate('menu.podcast'),
               style: const TextStyle(fontFamily: 'Sniglet'),
