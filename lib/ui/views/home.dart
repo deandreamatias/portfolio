@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_translate/flutter_translate.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import '../../core/utils/constants.dart';
@@ -39,9 +39,12 @@ class _HomeViewState extends State<HomeView> {
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
                             HeaderWidget(
-                              title: translate('home.header.title'),
-                              subtitle: translate('home.header.subtitle'),
+                              title:
+                                  AppLocalizations.of(context)!.homeHeaderTitle,
+                              subtitle: AppLocalizations.of(context)!
+                                  .homeHeaderSubtitle,
                               image: Urls.PROFILE,
+                              key: const Key(Urls.PROFILE),
                             ),
                             LanguagesWidget(),
                           ],
@@ -56,7 +59,6 @@ class _HomeViewState extends State<HomeView> {
                         )
                       ],
                     );
-                    break;
                   default:
                     return SingleChildScrollView(
                       padding: const EdgeInsets.all(16.0),
@@ -65,9 +67,12 @@ class _HomeViewState extends State<HomeView> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             HeaderWidget(
-                              title: translate('home.header.title'),
-                              subtitle: translate('home.header.subtitle'),
+                              title:
+                                  AppLocalizations.of(context)!.homeHeaderTitle,
+                              subtitle: AppLocalizations.of(context)!
+                                  .homeHeaderSubtitle,
                               image: Urls.PROFILE,
+                              key: const Key(Urls.PROFILE),
                             ),
                             GithubWidget(),
                             SkillsWidget(),

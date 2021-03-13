@@ -4,10 +4,10 @@ import 'circular_image.dart';
 
 class HeaderWidget extends StatelessWidget {
   const HeaderWidget({
-    Key key,
-    this.title,
-    this.subtitle,
-    this.image,
+    required Key key,
+    required this.title,
+    required this.subtitle,
+    required this.image,
     this.streaming = false,
   }) : super(key: key);
   final String title;
@@ -39,7 +39,10 @@ class HeaderWidget extends StatelessWidget {
                   const SizedBox(
                     width: 8.0,
                   ),
-                  CircularImage(image: image),
+                  CircularImage(
+                    image: image,
+                    key: Key(image.hashCode.toString()),
+                  ),
                 ],
               ),
               const SizedBox(height: 16.0),

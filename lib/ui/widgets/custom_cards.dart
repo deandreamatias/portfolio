@@ -1,7 +1,7 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_translate/flutter_translate.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../core/utils/constants.dart';
 import '../../core/utils/navigate_links.dart';
@@ -18,7 +18,7 @@ class SkillsWidget extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Text(
-                translate('home.skills.title'),
+                AppLocalizations.of(context)!.skillsTitle,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 16.0),
@@ -52,11 +52,11 @@ class GithubWidget extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Row(
             children: <Widget>[
-              RaisedButton.icon(
+              ElevatedButton.icon(
                 onPressed: () => openLink('https://github.com/deandreamatias'),
                 icon: const Icon(CustomIcons.github),
                 label: Text(
-                  translate('home.github.button'),
+                  AppLocalizations.of(context)!.github,
                   style: const TextStyle(fontFamily: 'Sniglet'),
                 ),
               ),
@@ -66,7 +66,7 @@ class GithubWidget extends StatelessWidget {
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
                   child: Text(
-                    translate('home.github.title'),
+                    AppLocalizations.of(context)!.githubTitle,
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -95,7 +95,7 @@ class LanguagesWidget extends StatelessWidget {
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
                   child: Text(
-                    translate('home.languages.title'),
+                    AppLocalizations.of(context)!.languagesTitle,
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -105,12 +105,12 @@ class LanguagesWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Text(
-                    translate('home.languages.spanish'),
+                    AppLocalizations.of(context)!.languagesSpanish,
                     textAlign: TextAlign.center,
                     style: const TextStyle(fontFamily: 'Sniglet'),
                   ),
                   Text(
-                    translate('home.languages.portuguese'),
+                    AppLocalizations.of(context)!.languagesPortuguese,
                     textAlign: TextAlign.center,
                     style: const TextStyle(fontFamily: 'Sniglet'),
                   ),
@@ -118,7 +118,7 @@ class LanguagesWidget extends StatelessWidget {
               ),
               const SizedBox(height: 8.0),
               Text(
-                translate('home.languages.english'),
+                AppLocalizations.of(context)!.languagesEnglish,
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontFamily: 'Sniglet'),
               ),
@@ -140,23 +140,23 @@ class ContactWidget extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: <Widget>[
-              Text(translate('home.contact.title')),
+              Text(AppLocalizations.of(context)!.contactTitle),
               const SizedBox(height: 8.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  RaisedButton(
+                  ElevatedButton(
                     onPressed: () => openApp('mailto:deandreamatias@gmail.com'),
                     child: Text(
-                      translate('home.contact.button_email'),
+                      AppLocalizations.of(context)!.email,
                       style: const TextStyle(fontFamily: 'Sniglet'),
                     ),
                   ),
-                  RaisedButton(
+                  ElevatedButton(
                     onPressed: () => openLink(
                         'https://www.linkedin.com/in/deandreamatias/?locale=en_US'),
                     child: Text(
-                      translate('home.contact.button_linkedin'),
+                      AppLocalizations.of(context)!.linkedin,
                       style: const TextStyle(fontFamily: 'Sniglet'),
                     ),
                   ),

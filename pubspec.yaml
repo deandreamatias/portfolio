@@ -5,22 +5,19 @@ version: 1.2.0
 code: 8
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  eof_podcast_feed:
-    git: git@github.com:deandreamatias/dart-eof-podcast-feed.git
-  flutter_html: ^0.11.1
-  flutter_translate: ^1.6.0
-  responsive_builder: ^0.2.0+2
-  url_launcher: ^5.7.10
-  url_launcher_web: ^0.1.5+1
+  intl: ^0.17.0
+  responsive_builder: ^0.4.0-nullsafety.1
+  url_launcher: ^6.0.2
 
 flutter:
+  generate: true
   assets:
     - assets/img/
     - assets/i18n/
