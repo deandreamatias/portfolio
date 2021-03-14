@@ -32,6 +32,7 @@ class MenuWidget extends StatelessWidget {
             ),
           ),
         ),
+        const SizedBox(width: 8.0, height: 8.0),
         PopupMenuButton<MenuItems>(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.0),
