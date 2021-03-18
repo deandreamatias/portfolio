@@ -1,12 +1,13 @@
 # Personal portfolio
 
+[![Deploy app](https://github.com/deandreamatias/portfolio/actions/workflows/deploy_app.yaml/badge.svg)](https://github.com/deandreamatias/portfolio/actions/workflows/deploy_app.yaml)
 [![Releases](https://img.shields.io/github/v/release/deandreamatias/portfolio)](https://github.com/deandreamatias/portfolio/releases)
 [![Website online](https://img.shields.io/website?up_message=online&url=https%3A%2F%2Fdeandreamatias.com)](https://deandreamatias.com)
 [![Paypal donate](https://img.shields.io/badge/paypal-donate-blue)](https://paypal.me/deandreamatias)
 
 ## About the project
 
-I made this portfolio to experiment with Flutter web and have a place to share the references link to my podcast.
+I made this portfolio to share my public information and links.
 Public board project [here](https://trello.com/b/TUxLi2ik)
 
 This project has been built using the [Flutter](https://flutter.dev/) framework, which allows to build an app for mobile, desktop & web, from a single codebase.
@@ -32,7 +33,7 @@ Run in debug mode :)
 
 ## Author
 
-- **Matias de Andrea** - Flutter developer and UI/UX designer: [Website](https://deandreamatias.com), [GitHub](https://github.com/deandreamatias) & [Twitter](https://twitter.com/deandreamatias).
+- **Matias de Andrea** - Mobile developer: [Website](https://deandreamatias.com), [GitHub](https://github.com/deandreamatias) & [Twitter](https://twitter.com/deandreamatias).
 
 ## Contributing
 
