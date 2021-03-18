@@ -4,13 +4,11 @@ import 'package:portfolio/ui/shared/styles.dart';
 
 class CircularImage extends StatelessWidget {
   const CircularImage({
-    Key key,
-    @required this.image,
-    this.button,
+    required Key key,
+    required this.image,
   }) : super(key: key);
 
   final String image;
-  final Widget button;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +17,6 @@ class CircularImage extends StatelessWidget {
       width: 70,
       child: CircleAvatar(
         backgroundImage: NetworkImage(image),
-        child: button,
       ),
       padding: const EdgeInsets.all(2.0),
       decoration: const BoxDecoration(

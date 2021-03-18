@@ -41,11 +41,21 @@ final ThemeData themeDark = ThemeData(
   primaryColor: PRIMARY,
   accentColor: ACCENT,
   buttonColor: ACCENT,
-  buttonTheme: const ButtonThemeData(
-    buttonColor: ACCENT,
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(Radius.circular(30.0)),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+    style: ButtonStyle(
+      backgroundColor: MaterialStateProperty.all<Color>(ACCENT),
+      shape: MaterialStateProperty.all<OutlinedBorder>(
+        const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(30.0)),
+        ),
+      ),
     ),
-    textTheme: ButtonTextTheme.normal,
+  ),
+  textButtonTheme: TextButtonThemeData(
+    style: ButtonStyle(
+        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+          const EdgeInsets.all(16.0),
+        ),
+        foregroundColor: MaterialStateProperty.all<Color>(Colors.white)),
   ),
 );

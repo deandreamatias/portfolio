@@ -1,9 +1,8 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_translate/flutter_translate.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-import '../../core/data/streamigs.dart';
 import '../../core/utils/constants.dart';
 import '../../core/utils/navigate_links.dart';
 import '../shared/portfolio_icons.dart';
@@ -19,7 +18,7 @@ class SkillsWidget extends StatelessWidget {
           child: Column(
             children: <Widget>[
               Text(
-                translate('home.skills.title'),
+                AppLocalizations.of(context)!.skillsTitle,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 16.0),
@@ -53,11 +52,11 @@ class GithubWidget extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Row(
             children: <Widget>[
-              RaisedButton.icon(
+              ElevatedButton.icon(
                 onPressed: () => openLink('https://github.com/deandreamatias'),
                 icon: const Icon(CustomIcons.github),
                 label: Text(
-                  translate('home.github.button'),
+                  AppLocalizations.of(context)!.github,
                   style: const TextStyle(fontFamily: 'Sniglet'),
                 ),
               ),
@@ -67,7 +66,7 @@ class GithubWidget extends StatelessWidget {
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
                   child: Text(
-                    translate('home.github.title'),
+                    AppLocalizations.of(context)!.githubTitle,
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -96,7 +95,7 @@ class LanguagesWidget extends StatelessWidget {
                 child: SingleChildScrollView(
                   physics: const BouncingScrollPhysics(),
                   child: Text(
-                    translate('home.languages.title'),
+                    AppLocalizations.of(context)!.languagesTitle,
                     textAlign: TextAlign.center,
                   ),
                 ),
@@ -106,12 +105,12 @@ class LanguagesWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Text(
-                    translate('home.languages.spanish'),
+                    AppLocalizations.of(context)!.languagesSpanish,
                     textAlign: TextAlign.center,
                     style: const TextStyle(fontFamily: 'Sniglet'),
                   ),
                   Text(
-                    translate('home.languages.portuguese'),
+                    AppLocalizations.of(context)!.languagesPortuguese,
                     textAlign: TextAlign.center,
                     style: const TextStyle(fontFamily: 'Sniglet'),
                   ),
@@ -119,7 +118,7 @@ class LanguagesWidget extends StatelessWidget {
               ),
               const SizedBox(height: 8.0),
               Text(
-                translate('home.languages.english'),
+                AppLocalizations.of(context)!.languagesEnglish,
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontFamily: 'Sniglet'),
               ),
@@ -141,72 +140,28 @@ class ContactWidget extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: <Widget>[
-              Text(translate('home.contact.title')),
+              Text(AppLocalizations.of(context)!.contactTitle),
               const SizedBox(height: 8.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  RaisedButton(
+                  ElevatedButton(
                     onPressed: () => openApp('mailto:deandreamatias@gmail.com'),
                     child: Text(
-                      translate('home.contact.button_email'),
+                      AppLocalizations.of(context)!.email,
                       style: const TextStyle(fontFamily: 'Sniglet'),
                     ),
                   ),
-                  RaisedButton(
+                  ElevatedButton(
                     onPressed: () => openLink(
                         'https://www.linkedin.com/in/deandreamatias/?locale=en_US'),
                     child: Text(
-                      translate('home.contact.button_linkedin'),
+                      AppLocalizations.of(context)!.linkedin,
                       style: const TextStyle(fontFamily: 'Sniglet'),
                     ),
                   ),
                 ],
               ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class StreamingWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: 280,
-      child: Card(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Text(
-                translate('podcast.streaming.title'),
-                textAlign: TextAlign.center,
-              ),
-              ConstrainedBox(
-                constraints: const BoxConstraints(
-                  minHeight: 70,
-                  maxHeight: 80,
-                ),
-                child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 5,
-                    childAspectRatio: 1.0,
-                    crossAxisSpacing: 8.0,
-                    mainAxisSpacing: 8.0,
-                  ),
-                  padding: const EdgeInsets.only(top: 4.0),
-                  itemCount: streamings.length,
-                  itemBuilder: (BuildContext context, int index) => IconButton(
-                    icon: Image.asset(streamings[index].image),
-                    onPressed: () => openLink(streamings[index].url),
-                    tooltip: streamings[index].title,
-                  ),
-                ),
-              )
             ],
           ),
         ),

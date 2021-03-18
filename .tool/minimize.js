@@ -2,7 +2,6 @@ const minify = require('@node-minify/core');
 const babelMinify = require('@node-minify/babel-minify');
 const cleanCSS = require('@node-minify/clean-css');
 const htmlMinifier = require('@node-minify/html-minifier');
-const jsonminify = require('@node-minify/jsonminify');
 
 minify({
     compressor: babelMinify,
@@ -44,37 +43,6 @@ minify({
     callback: function (err, min) {
         if (err) {
             console.log('Error to minify index.html. ', err);
-        }
-    }
-});
-
-minify({
-    compressor: jsonminify,
-    input: 'build/web/assets/assets/i18n/en.json',
-    output: 'build/web/assets/assets/i18n/en.json',
-    callback: function (err, min) {
-        if (err) {
-            console.log('Error to minify en.json. ', err);
-        }
-    }
-});
-minify({
-    compressor: jsonminify,
-    input: 'build/web/assets/assets/i18n/es.json',
-    output: 'build/web/assets/assets/i18n/es.json',
-    callback: function (err, min) {
-        if (err) {
-            console.log('Error to minify es.json. ', err);
-        }
-    }
-});
-minify({
-    compressor: jsonminify,
-    input: 'build/web/assets/assets/i18n/pt.json',
-    output: 'build/web/assets/assets/i18n/pt.json',
-    callback: function (err, min) {
-        if (err) {
-            console.log('Error to minify pt.json. ', err);
         }
     }
 });

@@ -8,16 +8,6 @@
     ],
     "redirects": [
       {
-        "source": "/universoflutter/",
-        "destination": "https://deandreamatias.com/#/universoflutter",
-        "type": 301
-      },
-      {
-        "source": "/podcast/",
-        "destination": "https://deandreamatias.com/#/universoflutter",
-        "type": 301
-      },
-      {
         "source": "https://www.deandreamatias.com/",
         "destination": "https://deandreamatias.com/",
         "type": 301

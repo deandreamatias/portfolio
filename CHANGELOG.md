@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/deandreamatias/portfolio/compare/v1.1.0...v1.3.0) (2021-03-18)
+
+
+### Features
+
+* Add twitter meta card support ([af6f4e3](https://github.com/deandreamatias/portfolio/commit/af6f4e357aa515c51eb5173057111d45773aeed7))
+* Implement native l10n ([a0d967d](https://github.com/deandreamatias/portfolio/commit/a0d967d60f23fe33a459fb5139d040e82bde72be))
+* Increase cache assets time ([d09bc05](https://github.com/deandreamatias/portfolio/commit/d09bc0546067b20ac30bb318fe24f79480ed3932))
+* Remove options menu ([ae4012e](https://github.com/deandreamatias/portfolio/commit/ae4012e37c82e314c0ffae422cb6908b7a67462f))
+* Remove podcast page ([237da42](https://github.com/deandreamatias/portfolio/commit/237da4207b4cd0dfcc7c33686e50b533e61546ea))
+* Update button styles ([c2b9491](https://github.com/deandreamatias/portfolio/commit/c2b9491d911d2d7ca8fc43cedfaae58569633d0d))
+* Update version ([e38569f](https://github.com/deandreamatias/portfolio/commit/e38569f8fca58d0eec0ab4d91bea0b546d7efa43))
+
 ## [1.2.0](https://github.com/deandreamatias/portfolio/compare/v1.1.0...v1.2.0) (2020-12-28)
 
 
