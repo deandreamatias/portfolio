@@ -23,8 +23,6 @@ jobs:
       run: flutter pub get
     - name: get node dependencies
       run: npm install
-    - name: verify assets
-      run: npm run compare
     - name: code analyze 
       run: flutter analyze
     - name: build web app
