@@ -2,8 +2,9 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [1.3.0](https://github.com/deandreamatias/portfolio/compare/v1.1.0...v1.3.0) (2021-03-18)
+## [1.4.0](https://github.com/deandreamatias/portfolio/compare/v1.3.0...v1.4.0) (2021-05-21)
 
+## [1.3.0](https://github.com/deandreamatias/portfolio/compare/v1.1.0...v1.3.0) (2021-03-18)
 
 ### Features
 
@@ -16,7 +17,6 @@ All notable changes to this project will be documented in this file. See [standa
 * Update version ([e38569f](https://github.com/deandreamatias/portfolio/commit/e38569f8fca58d0eec0ab4d91bea0b546d7efa43))
 
 ## [1.2.0](https://github.com/deandreamatias/portfolio/compare/v1.1.0...v1.2.0) (2020-12-28)
-
 
 ### Features
 
