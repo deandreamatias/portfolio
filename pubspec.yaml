@@ -14,7 +14,7 @@ dependencies:
     sdk: flutter
   intl: ^0.17.0
   responsive_builder: ^0.4.0-nullsafety.1
-  url_launcher: ^6.0.2
+  url_launcher: ^6.0.4
 
 flutter:
   generate: true
