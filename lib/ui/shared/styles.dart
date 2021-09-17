@@ -1,49 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-const Color PRIMARY = Color(0xFF222222);
-const Color ACCENT = Color(0xFF7E008E);
-const Color BACKGROUND = Color(0xFF333333);
+const Color primary = Color(0xFF222222);
+const Color accent = Color(0xFF7E008E);
+const Color background = Color(0xFF333333);
 
 final ThemeData themeDark = ThemeData(
   fontFamily: 'Asap',
   colorScheme: const ColorScheme(
-    primary: PRIMARY,
+    primary: primary,
     onPrimary: Colors.white,
-    secondary: ACCENT,
+    secondary: accent,
     error: Colors.red,
     onSecondary: Colors.white,
     onError: Colors.white,
     onBackground: Colors.black,
-    background: BACKGROUND,
+    background: background,
     primaryVariant: Colors.orange,
     secondaryVariant: Colors.deepOrange,
     surface: Colors.white,
     onSurface: Colors.black,
     brightness: Brightness.dark,
   ),
-  backgroundColor: BACKGROUND,
-  primaryColorDark: PRIMARY,
+  backgroundColor: background,
+  primaryColorDark: primary,
   appBarTheme: const AppBarTheme(
     elevation: 0.0,
-    color: BACKGROUND,
-    brightness: Brightness.dark,
+    color: background,
   ),
-  scaffoldBackgroundColor: BACKGROUND,
-  bottomSheetTheme: const BottomSheetThemeData(backgroundColor: PRIMARY),
+  scaffoldBackgroundColor: background,
+  bottomSheetTheme: const BottomSheetThemeData(backgroundColor: primary),
   cardTheme: const CardTheme(
-    color: PRIMARY,
+    color: primary,
     margin: EdgeInsets.all(12.0),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.all(Radius.circular(30.0)),
     ),
   ),
   brightness: Brightness.dark,
-  primaryColor: PRIMARY,
-  accentColor: ACCENT,
-  buttonColor: ACCENT,
+  primaryColor: primary,
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all<Color>(ACCENT),
+      backgroundColor: MaterialStateProperty.all<Color>(accent),
       shape: MaterialStateProperty.all<OutlinedBorder>(
         const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30.0)),

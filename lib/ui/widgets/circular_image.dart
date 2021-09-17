@@ -20,7 +20,7 @@ class CircularImage extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(2.0),
       decoration: const BoxDecoration(
-        color: ACCENT,
+        color: accent,
         shape: BoxShape.circle,
       ),
     );

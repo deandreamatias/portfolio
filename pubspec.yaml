@@ -13,8 +13,10 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
-  responsive_builder: ^0.4.0-nullsafety.1
-  url_launcher: ^6.0.4
+  responsive_builder: ^0.4.1
+  url_launcher: ^6.0.10
+dev_dependencies: 
+  flutter_lints: ^1.0.1
 
 flutter:
   generate: true

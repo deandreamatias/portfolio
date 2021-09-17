@@ -1,11 +1,11 @@
 class Assets {
-  static const String ADOBEXD = 'assets/img/adobe_xd.png';
-  static const String ANDROID = 'assets/img/android.png';
-  static const String FLUTTER = 'assets/img/flutter.png';
-  static const String GIT = 'assets/img/git.png';
+  static const String adobXd = 'assets/img/adobe_xd.png';
+  static const String android = 'assets/img/android.png';
+  static const String flutter = 'assets/img/flutter.png';
+  static const String git = 'assets/img/git.png';
 }
 
 class Urls {
-  static const String PODCAST = 'https://universoflutter.com';
-  static const String PROFILE = 'https://deandreamatias.com/profile.png';
+  static const String podcast = 'https://universoflutter.com';
+  static const String profile = 'https://deandreamatias.com/profile.png';
 }
