@@ -6,6 +6,7 @@ import '../../core/utils/navigate_links.dart';
 import '../shared/portfolio_icons.dart';
 
 class SkillsWidget extends StatelessWidget {
+  const SkillsWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -20,15 +21,15 @@ class SkillsWidget extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 16.0),
-              Container(
+              SizedBox(
                 height: 24.0,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Image.asset(Assets.FLUTTER),
-                    Image.asset(Assets.ANDROID),
-                    Image.asset(Assets.GIT),
-                    Image.asset(Assets.ADOBEXD),
+                    Image.asset(Assets.flutter),
+                    Image.asset(Assets.android),
+                    Image.asset(Assets.git),
+                    Image.asset(Assets.adobXd),
                   ],
                 ),
               ),
@@ -41,6 +42,7 @@ class SkillsWidget extends StatelessWidget {
 }
 
 class GithubWidget extends StatelessWidget {
+  const GithubWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -78,6 +80,7 @@ class GithubWidget extends StatelessWidget {
 }
 
 class LanguagesWidget extends StatelessWidget {
+  const LanguagesWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -129,6 +132,7 @@ class LanguagesWidget extends StatelessWidget {
 }
 
 class ContactWidget extends StatelessWidget {
+  const ContactWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SizedBox(

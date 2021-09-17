@@ -5,6 +5,7 @@ import '../../core/utils/navigate_links.dart';
 import '../shared/portfolio_icons.dart';
 
 class Footer extends StatelessWidget {
+  const Footer({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Column(

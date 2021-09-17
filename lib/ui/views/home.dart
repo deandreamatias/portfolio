@@ -10,6 +10,7 @@ import '../widgets/menu.dart';
 
 class HomeView extends StatefulWidget {
   static const String route = '/';
+  const HomeView({Key? key}) : super(key: key);
 
   @override
   _HomeViewState createState() => _HomeViewState();
@@ -19,8 +20,8 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(56.0),
+      appBar: const PreferredSize(
+        preferredSize: Size.fromHeight(56.0),
         child: MenuWidget(),
       ),
       body: Column(
@@ -43,15 +44,15 @@ class _HomeViewState extends State<HomeView> {
                                   AppLocalizations.of(context)!.homeHeaderTitle,
                               subtitle: AppLocalizations.of(context)!
                                   .homeHeaderSubtitle,
-                              image: Urls.PROFILE,
-                              key: const Key(Urls.PROFILE),
+                              image: Urls.profile,
+                              key: const Key(Urls.profile),
                             ),
-                            LanguagesWidget(),
+                            const LanguagesWidget(),
                           ],
                         ),
                         Column(
                           mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
+                          children: const <Widget>[
                             GithubWidget(),
                             SkillsWidget(),
                             ContactWidget(),
@@ -71,13 +72,13 @@ class _HomeViewState extends State<HomeView> {
                                   AppLocalizations.of(context)!.homeHeaderTitle,
                               subtitle: AppLocalizations.of(context)!
                                   .homeHeaderSubtitle,
-                              image: Urls.PROFILE,
-                              key: const Key(Urls.PROFILE),
+                              image: Urls.profile,
+                              key: const Key(Urls.profile),
                             ),
-                            GithubWidget(),
-                            SkillsWidget(),
-                            LanguagesWidget(),
-                            ContactWidget(),
+                            const GithubWidget(),
+                            const SkillsWidget(),
+                            const LanguagesWidget(),
+                            const ContactWidget(),
                           ],
                         ),
                       ),
@@ -86,7 +87,7 @@ class _HomeViewState extends State<HomeView> {
               },
             ),
           ),
-          Align(
+          const Align(
             alignment: Alignment.bottomCenter,
             child: Footer(),
           )

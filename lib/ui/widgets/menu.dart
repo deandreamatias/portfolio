@@ -8,6 +8,7 @@ import '../views/home.dart';
 enum MenuItems { en, es, pt }
 
 class MenuWidget extends StatelessWidget {
+  const MenuWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -24,7 +25,7 @@ class MenuWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 12.0),
           child: TextButton(
-            onPressed: () => openLink(Urls.PODCAST),
+            onPressed: () => openLink(Urls.podcast),
             child: Text(
               AppLocalizations.of(context)!.menuPodcast,
               style: const TextStyle(fontFamily: 'Sniglet'),
