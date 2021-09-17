@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/deandreamatias/portfolio/compare/v1.4.0...v1.5.0) (2021-09-17)
+
+### Feature
+
+* Update linter ([a4b3ed6](https://github.com/deandreamatias/portfolio/commit/a4b3ed63bbb4973eddd2e5a9964604c6b8741193))
+
 ## [1.4.0](https://github.com/deandreamatias/portfolio/compare/v1.3.0...v1.4.0) (2021-05-21)
 
 ## [1.3.0](https://github.com/deandreamatias/portfolio/compare/v1.1.0...v1.3.0) (2021-03-18)
