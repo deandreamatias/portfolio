@@ -8,9 +8,14 @@
 ## About the project
 
 I made this portfolio to share my public information and links.
-Public board project [here](https://trello.com/b/TUxLi2ik)
 
 This project has been built using the [Flutter](https://flutter.dev/) framework, which allows to build an multiplatform app from a single codebase.
+
+## Features
+
+- **See info about Matias de Andrea**
+- **Open some profile links**
+- **Roadmap in [public Trello](https://trello.com/b/TUxLi2ik)**
 
 ## Build and run
 
@@ -24,7 +29,7 @@ CLI Debug: `flutter run`
 
 ## Built with
 
-- [Flutter](https://flutter.dev/) - Beautiful native apps in record time.
+- [Flutter](https://flutter.dev/) - Build apps for any screen.
 - [Visual Studio Code](https://code.visualstudio.com/) - Code editing. Redefined.
 
 ## Author
