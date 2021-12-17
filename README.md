@@ -27,11 +27,6 @@ This project has been built using the [Flutter](https://flutter.dev/) framework,
 
 CLI Debug: `flutter run`
 
-## Built with
-
-- [Flutter](https://flutter.dev/) - Build apps for any screen.
-- [Visual Studio Code](https://code.visualstudio.com/) - Code editing. Redefined.
-
 ## Author
 
 - **Matias de Andrea** - Mobile developer: [Website](https://deandreamatias.com), [GitHub](https://github.com/deandreamatias) and [Twitter](https://twitter.com/deandreamatias).
