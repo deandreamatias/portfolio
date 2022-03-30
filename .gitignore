@@ -11,7 +11,7 @@
 .svn/
 lib/config/env.dart
 **.htaccess
-.fvm/*
+.fvm/flutter_sdk
 
 # IntelliJ related
 *.iml
