@@ -8,32 +8,28 @@
 ## About the project
 
 I made this portfolio to share my public information and links.
-Public board project [here](https://trello.com/b/TUxLi2ik)
 
-This project has been built using the [Flutter](https://flutter.dev/) framework, which allows to build an app for mobile, desktop & web, from a single codebase.
+This project has been built using the [Flutter](https://flutter.dev/) framework, which allows to build an multiplatform app from a single codebase.
+
+## Features
+
+- **See info about Matias de Andrea**
+- **Open some profile links**
+- **Roadmap in [public Trello](https://trello.com/b/TUxLi2ik)**
 
 ## Build and run
 
-First, clone the repository with the 'git clone' command, or just download the zip.
+1. Clone repository with 'git clone' command or just download the zip. `git clone git@github.com:deandreamatias/portfolio.git`
+2. Then, download either Android Studio or Visual Studio Code, with their respective [Flutter editor plugins](https://flutter.dev/docs/get-started/editor). For more information about Flutter installation procedure, check the [official install guide](https://flutter.dev/docs/get-started/install).
+3. Install dependencies from pubspec.yaml by running `flutter pub get` from the project root (see [using packages documentation](https://flutter.dev/docs/development/packages-and-plugins/using-packages#adding-a-package-dependency-to-an-app) for details and how to do this in the editor).
 
-```shell
-git clone git@github.com:deandreamatias/portfolio.git
-```
+## Run
 
-Then, download either Android Studio or Visual Studio Code, with their respective [Flutter editor plugins](https://flutter.dev/docs/get-started/editor). For more information about Flutter installation procedure, check the [official install guide](https://flutter.dev/docs/get-started/install).
-
-Install dependencies from pubspec.yaml by running `flutter packages get` from the project root (see [using packages documentation](https://flutter.dev/docs/development/packages-and-plugins/using-packages#adding-a-package-dependency-to-an-app) for details and how to do this in the editor).
-
-Run in debug mode :)
-
-## Built with
-
-- [Flutter](https://flutter.dev/) - Beautiful native apps in record time.
-- [Visual Studio Code](https://code.visualstudio.com/) - Code editing. Redefined.
+CLI Debug: `flutter run`
 
 ## Author
 
-- **Matias de Andrea** - Mobile developer: [Website](https://deandreamatias.com), [GitHub](https://github.com/deandreamatias) & [Twitter](https://twitter.com/deandreamatias).
+- **Matias de Andrea** - Mobile developer: [Website](https://deandreamatias.com), [GitHub](https://github.com/deandreamatias) and [Twitter](https://twitter.com/deandreamatias).
 
 ## Contributing
 
