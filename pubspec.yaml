@@ -1,8 +1,8 @@
 name: portfolio
 description: deandreamatias
 
-version: 1.5.0
-code: 11
+version: 1.6.0
+code: 12
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -13,10 +13,10 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
-  responsive_builder: ^0.4.1
-  url_launcher: ^6.0.10
+  responsive_builder: ^0.4.2
+  url_launcher: ^6.0.20
 dev_dependencies: 
-  flutter_lints: ^1.0.1
+  flutter_lints: ^1.0.4
 
 flutter:
   generate: true

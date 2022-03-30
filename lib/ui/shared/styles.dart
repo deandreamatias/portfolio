@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 const Color primary = Color(0xFF222222);
 const Color accent = Color(0xFF7E008E);
@@ -16,8 +15,8 @@ final ThemeData themeDark = ThemeData(
     onError: Colors.white,
     onBackground: Colors.black,
     background: background,
-    primaryVariant: Colors.orange,
-    secondaryVariant: Colors.deepOrange,
+    primaryContainer: Colors.orange,
+    secondaryContainer: Colors.deepOrange,
     surface: Colors.white,
     onSurface: Colors.black,
     brightness: Brightness.dark,
