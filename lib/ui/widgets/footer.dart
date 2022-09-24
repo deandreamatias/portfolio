@@ -18,27 +18,29 @@ class Footer extends StatelessWidget {
             IconButton(
               icon: const Icon(CustomIcons.linkedin),
               tooltip: AppLocalizations.of(context)!.linkedin,
-              onPressed: () => openLink(
-                  'https://www.linkedin.com/in/deandreamatias/?locale=en_US'),
+              onPressed: () => openLink(Uri.parse(
+                  'https://www.linkedin.com/in/deandreamatias/?locale=en_US')),
             ),
             const SizedBox(width: 16.0),
             IconButton(
               icon: const Icon(CustomIcons.github),
               tooltip: AppLocalizations.of(context)!.github,
-              onPressed: () => openLink('https://github.com/deandreamatias'),
+              onPressed: () =>
+                  openLink(Uri.parse('https://github.com/deandreamatias')),
             ),
             const SizedBox(width: 16.0),
             IconButton(
               icon: const Icon(CustomIcons.behance),
               tooltip: AppLocalizations.of(context)!.behance,
               onPressed: () =>
-                  openLink('https://www.behance.net/deandreamatias'),
+                  openLink(Uri.parse('https://www.behance.net/deandreamatias')),
             ),
             const SizedBox(width: 16.0),
             IconButton(
               icon: const Icon(CustomIcons.twitter),
               tooltip: AppLocalizations.of(context)!.twitter,
-              onPressed: () => openLink('https://twitter.com/deandreamatias'),
+              onPressed: () =>
+                  openLink(Uri.parse('https://twitter.com/deandreamatias')),
             ),
           ],
         )
