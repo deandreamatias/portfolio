@@ -15,13 +15,13 @@ class CircularImage extends StatelessWidget {
     return Container(
       height: 70,
       width: 70,
-      child: CircleAvatar(
-        backgroundImage: NetworkImage(image),
-      ),
       padding: const EdgeInsets.all(2.0),
       decoration: const BoxDecoration(
         color: accent,
         shape: BoxShape.circle,
+      ),
+      child: CircleAvatar(
+        backgroundImage: NetworkImage(image),
       ),
     );
   }

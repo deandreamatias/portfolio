@@ -53,7 +53,8 @@ class GithubWidget extends StatelessWidget {
           child: Row(
             children: <Widget>[
               ElevatedButton.icon(
-                onPressed: () => openLink('https://github.com/deandreamatias'),
+                onPressed: () =>
+                    openLink(Uri.parse('https://github.com/deandreamatias')),
                 icon: const Icon(CustomIcons.github),
                 label: Text(
                   AppLocalizations.of(context)!.github,
@@ -148,15 +149,16 @@ class ContactWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   ElevatedButton(
-                    onPressed: () => openApp('mailto:deandreamatias@gmail.com'),
+                    onPressed: () =>
+                        openApp(Uri.parse('mailto:deandreamatias@gmail.com')),
                     child: Text(
                       AppLocalizations.of(context)!.email,
                       style: const TextStyle(fontFamily: 'Sniglet'),
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () => openLink(
-                        'https://www.linkedin.com/in/deandreamatias/?locale=en_US'),
+                    onPressed: () => openLink(Uri.parse(
+                        'https://www.linkedin.com/in/deandreamatias/?locale=en_US')),
                     child: Text(
                       AppLocalizations.of(context)!.linkedin,
                       style: const TextStyle(fontFamily: 'Sniglet'),

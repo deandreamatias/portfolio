@@ -25,7 +25,7 @@ class MenuWidget extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 12.0),
           child: TextButton(
-            onPressed: () => openLink(Urls.podcast),
+            onPressed: () => openLink(Uri.parse(Urls.podcast)),
             child: Text(
               AppLocalizations.of(context)!.menuPodcast,
               style: const TextStyle(fontFamily: 'Sniglet'),
