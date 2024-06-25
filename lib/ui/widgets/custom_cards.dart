@@ -6,7 +6,7 @@ import '../../core/utils/navigate_links.dart';
 import '../shared/portfolio_icons.dart';
 
 class SkillsWidget extends StatelessWidget {
-  const SkillsWidget({Key? key}) : super(key: key);
+  const SkillsWidget({super.key});
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -42,7 +42,7 @@ class SkillsWidget extends StatelessWidget {
 }
 
 class GithubWidget extends StatelessWidget {
-  const GithubWidget({Key? key}) : super(key: key);
+  const GithubWidget({super.key});
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -81,7 +81,7 @@ class GithubWidget extends StatelessWidget {
 }
 
 class LanguagesWidget extends StatelessWidget {
-  const LanguagesWidget({Key? key}) : super(key: key);
+  const LanguagesWidget({super.key});
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -133,7 +133,7 @@ class LanguagesWidget extends StatelessWidget {
 }
 
 class ContactWidget extends StatelessWidget {
-  const ContactWidget({Key? key}) : super(key: key);
+  const ContactWidget({super.key});
   @override
   Widget build(BuildContext context) {
     return SizedBox(
