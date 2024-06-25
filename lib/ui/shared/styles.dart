@@ -16,7 +16,7 @@ final ThemeData themeDark = ThemeData(
     primaryContainer: Colors.orange,
     secondaryContainer: Colors.deepOrange,
     surface: Colors.white,
-    onSurface: Colors.black,
+    onSurface: Colors.white,
     brightness: Brightness.dark,
   ),
   primaryColorDark: primary,
@@ -38,6 +38,7 @@ final ThemeData themeDark = ThemeData(
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
       backgroundColor: WidgetStateProperty.all<Color>(accent),
+      foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
       shape: WidgetStateProperty.all<OutlinedBorder>(
         const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -47,9 +48,10 @@ final ThemeData themeDark = ThemeData(
   ),
   textButtonTheme: TextButtonThemeData(
     style: ButtonStyle(
-        padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
-          const EdgeInsets.all(16.0),
-        ),
-        foregroundColor: WidgetStateProperty.all<Color>(Colors.white)),
+      padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
+        const EdgeInsets.all(16.0),
+      ),
+      foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
+    ),
   ),
 );

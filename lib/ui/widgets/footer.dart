@@ -35,13 +35,6 @@ class Footer extends StatelessWidget {
               onPressed: () =>
                   openLink(Uri.parse('https://www.behance.net/deandreamatias')),
             ),
-            const SizedBox(width: 16.0),
-            IconButton(
-              icon: const Icon(CustomIcons.twitter),
-              tooltip: AppLocalizations.of(context)!.twitter,
-              onPressed: () =>
-                  openLink(Uri.parse('https://twitter.com/deandreamatias')),
-            ),
           ],
         )
       ],
