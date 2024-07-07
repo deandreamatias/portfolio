@@ -19,5 +19,4 @@ class CustomIcons {
   static const IconData pause = IconData(0xe90b, fontFamily: _fontFamily);
   static const IconData play = IconData(0xe90c, fontFamily: _fontFamily);
   static const IconData share = IconData(0xe90d, fontFamily: _fontFamily);
-  static const IconData twitter = IconData(0xe904, fontFamily: _fontFamily);
 }

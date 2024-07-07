@@ -26,14 +26,6 @@
   <meta property="og:locale:alternate" content="pt_BR"/>
   <meta property="og:type" content="profile">
 
-  <!-- Twitter meta -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@deandreamatias" />
-  <meta name="twitter:creator" content="@deandreamatias" />
-  <meta name="twitter:title" content="deandreamatias | Mobile developer with Flutter" />
-  <meta name="twitter:description" content="Matias de Andrea is a creative and dynamic developer. Work with mobile applications, developing UI/UX and software with Flutter" />
-  <meta name="twitter:image" content="https://deandreamatias.com/profile.png" />
-
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/png" href="favicon.png"/>
 
@@ -41,14 +33,7 @@
   <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', function () {
-        navigator.serviceWorker.register('flutter_service_worker.js');
-      });
-    }
-  </script>
-  <script src="main.dart.js" type="application/javascript"></script>
+  <script src="flutter_bootstrap.js" async></script>
   <script type="application/ld+json">
       {
         "@context": "https://schema.org/",
@@ -57,7 +42,6 @@
         "url": "https://deandreamatias.com",
         "image": "https://deandreamatias.com/profile.png",
         "sameAs": [
-          "https://twitter.com/deandreamatias",
           "https://www.linkedin.com/in/deandreamatias",
           "https://github.com/deandreamatias"
         ],

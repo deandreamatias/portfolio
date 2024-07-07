@@ -10,7 +10,7 @@ import '../widgets/menu.dart';
 
 class HomeView extends StatefulWidget {
   static const String route = '/';
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({super.key});
 
   @override
   HomeViewState createState() => HomeViewState();
@@ -50,9 +50,9 @@ class HomeViewState extends State<HomeView> {
                             const LanguagesWidget(),
                           ],
                         ),
-                        Column(
+                        const Column(
                           mainAxisSize: MainAxisSize.min,
-                          children: const <Widget>[
+                          children: <Widget>[
                             GithubWidget(),
                             SkillsWidget(),
                             ContactWidget(),

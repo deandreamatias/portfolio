@@ -11,7 +11,6 @@
 .svn/
 lib/config/env.dart
 **.htaccess
-.fvm/flutter_sdk
 
 # IntelliJ related
 *.iml
@@ -90,10 +89,5 @@ unlinked_spec.ds
 **/ios/Runner/GeneratedPluginRegistrant.*
 **/ios/Flutter/flutter_export_environment.sh
 
-### Firebase ###
-**/node_modules/*
-**/.firebaserc
-.runtimeconfig.json
-.firebase/
-**/.well-known/brave-rewards-verification.txt
-lib/generated_plugin_registrant.dart
+# FVM Version Cache
+.fvm/

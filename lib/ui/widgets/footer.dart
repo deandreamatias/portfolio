@@ -5,7 +5,7 @@ import '../../core/utils/navigate_links.dart';
 import '../shared/portfolio_icons.dart';
 
 class Footer extends StatelessWidget {
-  const Footer({Key? key}) : super(key: key);
+  const Footer({super.key});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -34,13 +34,6 @@ class Footer extends StatelessWidget {
               tooltip: AppLocalizations.of(context)!.behance,
               onPressed: () =>
                   openLink(Uri.parse('https://www.behance.net/deandreamatias')),
-            ),
-            const SizedBox(width: 16.0),
-            IconButton(
-              icon: const Icon(CustomIcons.twitter),
-              tooltip: AppLocalizations.of(context)!.twitter,
-              onPressed: () =>
-                  openLink(Uri.parse('https://twitter.com/deandreamatias')),
             ),
           ],
         )

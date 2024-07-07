@@ -8,7 +8,7 @@ import '../views/home.dart';
 enum MenuItems { en, es, pt }
 
 class MenuWidget extends StatelessWidget {
-  const MenuWidget({Key? key}) : super(key: key);
+  const MenuWidget({super.key});
   @override
   Widget build(BuildContext context) {
     return AppBar(

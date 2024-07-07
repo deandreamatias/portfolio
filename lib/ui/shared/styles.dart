@@ -13,15 +13,12 @@ final ThemeData themeDark = ThemeData(
     error: Colors.red,
     onSecondary: Colors.white,
     onError: Colors.white,
-    onBackground: Colors.black,
-    background: background,
     primaryContainer: Colors.orange,
     secondaryContainer: Colors.deepOrange,
     surface: Colors.white,
-    onSurface: Colors.black,
+    onSurface: Colors.white,
     brightness: Brightness.dark,
   ),
-  backgroundColor: background,
   primaryColorDark: primary,
   appBarTheme: const AppBarTheme(
     elevation: 0.0,
@@ -40,8 +37,9 @@ final ThemeData themeDark = ThemeData(
   primaryColor: primary,
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.all<Color>(accent),
-      shape: MaterialStateProperty.all<OutlinedBorder>(
+      backgroundColor: WidgetStateProperty.all<Color>(accent),
+      foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
+      shape: WidgetStateProperty.all<OutlinedBorder>(
         const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(30.0)),
         ),
@@ -50,9 +48,10 @@ final ThemeData themeDark = ThemeData(
   ),
   textButtonTheme: TextButtonThemeData(
     style: ButtonStyle(
-        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-          const EdgeInsets.all(16.0),
-        ),
-        foregroundColor: MaterialStateProperty.all<Color>(Colors.white)),
+      padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
+        const EdgeInsets.all(16.0),
+      ),
+      foregroundColor: WidgetStateProperty.all<Color>(Colors.white),
+    ),
   ),
 );
