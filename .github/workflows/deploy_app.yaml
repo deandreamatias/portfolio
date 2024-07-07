@@ -33,7 +33,7 @@ jobs:
       with:
         directory: 'build/web'
         add_suffix: false
-    - uses: actions/upload-artifact@v3
+    - uses: actions/upload-artifact@v4
       with:
         name: web-app
         path: build/web/
