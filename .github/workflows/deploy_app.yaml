@@ -28,13 +28,58 @@ jobs:
       run: flutter analyze
     - name: build web app
       run: flutter build web
-    - name: HTML/CSS/JS Minifier
-      uses: docker://devatherock/minify-js:2.0.0
-      with:
-        directory: 'build/web'
-        add_suffix: false
     - uses: actions/upload-artifact@v4
       with:
         name: web-app
         path: build/web/
         retention-days: 1
+
+  preview:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs: build
+    name: Deploy preview web
+    runs-on: ubuntu-latest
+    steps:
+    - name: Configure enviroment
+      uses: actions/checkout@v4
+    - uses: actions/download-artifact@v4
+      with:
+        name: web-app
+        path: build/web
+    - name: HTML/CSS/JS Minifier
+      uses: docker://devatherock/minify-js:2.0.0
+      with:
+        directory: 'build/web'
+        add_suffix: false
+    - uses: FirebaseExtended/action-hosting-deploy@v0
+      with:
+        repoToken: '${{ secrets.GITHUB_TOKEN }}'
+        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEANDREAMATIAS_PORTOFLIO }}'
+        projectId: deandreamatias-portoflio
+        channelId: preview
+
+  deployment:
+    if: ${{ github.ref_type == 'tag' }}
+    needs: build
+    name: Deploy web
+    runs-on: ubuntu-latest
+    steps:
+    - name: Configure enviroment
+      uses: actions/checkout@v4
+    - uses: actions/download-artifact@v4
+      with:
+        name: web-app
+        path: build/web
+    - name: HTML/CSS/JS Minifier
+      uses: docker://devatherock/minify-js:2.0.0
+      with:
+        directory: 'build/web'
+        add_suffix: false
+    - uses: FirebaseExtended/action-hosting-deploy@v0
+      with:
+        repoToken: '${{ secrets.GITHUB_TOKEN }}'
+        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEANDREAMATIAS_PORTOFLIO }}'
+        projectId: deandreamatias-portoflio
+        channelId: live
+    - name: Release
+      uses: softprops/action-gh-release@v2

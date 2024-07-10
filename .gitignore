@@ -89,5 +89,10 @@ unlinked_spec.ds
 **/ios/Runner/GeneratedPluginRegistrant.*
 **/ios/Flutter/flutter_export_environment.sh
 
+### Firebase ###
+**/.firebaserc
+.runtimeconfig.json
+.firebase/
+
 # FVM Version Cache
 .fvm/
