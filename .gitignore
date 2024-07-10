@@ -90,7 +90,6 @@ unlinked_spec.ds
 **/ios/Flutter/flutter_export_environment.sh
 
 ### Firebase ###
-**/.firebaserc
 .runtimeconfig.json
 .firebase/
 
