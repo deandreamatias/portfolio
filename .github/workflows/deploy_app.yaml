@@ -54,8 +54,8 @@ jobs:
     - uses: FirebaseExtended/action-hosting-deploy@v0
       with:
         repoToken: '${{ secrets.GITHUB_TOKEN }}'
-        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEANDREAMATIAS_PORTOFLIO }}'
-        projectId: deandreamatias-portoflio
+        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEANDREAMATIAS_WEBSITE }}'
+        projectId: deandreamatias-website
         channelId: preview
 
   deployment:
@@ -78,8 +78,8 @@ jobs:
     - uses: FirebaseExtended/action-hosting-deploy@v0
       with:
         repoToken: '${{ secrets.GITHUB_TOKEN }}'
-        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEANDREAMATIAS_PORTOFLIO }}'
-        projectId: deandreamatias-portoflio
+        firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEANDREAMATIAS_WEBSITE }}'
+        projectId: deandreamatias-website
         channelId: live
     - name: Release
       uses: softprops/action-gh-release@v2
