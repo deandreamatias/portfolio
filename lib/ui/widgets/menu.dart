@@ -17,7 +17,7 @@ class MenuWidget extends StatelessWidget {
             Navigator.of(context).pushReplacementNamed(HomeView.route),
         child: Text(
           AppLocalizations.of(context)!.menuHome,
-          style: const TextStyle(fontFamily: 'Sniglet'),
+          style: Theme.of(context).textTheme.titleMedium,
         ),
       ),
       automaticallyImplyLeading: false,
@@ -28,7 +28,7 @@ class MenuWidget extends StatelessWidget {
             onPressed: () => openLink(Uri.parse(Urls.podcast)),
             child: Text(
               AppLocalizations.of(context)!.menuPodcast,
-              style: const TextStyle(fontFamily: 'Sniglet'),
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
         ),

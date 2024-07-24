@@ -58,7 +58,7 @@ class GithubWidget extends StatelessWidget {
                 icon: const Icon(CustomIcons.github),
                 label: Text(
                   AppLocalizations.of(context)!.github,
-                  style: const TextStyle(fontFamily: 'Sniglet'),
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
               ),
               const SizedBox(width: 12),
@@ -109,12 +109,12 @@ class LanguagesWidget extends StatelessWidget {
                   Text(
                     AppLocalizations.of(context)!.languagesSpanish,
                     textAlign: TextAlign.center,
-                    style: const TextStyle(fontFamily: 'Sniglet'),
+                    style: Theme.of(context).textTheme.titleSmall,
                   ),
                   Text(
                     AppLocalizations.of(context)!.languagesPortuguese,
                     textAlign: TextAlign.center,
-                    style: const TextStyle(fontFamily: 'Sniglet'),
+                    style: Theme.of(context).textTheme.titleSmall,
                   ),
                 ],
               ),
@@ -122,7 +122,7 @@ class LanguagesWidget extends StatelessWidget {
               Text(
                 AppLocalizations.of(context)!.languagesEnglish,
                 textAlign: TextAlign.center,
-                style: const TextStyle(fontFamily: 'Sniglet'),
+                style: Theme.of(context).textTheme.titleSmall,
               ),
             ],
           ),
@@ -153,7 +153,7 @@ class ContactWidget extends StatelessWidget {
                         openApp(Uri.parse('mailto:deandreamatias@gmail.com')),
                     child: Text(
                       AppLocalizations.of(context)!.email,
-                      style: const TextStyle(fontFamily: 'Sniglet'),
+                      style: Theme.of(context).textTheme.titleSmall,
                     ),
                   ),
                   ElevatedButton(
@@ -161,7 +161,7 @@ class ContactWidget extends StatelessWidget {
                         'https://www.linkedin.com/in/deandreamatias/?locale=en_US')),
                     child: Text(
                       AppLocalizations.of(context)!.linkedin,
-                      style: const TextStyle(fontFamily: 'Sniglet'),
+                      style: Theme.of(context).textTheme.titleSmall,
                     ),
                   ),
                 ],
