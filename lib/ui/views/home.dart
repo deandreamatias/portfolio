@@ -33,33 +33,7 @@ class HomeViewState extends State<HomeView> {
                   (BuildContext context, SizingInformation sizingInformation) {
                 switch (sizingInformation.deviceScreenType) {
                   case DeviceScreenType.desktop:
-                    return Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            HeaderWidget(
-                              title:
-                                  AppLocalizations.of(context)!.homeHeaderTitle,
-                              subtitle: AppLocalizations.of(context)!
-                                  .homeHeaderSubtitle,
-                              image: Urls.profile,
-                              key: const Key(Urls.profile),
-                            ),
-                            const LanguagesWidget(),
-                          ],
-                        ),
-                        const Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: <Widget>[
-                            GithubWidget(),
-                            SkillsWidget(),
-                            ContactWidget(),
-                          ],
-                        )
-                      ],
-                    );
+                    return const _LargeContent();
                   default:
                     return SingleChildScrollView(
                       padding: const EdgeInsets.all(16.0),
@@ -91,6 +65,109 @@ class HomeViewState extends State<HomeView> {
             alignment: Alignment.bottomCenter,
             child: Footer(),
           )
+        ],
+      ),
+    );
+  }
+}
+
+class _LargeContent extends StatelessWidget {
+  const _LargeContent();
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Flexible(
+          child: ColumnContent(
+            title: AppLocalizations.of(context)!.who_title,
+            content: [
+              AppLocalizations.of(context)!.who_is_mobile,
+              AppLocalizations.of(context)!.who_communities,
+              AppLocalizations.of(context)!.who_writer,
+              AppLocalizations.of(context)!.who_podcast,
+              AppLocalizations.of(context)!.who_football,
+              AppLocalizations.of(context)!.who_secondary_football,
+              AppLocalizations.of(context)!.who_nationality,
+              AppLocalizations.of(context)!.who_secondary_nationality,
+              AppLocalizations.of(context)!.who_family,
+              AppLocalizations.of(context)!.who_pets,
+            ],
+          ),
+        ),
+        Flexible(
+          child: ColumnContent(
+            title: AppLocalizations.of(context)!.what_title,
+            content: [
+              AppLocalizations.of(context)!.what_mobile,
+              AppLocalizations.of(context)!.what_contribute,
+              AppLocalizations.of(context)!.what_videos,
+              AppLocalizations.of(context)!.what_writing,
+              AppLocalizations.of(context)!.what_podcast,
+              AppLocalizations.of(context)!.what_languages,
+              AppLocalizations.of(context)!.what_pets,
+            ],
+          ),
+        ),
+        Flexible(
+          child: ColumnContent(
+            title: AppLocalizations.of(context)!.where_title,
+            content: [
+              AppLocalizations.of(context)!.where_live,
+              AppLocalizations.of(context)!.where_work,
+              AppLocalizations.of(context)!.where_contribute,
+              AppLocalizations.of(context)!.where_videos,
+              AppLocalizations.of(context)!.where_communities,
+              AppLocalizations.of(context)!.where_writing,
+              AppLocalizations.of(context)!.where_podcast,
+              AppLocalizations.of(context)!.where_football,
+              AppLocalizations.of(context)!.where_family_and_pets,
+            ],
+          ),
+        ),
+        Flexible(
+          child: ColumnContent(
+            title: AppLocalizations.of(context)!.when_title,
+            content: [
+              AppLocalizations.of(context)!.when_age(29),
+              AppLocalizations.of(context)!.when_work,
+              AppLocalizations.of(context)!.when_balance,
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class ColumnContent extends StatelessWidget {
+  final String title;
+  final List<String> content;
+  const ColumnContent({
+    super.key,
+    required this.title,
+    this.content = const [],
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Align(
+            alignment: Alignment.topCenter,
+            child: Text(
+              title,
+              textAlign: TextAlign.center,
+              maxLines: 1,
+            ),
+          ),
+          for (final String item in content)
+            Padding(padding: const EdgeInsets.all(8.0), child: Text(item)),
         ],
       ),
     );
