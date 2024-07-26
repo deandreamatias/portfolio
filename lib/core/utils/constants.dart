@@ -9,3 +9,9 @@ class Urls {
   static const String podcast = 'https://universoflutter.com';
   static const String profile = 'https://deandreamatias.com/profile.png';
 }
+
+class Constants {
+  static const String username = 'dendreamatias';
+  static const String name = 'Matias de Andrea';
+  static const String separator = '·';
+}
