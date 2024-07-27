@@ -25,12 +25,6 @@ flutter:
   assets:
     - assets/img/
   fonts:
-    - family: Sniglet
-      fonts:
-        - asset: assets/fonts/sniglet.ttf
-    - family: Asap
-      fonts:
-        - asset: assets/fonts/asap.ttf
     - family: portfolio
       fonts:
         - asset: assets/fonts/portfolio.ttf
