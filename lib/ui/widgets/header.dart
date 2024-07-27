@@ -1,61 +1,46 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:portfolio/core/utils/constants.dart';
+import 'package:portfolio/ui/shared/media_query_extension.dart';
+import 'package:portfolio/ui/widgets/text/body_medium_text.dart';
+import 'package:portfolio/ui/widgets/text/display_large_text.dart';
+import 'package:portfolio/ui/widgets/username.dart';
 
-import 'circular_image.dart';
-
-class HeaderWidget extends StatelessWidget {
-  const HeaderWidget({
-    required Key key,
-    required this.title,
-    required this.subtitle,
-    required this.image,
-    this.streaming = false,
-  }) : super(key: key);
-  final String title;
-  final String subtitle;
-  final String image;
-  final bool streaming;
+class Header extends StatelessWidget {
+  const Header({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 320,
-      child: Card(
-        child: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Expanded(
-                    child: Text(
-                      title,
-                      textAlign: TextAlign.center,
-                      maxLines: 3,
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 8.0,
-                  ),
-                  CircularImage(
-                    image: image,
-                    key: Key(image.hashCode.toString()),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16.0),
-              Flexible(
-                fit: FlexFit.loose,
-                child: Text(
-                  subtitle,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            ],
+    final List<String> skills = [
+      AppLocalizations.of(context)!.skills_one,
+      Constants.separator,
+      AppLocalizations.of(context)!.skills_two,
+      Constants.separator,
+      AppLocalizations.of(context)!.skills_three,
+      Constants.separator,
+      AppLocalizations.of(context)!.skills_four,
+      Constants.separator,
+      AppLocalizations.of(context)!.skills_five,
+    ];
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          if (context.isLarge)
+            const Align(alignment: Alignment.topRight, child: Username()),
+          const Padding(
+            padding: EdgeInsets.all(16),
+            child: DisplayLargeText(Constants.name),
           ),
-        ),
+          Wrap(
+            alignment: WrapAlignment.center,
+            spacing: 4,
+            runSpacing: 8,
+            children:
+                skills.map((String skill) => BodyMediumText(skill)).toList(),
+          ),
+        ],
       ),
     );
   }
