@@ -20,7 +20,8 @@ class HomeViewState extends State<HomeView> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          const Expanded(child: Column(children: [Header(), Content()])),
+          const Expanded(
+              child: Column(children: [Header(), Flexible(child: Content())])),
           if (!context.isLarge)
             const Align(alignment: Alignment.bottomCenter, child: Username())
         ],

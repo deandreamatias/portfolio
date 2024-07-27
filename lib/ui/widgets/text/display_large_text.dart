@@ -10,7 +10,9 @@ class DisplayLargeText extends StatelessWidget {
     return Text(
       text,
       textAlign: TextAlign.center,
-      style: Theme.of(context).textTheme.displayLarge,
+      style: Theme.of(context).textTheme.displayLarge?.copyWith(
+            color: Theme.of(context).colorScheme.onSurface,
+          ),
     );
   }
 }

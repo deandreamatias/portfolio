@@ -22,25 +22,32 @@ class Header extends StatelessWidget {
       Constants.separator,
       AppLocalizations.of(context)!.skills_five,
     ];
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          if (context.isLarge)
-            const Align(alignment: Alignment.topRight, child: Username()),
-          const Padding(
-            padding: EdgeInsets.all(16),
-            child: DisplayLargeText(Constants.name),
+    return ColoredBox(
+      color: Theme.of(context).colorScheme.surface,
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              if (context.isLarge)
+                const Align(alignment: Alignment.topRight, child: Username()),
+              const Padding(
+                padding: EdgeInsets.all(16),
+                child: DisplayLargeText(Constants.name),
+              ),
+              Wrap(
+                alignment: WrapAlignment.center,
+                spacing: 4,
+                runSpacing: 8,
+                children: skills
+                    .map((String skill) => BodyMediumText(skill))
+                    .toList(),
+              ),
+            ],
           ),
-          Wrap(
-            alignment: WrapAlignment.center,
-            spacing: 4,
-            runSpacing: 8,
-            children:
-                skills.map((String skill) => BodyMediumText(skill)).toList(),
-          ),
-        ],
+        ),
       ),
     );
   }

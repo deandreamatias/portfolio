@@ -7,10 +7,12 @@ import 'package:portfolio/ui/widgets/text/title_large_text.dart';
 class ContentModel {
   final String title;
   final List<String> content;
+  final Color color;
 
   const ContentModel({
     required this.title,
     this.content = const [],
+    required this.color,
   })  : assert(content.length > 0, 'Content must not be empty'),
         assert(title.length > 0, 'Title must not be empty');
 }
@@ -22,6 +24,7 @@ class Content extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<ContentModel> content = [
       ContentModel(
+        color: Theme.of(context).colorScheme.surfaceContainerHighest,
         title: AppLocalizations.of(context)!.who_title,
         content: [
           AppLocalizations.of(context)!.who_is_mobile,
@@ -37,6 +40,7 @@ class Content extends StatelessWidget {
         ],
       ),
       ContentModel(
+        color: Theme.of(context).colorScheme.surfaceContainer,
         title: AppLocalizations.of(context)!.what_title,
         content: [
           AppLocalizations.of(context)!.what_mobile,
@@ -49,6 +53,7 @@ class Content extends StatelessWidget {
         ],
       ),
       ContentModel(
+        color: Theme.of(context).colorScheme.surfaceContainerHighest,
         title: AppLocalizations.of(context)!.where_title,
         content: [
           AppLocalizations.of(context)!.where_live,
@@ -63,6 +68,7 @@ class Content extends StatelessWidget {
         ],
       ),
       ContentModel(
+        color: Theme.of(context).colorScheme.surfaceContainer,
         title: AppLocalizations.of(context)!.when_title,
         content: [
           AppLocalizations.of(context)!.when_age(29),
@@ -78,10 +84,10 @@ class Content extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Flexible(child: _ColumnContent(contentModel: content[0])),
-                Flexible(child: _ColumnContent(contentModel: content[1])),
-                Flexible(child: _ColumnContent(contentModel: content[2])),
-                Flexible(child: _ColumnContent(contentModel: content[3])),
+                Expanded(child: _ColumnContent(contentModel: content[0])),
+                Expanded(child: _ColumnContent(contentModel: content[1])),
+                Expanded(child: _ColumnContent(contentModel: content[2])),
+                Expanded(child: _ColumnContent(contentModel: content[3])),
               ],
             ),
           )
@@ -102,25 +108,33 @@ class _ColumnContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Align(
-            alignment: Alignment.topCenter,
-            child: TitleLargeText(contentModel.title),
-          ),
-          const SizedBox(height: 8),
-          for (final String item in contentModel.content)
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: BodyMediumText(item),
+    return LayoutBuilder(builder: (context, constraints) {
+      return SizedBox(
+        height: constraints.maxHeight,
+        child: ColoredBox(
+          color: contentModel.color,
+          child: Padding(
+            padding: const EdgeInsets.all(8),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: TitleLargeText(contentModel.title),
+                ),
+                const SizedBox(height: 8),
+                for (final String item in contentModel.content)
+                  Padding(
+                    padding: const EdgeInsets.all(8),
+                    child: BodyMediumText(item),
+                  ),
+              ],
             ),
-        ],
-      ),
-    );
+          ),
+        ),
+      );
+    });
   }
 }
 
@@ -133,6 +147,9 @@ class _ExpansionTileContent extends StatelessWidget {
     return ExpansionTile(
       childrenPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       expandedCrossAxisAlignment: CrossAxisAlignment.start,
+      collapsedBackgroundColor: contentModel.color,
+      backgroundColor: contentModel.color,
+      shape: const RoundedRectangleBorder(),
       title: TitleLargeText(contentModel.title),
       children: <Widget>[
         for (final String item in contentModel.content)
