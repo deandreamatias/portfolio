@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/ui/shared/media_query_extension.dart';
+import 'package:portfolio/ui/shared/context_extensions.dart';
 import 'package:portfolio/ui/widgets/content.dart';
 import 'package:portfolio/ui/widgets/header.dart';
 

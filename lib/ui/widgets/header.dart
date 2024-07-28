@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:portfolio/core/utils/constants.dart';
-import 'package:portfolio/ui/shared/media_query_extension.dart';
+import 'package:portfolio/ui/shared/context_extensions.dart';
+import 'package:portfolio/ui/shared/sizes.dart';
 import 'package:portfolio/ui/widgets/text/body_medium_text.dart';
 import 'package:portfolio/ui/widgets/text/display_large_text.dart';
 import 'package:portfolio/ui/widgets/username.dart';
@@ -25,7 +26,7 @@ class Header extends StatelessWidget {
     return ColoredBox(
       color: Theme.of(context).colorScheme.surface,
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(Sizes.large),
         child: SizedBox(
           width: double.infinity,
           child: Column(
@@ -34,7 +35,7 @@ class Header extends StatelessWidget {
               if (context.isLarge)
                 const Align(alignment: Alignment.topRight, child: Username()),
               const Padding(
-                padding: EdgeInsets.all(16),
+                padding: EdgeInsets.all(Sizes.large),
                 child: DisplayLargeText(Constants.name),
               ),
               Wrap(

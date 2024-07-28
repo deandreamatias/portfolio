@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:portfolio/ui/shared/context_extensions.dart';
 
 import 'ui/shared/theme.dart';
-import 'ui/shared/util.dart';
 import 'ui/views/home.dart';
 
 Future<void> main() async {
@@ -15,11 +15,11 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     final brightness = View.of(context).platformDispatcher.platformBrightness;
 
-    // Retrieves the default theme for the platform
-    //TextTheme textTheme = Theme.of(context).textTheme;
-
     // Use with Google Fonts package to use downloadable fonts
-    TextTheme textTheme = createTextTheme(context, "Asap", "Geologica");
+    TextTheme textTheme = context.createTextTheme(
+      bodyFontString: "Asap",
+      displayFontString: "Geologica",
+    );
 
     MaterialTheme theme = MaterialTheme(textTheme);
     return MaterialApp(
