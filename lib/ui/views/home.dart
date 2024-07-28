@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/ui/shared/context_extensions.dart';
 import 'package:portfolio/ui/widgets/content.dart';
 import 'package:portfolio/ui/widgets/header.dart';
 
@@ -16,14 +15,19 @@ class HomeView extends StatefulWidget {
 class HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          const Expanded(
-              child: Column(children: [Header(), Flexible(child: Content())])),
-          if (!context.isLarge)
-            const Align(alignment: Alignment.bottomCenter, child: Username())
+          Expanded(
+            child: Column(
+              children: [
+                Header(),
+                Flexible(child: Content()),
+              ],
+            ),
+          ),
+          Align(alignment: Alignment.bottomCenter, child: Username())
         ],
       ),
     );

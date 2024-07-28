@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:portfolio/core/utils/constants.dart';
-import 'package:portfolio/ui/shared/context_extensions.dart';
 import 'package:portfolio/ui/shared/sizes.dart';
 import 'package:portfolio/ui/widgets/text/body_medium_text.dart';
 import 'package:portfolio/ui/widgets/text/display_large_text.dart';
-import 'package:portfolio/ui/widgets/username.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key});
@@ -32,8 +30,6 @@ class Header extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              if (context.isLarge)
-                const Align(alignment: Alignment.topRight, child: Username()),
               const Padding(
                 padding: EdgeInsets.all(Sizes.large),
                 child: DisplayLargeText(Constants.name),
