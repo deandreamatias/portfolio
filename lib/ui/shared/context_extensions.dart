@@ -6,8 +6,10 @@ extension MediaQueryExtension on BuildContext {
   double get height => MediaQuery.of(this).size.height;
 
   // Breakpoints
-  bool get isSmall => width < 600;
-  bool get isMedium => width >= 600;
+  bool get isExtraExtraSmall => width < 256;
+  bool get isExtraSmall => width < 512;
+  bool get isSmall => width < 768;
+  bool get isMedium => width >= 768;
   bool get isLarge => width >= 1024;
   bool get isExtraLarge => width >= 1440;
   bool get isExtraExtraLarge => width >= 2560;

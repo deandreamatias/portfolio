@@ -165,33 +165,28 @@ class _ColumnContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (context, constraints) {
-      return SizedBox(
-        height: constraints.maxHeight,
-        child: ColoredBox(
-          color: contentModel.color,
-          child: Padding(
-            padding: const EdgeInsets.all(Sizes.medium),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: TitleLargeText(contentModel.title),
-                ),
-                const SizedBox(height: Sizes.medium),
-                for (final SubContentModel item in contentModel.content)
-                  Padding(
-                    padding: const EdgeInsets.all(Sizes.medium),
-                    child: _ContentItem(subcontentModel: item),
-                  ),
-              ],
+    return ColoredBox(
+      color: contentModel.color,
+      child: Padding(
+        padding: const EdgeInsets.all(Sizes.medium),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Align(
+              alignment: Alignment.topCenter,
+              child: TitleLargeText(contentModel.title),
             ),
-          ),
+            const SizedBox(height: Sizes.medium),
+            for (final SubContentModel item in contentModel.content)
+              Padding(
+                padding: const EdgeInsets.all(Sizes.medium),
+                child: _ContentItem(subcontentModel: item),
+              ),
+          ],
         ),
-      );
-    });
+      ),
+    );
   }
 }
 

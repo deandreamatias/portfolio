@@ -13,6 +13,8 @@ class Urls {
   static const String ondaFC = 'https://www.ondafc.es/';
   static const String youtube =
       'https://youtube.com/playlist?list=PL47j3mLiYhbh763kwspHLXlfedT6n-lYO&feature=shared';
+  static const String brazilTechExpats =
+      'https://brazil-tech-expats.deandreamatias.com/home/spain/';
 }
 
 class Constants {
