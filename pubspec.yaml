@@ -12,23 +12,13 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  google_fonts: ^6.2.1
   intl: ^0.19.0
-  responsive_builder: ^0.7.0
+  unicons: ^2.1.2
   url_launcher: ^6.3.0
+
 dev_dependencies: 
   flutter_lints: ^4.0.0
 
 flutter:
   generate: true
-  assets:
-    - assets/img/
-  fonts:
-    - family: Sniglet
-      fonts:
-        - asset: assets/fonts/sniglet.ttf
-    - family: Asap
-      fonts:
-        - asset: assets/fonts/asap.ttf
-    - family: portfolio
-      fonts:
-        - asset: assets/fonts/portfolio.ttf
