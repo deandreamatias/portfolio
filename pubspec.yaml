@@ -23,7 +23,3 @@ dev_dependencies:
 
 flutter:
   generate: true
-  fonts:
-    - family: portfolio
-      fonts:
-        - asset: assets/fonts/portfolio.ttf

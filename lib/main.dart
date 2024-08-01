@@ -26,7 +26,7 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'deandreamatias | Mobile developer with Flutter',
       theme: brightness == Brightness.light ? theme.light() : theme.dark(),
-      initialRoute: '/',
+      initialRoute: HomeView.route,
       routes: <String, WidgetBuilder>{
         HomeView.route: (BuildContext context) => const HomeView(),
       },

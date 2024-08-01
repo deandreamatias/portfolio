@@ -72,7 +72,6 @@ class Content extends StatelessWidget {
           ContentModel(title: AppLocalizations.of(context)!.what_writing),
           ContentModel(title: AppLocalizations.of(context)!.what_podcast),
           ContentModel(title: AppLocalizations.of(context)!.what_languages),
-          ContentModel(title: AppLocalizations.of(context)!.what_pets),
         ],
       ),
       ColumnModel(

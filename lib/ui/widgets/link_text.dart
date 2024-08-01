@@ -22,8 +22,8 @@ class LinkText extends StatelessWidget {
       if (text.contains(key)) {
         foundLink = true;
         final parts = text.split(key);
-        spans.addAll(_buildSpans(
-            context, parts[0])); // Recursively process the text before the link
+        // Recursively process the text before the link
+        spans.addAll(_buildSpans(context, parts[0]));
         spans.add(
           TextSpan(
             text: key,
@@ -39,11 +39,8 @@ class LinkText extends StatelessWidget {
               },
           ),
         );
-        spans.addAll(_buildSpans(
-            context,
-            parts
-                .sublist(1)
-                .join(key))); // Recursively process the text after the link
+        // Recursively process the text after the link
+        spans.addAll(_buildSpans(context, parts.sublist(1).join(key)));
         break;
       }
     }
