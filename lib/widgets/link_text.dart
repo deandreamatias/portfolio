@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/utils/navigate_links.dart';
+import 'package:portfolio/shared/navigate_links.dart';
 
 class LinkText extends StatelessWidget {
   final String text;

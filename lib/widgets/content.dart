@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:portfolio/core/utils/constants.dart';
-import 'package:portfolio/ui/shared/context_extensions.dart';
-import 'package:portfolio/ui/shared/sizes.dart';
-import 'package:portfolio/ui/widgets/link_text.dart';
-import 'package:portfolio/ui/widgets/text/body_large_text.dart';
-import 'package:portfolio/ui/widgets/text/body_small_text.dart';
-import 'package:portfolio/ui/widgets/text/title_large_text.dart';
+import 'package:portfolio/shared/constants.dart';
+import 'package:portfolio/shared/context_extensions.dart';
+import 'package:portfolio/shared/sizes.dart';
+import 'package:portfolio/widgets/link_text.dart';
+import 'package:portfolio/widgets/text/body_large_text.dart';
+import 'package:portfolio/widgets/text/body_small_text.dart';
+import 'package:portfolio/widgets/text/title_large_text.dart';
 import 'package:unicons/unicons.dart';
 
 class ColumnModel {

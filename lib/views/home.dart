@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/ui/shared/context_extensions.dart';
-import 'package:portfolio/ui/shared/sizes.dart';
-import 'package:portfolio/ui/widgets/content.dart';
-import 'package:portfolio/ui/widgets/expats_wiki_button.dart';
-import 'package:portfolio/ui/widgets/github_button.dart';
-import 'package:portfolio/ui/widgets/header.dart';
-import 'package:portfolio/ui/widgets/linkedin_button.dart';
+import 'package:portfolio/shared/context_extensions.dart';
+import 'package:portfolio/shared/sizes.dart';
+import 'package:portfolio/widgets/content.dart';
+import 'package:portfolio/widgets/expats_wiki_button.dart';
+import 'package:portfolio/widgets/github_button.dart';
+import 'package:portfolio/widgets/header.dart';
+import 'package:portfolio/widgets/linkedin_button.dart';
 
 import '../widgets/username.dart';
 

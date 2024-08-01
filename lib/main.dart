@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:portfolio/ui/shared/context_extensions.dart';
+import 'package:portfolio/shared/context_extensions.dart';
 
-import 'ui/shared/theme.dart';
-import 'ui/views/home.dart';
+import 'shared/theme.dart';
+import 'views/home.dart';
 
 Future<void> main() async {
   runApp(const App());

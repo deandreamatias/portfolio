@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:portfolio/core/utils/constants.dart';
-import 'package:portfolio/ui/shared/sizes.dart';
-import 'package:portfolio/ui/widgets/text/body_medium_text.dart';
-import 'package:portfolio/ui/widgets/text/display_large_text.dart';
+import 'package:portfolio/shared/constants.dart';
+import 'package:portfolio/shared/sizes.dart';
+import 'package:portfolio/widgets/text/body_medium_text.dart';
+import 'package:portfolio/widgets/text/display_large_text.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/core/utils/constants.dart';
-import 'package:portfolio/ui/shared/sizes.dart';
-import 'package:portfolio/ui/widgets/text/title_medium_text.dart';
+import 'package:portfolio/shared/constants.dart';
+import 'package:portfolio/shared/sizes.dart';
+import 'package:portfolio/widgets/text/title_medium_text.dart';
 
 class Username extends StatelessWidget {
   const Username({super.key});
