@@ -15,7 +15,10 @@ This project has been built using the [Flutter](https://flutter.dev/) framework,
 
 - **See info about Matias de Andrea**
 - **Open some profile links**
-- **Roadmap in [public Trello](https://trello.com/b/TUxLi2ik)**
+- **Responsive design**
+- **Light and dark themes**
+- **Translated to english, spanish and portuguese**
+- **Automatic deploy to Firebase Hosting**
 
 ## Build and run
 

@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/deandreamatias/portfolio/compare/v1.8.0...v2.0.0) (2024-08-01)
+
 ## [1.8.0](https://github.com/deandreamatias/portfolio/compare/v1.7.0...v1.8.0) (2024-07-07)
 
 ## [1.7.0](https://github.com/deandreamatias/portfolio/compare/v1.6.0...v1.7.0) (2022-09-24)
