@@ -1,7 +1,7 @@
 name: portfolio
 description: deandreamatias
-version: 1.8.0
-code: 14
+version: 2.0.0
+code: 15
 
 environment:
   sdk: ">=3.4.0 <4.0.0"
