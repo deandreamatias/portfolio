@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:portfolio/core/utils/constants.dart';
-import 'package:portfolio/core/utils/navigate_links.dart';
 import 'package:portfolio/ui/shared/context_extensions.dart';
 import 'package:portfolio/ui/shared/sizes.dart';
+import 'package:portfolio/ui/widgets/link_text.dart';
 import 'package:portfolio/ui/widgets/text/body_large_text.dart';
 import 'package:portfolio/ui/widgets/text/body_small_text.dart';
 import 'package:portfolio/ui/widgets/text/title_large_text.dart';
 import 'package:unicons/unicons.dart';
 
-class ContentModel {
+class ColumnModel {
   final String title;
-  final List<SubContentModel> content;
+  final List<ContentModel> content;
   final Color color;
 
-  const ContentModel({
+  const ColumnModel({
     required this.title,
     this.content = const [],
     required this.color,
@@ -22,19 +22,17 @@ class ContentModel {
         assert(title.length > 0, 'Title must not be empty');
 }
 
-class SubContentModel {
+class ContentModel {
   final String title;
   final String subtitle;
-  final List<Uri> urls;
-  final List<IconData> urlIcons;
-  final String info;
+  final Map<String, Uri> urls;
+  final String infoId;
 
-  const SubContentModel({
+  const ContentModel({
     required this.title,
     this.subtitle = '',
-    this.urls = const [],
-    this.info = '',
-    this.urlIcons = const [],
+    this.urls = const {},
+    this.infoId = '',
   }) : assert(title.length > 0, 'Title must not be empty');
 }
 
@@ -43,97 +41,96 @@ class Content extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<ContentModel> content = [
-      ContentModel(
+    final List<ColumnModel> content = [
+      ColumnModel(
         color: Theme.of(context).colorScheme.surfaceContainerHighest,
         title: AppLocalizations.of(context)!.who_title,
         content: [
-          SubContentModel(title: AppLocalizations.of(context)!.who_is_mobile),
-          SubContentModel(title: AppLocalizations.of(context)!.who_communities),
-          SubContentModel(title: AppLocalizations.of(context)!.who_writer),
-          SubContentModel(title: AppLocalizations.of(context)!.who_podcast),
-          SubContentModel(
+          ContentModel(title: AppLocalizations.of(context)!.who_is_mobile),
+          ContentModel(title: AppLocalizations.of(context)!.who_communities),
+          ContentModel(title: AppLocalizations.of(context)!.who_writer),
+          ContentModel(title: AppLocalizations.of(context)!.who_podcast),
+          ContentModel(
             title: AppLocalizations.of(context)!.who_football,
             subtitle: AppLocalizations.of(context)!.who_secondary_football,
           ),
-          SubContentModel(
+          ContentModel(
             title: AppLocalizations.of(context)!.who_nationality,
             subtitle: AppLocalizations.of(context)!.who_secondary_nationality,
           ),
-          SubContentModel(title: AppLocalizations.of(context)!.who_family),
-          SubContentModel(title: AppLocalizations.of(context)!.who_pets)
+          ContentModel(title: AppLocalizations.of(context)!.who_family),
+          ContentModel(title: AppLocalizations.of(context)!.who_pets)
         ],
       ),
-      ContentModel(
+      ColumnModel(
         color: Theme.of(context).colorScheme.surfaceContainer,
         title: AppLocalizations.of(context)!.what_title,
         content: [
-          SubContentModel(title: AppLocalizations.of(context)!.what_mobile),
-          SubContentModel(title: AppLocalizations.of(context)!.what_contribute),
-          SubContentModel(title: AppLocalizations.of(context)!.what_videos),
-          SubContentModel(title: AppLocalizations.of(context)!.what_writing),
-          SubContentModel(title: AppLocalizations.of(context)!.what_podcast),
-          SubContentModel(title: AppLocalizations.of(context)!.what_languages),
-          SubContentModel(title: AppLocalizations.of(context)!.what_pets),
+          ContentModel(title: AppLocalizations.of(context)!.what_mobile),
+          ContentModel(title: AppLocalizations.of(context)!.what_contribute),
+          ContentModel(title: AppLocalizations.of(context)!.what_videos),
+          ContentModel(title: AppLocalizations.of(context)!.what_writing),
+          ContentModel(title: AppLocalizations.of(context)!.what_podcast),
+          ContentModel(title: AppLocalizations.of(context)!.what_languages),
+          ContentModel(title: AppLocalizations.of(context)!.what_pets),
         ],
       ),
-      ContentModel(
+      ColumnModel(
         color: Theme.of(context).colorScheme.surfaceContainerHighest,
         title: AppLocalizations.of(context)!.where_title,
         content: [
-          SubContentModel(title: AppLocalizations.of(context)!.where_live),
-          SubContentModel(
-            title: AppLocalizations.of(context)!.where_work,
-            urls: [Uri.parse(Urls.linkedin)],
-            urlIcons: [UniconsLine.linkedin],
+          ContentModel(title: AppLocalizations.of(context)!.where_live),
+          ContentModel(
+            title: AppLocalizations.of(context)!.where_work(UrlKeys.linkedIn),
+            urls: {UrlKeys.linkedIn: Uri.parse(Urls.linkedin)},
           ),
-          SubContentModel(
-            title: AppLocalizations.of(context)!.where_contribute,
-            urls: [Uri.parse(Urls.github), Uri.parse(Urls.stackoverflow)],
-            urlIcons: [UniconsLine.github, UniconsLine.comments],
+          ContentModel(
+            title: AppLocalizations.of(context)!
+                .where_contribute(UrlKeys.gitHub, UrlKeys.stackOverflow),
+            urls: {
+              UrlKeys.gitHub: Uri.parse(Urls.github),
+              UrlKeys.stackOverflow: Uri.parse(Urls.stackoverflow),
+            },
           ),
-          SubContentModel(
-            title: AppLocalizations.of(context)!.where_videos,
-            urls: [Uri.parse(Urls.youtube)],
-            urlIcons: [UniconsLine.youtube],
+          ContentModel(
+            title: AppLocalizations.of(context)!.where_videos(UrlKeys.youtube),
+            urls: {UrlKeys.youtube: Uri.parse(Urls.youtube)},
           ),
-          SubContentModel(
-            title: AppLocalizations.of(context)!.where_communities,
-            urls: [Uri.parse(Urls.stackoverflow)],
-            urlIcons: [UniconsLine.users_alt],
+          ContentModel(title: AppLocalizations.of(context)!.where_communities),
+          ContentModel(
+            title: AppLocalizations.of(context)!.where_writing(UrlKeys.medium),
+            urls: {UrlKeys.medium: Uri.parse(Urls.medium)},
           ),
-          SubContentModel(
-            title: AppLocalizations.of(context)!.where_writing,
-            urls: [Uri.parse(Urls.medium)],
-            urlIcons: [UniconsLine.medium_m],
+          ContentModel(
+            title: AppLocalizations.of(context)!.where_podcast(
+              AppLocalizations.of(context)!.where_podcast_participation,
+              UrlKeys.universoFlutter,
+            ),
+            urls: {
+              UrlKeys.universoFlutter: Uri.parse(Urls.podcast),
+              AppLocalizations.of(context)!.where_podcast_participation:
+                  Uri.parse(Urls.podcastParticipations),
+            },
           ),
-          SubContentModel(
-            title: AppLocalizations.of(context)!.where_podcast,
-            urls: [
-              Uri.parse(Urls.podcast),
-              Uri.parse(Urls.podcastParticipations)
-            ],
-            urlIcons: [UniconsLine.microphone, UniconsLine.headphones],
+          ContentModel(
+            title: AppLocalizations.of(context)!.where_football(UrlKeys.ondaFC),
+            urls: {UrlKeys.ondaFC: Uri.parse(Urls.ondaFC)},
           ),
-          SubContentModel(
-            title: AppLocalizations.of(context)!.where_football,
-            urls: [Uri.parse(Urls.ondaFC)],
-            urlIcons: [UniconsLine.football],
-          ),
-          SubContentModel(
-            title: AppLocalizations.of(context)!.where_family_and_pets,
-            urls: [Uri.parse(Urls.bluesky)],
-            urlIcons: [UniconsLine.at],
+          ContentModel(
+            title: AppLocalizations.of(context)!.where_family_and_pets(
+              UrlKeys.blueSky,
+            ),
+            urls: {UrlKeys.blueSky: Uri.parse(Urls.bluesky)},
           )
         ],
       ),
-      ContentModel(
+      ColumnModel(
         color: Theme.of(context).colorScheme.surfaceContainer,
         title: AppLocalizations.of(context)!.when_title,
         content: [
-          SubContentModel(title: AppLocalizations.of(context)!.when_age(29)),
-          SubContentModel(title: AppLocalizations.of(context)!.when_work),
-          SubContentModel(title: AppLocalizations.of(context)!.when_balance),
+          ContentModel(title: AppLocalizations.of(context)!.when_age(29)),
+          ContentModel(title: AppLocalizations.of(context)!.when_work),
+          ContentModel(title: AppLocalizations.of(context)!.when_balance),
         ],
       ),
     ];
@@ -160,7 +157,7 @@ class Content extends StatelessWidget {
 }
 
 class _ColumnContent extends StatelessWidget {
-  final ContentModel contentModel;
+  final ColumnModel contentModel;
   const _ColumnContent({required this.contentModel});
 
   @override
@@ -178,7 +175,7 @@ class _ColumnContent extends StatelessWidget {
               child: TitleLargeText(contentModel.title),
             ),
             const SizedBox(height: Sizes.medium),
-            for (final SubContentModel item in contentModel.content)
+            for (final ContentModel item in contentModel.content)
               Padding(
                 padding: const EdgeInsets.all(Sizes.medium),
                 child: _ContentItem(subcontentModel: item),
@@ -191,7 +188,7 @@ class _ColumnContent extends StatelessWidget {
 }
 
 class _ExpansionTileContent extends StatefulWidget {
-  final ContentModel contentModel;
+  final ColumnModel contentModel;
   const _ExpansionTileContent({required this.contentModel});
 
   @override
@@ -222,7 +219,7 @@ class _ExpansionTileContentState extends State<_ExpansionTileContent> {
       shape: const RoundedRectangleBorder(),
       title: TitleLargeText(widget.contentModel.title),
       children: <Widget>[
-        for (final SubContentModel item in widget.contentModel.content)
+        for (final ContentModel item in widget.contentModel.content)
           SizedBox(
             width: MediaQuery.sizeOf(context).width,
             child: Padding(
@@ -238,7 +235,7 @@ class _ExpansionTileContentState extends State<_ExpansionTileContent> {
 class _ContentItem extends StatelessWidget {
   const _ContentItem({required this.subcontentModel});
 
-  final SubContentModel subcontentModel;
+  final ContentModel subcontentModel;
 
   @override
   Widget build(BuildContext context) {
@@ -249,22 +246,21 @@ class _ContentItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              BodyLargeText(subcontentModel.title),
+              subcontentModel.urls.isEmpty
+                  ? BodyLargeText(subcontentModel.title)
+                  : LinkText(
+                      text: subcontentModel.title,
+                      links: subcontentModel.urls,
+                    ),
               if (subcontentModel.subtitle.isNotEmpty)
                 BodySmallText(subcontentModel.subtitle),
             ],
           ),
         ),
-        if (subcontentModel.urls.isNotEmpty &&
-            subcontentModel.urlIcons.isNotEmpty)
-          Row(
-            children: [
-              for (int i = 0; i < subcontentModel.urls.length; i++)
-                IconButton(
-                  onPressed: () => openLink(subcontentModel.urls[i]),
-                  icon: Icon(subcontentModel.urlIcons[i]),
-                )
-            ],
+        if (subcontentModel.infoId.isNotEmpty)
+          IconButton(
+            onPressed: () => {},
+            icon: const Icon(UniconsLine.info_circle),
           )
       ],
     );

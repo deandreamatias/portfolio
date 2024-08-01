@@ -17,6 +17,17 @@ class Urls {
       'https://brazil-tech-expats.deandreamatias.com/home/spain/';
 }
 
+class UrlKeys {
+  static const String linkedIn = 'LinkedIn';
+  static const String gitHub = 'GitHub';
+  static const String stackOverflow = 'StackOverflow';
+  static const String youtube = 'YouTube';
+  static const String medium = 'Medium';
+  static const String universoFlutter = 'Universo Flutter';
+  static const String ondaFC = 'OndaFC';
+  static const String blueSky = 'Bluesky';
+}
+
 class Constants {
   static const String username = 'dendreamatias';
   static const String name = 'Matias de Andrea';
