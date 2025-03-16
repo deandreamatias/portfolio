@@ -21,7 +21,8 @@ jobs:
       run: flutter analyze
     - name: Build web app
       run: flutter build web
-    - uses: actions/upload-artifact@v4
+    - name: Upload web build
+      uses: actions/upload-artifact@v4
       with:
         name: web-app
         path: build/web/
@@ -35,7 +36,8 @@ jobs:
     steps:
     - name: Configure enviroment
       uses: actions/checkout@v4
-    - uses: actions/download-artifact@v4
+    - name: Download web build
+      uses: actions/download-artifact@v4
       with:
         name: web-app
         path: build/web
@@ -59,7 +61,8 @@ jobs:
     steps:
     - name: Configure enviroment
       uses: actions/checkout@v4
-    - uses: actions/download-artifact@v4
+    - name: Download web build
+      uses: actions/download-artifact@v4
       with:
         name: web-app
         path: build/web
