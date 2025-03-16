@@ -13,13 +13,13 @@ jobs:
       uses: kuhnroyal/flutter-fvm-config-action/setup@v3
       with:
         path: '.fvmrc'
-    - name: get flutter dependencies
+    - name: Get flutter dependencies
       run: flutter pub get
     - name: Verify formated files
       run: dart format . --set-exit-if-changed
-    - name: code analyze 
+    - name: Code analyze 
       run: flutter analyze
-    - name: build web app
+    - name: Build web app
       run: flutter build web
     - uses: actions/upload-artifact@v4
       with:
