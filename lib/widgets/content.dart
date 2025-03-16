@@ -18,8 +18,8 @@ class ColumnModel {
     required this.title,
     this.content = const [],
     required this.color,
-  })  : assert(content.length > 0, 'Content must not be empty'),
-        assert(title.length > 0, 'Title must not be empty');
+  }) : assert(content.length > 0, 'Content must not be empty'),
+       assert(title.length > 0, 'Title must not be empty');
 }
 
 class ContentModel {
@@ -59,7 +59,7 @@ class Content extends StatelessWidget {
             subtitle: AppLocalizations.of(context)!.who_secondary_nationality,
           ),
           ContentModel(title: AppLocalizations.of(context)!.who_family),
-          ContentModel(title: AppLocalizations.of(context)!.who_pets)
+          ContentModel(title: AppLocalizations.of(context)!.who_pets),
         ],
       ),
       ColumnModel(
@@ -84,8 +84,9 @@ class Content extends StatelessWidget {
             urls: {UrlKeys.linkedIn: Uri.parse(Urls.linkedin)},
           ),
           ContentModel(
-            title: AppLocalizations.of(context)!
-                .where_contribute(UrlKeys.gitHub, UrlKeys.stackOverflow),
+            title: AppLocalizations.of(
+              context,
+            )!.where_contribute(UrlKeys.gitHub, UrlKeys.stackOverflow),
             urls: {
               UrlKeys.gitHub: Uri.parse(Urls.github),
               UrlKeys.stackOverflow: Uri.parse(Urls.stackoverflow),
@@ -116,11 +117,11 @@ class Content extends StatelessWidget {
             urls: {UrlKeys.ondaFC: Uri.parse(Urls.ondaFC)},
           ),
           ContentModel(
-            title: AppLocalizations.of(context)!.where_family_and_pets(
-              UrlKeys.blueSky,
-            ),
+            title: AppLocalizations.of(
+              context,
+            )!.where_family_and_pets(UrlKeys.blueSky),
             urls: {UrlKeys.blueSky: Uri.parse(Urls.bluesky)},
-          )
+          ),
         ],
       ),
       ColumnModel(
@@ -135,23 +136,29 @@ class Content extends StatelessWidget {
     ];
     return context.isMedium
         ? SizedBox(
-            width: context.isExtraLarge ? 1440 : double.infinity,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: content
-                  .map((contentModel) => Expanded(
+          width: context.isExtraLarge ? 1440 : double.infinity,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children:
+                content
+                    .map(
+                      (contentModel) => Expanded(
                         child: _ColumnContent(contentModel: contentModel),
-                      ))
-                  .toList(),
-            ),
-          )
+                      ),
+                    )
+                    .toList(),
+          ),
+        )
         : Column(
-            children: content
-                .map((contentModel) =>
-                    _ExpansionTileContent(contentModel: contentModel))
-                .toList(),
-          );
+          children:
+              content
+                  .map(
+                    (contentModel) =>
+                        _ExpansionTileContent(contentModel: contentModel),
+                  )
+                  .toList(),
+        );
   }
 }
 
@@ -208,9 +215,11 @@ class _ExpansionTileContentState extends State<_ExpansionTileContent> {
       ),
       trailing: ValueListenableBuilder(
         valueListenable: isExpanded,
-        builder: (context, value, child) => value
-            ? const Icon(UniconsLine.angle_down)
-            : const Icon(UniconsLine.angle_up),
+        builder:
+            (context, value, child) =>
+                value
+                    ? const Icon(UniconsLine.angle_down)
+                    : const Icon(UniconsLine.angle_up),
       ),
       expandedCrossAxisAlignment: CrossAxisAlignment.start,
       collapsedBackgroundColor: widget.contentModel.color,
@@ -248,9 +257,9 @@ class _ContentItem extends StatelessWidget {
               subcontentModel.urls.isEmpty
                   ? BodyLargeText(subcontentModel.title)
                   : LinkText(
-                      text: subcontentModel.title,
-                      links: subcontentModel.urls,
-                    ),
+                    text: subcontentModel.title,
+                    links: subcontentModel.urls,
+                  ),
               if (subcontentModel.subtitle.isNotEmpty)
                 BodySmallText(subcontentModel.subtitle),
             ],
@@ -260,7 +269,7 @@ class _ContentItem extends StatelessWidget {
           IconButton(
             onPressed: () => {},
             icon: const Icon(UniconsLine.info_circle),
-          )
+          ),
       ],
     );
   }

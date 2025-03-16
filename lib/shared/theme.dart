@@ -360,20 +360,20 @@ class MaterialTheme {
   }
 
   ThemeData theme(ColorScheme colorScheme) => ThemeData(
-        useMaterial3: true,
-        brightness: colorScheme.brightness,
-        colorScheme: colorScheme,
-        textTheme: textTheme.apply(
-          bodyColor: colorScheme.onSurface,
-          displayColor: colorScheme.onSurface,
-        ),
-        scaffoldBackgroundColor: colorScheme.surface,
-        canvasColor: colorScheme.surface,
-        cardTheme: CardTheme(
-          color: colorScheme.secondaryContainer,
-          shadowColor: colorScheme.shadow,
-        ),
-      );
+    useMaterial3: true,
+    brightness: colorScheme.brightness,
+    colorScheme: colorScheme,
+    textTheme: textTheme.apply(
+      bodyColor: colorScheme.onSurface,
+      displayColor: colorScheme.onSurface,
+    ),
+    scaffoldBackgroundColor: colorScheme.surface,
+    canvasColor: colorScheme.surface,
+    cardTheme: CardTheme(
+      color: colorScheme.secondaryContainer,
+      shadowColor: colorScheme.shadow,
+    ),
+  );
 
   List<ExtendedColor> get extendedColors => [];
 }

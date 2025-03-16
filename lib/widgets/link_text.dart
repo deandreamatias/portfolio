@@ -28,15 +28,16 @@ class LinkText extends StatelessWidget {
           TextSpan(
             text: key,
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: Theme.of(context).colorScheme.primary,
-                  decoration: TextDecoration.underline,
-                  decorationColor: Theme.of(context).colorScheme.primary,
-                ),
-            recognizer: TapGestureRecognizer()
-              ..onTap = () async {
-                final url = links[key];
-                if (url != null) openLink(url);
-              },
+              color: Theme.of(context).colorScheme.primary,
+              decoration: TextDecoration.underline,
+              decorationColor: Theme.of(context).colorScheme.primary,
+            ),
+            recognizer:
+                TapGestureRecognizer()
+                  ..onTap = () async {
+                    final url = links[key];
+                    if (url != null) openLink(url);
+                  },
           ),
         );
         // Recursively process the text after the link
@@ -47,10 +48,7 @@ class LinkText extends StatelessWidget {
 
     if (!foundLink) {
       spans.add(
-        TextSpan(
-          text: text,
-          style: Theme.of(context).textTheme.bodyLarge,
-        ),
+        TextSpan(text: text, style: Theme.of(context).textTheme.bodyLarge),
       );
     }
 

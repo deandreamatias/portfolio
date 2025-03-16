@@ -28,9 +28,10 @@ class HomeViewState extends State<HomeView> {
               SingleChildScrollView(
                 // Dynamic padding for avoid footer overlap
                 padding: EdgeInsets.only(
-                  bottom: context.isExtraExtraSmall
-                      ? 241
-                      : context.isExtraSmall
+                  bottom:
+                      context.isExtraExtraSmall
+                          ? 241
+                          : context.isExtraSmall
                           ? 137
                           : 81,
                 ),
@@ -38,18 +39,12 @@ class HomeViewState extends State<HomeView> {
                   constraints: BoxConstraints(minHeight: constraints.maxHeight),
                   child: const IntrinsicHeight(
                     child: Column(
-                      children: [
-                        Header(),
-                        Flexible(child: Content()),
-                      ],
+                      children: [Header(), Flexible(child: Content())],
                     ),
                   ),
                 ),
               ),
-              const Align(
-                alignment: Alignment.bottomCenter,
-                child: Footer(),
-              ),
+              const Align(alignment: Alignment.bottomCenter, child: Footer()),
             ],
           );
         },
@@ -59,9 +54,7 @@ class HomeViewState extends State<HomeView> {
 }
 
 class Footer extends StatelessWidget {
-  const Footer({
-    super.key,
-  });
+  const Footer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -71,8 +64,9 @@ class Footer extends StatelessWidget {
         color: Theme.of(context).scaffoldBackgroundColor,
         border: Border(
           top: BorderSide(
-            color:
-                Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.3),
+            color: Theme.of(
+              context,
+            ).colorScheme.onSurface.withValues(alpha: 0.3),
             width: 1,
           ),
         ),

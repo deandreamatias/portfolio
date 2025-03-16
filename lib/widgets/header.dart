@@ -38,9 +38,10 @@ class Header extends StatelessWidget {
                 alignment: WrapAlignment.center,
                 spacing: 4,
                 runSpacing: 8,
-                children: skills
-                    .map((String skill) => BodyMediumText(skill))
-                    .toList(),
+                children:
+                    skills
+                        .map((String skill) => BodyMediumText(skill))
+                        .toList(),
               ),
             ],
           ),

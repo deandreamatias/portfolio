@@ -21,10 +21,14 @@ extension ThemeExtension on BuildContext {
     required String displayFontString,
   }) {
     TextTheme baseTextTheme = Theme.of(this).textTheme;
-    TextTheme bodyTextTheme =
-        GoogleFonts.getTextTheme(bodyFontString, baseTextTheme);
-    TextTheme displayTextTheme =
-        GoogleFonts.getTextTheme(displayFontString, baseTextTheme);
+    TextTheme bodyTextTheme = GoogleFonts.getTextTheme(
+      bodyFontString,
+      baseTextTheme,
+    );
+    TextTheme displayTextTheme = GoogleFonts.getTextTheme(
+      displayFontString,
+      baseTextTheme,
+    );
     TextTheme textTheme = displayTextTheme.copyWith(
       bodyLarge: bodyTextTheme.bodyLarge,
       bodyMedium: bodyTextTheme.bodyMedium,
