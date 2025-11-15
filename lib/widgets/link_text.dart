@@ -32,12 +32,11 @@ class LinkText extends StatelessWidget {
               decoration: TextDecoration.underline,
               decorationColor: Theme.of(context).colorScheme.primary,
             ),
-            recognizer:
-                TapGestureRecognizer()
-                  ..onTap = () async {
-                    final url = links[key];
-                    if (url != null) openLink(url);
-                  },
+            recognizer: TapGestureRecognizer()
+              ..onTap = () async {
+                final url = links[key];
+                if (url != null) openLink(url);
+              },
           ),
         );
         // Recursively process the text after the link

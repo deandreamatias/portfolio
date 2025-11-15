@@ -28,18 +28,20 @@ class HomeViewState extends State<HomeView> {
               SingleChildScrollView(
                 // Dynamic padding for avoid footer overlap
                 padding: EdgeInsets.only(
-                  bottom:
-                      context.isExtraExtraSmall
-                          ? 241
-                          : context.isExtraSmall
-                          ? 137
-                          : 81,
+                  bottom: context.isExtraExtraSmall
+                      ? 241
+                      : context.isExtraSmall
+                      ? 137
+                      : 81,
                 ),
                 child: ConstrainedBox(
                   constraints: BoxConstraints(minHeight: constraints.maxHeight),
                   child: const IntrinsicHeight(
                     child: Column(
-                      children: [Header(), Flexible(child: Content())],
+                      children: [
+                        Header(),
+                        Flexible(child: Content()),
+                      ],
                     ),
                   ),
                 ),
