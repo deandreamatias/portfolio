@@ -98,8 +98,13 @@ class Content extends StatelessWidget {
           ),
           ContentModel(title: AppLocalizations.of(context).where_communities),
           ContentModel(
-            title: AppLocalizations.of(context).where_writing(UrlKeys.medium),
-            urls: {UrlKeys.medium: Uri.parse(Urls.medium)},
+            title: AppLocalizations.of(
+              context,
+            ).where_writing(UrlKeys.medium, UrlKeys.telegram),
+            urls: {
+              UrlKeys.medium: Uri.parse(Urls.medium),
+              UrlKeys.telegram: Uri.parse(Urls.telegramFlutterUniverse),
+            },
           ),
           ContentModel(
             title: AppLocalizations.of(context).where_podcast(

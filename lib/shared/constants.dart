@@ -15,6 +15,7 @@ class Urls {
       'https://youtube.com/playlist?list=PL47j3mLiYhbh763kwspHLXlfedT6n-lYO&feature=shared';
   static const String brazilTechExpats =
       'https://brazil-tech-expats.deandreamatias.com/home/spain/';
+  static const String telegramFlutterUniverse = 'https://t.me/flutteruniverse';
 }
 
 class UrlKeys {
@@ -23,6 +24,7 @@ class UrlKeys {
   static const String stackOverflow = 'StackOverflow';
   static const String youtube = 'YouTube';
   static const String medium = 'Medium';
+  static const String telegram = 'Telegram';
   static const String universoFlutter = 'Universo Flutter';
   static const String ondaFC = 'OndaFC';
   static const String blueSky = 'Bluesky';
