@@ -32,6 +32,7 @@ lib/config/env.dart
 /dev/docs/lib/
 /dev/docs/pubspec.yaml
 /packages/flutter/coverage/
+/lib/l10n/gen_l10n/
 version
 
 # packages file containing multi-root paths

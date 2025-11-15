@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
 import 'package:portfolio/shared/constants.dart';
 import 'package:portfolio/shared/context_extensions.dart';
 import 'package:portfolio/shared/sizes.dart';
@@ -44,121 +44,119 @@ class Content extends StatelessWidget {
     final List<ColumnModel> content = [
       ColumnModel(
         color: Theme.of(context).colorScheme.surfaceContainerHighest,
-        title: AppLocalizations.of(context)!.who_title,
+        title: AppLocalizations.of(context).who_title,
         content: [
-          ContentModel(title: AppLocalizations.of(context)!.who_is_mobile),
-          ContentModel(title: AppLocalizations.of(context)!.who_communities),
-          ContentModel(title: AppLocalizations.of(context)!.who_writer),
-          ContentModel(title: AppLocalizations.of(context)!.who_podcast),
+          ContentModel(title: AppLocalizations.of(context).who_is_mobile),
+          ContentModel(title: AppLocalizations.of(context).who_communities),
+          ContentModel(title: AppLocalizations.of(context).who_writer),
+          ContentModel(title: AppLocalizations.of(context).who_podcast),
           ContentModel(
-            title: AppLocalizations.of(context)!.who_football,
-            subtitle: AppLocalizations.of(context)!.who_secondary_football,
+            title: AppLocalizations.of(context).who_football,
+            subtitle: AppLocalizations.of(context).who_secondary_football,
           ),
           ContentModel(
-            title: AppLocalizations.of(context)!.who_nationality,
-            subtitle: AppLocalizations.of(context)!.who_secondary_nationality,
+            title: AppLocalizations.of(context).who_nationality,
+            subtitle: AppLocalizations.of(context).who_secondary_nationality,
           ),
-          ContentModel(title: AppLocalizations.of(context)!.who_family),
-          ContentModel(title: AppLocalizations.of(context)!.who_pets),
+          ContentModel(title: AppLocalizations.of(context).who_family),
+          ContentModel(title: AppLocalizations.of(context).who_pets),
         ],
       ),
       ColumnModel(
         color: Theme.of(context).colorScheme.surfaceContainer,
-        title: AppLocalizations.of(context)!.what_title,
+        title: AppLocalizations.of(context).what_title,
         content: [
-          ContentModel(title: AppLocalizations.of(context)!.what_mobile),
-          ContentModel(title: AppLocalizations.of(context)!.what_contribute),
-          ContentModel(title: AppLocalizations.of(context)!.what_videos),
-          ContentModel(title: AppLocalizations.of(context)!.what_writing),
-          ContentModel(title: AppLocalizations.of(context)!.what_podcast),
-          ContentModel(title: AppLocalizations.of(context)!.what_languages),
+          ContentModel(title: AppLocalizations.of(context).what_mobile),
+          ContentModel(title: AppLocalizations.of(context).what_contribute),
+          ContentModel(title: AppLocalizations.of(context).what_videos),
+          ContentModel(title: AppLocalizations.of(context).what_writing),
+          ContentModel(title: AppLocalizations.of(context).what_podcast),
+          ContentModel(title: AppLocalizations.of(context).what_languages),
         ],
       ),
       ColumnModel(
         color: Theme.of(context).colorScheme.surfaceContainerHighest,
-        title: AppLocalizations.of(context)!.where_title,
+        title: AppLocalizations.of(context).where_title,
         content: [
-          ContentModel(title: AppLocalizations.of(context)!.where_live),
+          ContentModel(title: AppLocalizations.of(context).where_live),
           ContentModel(
-            title: AppLocalizations.of(context)!.where_work(UrlKeys.linkedIn),
+            title: AppLocalizations.of(context).where_work(UrlKeys.linkedIn),
             urls: {UrlKeys.linkedIn: Uri.parse(Urls.linkedin)},
           ),
           ContentModel(
             title: AppLocalizations.of(
               context,
-            )!.where_contribute(UrlKeys.gitHub, UrlKeys.stackOverflow),
+            ).where_contribute(UrlKeys.gitHub, UrlKeys.stackOverflow),
             urls: {
               UrlKeys.gitHub: Uri.parse(Urls.github),
               UrlKeys.stackOverflow: Uri.parse(Urls.stackoverflow),
             },
           ),
           ContentModel(
-            title: AppLocalizations.of(context)!.where_videos(UrlKeys.youtube),
+            title: AppLocalizations.of(context).where_videos(UrlKeys.youtube),
             urls: {UrlKeys.youtube: Uri.parse(Urls.youtube)},
           ),
-          ContentModel(title: AppLocalizations.of(context)!.where_communities),
+          ContentModel(title: AppLocalizations.of(context).where_communities),
           ContentModel(
-            title: AppLocalizations.of(context)!.where_writing(UrlKeys.medium),
+            title: AppLocalizations.of(context).where_writing(UrlKeys.medium),
             urls: {UrlKeys.medium: Uri.parse(Urls.medium)},
           ),
           ContentModel(
-            title: AppLocalizations.of(context)!.where_podcast(
-              AppLocalizations.of(context)!.where_podcast_participation,
+            title: AppLocalizations.of(context).where_podcast(
+              AppLocalizations.of(context).where_podcast_participation,
               UrlKeys.universoFlutter,
             ),
             urls: {
               UrlKeys.universoFlutter: Uri.parse(Urls.podcast),
-              AppLocalizations.of(context)!.where_podcast_participation:
+              AppLocalizations.of(context).where_podcast_participation:
                   Uri.parse(Urls.podcastParticipations),
             },
           ),
           ContentModel(
-            title: AppLocalizations.of(context)!.where_football(UrlKeys.ondaFC),
+            title: AppLocalizations.of(context).where_football(UrlKeys.ondaFC),
             urls: {UrlKeys.ondaFC: Uri.parse(Urls.ondaFC)},
           ),
           ContentModel(
             title: AppLocalizations.of(
               context,
-            )!.where_family_and_pets(UrlKeys.blueSky),
+            ).where_family_and_pets(UrlKeys.blueSky),
             urls: {UrlKeys.blueSky: Uri.parse(Urls.bluesky)},
           ),
         ],
       ),
       ColumnModel(
         color: Theme.of(context).colorScheme.surfaceContainer,
-        title: AppLocalizations.of(context)!.when_title,
+        title: AppLocalizations.of(context).when_title,
         content: [
-          ContentModel(title: AppLocalizations.of(context)!.when_age(29)),
-          ContentModel(title: AppLocalizations.of(context)!.when_work),
-          ContentModel(title: AppLocalizations.of(context)!.when_balance),
+          ContentModel(title: AppLocalizations.of(context).when_age(29)),
+          ContentModel(title: AppLocalizations.of(context).when_work),
+          ContentModel(title: AppLocalizations.of(context).when_balance),
         ],
       ),
     ];
     return context.isMedium
         ? SizedBox(
-          width: context.isExtraLarge ? 1440 : double.infinity,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children:
-                content
-                    .map(
-                      (contentModel) => Expanded(
-                        child: _ColumnContent(contentModel: contentModel),
-                      ),
-                    )
-                    .toList(),
-          ),
-        )
-        : Column(
-          children:
-              content
+            width: context.isExtraLarge ? 1440 : double.infinity,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: content
                   .map(
-                    (contentModel) =>
-                        _ExpansionTileContent(contentModel: contentModel),
+                    (contentModel) => Expanded(
+                      child: _ColumnContent(contentModel: contentModel),
+                    ),
                   )
                   .toList(),
-        );
+            ),
+          )
+        : Column(
+            children: content
+                .map(
+                  (contentModel) =>
+                      _ExpansionTileContent(contentModel: contentModel),
+                )
+                .toList(),
+          );
   }
 }
 
@@ -215,11 +213,9 @@ class _ExpansionTileContentState extends State<_ExpansionTileContent> {
       ),
       trailing: ValueListenableBuilder(
         valueListenable: isExpanded,
-        builder:
-            (context, value, child) =>
-                value
-                    ? const Icon(UniconsLine.angle_down)
-                    : const Icon(UniconsLine.angle_up),
+        builder: (context, value, child) => value
+            ? const Icon(UniconsLine.angle_down)
+            : const Icon(UniconsLine.angle_up),
       ),
       expandedCrossAxisAlignment: CrossAxisAlignment.start,
       collapsedBackgroundColor: widget.contentModel.color,
@@ -257,9 +253,9 @@ class _ContentItem extends StatelessWidget {
               subcontentModel.urls.isEmpty
                   ? BodyLargeText(subcontentModel.title)
                   : LinkText(
-                    text: subcontentModel.title,
-                    links: subcontentModel.urls,
-                  ),
+                      text: subcontentModel.title,
+                      links: subcontentModel.urls,
+                    ),
               if (subcontentModel.subtitle.isNotEmpty)
                 BodySmallText(subcontentModel.subtitle),
             ],

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
 import 'package:portfolio/shared/context_extensions.dart';
 
 import 'shared/theme.dart';

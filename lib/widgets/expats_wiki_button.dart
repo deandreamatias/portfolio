@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
 import 'package:portfolio/shared/constants.dart';
 import 'package:portfolio/shared/navigate_links.dart';
 
@@ -11,7 +11,7 @@ class ExpatsWikiButton extends StatelessWidget {
     return TextButton(
       onPressed: () => openLink(Uri.parse(Urls.brazilTechExpats)),
       child: Text(
-        AppLocalizations.of(context)!.brazil_tech_expats,
+        AppLocalizations.of(context).brazil_tech_expats,
         textAlign: TextAlign.center,
       ),
     );

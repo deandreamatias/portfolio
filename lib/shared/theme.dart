@@ -369,7 +369,7 @@ class MaterialTheme {
     ),
     scaffoldBackgroundColor: colorScheme.surface,
     canvasColor: colorScheme.surface,
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       color: colorScheme.secondaryContainer,
       shadowColor: colorScheme.shadow,
     ),
