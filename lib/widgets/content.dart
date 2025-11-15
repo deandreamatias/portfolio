@@ -133,7 +133,9 @@ class Content extends StatelessWidget {
         color: Theme.of(context).colorScheme.surfaceContainer,
         title: AppLocalizations.of(context).when_title,
         content: [
-          ContentModel(title: AppLocalizations.of(context).when_age(29)),
+          ContentModel(
+            title: AppLocalizations.of(context).when_age(_calculateAge),
+          ),
           ContentModel(title: AppLocalizations.of(context).when_work),
           ContentModel(title: AppLocalizations.of(context).when_balance),
         ],
@@ -162,6 +164,22 @@ class Content extends StatelessWidget {
                 )
                 .toList(),
           );
+  }
+
+  int get _calculateAge {
+    final String birthday = const String.fromEnvironment(
+      'BIRTHDAY',
+      defaultValue: '2000-01-01',
+    );
+    DateTime birthDate = DateTime.parse(birthday);
+    DateTime currentDate = DateTime.now();
+    int age = currentDate.year - birthDate.year;
+    if (currentDate.month < birthDate.month ||
+        (currentDate.month == birthDate.month &&
+            currentDate.day < birthDate.day)) {
+      age--;
+    }
+    return age;
   }
 }
 
