@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/shared/context_extensions.dart';
 import 'package:portfolio/shared/sizes.dart';
 import 'package:portfolio/widgets/content.dart';
 import 'package:portfolio/widgets/expats_wiki_button.dart';
@@ -26,14 +25,6 @@ class HomeViewState extends State<HomeView> {
           return Stack(
             children: [
               SingleChildScrollView(
-                // Dynamic padding for avoid footer overlap
-                padding: EdgeInsets.only(
-                  bottom: context.isExtraExtraSmall
-                      ? 241
-                      : context.isExtraSmall
-                      ? 137
-                      : 81,
-                ),
                 child: ConstrainedBox(
                   constraints: BoxConstraints(minHeight: constraints.maxHeight),
                   child: const IntrinsicHeight(

@@ -156,13 +156,24 @@ class Content extends StatelessWidget {
                   .toList(),
             ),
           )
-        : Column(
-            children: content
-                .map(
-                  (contentModel) =>
-                      _ExpansionTileContent(contentModel: contentModel),
-                )
-                .toList(),
+        : Padding(
+            padding:
+                // Dynamic padding for avoid footer overlap
+                EdgeInsets.only(
+                  bottom: context.isExtraExtraSmall
+                      ? 241
+                      : context.isExtraSmall
+                      ? 137
+                      : 81,
+                ),
+            child: Column(
+              children: content
+                  .map(
+                    (contentModel) =>
+                        _ExpansionTileContent(contentModel: contentModel),
+                  )
+                  .toList(),
+            ),
           );
   }
 
@@ -192,7 +203,16 @@ class _ColumnContent extends StatelessWidget {
     return ColoredBox(
       color: contentModel.color,
       child: Padding(
-        padding: const EdgeInsets.all(Sizes.medium),
+        padding:
+            const EdgeInsets.all(Sizes.medium) +
+            // Dynamic padding for avoid footer overlap
+            EdgeInsets.only(
+              bottom: context.isExtraExtraSmall
+                  ? 241
+                  : context.isExtraSmall
+                  ? 137
+                  : 81,
+            ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
