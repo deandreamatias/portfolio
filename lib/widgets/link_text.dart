@@ -27,6 +27,7 @@ class LinkText extends StatelessWidget {
         spans.add(
           TextSpan(
             text: key,
+            semanticsLabel: key,
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
               color: Theme.of(context).colorScheme.primary,
               decoration: TextDecoration.underline,

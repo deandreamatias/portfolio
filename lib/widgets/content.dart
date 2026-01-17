@@ -26,13 +26,11 @@ class ContentModel {
   final String title;
   final String subtitle;
   final Map<String, Uri> urls;
-  final String infoId;
 
   const ContentModel({
     required this.title,
     this.subtitle = '',
     this.urls = const {},
-    this.infoId = '',
   }) : assert(title.length > 0, 'Title must not be empty');
 }
 
@@ -219,7 +217,10 @@ class _ColumnContent extends StatelessWidget {
           children: <Widget>[
             Align(
               alignment: Alignment.topCenter,
-              child: TitleLargeText(contentModel.title),
+              child: Semantics(
+                header: true,
+                child: TitleLargeText(contentModel.title),
+              ),
             ),
             const SizedBox(height: Sizes.medium),
             for (final ContentModel item in contentModel.content)
@@ -264,7 +265,10 @@ class _ExpansionTileContentState extends State<_ExpansionTileContent> {
       collapsedBackgroundColor: widget.contentModel.color,
       backgroundColor: widget.contentModel.color,
       shape: const RoundedRectangleBorder(),
-      title: TitleLargeText(widget.contentModel.title),
+      title: Semantics(
+        header: true,
+        child: TitleLargeText(widget.contentModel.title),
+      ),
       children: <Widget>[
         for (final ContentModel item in widget.contentModel.content)
           SizedBox(
@@ -304,11 +308,6 @@ class _ContentItem extends StatelessWidget {
             ],
           ),
         ),
-        if (subcontentModel.infoId.isNotEmpty)
-          IconButton(
-            onPressed: () => {},
-            icon: const Icon(UniconsLine.info_circle),
-          ),
       ],
     );
   }

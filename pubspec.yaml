@@ -18,6 +18,8 @@ dependencies:
   url_launcher: ^6.3.2
 
 dev_dependencies: 
+  flutter_test:
+    sdk: flutter
   flutter_lints: ^6.0.0
 
 flutter:

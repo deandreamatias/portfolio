@@ -30,9 +30,12 @@ class Header extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.all(Sizes.large),
-                child: DisplayLargeText(Constants.name),
+              Padding(
+                padding: const EdgeInsets.all(Sizes.large),
+                child: Semantics(
+                  header: true,
+                  child: const DisplayLargeText(Constants.name),
+                ),
               ),
               Wrap(
                 alignment: WrapAlignment.center,

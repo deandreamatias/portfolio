@@ -5,8 +5,14 @@ import 'package:portfolio/shared/context_extensions.dart';
 import 'shared/theme.dart';
 import 'views/home.dart';
 
+import 'package:flutter/semantics.dart';
+import 'package:flutter/foundation.dart';
+
 Future<void> main() async {
   runApp(const App());
+  if (kIsWeb) {
+    SemanticsBinding.instance.ensureSemantics();
+  }
 }
 
 class App extends StatelessWidget {
