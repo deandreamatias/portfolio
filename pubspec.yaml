@@ -4,15 +4,15 @@ version: 2.3.0
 code: 18
 
 environment:
-  sdk: ">=3.9.0 <4.0.0"
-  flutter: ">=3.35.0"
+  sdk: ">=3.10.0 <4.0.0"
+  flutter: ">=3.38.0"
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  google_fonts: ^6.3.2
+  google_fonts: ^8.0.0
   intl: ^0.20.2
   unicons: ^3.0.0
   url_launcher: ^6.3.2
