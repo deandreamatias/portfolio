@@ -37,7 +37,7 @@ class HomeViewState extends State<HomeView> {
                   ),
                 ),
               ),
-              const Align(alignment: Alignment.bottomCenter, child: Footer()),
+              const Align(alignment: .bottomCenter, child: Footer()),
             ],
           );
         },
@@ -52,7 +52,7 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+      width: .infinity,
       decoration: BoxDecoration(
         color: Theme.of(context).scaffoldBackgroundColor,
         border: Border(
@@ -64,12 +64,12 @@ class Footer extends StatelessWidget {
           ),
         ),
       ),
-      padding: const EdgeInsets.symmetric(vertical: Sizes.large),
+      padding: const .symmetric(vertical: Sizes.large),
       child: const Wrap(
-        alignment: WrapAlignment.center,
+        alignment: .center,
         spacing: Sizes.medium,
         runSpacing: Sizes.medium,
-        crossAxisAlignment: WrapCrossAlignment.center,
+        crossAxisAlignment: .center,
         children: [
           Username(),
           ExpatsWikiButton(),

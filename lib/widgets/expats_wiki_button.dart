@@ -9,10 +9,10 @@ class ExpatsWikiButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () => openLink(Uri.parse(Urls.brazilTechExpats)),
+      onPressed: () => openLink(.parse(Urls.brazilTechExpats)),
       child: Text(
         AppLocalizations.of(context).brazil_tech_expats,
-        textAlign: TextAlign.center,
+        textAlign: .center,
       ),
     );
   }

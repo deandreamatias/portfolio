@@ -24,21 +24,21 @@ class Header extends StatelessWidget {
     return ColoredBox(
       color: Theme.of(context).colorScheme.surface,
       child: Padding(
-        padding: const EdgeInsets.all(Sizes.large),
+        padding: const .all(Sizes.large),
         child: SizedBox(
-          width: double.infinity,
+          width: .infinity,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: .center,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.all(Sizes.large),
+                padding: const .all(Sizes.large),
                 child: Semantics(
                   header: true,
                   child: const DisplayLargeText(Constants.name),
                 ),
               ),
               Wrap(
-                alignment: WrapAlignment.center,
+                alignment: .center,
                 spacing: 4,
                 runSpacing: 8,
                 children: skills

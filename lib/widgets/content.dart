@@ -79,20 +79,20 @@ class Content extends StatelessWidget {
           ContentModel(title: AppLocalizations.of(context).where_live),
           ContentModel(
             title: AppLocalizations.of(context).where_work(UrlKeys.linkedIn),
-            urls: {UrlKeys.linkedIn: Uri.parse(Urls.linkedin)},
+            urls: {UrlKeys.linkedIn: .parse(Urls.linkedin)},
           ),
           ContentModel(
             title: AppLocalizations.of(
               context,
             ).where_contribute(UrlKeys.gitHub, UrlKeys.stackOverflow),
             urls: {
-              UrlKeys.gitHub: Uri.parse(Urls.github),
-              UrlKeys.stackOverflow: Uri.parse(Urls.stackoverflow),
+              UrlKeys.gitHub: .parse(Urls.github),
+              UrlKeys.stackOverflow: .parse(Urls.stackoverflow),
             },
           ),
           ContentModel(
             title: AppLocalizations.of(context).where_videos(UrlKeys.youtube),
-            urls: {UrlKeys.youtube: Uri.parse(Urls.youtube)},
+            urls: {UrlKeys.youtube: .parse(Urls.youtube)},
           ),
           ContentModel(title: AppLocalizations.of(context).where_communities),
           ContentModel(
@@ -100,8 +100,8 @@ class Content extends StatelessWidget {
               context,
             ).where_writing(UrlKeys.medium, UrlKeys.telegram),
             urls: {
-              UrlKeys.medium: Uri.parse(Urls.medium),
-              UrlKeys.telegram: Uri.parse(Urls.telegramFlutterUniverse),
+              UrlKeys.medium: .parse(Urls.medium),
+              UrlKeys.telegram: .parse(Urls.telegramFlutterUniverse),
             },
           ),
           ContentModel(
@@ -110,20 +110,21 @@ class Content extends StatelessWidget {
               UrlKeys.universoFlutter,
             ),
             urls: {
-              UrlKeys.universoFlutter: Uri.parse(Urls.podcast),
-              AppLocalizations.of(context).where_podcast_participation:
-                  Uri.parse(Urls.podcastParticipations),
+              UrlKeys.universoFlutter: .parse(Urls.podcast),
+              AppLocalizations.of(context).where_podcast_participation: .parse(
+                Urls.podcastParticipations,
+              ),
             },
           ),
           ContentModel(
             title: AppLocalizations.of(context).where_football(UrlKeys.ondaFC),
-            urls: {UrlKeys.ondaFC: Uri.parse(Urls.ondaFC)},
+            urls: {UrlKeys.ondaFC: .parse(Urls.ondaFC)},
           ),
           ContentModel(
             title: AppLocalizations.of(
               context,
             ).where_family_and_pets(UrlKeys.blueSky),
-            urls: {UrlKeys.blueSky: Uri.parse(Urls.bluesky)},
+            urls: {UrlKeys.blueSky: .parse(Urls.bluesky)},
           ),
         ],
       ),
@@ -143,8 +144,8 @@ class Content extends StatelessWidget {
         ? SizedBox(
             width: context.isExtraLarge ? 1440 : double.infinity,
             child: Row(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: .min,
+              crossAxisAlignment: .start,
               children: content
                   .map(
                     (contentModel) => Expanded(
@@ -157,7 +158,7 @@ class Content extends StatelessWidget {
         : Padding(
             padding:
                 // Dynamic padding for avoid footer overlap
-                EdgeInsets.only(
+                .only(
                   bottom: context.isExtraExtraSmall
                       ? 241
                       : context.isExtraSmall
@@ -180,8 +181,8 @@ class Content extends StatelessWidget {
       'BIRTHDAY',
       defaultValue: '2000-01-01',
     );
-    DateTime birthDate = DateTime.parse(birthday);
-    DateTime currentDate = DateTime.now();
+    DateTime birthDate = .parse(birthday);
+    DateTime currentDate = .now();
     int age = currentDate.year - birthDate.year;
     if (currentDate.month < birthDate.month ||
         (currentDate.month == birthDate.month &&
@@ -204,7 +205,7 @@ class _ColumnContent extends StatelessWidget {
         padding:
             const EdgeInsets.all(Sizes.medium) +
             // Dynamic padding for avoid footer overlap
-            EdgeInsets.only(
+            .only(
               bottom: context.isExtraExtraSmall
                   ? 241
                   : context.isExtraSmall
@@ -212,11 +213,11 @@ class _ColumnContent extends StatelessWidget {
                   : 81,
             ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: .start,
+          crossAxisAlignment: .start,
           children: <Widget>[
             Align(
-              alignment: Alignment.topCenter,
+              alignment: .topCenter,
               child: Semantics(
                 header: true,
                 child: TitleLargeText(contentModel.title),
@@ -261,7 +262,7 @@ class _ExpansionTileContentState extends State<_ExpansionTileContent> {
             ? const Icon(UniconsLine.angle_down)
             : const Icon(UniconsLine.angle_up),
       ),
-      expandedCrossAxisAlignment: CrossAxisAlignment.start,
+      expandedCrossAxisAlignment: .start,
       collapsedBackgroundColor: widget.contentModel.color,
       backgroundColor: widget.contentModel.color,
       shape: const RoundedRectangleBorder(),
@@ -294,8 +295,8 @@ class _ContentItem extends StatelessWidget {
       children: [
         Expanded(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: .start,
+            mainAxisSize: .min,
             children: <Widget>[
               subcontentModel.urls.isEmpty
                   ? BodyLargeText(subcontentModel.title)

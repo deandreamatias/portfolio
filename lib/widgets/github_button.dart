@@ -9,10 +9,10 @@ class GithubButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () => openLink(Uri.parse(Urls.github)),
+      onPressed: () => openLink(.parse(Urls.github)),
       child: Text(
         AppLocalizations.of(context).github_button,
-        textAlign: TextAlign.center,
+        textAlign: .center,
       ),
     );
   }

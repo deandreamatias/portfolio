@@ -9,7 +9,7 @@ class DisplayLargeText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      textAlign: TextAlign.center,
+      textAlign: .center,
       style: Theme.of(context).textTheme.displayLarge?.copyWith(
         color: Theme.of(context).colorScheme.onSurface,
       ),

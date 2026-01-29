@@ -9,11 +9,8 @@ class LinkedinButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      onPressed: () => openLink(Uri.parse(Urls.linkedin)),
-      child: Text(
-        AppLocalizations.of(context).cv_button,
-        textAlign: TextAlign.center,
-      ),
+      onPressed: () => openLink(.parse(Urls.linkedin)),
+      child: Text(AppLocalizations.of(context).cv_button, textAlign: .center),
     );
   }
 }

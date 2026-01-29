@@ -30,7 +30,7 @@ class LinkText extends StatelessWidget {
             semanticsLabel: key,
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
               color: Theme.of(context).colorScheme.primary,
-              decoration: TextDecoration.underline,
+              decoration: .underline,
               decorationColor: Theme.of(context).colorScheme.primary,
             ),
             recognizer: TapGestureRecognizer()

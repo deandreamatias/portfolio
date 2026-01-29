@@ -31,7 +31,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'deandreamatias | Mobile developer with Flutter',
-      theme: brightness == Brightness.light ? theme.light() : theme.dark(),
+      theme: brightness == .light ? theme.light() : theme.dark(),
       initialRoute: HomeView.route,
       routes: <String, WidgetBuilder>{
         HomeView.route: (BuildContext context) => const HomeView(),

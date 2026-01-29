@@ -10,7 +10,7 @@ class TitleMediumText extends StatelessWidget {
     return Text(
       text,
       style: Theme.of(context).textTheme.titleMedium,
-      textAlign: TextAlign.center,
+      textAlign: .center,
       maxLines: 2,
     );
   }

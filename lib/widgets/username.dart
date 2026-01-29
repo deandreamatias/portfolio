@@ -8,7 +8,7 @@ class Username extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.all(Sizes.medium),
+      padding: .all(Sizes.medium),
       child: TitleMediumText(Constants.username),
     );
   }

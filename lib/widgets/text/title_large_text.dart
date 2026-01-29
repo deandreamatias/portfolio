@@ -10,7 +10,7 @@ class TitleLargeText extends StatelessWidget {
     return Text(
       text,
       style: Theme.of(context).textTheme.titleLarge,
-      textAlign: TextAlign.center,
+      textAlign: .center,
       maxLines: 2,
     );
   }
