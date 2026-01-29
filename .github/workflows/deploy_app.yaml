@@ -20,7 +20,7 @@ jobs:
     - name: Code analyze 
       run: flutter analyze
     - name: Build web app
-      run: flutter build web --dart-define=birthday='${{ secrets.BIRTHDAY }}'
+      run: flutter build web --dart-define=BIRTHDAY='${{ secrets.BIRTHDAY }}'
     - name: Upload web build
       uses: actions/upload-artifact@v4
       with:
