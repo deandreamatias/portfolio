@@ -28,7 +28,7 @@ This project has been built using the [Flutter](https://flutter.dev/) framework,
 
 ## Run
 
-CLI Debug: `flutter run`
+CLI Debug: `flutter run --dart-define=BIRTHDAY=2000-01-01`
 
 ## Author
 
