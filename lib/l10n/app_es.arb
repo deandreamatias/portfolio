@@ -42,5 +42,16 @@
     "skills_five": "mediador",
     "brazil_tech_expats": "Brazil Tech Expats (Wiki)",
     "cv_button": "CV",
-    "github_button": "Contribuciones de código abierto"
+    "github_button": "Contribuciones de código abierto",
+    "appTitle": "deandreamatias | Desarrollador móvil con Flutter",
+    "homeSubtitle": "un desarrollador de soluciones",
+    "navProjects": "Proyectos",
+    "navTrajectory": "Trayectoria",
+    "navAboutMe": "Sobre mí",
+    "navContact": "Contacto",
+    "homeNavigationPrevious": "Opción anterior",
+    "homeNavigationNext": "Opción siguiente",
+    "homeNavigationRegion": "Opciones de navegación de inicio",
+    "homeNavigationPosition": "Opción {current} de {total}",
+    "sectionComingSoon": "La sección {section} estará disponible pronto"
 }

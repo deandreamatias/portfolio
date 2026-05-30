@@ -1,82 +1,107 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
+import 'package:portfolio/shared/context_extensions.dart';
 import 'package:portfolio/shared/sizes.dart';
-import 'package:portfolio/widgets/content.dart';
-import 'package:portfolio/widgets/expats_wiki_button.dart';
-import 'package:portfolio/widgets/github_button.dart';
-import 'package:portfolio/widgets/header.dart';
-import 'package:portfolio/widgets/linkedin_button.dart';
+import 'package:portfolio/views/about_view.dart';
+import 'package:portfolio/views/contact_view.dart';
+import 'package:portfolio/views/projects_view.dart';
+import 'package:portfolio/views/trajectory_view.dart';
+import 'package:portfolio/widgets/home/models/home_navigation_option.dart';
+import 'package:portfolio/widgets/home/organisms/home_desktop_navigation_tiles.dart';
+import 'package:portfolio/widgets/home/organisms/home_hero.dart';
+import 'package:portfolio/widgets/home/organisms/home_mobile_navigation_swipe.dart';
 
-import '../widgets/username.dart';
-
-class HomeView extends StatefulWidget {
+class HomeView extends StatelessWidget {
   static const String route = '/';
+
   const HomeView({super.key});
 
-  @override
-  HomeViewState createState() => HomeViewState();
-}
+  void _navigateTo(BuildContext context, String routeName) {
+    Navigator.of(context).pushNamed(routeName);
+  }
 
-class HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
+    final AppLocalizations l10n = AppLocalizations.of(context);
+    final List<HomeNavigationOption> options = <HomeNavigationOption>[
+      HomeNavigationOption(label: l10n.navProjects, route: ProjectsView.route),
+      HomeNavigationOption(
+        label: l10n.navTrajectory,
+        route: TrajectoryView.route,
+      ),
+      HomeNavigationOption(label: l10n.navAboutMe, route: AboutView.route),
+      HomeNavigationOption(label: l10n.navContact, route: ContactView.route),
+    ];
+
     return Scaffold(
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          return Stack(
-            children: [
-              SingleChildScrollView(
+      body: context.isMedium
+          ? SafeArea(
+              bottom: false,
+              child: Center(
                 child: ConstrainedBox(
-                  constraints: BoxConstraints(minHeight: constraints.maxHeight),
-                  child: const IntrinsicHeight(
-                    child: Column(
-                      children: [
-                        Header(),
-                        Flexible(child: Content()),
-                      ],
+                  constraints: const BoxConstraints(maxWidth: 1280),
+                  child: Padding(
+                    padding: const EdgeInsets.only(
+                      left: Sizes.extraLarge,
+                      right: Sizes.extraLarge,
+                      top: Sizes.large,
+                    ),
+                    child: _DesktopLayout(
+                      options: options,
+                      onNavigate: (String r) => _navigateTo(context, r),
                     ),
                   ),
                 ),
               ),
-              const Align(alignment: .bottomCenter, child: Footer()),
-            ],
-          );
-        },
-      ),
+            )
+          : SafeArea(
+              bottom: false,
+              child: _MobileLayout(
+                options: options,
+                onNavigate: (String r) => _navigateTo(context, r),
+              ),
+            ),
     );
   }
 }
 
-class Footer extends StatelessWidget {
-  const Footer({super.key});
+class _DesktopLayout extends StatelessWidget {
+  const _DesktopLayout({required this.options, required this.onNavigate});
+
+  final List<HomeNavigationOption> options;
+  final ValueChanged<String> onNavigate;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: .infinity,
-      decoration: BoxDecoration(
-        color: Theme.of(context).scaffoldBackgroundColor,
-        border: Border(
-          top: BorderSide(
-            color: Theme.of(
-              context,
-            ).colorScheme.onSurface.withValues(alpha: 0.3),
-            width: 1,
+    return Column(
+      children: <Widget>[
+        const Expanded(child: Center(child: HomeHero())),
+        HomeDesktopNavigationTiles(options: options, onNavigate: onNavigate),
+      ],
+    );
+  }
+}
+
+class _MobileLayout extends StatelessWidget {
+  const _MobileLayout({required this.options, required this.onNavigate});
+
+  final List<HomeNavigationOption> options;
+  final ValueChanged<String> onNavigate;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Expanded(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: Sizes.extraLarge),
+              child: const HomeHero(),
+            ),
           ),
         ),
-      ),
-      padding: const .symmetric(vertical: Sizes.large),
-      child: const Wrap(
-        alignment: .center,
-        spacing: Sizes.medium,
-        runSpacing: Sizes.medium,
-        crossAxisAlignment: .center,
-        children: [
-          Username(),
-          ExpatsWikiButton(),
-          LinkedinButton(),
-          GithubButton(),
-        ],
-      ),
+        HomeMobileNavigationSwipe(options: options, onNavigate: onNavigate),
+      ],
     );
   }
 }

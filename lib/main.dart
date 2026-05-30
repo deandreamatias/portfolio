@@ -3,7 +3,11 @@ import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
 import 'package:portfolio/shared/context_extensions.dart';
 
 import 'shared/theme.dart';
+import 'views/about_view.dart';
+import 'views/contact_view.dart';
 import 'views/home.dart';
+import 'views/projects_view.dart';
+import 'views/trajectory_view.dart';
 
 import 'package:flutter/semantics.dart';
 import 'package:flutter/foundation.dart';
@@ -30,11 +34,16 @@ class App extends StatelessWidget {
     MaterialTheme theme = MaterialTheme(textTheme);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'deandreamatias | Mobile developer with Flutter',
+      onGenerateTitle: (BuildContext context) =>
+          AppLocalizations.of(context).appTitle,
       theme: brightness == .light ? theme.light() : theme.dark(),
       initialRoute: HomeView.route,
       routes: <String, WidgetBuilder>{
         HomeView.route: (BuildContext context) => const HomeView(),
+        ProjectsView.route: (BuildContext context) => const ProjectsView(),
+        TrajectoryView.route: (BuildContext context) => const TrajectoryView(),
+        AboutView.route: (BuildContext context) => const AboutView(),
+        ContactView.route: (BuildContext context) => const ContactView(),
       },
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,

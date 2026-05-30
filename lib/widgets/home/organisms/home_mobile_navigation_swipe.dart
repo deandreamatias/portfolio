@@ -1,0 +1,159 @@
+import 'package:flutter/material.dart';
+import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
+import 'package:portfolio/shared/sizes.dart';
+import 'package:portfolio/widgets/home/atoms/home_navigation_label.dart';
+import 'package:portfolio/widgets/home/models/home_navigation_option.dart';
+
+class HomeMobileNavigationSwipe extends StatefulWidget {
+  const HomeMobileNavigationSwipe({
+    required this.options,
+    required this.onNavigate,
+    super.key,
+  });
+
+  final List<HomeNavigationOption> options;
+  final ValueChanged<String> onNavigate;
+
+  @override
+  State<HomeMobileNavigationSwipe> createState() =>
+      _HomeMobileNavigationSwipeState();
+}
+
+class _HomeMobileNavigationSwipeState extends State<HomeMobileNavigationSwipe> {
+  late final PageController _pageController;
+  int _currentIndex = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    _pageController = PageController();
+  }
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
+
+  void _goToPrevious() {
+    _pageController.previousPage(
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+    );
+  }
+
+  void _goToNext() {
+    _pageController.nextPage(
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final AppLocalizations l10n = AppLocalizations.of(context);
+    final bool hasPrevious = _currentIndex > 0;
+    final bool hasNext = _currentIndex < widget.options.length - 1;
+
+    return Semantics(
+      container: true,
+      label: l10n.homeNavigationRegion,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: <Widget>[
+              // Left arrow — always occupies space to avoid layout shift
+              SizedBox(
+                width: 48,
+                height: 160,
+                child: hasPrevious
+                    ? Semantics(
+                        button: true,
+                        label: l10n.homeNavigationPrevious,
+                        child: IconButton(
+                          style: IconButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            foregroundColor: Theme.of(
+                              context,
+                            ).colorScheme.onSurface,
+                          ),
+                          icon: const Icon(Icons.chevron_left, size: 32),
+                          tooltip: l10n.homeNavigationPrevious,
+                          onPressed: _goToPrevious,
+                        ),
+                      )
+                    : null,
+              ),
+              // Card — fills all remaining space
+              Expanded(
+                child: SizedBox(
+                  height: 160,
+                  child: PageView.builder(
+                    controller: _pageController,
+                    itemCount: widget.options.length,
+                    onPageChanged: (int index) {
+                      setState(() => _currentIndex = index);
+                    },
+                    itemBuilder: (BuildContext context, int index) {
+                      final HomeNavigationOption option = widget.options[index];
+                      return Semantics(
+                        button: true,
+                        label: option.label,
+                        child: Material(
+                          color: Theme.of(
+                            context,
+                          ).colorScheme.surfaceContainerHigh,
+                          borderRadius: const BorderRadius.only(
+                            topLeft: Radius.circular(Sizes.extraLarge),
+                            topRight: Radius.circular(Sizes.extraLarge),
+                          ),
+                          child: InkWell(
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(Sizes.extraLarge),
+                              topRight: Radius.circular(Sizes.extraLarge),
+                            ),
+                            onTap: () => widget.onNavigate(option.route),
+                            child: Center(
+                              child: HomeNavigationLabel(
+                                label: option.label,
+                                isSelected: true,
+                              ),
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+              // Right arrow — always occupies space to avoid layout shift
+              SizedBox(
+                width: 48,
+                height: 160,
+                child: hasNext
+                    ? Semantics(
+                        button: true,
+                        label: l10n.homeNavigationNext,
+                        child: IconButton(
+                          style: IconButton.styleFrom(
+                            backgroundColor: Colors.transparent,
+                            foregroundColor: Theme.of(
+                              context,
+                            ).colorScheme.onSurface,
+                          ),
+                          icon: const Icon(Icons.chevron_right, size: 32),
+                          tooltip: l10n.homeNavigationNext,
+                          onPressed: _goToNext,
+                        ),
+                      )
+                    : null,
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
