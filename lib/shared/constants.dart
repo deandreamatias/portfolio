@@ -31,7 +31,7 @@ class UrlKeys {
 }
 
 class Constants {
-  static const String username = 'dendreamatias';
-  static const String name = 'Matias de Andrea';
+  static const String username = 'deandreamatias';
+  static const String name = 'Matías de Andrea';
   static const String separator = '·';
 }
