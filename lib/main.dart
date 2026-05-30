@@ -58,6 +58,7 @@ class App extends StatelessWidget {
       brightness: brightness,
       highContrast: highContrast,
       textStyles: baseTextStyles,
+      typographyVariant: context.typographyVariant,
     );
 
     return AppTheme(

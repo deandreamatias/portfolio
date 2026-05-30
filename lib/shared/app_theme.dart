@@ -2,6 +2,16 @@ import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/shared/theme.dart';
 
+enum AppTypographyVariant {
+  compact(0.8),
+  regular(1.0),
+  expanded(1.2);
+
+  const AppTypographyVariant(this.fontScale);
+
+  final double fontScale;
+}
+
 class AppColors {
   const AppColors({
     required this.surfaceTint,
@@ -166,9 +176,9 @@ class AppTextStyles {
     return AppTextStyles(
       displayLarge: GoogleFonts.getFont(
         displayFontString,
-        fontSize: 57,
+        fontSize: 90,
         fontWeight: FontWeight.w400,
-        height: 64 / 57,
+        height: 1,
         letterSpacing: -0.25,
       ),
       headlineSmall: GoogleFonts.getFont(
@@ -233,6 +243,26 @@ class AppTextStyles {
       bodySmall: bodySmall.copyWith(color: color),
     );
   }
+
+  AppTextStyles withScale(double scale) {
+    return AppTextStyles(
+      displayLarge: _scaled(displayLarge, scale),
+      headlineSmall: _scaled(headlineSmall, scale),
+      titleLarge: _scaled(titleLarge, scale),
+      titleMedium: _scaled(titleMedium, scale),
+      bodyLarge: _scaled(bodyLarge, scale),
+      bodyMedium: _scaled(bodyMedium, scale),
+      bodySmall: _scaled(bodySmall, scale),
+    );
+  }
+
+  TextStyle _scaled(TextStyle style, double scale) {
+    final double? fontSize = style.fontSize;
+    if (fontSize == null) {
+      return style;
+    }
+    return style.copyWith(fontSize: fontSize * scale);
+  }
 }
 
 class AppThemeData {
@@ -270,6 +300,7 @@ class AppThemeFactory {
     required Brightness brightness,
     required bool highContrast,
     required AppTextStyles textStyles,
+    AppTypographyVariant typographyVariant = AppTypographyVariant.regular,
   }) {
     final ThemePalette palette = switch ((brightness, highContrast)) {
       (Brightness.light, true) => ThemePalettes.lightHighContrast,
@@ -282,7 +313,9 @@ class AppThemeFactory {
     return AppThemeData(
       brightness: brightness,
       colors: colors,
-      textStyles: textStyles.withColor(colors.onSurface),
+      textStyles: textStyles
+          .withScale(typographyVariant.fontScale)
+          .withColor(colors.onSurface),
     );
   }
 }

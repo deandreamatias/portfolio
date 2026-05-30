@@ -2,8 +2,23 @@ import 'package:flutter/widgets.dart';
 import 'package:portfolio/shared/app_theme.dart';
 
 extension MediaQueryExtension on BuildContext {
-  double get width => MediaQuery.of(this).size.width;
-  double get height => MediaQuery.of(this).size.height;
+  double get width {
+    final MediaQueryData? mediaQuery = MediaQuery.maybeOf(this);
+    if (mediaQuery != null) {
+      return mediaQuery.size.width;
+    }
+    final view = View.of(this);
+    return view.physicalSize.width / view.devicePixelRatio;
+  }
+
+  double get height {
+    final MediaQueryData? mediaQuery = MediaQuery.maybeOf(this);
+    if (mediaQuery != null) {
+      return mediaQuery.size.height;
+    }
+    final view = View.of(this);
+    return view.physicalSize.height / view.devicePixelRatio;
+  }
 
   // Breakpoints
   bool get isExtraExtraSmall => width < 256;
@@ -13,6 +28,16 @@ extension MediaQueryExtension on BuildContext {
   bool get isLarge => width >= 1024;
   bool get isExtraLarge => width >= 1440;
   bool get isExtraExtraLarge => width >= 2560;
+
+  AppTypographyVariant get typographyVariant {
+    if (isExtraExtraSmall || isExtraSmall) {
+      return AppTypographyVariant.compact;
+    }
+    if (isExtraLarge || isExtraExtraLarge) {
+      return AppTypographyVariant.expanded;
+    }
+    return AppTypographyVariant.regular;
+  }
 }
 
 extension AppThemeExtension on BuildContext {
