@@ -1,15 +1,17 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:portfolio/shared/context_extensions.dart';
 
 class TitleLargeText extends StatelessWidget {
-  const TitleLargeText(this.text, {super.key});
+  const TitleLargeText(this.text, {this.style, super.key});
 
   final String text;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: Theme.of(context).textTheme.titleLarge,
+      style: style ?? context.appTextStyles.titleLarge,
       textAlign: .center,
       maxLines: 2,
     );

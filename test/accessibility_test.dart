@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:portfolio/main.dart';
+import 'package:unicons/unicons.dart';
 
 void main() {
   group('Accessibility Tests', () {
@@ -51,8 +52,8 @@ void main() {
 
       expect(find.byType(PageView), findsOneWidget);
       // Left arrow hidden on first page; right arrow visible since there are more options
-      expect(find.byIcon(Icons.chevron_left), findsNothing);
-      expect(find.byIcon(Icons.chevron_right), findsOneWidget);
+      expect(find.byIcon(UniconsLine.angle_left), findsNothing);
+      expect(find.byIcon(UniconsLine.angle_right), findsOneWidget);
 
       handle.dispose();
     });

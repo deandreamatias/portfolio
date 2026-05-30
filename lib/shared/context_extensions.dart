@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/widgets.dart';
+import 'package:portfolio/shared/app_theme.dart';
 
 extension MediaQueryExtension on BuildContext {
   double get width => MediaQuery.of(this).size.width;
@@ -15,28 +15,8 @@ extension MediaQueryExtension on BuildContext {
   bool get isExtraExtraLarge => width >= 2560;
 }
 
-extension ThemeExtension on BuildContext {
-  TextTheme createTextTheme({
-    required String bodyFontString,
-    required String displayFontString,
-  }) {
-    TextTheme baseTextTheme = Theme.of(this).textTheme;
-    TextTheme bodyTextTheme = GoogleFonts.getTextTheme(
-      bodyFontString,
-      baseTextTheme,
-    );
-    TextTheme displayTextTheme = GoogleFonts.getTextTheme(
-      displayFontString,
-      baseTextTheme,
-    );
-    TextTheme textTheme = displayTextTheme.copyWith(
-      bodyLarge: bodyTextTheme.bodyLarge,
-      bodyMedium: bodyTextTheme.bodyMedium,
-      bodySmall: bodyTextTheme.bodySmall,
-      labelLarge: bodyTextTheme.labelLarge,
-      labelMedium: bodyTextTheme.labelMedium,
-      labelSmall: bodyTextTheme.labelSmall,
-    );
-    return textTheme;
-  }
+extension AppThemeExtension on BuildContext {
+  AppThemeData get appTheme => AppTheme.of(this);
+  AppColors get appColors => appTheme.colors;
+  AppTextStyles get appTextStyles => appTheme.textStyles;
 }

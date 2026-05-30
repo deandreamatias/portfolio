@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
 import 'package:portfolio/shared/constants.dart';
 import 'package:portfolio/shared/context_extensions.dart';
@@ -41,7 +41,7 @@ class Content extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<ColumnModel> content = [
       ColumnModel(
-        color: Theme.of(context).colorScheme.surfaceContainerHighest,
+        color: context.appColors.surfaceContainerHighest,
         title: AppLocalizations.of(context).who_title,
         content: [
           ContentModel(title: AppLocalizations.of(context).who_is_mobile),
@@ -61,7 +61,7 @@ class Content extends StatelessWidget {
         ],
       ),
       ColumnModel(
-        color: Theme.of(context).colorScheme.surfaceContainer,
+        color: context.appColors.surfaceContainer,
         title: AppLocalizations.of(context).what_title,
         content: [
           ContentModel(title: AppLocalizations.of(context).what_mobile),
@@ -73,26 +73,26 @@ class Content extends StatelessWidget {
         ],
       ),
       ColumnModel(
-        color: Theme.of(context).colorScheme.surfaceContainerHighest,
+        color: context.appColors.surfaceContainerHighest,
         title: AppLocalizations.of(context).where_title,
         content: [
           ContentModel(title: AppLocalizations.of(context).where_live),
           ContentModel(
             title: AppLocalizations.of(context).where_work(UrlKeys.linkedIn),
-            urls: {UrlKeys.linkedIn: .parse(Urls.linkedin)},
+            urls: {UrlKeys.linkedIn: Uri.parse(Urls.linkedin)},
           ),
           ContentModel(
             title: AppLocalizations.of(
               context,
             ).where_contribute(UrlKeys.gitHub, UrlKeys.stackOverflow),
             urls: {
-              UrlKeys.gitHub: .parse(Urls.github),
-              UrlKeys.stackOverflow: .parse(Urls.stackoverflow),
+              UrlKeys.gitHub: Uri.parse(Urls.github),
+              UrlKeys.stackOverflow: Uri.parse(Urls.stackoverflow),
             },
           ),
           ContentModel(
             title: AppLocalizations.of(context).where_videos(UrlKeys.youtube),
-            urls: {UrlKeys.youtube: .parse(Urls.youtube)},
+            urls: {UrlKeys.youtube: Uri.parse(Urls.youtube)},
           ),
           ContentModel(title: AppLocalizations.of(context).where_communities),
           ContentModel(
@@ -100,8 +100,8 @@ class Content extends StatelessWidget {
               context,
             ).where_writing(UrlKeys.medium, UrlKeys.telegram),
             urls: {
-              UrlKeys.medium: .parse(Urls.medium),
-              UrlKeys.telegram: .parse(Urls.telegramFlutterUniverse),
+              UrlKeys.medium: Uri.parse(Urls.medium),
+              UrlKeys.telegram: Uri.parse(Urls.telegramFlutterUniverse),
             },
           ),
           ContentModel(
@@ -110,26 +110,25 @@ class Content extends StatelessWidget {
               UrlKeys.universoFlutter,
             ),
             urls: {
-              UrlKeys.universoFlutter: .parse(Urls.podcast),
-              AppLocalizations.of(context).where_podcast_participation: .parse(
-                Urls.podcastParticipations,
-              ),
+              UrlKeys.universoFlutter: Uri.parse(Urls.podcast),
+              AppLocalizations.of(context).where_podcast_participation:
+                  Uri.parse(Urls.podcastParticipations),
             },
           ),
           ContentModel(
             title: AppLocalizations.of(context).where_football(UrlKeys.ondaFC),
-            urls: {UrlKeys.ondaFC: .parse(Urls.ondaFC)},
+            urls: {UrlKeys.ondaFC: Uri.parse(Urls.ondaFC)},
           ),
           ContentModel(
             title: AppLocalizations.of(
               context,
             ).where_family_and_pets(UrlKeys.blueSky),
-            urls: {UrlKeys.blueSky: .parse(Urls.bluesky)},
+            urls: {UrlKeys.blueSky: Uri.parse(Urls.bluesky)},
           ),
         ],
       ),
       ColumnModel(
-        color: Theme.of(context).colorScheme.surfaceContainer,
+        color: context.appColors.surfaceContainer,
         title: AppLocalizations.of(context).when_title,
         content: [
           ContentModel(
@@ -181,8 +180,8 @@ class Content extends StatelessWidget {
       'BIRTHDAY',
       defaultValue: '2000-01-01',
     );
-    DateTime birthDate = .parse(birthday);
-    DateTime currentDate = .now();
+    DateTime birthDate = DateTime.parse(birthday);
+    DateTime currentDate = DateTime.now();
     int age = currentDate.year - birthDate.year;
     if (currentDate.month < birthDate.month ||
         (currentDate.month == birthDate.month &&
@@ -248,38 +247,75 @@ class _ExpansionTileContentState extends State<_ExpansionTileContent> {
   final ValueNotifier<bool> isExpanded = ValueNotifier(false);
   @override
   Widget build(BuildContext context) {
-    return ExpansionTile(
-      onExpansionChanged: (bool value) {
-        isExpanded.value = value;
-      },
-      childrenPadding: const EdgeInsets.symmetric(
-        vertical: Sizes.medium,
-        horizontal: Sizes.large,
-      ),
-      trailing: ValueListenableBuilder(
-        valueListenable: isExpanded,
-        builder: (context, value, child) => value
-            ? const Icon(UniconsLine.angle_down)
-            : const Icon(UniconsLine.angle_up),
-      ),
-      expandedCrossAxisAlignment: .start,
-      collapsedBackgroundColor: widget.contentModel.color,
-      backgroundColor: widget.contentModel.color,
-      shape: const RoundedRectangleBorder(),
-      title: Semantics(
-        header: true,
-        child: TitleLargeText(widget.contentModel.title),
-      ),
-      children: <Widget>[
-        for (final ContentModel item in widget.contentModel.content)
-          SizedBox(
-            width: MediaQuery.sizeOf(context).width,
-            child: Padding(
-              padding: const EdgeInsets.all(Sizes.small),
-              child: _ContentItem(subcontentModel: item),
+    return ColoredBox(
+      color: widget.contentModel.color,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Semantics(
+            button: true,
+            label: widget.contentModel.title,
+            child: MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: GestureDetector(
+                onTap: () => isExpanded.value = !isExpanded.value,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    vertical: Sizes.medium,
+                    horizontal: Sizes.large,
+                  ),
+                  child: Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Semantics(
+                          header: true,
+                          child: TitleLargeText(widget.contentModel.title),
+                        ),
+                      ),
+                      ValueListenableBuilder<bool>(
+                        valueListenable: isExpanded,
+                        builder: (BuildContext context, bool value, _) {
+                          return Icon(
+                            value
+                                ? UniconsLine.angle_down
+                                : UniconsLine.angle_up,
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
           ),
-      ],
+          ValueListenableBuilder<bool>(
+            valueListenable: isExpanded,
+            builder: (BuildContext context, bool value, Widget? child) {
+              if (!value) {
+                return const SizedBox.shrink();
+              }
+              return Padding(
+                padding: const EdgeInsets.symmetric(
+                  vertical: Sizes.medium,
+                  horizontal: Sizes.large,
+                ),
+                child: Column(
+                  children: <Widget>[
+                    for (final ContentModel item in widget.contentModel.content)
+                      SizedBox(
+                        width: MediaQuery.sizeOf(context).width,
+                        child: Padding(
+                          padding: const EdgeInsets.all(Sizes.small),
+                          child: _ContentItem(subcontentModel: item),
+                        ),
+                      ),
+                  ],
+                ),
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 }

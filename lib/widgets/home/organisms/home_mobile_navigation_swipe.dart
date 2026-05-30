@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
+import 'package:portfolio/shared/context_extensions.dart';
 import 'package:portfolio/shared/sizes.dart';
 import 'package:portfolio/widgets/home/atoms/home_navigation_label.dart';
 import 'package:portfolio/widgets/home/models/home_navigation_option.dart';
+import 'package:unicons/unicons.dart';
 
 class HomeMobileNavigationSwipe extends StatefulWidget {
   const HomeMobileNavigationSwipe({
@@ -72,15 +74,9 @@ class _HomeMobileNavigationSwipeState extends State<HomeMobileNavigationSwipe> {
                     ? Semantics(
                         button: true,
                         label: l10n.homeNavigationPrevious,
-                        child: IconButton(
-                          style: IconButton.styleFrom(
-                            backgroundColor: Colors.transparent,
-                            foregroundColor: Theme.of(
-                              context,
-                            ).colorScheme.onSurface,
-                          ),
-                          icon: const Icon(Icons.chevron_left, size: 32),
-                          tooltip: l10n.homeNavigationPrevious,
+                        child: _NavigationArrowButton(
+                          icon: UniconsLine.angle_left,
+                          semanticLabel: l10n.homeNavigationPrevious,
                           onPressed: _goToPrevious,
                         ),
                       )
@@ -101,24 +97,20 @@ class _HomeMobileNavigationSwipeState extends State<HomeMobileNavigationSwipe> {
                       return Semantics(
                         button: true,
                         label: option.label,
-                        child: Material(
-                          color: Theme.of(
-                            context,
-                          ).colorScheme.surfaceContainerHigh,
+                        child: ClipRRect(
                           borderRadius: const BorderRadius.only(
                             topLeft: Radius.circular(Sizes.extraLarge),
                             topRight: Radius.circular(Sizes.extraLarge),
                           ),
-                          child: InkWell(
-                            borderRadius: const BorderRadius.only(
-                              topLeft: Radius.circular(Sizes.extraLarge),
-                              topRight: Radius.circular(Sizes.extraLarge),
-                            ),
+                          child: GestureDetector(
                             onTap: () => widget.onNavigate(option.route),
-                            child: Center(
-                              child: HomeNavigationLabel(
-                                label: option.label,
-                                isSelected: true,
+                            child: ColoredBox(
+                              color: context.appColors.surfaceContainerHigh,
+                              child: Center(
+                                child: HomeNavigationLabel(
+                                  label: option.label,
+                                  isSelected: true,
+                                ),
                               ),
                             ),
                           ),
@@ -136,15 +128,9 @@ class _HomeMobileNavigationSwipeState extends State<HomeMobileNavigationSwipe> {
                     ? Semantics(
                         button: true,
                         label: l10n.homeNavigationNext,
-                        child: IconButton(
-                          style: IconButton.styleFrom(
-                            backgroundColor: Colors.transparent,
-                            foregroundColor: Theme.of(
-                              context,
-                            ).colorScheme.onSurface,
-                          ),
-                          icon: const Icon(Icons.chevron_right, size: 32),
-                          tooltip: l10n.homeNavigationNext,
+                        child: _NavigationArrowButton(
+                          icon: UniconsLine.angle_right,
+                          semanticLabel: l10n.homeNavigationNext,
                           onPressed: _goToNext,
                         ),
                       )
@@ -153,6 +139,36 @@ class _HomeMobileNavigationSwipeState extends State<HomeMobileNavigationSwipe> {
             ],
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _NavigationArrowButton extends StatelessWidget {
+  const _NavigationArrowButton({
+    required this.icon,
+    required this.semanticLabel,
+    required this.onPressed,
+  });
+
+  final IconData icon;
+  final String semanticLabel;
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: onPressed,
+        child: Center(
+          child: Icon(
+            icon,
+            size: 32,
+            color: context.appColors.onSurface,
+            semanticLabel: semanticLabel,
+          ),
+        ),
       ),
     );
   }

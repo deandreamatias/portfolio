@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
 import 'package:portfolio/shared/constants.dart';
+import 'package:portfolio/shared/context_extensions.dart';
 import 'package:portfolio/shared/sizes.dart';
 import 'package:portfolio/widgets/text/body_medium_text.dart';
 import 'package:portfolio/widgets/text/display_large_text.dart';
@@ -22,7 +23,7 @@ class Header extends StatelessWidget {
       AppLocalizations.of(context).skills_five,
     ];
     return ColoredBox(
-      color: Theme.of(context).colorScheme.surface,
+      color: context.appColors.surface,
       child: Padding(
         padding: const .all(Sizes.large),
         child: SizedBox(

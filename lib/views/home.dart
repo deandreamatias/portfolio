@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
 import 'package:portfolio/shared/context_extensions.dart';
 import 'package:portfolio/shared/sizes.dart';
@@ -33,8 +33,9 @@ class HomeView extends StatelessWidget {
       HomeNavigationOption(label: l10n.navContact, route: ContactView.route),
     ];
 
-    return Scaffold(
-      body: context.isMedium
+    return ColoredBox(
+      color: context.appColors.surface,
+      child: context.isMedium
           ? SafeArea(
               bottom: false,
               child: Center(

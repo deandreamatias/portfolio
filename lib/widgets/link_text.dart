@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:portfolio/shared/context_extensions.dart';
 import 'package:portfolio/shared/navigate_links.dart';
 
 class LinkText extends StatelessWidget {
@@ -28,10 +29,10 @@ class LinkText extends StatelessWidget {
           TextSpan(
             text: key,
             semanticsLabel: key,
-            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              color: Theme.of(context).colorScheme.primary,
+            style: context.appTextStyles.bodyLarge.copyWith(
+              color: context.appColors.primary,
               decoration: .underline,
-              decorationColor: Theme.of(context).colorScheme.primary,
+              decorationColor: context.appColors.primary,
             ),
             recognizer: TapGestureRecognizer()
               ..onTap = () async {
@@ -47,9 +48,7 @@ class LinkText extends StatelessWidget {
     }
 
     if (!foundLink) {
-      spans.add(
-        TextSpan(text: text, style: Theme.of(context).textTheme.bodyLarge),
-      );
+      spans.add(TextSpan(text: text, style: context.appTextStyles.bodyLarge));
     }
 
     return spans;

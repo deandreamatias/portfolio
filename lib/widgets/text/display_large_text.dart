@@ -1,18 +1,18 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:portfolio/shared/context_extensions.dart';
 
 class DisplayLargeText extends StatelessWidget {
-  const DisplayLargeText(this.text, {super.key});
+  const DisplayLargeText(this.text, {this.style, super.key});
 
   final String text;
+  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
       textAlign: .center,
-      style: Theme.of(context).textTheme.displayLarge?.copyWith(
-        color: Theme.of(context).colorScheme.onSurface,
-      ),
+      style: style ?? context.appTextStyles.displayLarge,
     );
   }
 }

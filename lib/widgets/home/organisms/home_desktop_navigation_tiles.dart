@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:portfolio/shared/context_extensions.dart';
 import 'package:portfolio/shared/sizes.dart';
 import 'package:portfolio/widgets/home/atoms/home_navigation_label.dart';
 import 'package:portfolio/widgets/home/models/home_navigation_option.dart';
@@ -43,22 +44,20 @@ class _NavigationTile extends StatelessWidget {
       child: Semantics(
         button: true,
         label: option.label,
-        child: Material(
-          color: Theme.of(context).colorScheme.surfaceContainerHigh,
+        child: ClipRRect(
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(Sizes.extraLarge),
             topRight: Radius.circular(Sizes.extraLarge),
           ),
-          child: InkWell(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(Sizes.extraLarge),
-              topRight: Radius.circular(Sizes.extraLarge),
-            ),
+          child: GestureDetector(
             onTap: () => onNavigate(option.route),
-            child: Center(
-              child: HomeNavigationLabel(
-                label: option.label,
-                isSelected: false,
+            child: ColoredBox(
+              color: context.appColors.surfaceContainerHigh,
+              child: Center(
+                child: HomeNavigationLabel(
+                  label: option.label,
+                  isSelected: false,
+                ),
               ),
             ),
           ),

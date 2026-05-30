@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:portfolio/main.dart';
+import 'package:unicons/unicons.dart';
 
 void main() {
   group('Home navigation responsiveness', () {
@@ -67,8 +68,8 @@ void main() {
       expect(find.byType(PageView), findsOneWidget);
       expect(find.text('Projects'), findsOneWidget);
       // On first page: no left arrow, right arrow is visible
-      expect(find.byIcon(Icons.chevron_left), findsNothing);
-      expect(find.byIcon(Icons.chevron_right), findsOneWidget);
+      expect(find.byIcon(UniconsLine.angle_left), findsNothing);
+      expect(find.byIcon(UniconsLine.angle_right), findsOneWidget);
 
       await tester.fling(find.byType(PageView), const Offset(-300, 0), 1000);
       await tester.pumpAndSettle();
