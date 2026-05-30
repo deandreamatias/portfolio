@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
 import 'package:portfolio/shared/constants.dart';
 import 'package:portfolio/shared/sizes.dart';
