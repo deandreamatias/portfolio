@@ -8,9 +8,9 @@ import 'package:portfolio/views/career_view.dart';
 import 'package:portfolio/views/contact_view.dart';
 import 'package:portfolio/views/projects_view.dart';
 import 'package:portfolio/widgets/home/models/home_navigation_option.dart';
-import 'package:portfolio/widgets/home/organisms/home_desktop_navigation_tiles.dart';
-import 'package:portfolio/widgets/home/organisms/home_hero.dart';
-import 'package:portfolio/widgets/home/organisms/home_mobile_navigation_swipe.dart';
+import 'package:portfolio/widgets/home/home_desktop_navigation_tiles.dart';
+import 'package:portfolio/widgets/home/home_hero.dart';
+import 'package:portfolio/widgets/home/home_mobile_navigation_swipe.dart';
 
 class HomeView extends StatelessWidget {
   static const String route = '/';
