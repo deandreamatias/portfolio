@@ -1,11 +1,12 @@
 import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
 import 'package:portfolio/shared/context_extensions.dart';
 import 'package:portfolio/shared/sizes.dart';
 import 'package:portfolio/views/about_view.dart';
 import 'package:portfolio/views/contact_view.dart';
 import 'package:portfolio/views/projects_view.dart';
-import 'package:portfolio/views/trajectory_view.dart';
+import 'package:portfolio/views/career_view.dart';
 import 'package:portfolio/widgets/home/models/home_navigation_option.dart';
 import 'package:portfolio/widgets/home/organisms/home_desktop_navigation_tiles.dart';
 import 'package:portfolio/widgets/home/organisms/home_hero.dart';
@@ -16,8 +17,8 @@ class HomeView extends StatelessWidget {
 
   const HomeView({super.key});
 
-  void _navigateTo(BuildContext context, String routeName) {
-    Navigator.of(context).pushNamed(routeName);
+  void _navigateTo(BuildContext context, String route) {
+    context.go(route);
   }
 
   @override
@@ -25,10 +26,7 @@ class HomeView extends StatelessWidget {
     final AppLocalizations l10n = AppLocalizations.of(context);
     final List<HomeNavigationOption> options = <HomeNavigationOption>[
       HomeNavigationOption(label: l10n.navProjects, route: ProjectsView.route),
-      HomeNavigationOption(
-        label: l10n.navTrajectory,
-        route: TrajectoryView.route,
-      ),
+      HomeNavigationOption(label: l10n.navCareer, route: CareerView.route),
       HomeNavigationOption(label: l10n.navAboutMe, route: AboutView.route),
       HomeNavigationOption(label: l10n.navContact, route: ContactView.route),
     ];
