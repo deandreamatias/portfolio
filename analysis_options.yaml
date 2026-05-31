@@ -1,29 +1,53 @@
-# Specify analysis options.
+# This file configures the analyzer, which statically analyzes Dart code to
+# check for errors, warnings, and lints.
 #
-# Until there are meta linter rules, each desired lint must be explicitly enabled.
-# See: https://github.com/dart-lang/linter/issues/288
-#
-# For a list of lints, see: http://dart-lang.github.io/linter/lints/
-# See the configuration guide for more
-# https://github.com/dart-lang/sdk/tree/master/pkg/analyzer#configuring-the-analyzer
-#
-# There are other similar analysis options files in the flutter repos,
-# which should be kept in sync with this file:
-#
-#   - analysis_options.yaml (this file)
-#   - packages/flutter/lib/analysis_options_user.yaml
-#   - https://github.com/flutter/plugins/blob/master/analysis_options.yaml
-#   - https://github.com/flutter/engine/blob/master/analysis_options.yaml
-#
-# This file contains the analysis options used by Flutter tools, such as IntelliJ,
-# Android Studio, and the `flutter analyze` command.
+# The issues identified by the analyzer are surfaced in the UI of Dart-enabled
+# IDEs (https://dart.dev/tools#ides-and-editors). The analyzer can also be
+# invoked from the command line by running `flutter analyze`.
+
+# The following line activates a set of recommended lints for Flutter apps,
+# packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    - always_declare_return_types
+    - always_use_package_imports
+    - avoid_annotating_with_dynamic
+    - avoid_bool_literals_in_conditional_expressions
+    - avoid_positional_boolean_parameters
+    - avoid_redundant_argument_values
+    - avoid_unused_constructor_parameters
+    - conditional_uri_does_not_exist
+    - directives_ordering
+    - lines_longer_than_80_chars
+    - literal_only_boolean_expressions
+    - parameter_assignments
+    - prefer_asserts_with_message
+    - prefer_final_locals
+    - prefer_initializing_formals
+    - prefer_null_aware_method_calls
+    - prefer_single_quotes
+    - require_trailing_commas
+    - secure_pubspec_urls
+    - simple_directive_paths
+    - simplify_variable_pattern
+    - sized_box_shrink_expand
+    - sort_pub_dependencies
+    - sort_unnamed_constructors_first
+    - throw_in_finally
+    - unnecessary_await_in_return
+    - unnecessary_null_checks
+    - unnecessary_parenthesis
+    - unnecessary_statements
+    - use_colored_box
+    - use_decorated_box
+    - use_is_even_rather_than_modulo
+    - use_named_constants
+    - use_string_buffers
+    - use_super_parameters
 analyzer:
   exclude:
-    - "bin/cache/**"
-    - ".dart_tool/**"
-    - ".vscode/**"
-    - "build/**"
-    - "images/**"
-    - "assets/**"
-    - "github/**"
+    - fvm/
+    - lib/generated_plugin_registrant.dart
+

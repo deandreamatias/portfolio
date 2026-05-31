@@ -10,13 +10,13 @@ class LinkText extends StatelessWidget {
   const LinkText({required this.text, required this.links, super.key});
   @override
   Widget build(BuildContext context) {
-    List<TextSpan> spans = _buildSpans(context, text);
+    final List<TextSpan> spans = _buildSpans(context, text);
 
     return RichText(text: TextSpan(children: spans));
   }
 
   List<TextSpan> _buildSpans(BuildContext context, String text) {
-    List<TextSpan> spans = [];
+    final List<TextSpan> spans = [];
     bool foundLink = false;
 
     for (var key in links.keys) {

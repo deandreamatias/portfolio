@@ -26,7 +26,6 @@ class SectionPlaceholderView extends StatelessWidget {
               padding: const EdgeInsets.all(Sizes.medium),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Semantics(
                     header: true,

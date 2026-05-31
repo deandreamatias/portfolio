@@ -23,8 +23,8 @@ class App extends StatelessWidget {
         view.platformDispatcher.accessibilityFeatures.highContrast;
 
     final AppTextStyles baseTextStyles = AppTextStyles.fromFonts(
-      bodyFontString: "Geologica",
-      displayFontString: "Titan One",
+      bodyFontString: 'Geologica',
+      displayFontString: 'Titan One',
     );
     final AppThemeData appTheme = AppThemeFactory.resolve(
       brightness: brightness,

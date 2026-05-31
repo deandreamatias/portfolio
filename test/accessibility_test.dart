@@ -1,5 +1,5 @@
-import 'package:flutter/widgets.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:portfolio/main.dart';
 import 'package:unicons/unicons.dart';
@@ -51,7 +51,8 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(find.byType(PageView), findsOneWidget);
-      // Left arrow hidden on first page; right arrow visible since there are more options
+      // Left arrow hidden on first page; right arrow visible since there are
+      // more options
       expect(find.byIcon(UniconsLine.angle_left), findsNothing);
       expect(find.byIcon(UniconsLine.angle_right), findsOneWidget);
 

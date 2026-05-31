@@ -11,7 +11,8 @@ final GoRouter appRouter = GoRouter(
   routes: <RouteBase>[
     GoRoute(
       path: HomeView.route,
-      pageBuilder: (context, state) => const NoTransitionPage(child: HomeView()),
+      pageBuilder: (context, state) =>
+          const NoTransitionPage(child: HomeView()),
       routes: <RouteBase>[
         GoRoute(
           path: 'projects',
@@ -21,9 +22,7 @@ final GoRouter appRouter = GoRouter(
             GoRoute(
               path: ':id',
               pageBuilder: (context, state) => NoTransitionPage(
-                child: ProjectDetailView(
-                  id: state.pathParameters['id']!,
-                ),
+                child: ProjectDetailView(id: state.pathParameters['id']!),
               ),
             ),
           ],
