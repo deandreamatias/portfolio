@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/data/models/project.dart';
+import 'package:portfolio/style/border_styles.dart';
 import 'package:portfolio/style/context_extensions.dart';
 import 'package:portfolio/style/sizes.dart';
 import 'package:portfolio/widgets/network_image_with_placeholder.dart';
@@ -25,7 +26,7 @@ class ProjectCard extends StatelessWidget {
               AspectRatio(
                 aspectRatio: 1,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(Sizes.small),
+                  borderRadius: BorderStyles.br,
                   child: _ProjectCardImage(logoUrl: project.logoUrl),
                 ),
               ),

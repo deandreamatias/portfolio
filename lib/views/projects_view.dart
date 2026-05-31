@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:portfolio/data/file_service.dart';
 import 'package:portfolio/data/models/project.dart';
 import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
+import 'package:portfolio/style/border_styles.dart';
 import 'package:portfolio/style/context_extensions.dart';
 import 'package:portfolio/style/sizes.dart';
 import 'package:portfolio/views/career_view.dart';
@@ -56,9 +57,7 @@ class _ProjectsViewState extends State<ProjectsView> {
                   child: DecoratedBox(
                     decoration: BoxDecoration(
                       color: context.appColors.surfaceContainerLow,
-                      borderRadius: BorderRadius.vertical(
-                        top: Radius.circular(Sizes.small),
-                      ),
+                      borderRadius: BorderStyles.brTop,
                     ),
                     child: Padding(
                       padding: const .symmetric(

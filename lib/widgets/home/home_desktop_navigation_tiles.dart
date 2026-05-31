@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:portfolio/style/border_styles.dart';
 import 'package:portfolio/style/context_extensions.dart';
 import 'package:portfolio/style/sizes.dart';
 import 'package:portfolio/widgets/home/models/home_navigation_option.dart';
@@ -42,10 +43,7 @@ class _NavigationTile extends StatelessWidget {
         button: true,
         label: option.label,
         child: ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(Sizes.small),
-            topRight: Radius.circular(Sizes.small),
-          ),
+          borderRadius: BorderStyles.brTop,
           child: GestureDetector(
             onTap: () => onNavigate(option.route),
             child: ColoredBox(
