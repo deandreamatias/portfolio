@@ -1,0 +1,318 @@
+[
+    {
+        "name": "TV Randshow",
+        "description": "App to choose a random TV show episode",
+        "type": "open-source",
+        "role": "author",
+        "url": "https://tvrandshow.com/",
+        "repo": "https://github.com/deandreamatias/tv-randshow",
+        "platforms": [
+            "android",
+            "web"
+        ],
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "GitHub",
+            "GitHub Actions",
+            "Git"
+        ],
+        "start_date": "2019-08-01",
+        "end_date": null,
+        "featured": true,
+        "available_in_stores": true,
+        "screenshots": [],
+        "summary": "Utility app for TV audiences that increases entertainment value by instantly picking random episodes to watch.",
+        "id": "tv-randshow",
+        "logo_url": "https://tvrandshow.com/favicon.png"
+    },
+    {
+        "name": "Flutter Form Builder",
+        "description": "Simple form maker for Flutter Framework — the community's most popular form package",
+        "type": "open-source",
+        "role": "main maintainer",
+        "url": "https://pub.dev/packages/flutter_form_builder",
+        "repo": "https://github.com/flutter-form-builder-ecosystem/flutter_form_builder",
+        "platforms": [
+            "android",
+            "ios",
+            "web",
+            "desktop"
+        ],
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "GitHub",
+            "GitHub Actions",
+            "Git"
+        ],
+        "start_date": "2022-06-01",
+        "end_date": null,
+        "featured": true,
+        "available_in_stores": false,
+        "screenshots": [],
+        "summary": "Production-ready Flutter package that speeds up form development and reduces implementation effort for app teams.",
+        "id": "flutter-form-builder",
+        "logo_url": "https://github.com/flutter-form-builder-ecosystem.png?size=200"
+    },
+    {
+        "name": "Portfolio",
+        "description": "Personal portfolio built with Flutter Web",
+        "type": "open-source",
+        "role": "author",
+        "url": "https://deandreamatias.com",
+        "repo": "https://github.com/deandreamatias/portfolio",
+        "platforms": [
+            "web"
+        ],
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "GitHub",
+            "GitHub Actions",
+            "Git"
+        ],
+        "start_date": null,
+        "end_date": null,
+        "featured": true,
+        "available_in_stores": false,
+        "screenshots": [],
+        "summary": "Personal business portfolio showcasing services, experience, and proof of delivery for potential clients and employers.",
+        "id": "portfolio",
+        "logo_url": "https://deandreamatias.com/profile.png"
+    },
+    {
+        "name": "Brazil Tech Expats Wiki",
+        "description": "Community wiki for Brazilian tech professionals living abroad",
+        "type": "community",
+        "role": "author",
+        "url": "https://brazil-tech-expats.deandreamatias.com/home/spain/",
+        "repo": "https://github.com/deandreamatias/brazil-tech-expats-wiki/",
+        "platforms": [
+            "web"
+        ],
+        "technologies": [
+            "Gitbook",
+            "Markdown",
+            "Git"
+        ],
+        "start_date": "2023-05-21",
+        "end_date": null,
+        "featured": true,
+        "available_in_stores": false,
+        "screenshots": [],
+        "summary": "Community knowledge hub helping Brazilian tech professionals abroad make practical relocation and career decisions.",
+        "id": "brazil-tech-expats-wiki",
+        "logo_url": "https://github.com/deandreamatias.png?size=200"
+    },
+    {
+        "name": "Dog Grooming Website",
+        "description": "Dog grooming website for Mimos",
+        "type": "freelance",
+        "role": "author",
+        "url": "https://peluqueriacaninamimos.com/",
+        "repo": "https://github.com/deandreamatias/dog-gromming-website",
+        "platforms": [
+            "web"
+        ],
+        "technologies": [
+            "Flutter",
+            "Dart"
+        ],
+        "start_date": "2023-08-19",
+        "end_date": null,
+        "featured": false,
+        "available_in_stores": false,
+        "screenshots": [],
+        "summary": "Lead-generation website for a local grooming business, focused on visibility, trust, and customer contact conversion.",
+        "id": "dog-grooming-website",
+        "logo_url": "https://peluqueriacaninamimos.com/icons/og-image.png"
+    },
+    {
+        "name": "Museum Tour App",
+        "description": "UX/UI concept for a museum audio guide app",
+        "type": "personal",
+        "role": "author",
+        "url": "https://www.behance.net/gallery/102326491/Museum-tour-App",
+        "repo": "https://github.com/deandreamatias/museum_tour",
+        "platforms": [
+            "android",
+            "ios"
+        ],
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Adobe XD"
+        ],
+        "start_date": "2020-08-12",
+        "end_date": "2022-02-12",
+        "featured": false,
+        "available_in_stores": false,
+        "screenshots": [],
+        "summary": "Concept product for museums to improve visitor engagement through guided mobile experiences and accessible content.",
+        "id": "museum-tour-app",
+        "logo_url": "https://github.com/deandreamatias.png?size=200"
+    },
+    {
+        "name": "flutter.base",
+        "description": "Flutter architecture template co-created at Mr Milú",
+        "type": "open-source",
+        "role": "co-author",
+        "url": null,
+        "repo": "https://github.com/mrmilu/flutter.base",
+        "platforms": [
+            "android",
+            "ios",
+            "web"
+        ],
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Clean Architecture"
+        ],
+        "start_date": "2022-04-01",
+        "end_date": "2023-05-01",
+        "featured": false,
+        "available_in_stores": false,
+        "screenshots": [],
+        "summary": "Open-source starter architecture to shorten project onboarding and improve long-term maintainability for Flutter teams.",
+        "id": "flutter-base",
+        "logo_url": "https://github.com/mrmilu.png?size=200"
+    },
+    {
+        "name": "SpaceX Go!",
+        "description": "Open-source app to follow SpaceX launches, rockets, and missions",
+        "type": "open-source",
+        "role": "contributor",
+        "url": null,
+        "repo": "https://github.com/jesusrp98/spacex-go",
+        "platforms": [
+            "android",
+            "ios"
+        ],
+        "technologies": [
+            "Flutter",
+            "Dart"
+        ],
+        "start_date": "2019-04-20",
+        "end_date": "2019-05-31",
+        "featured": false,
+        "available_in_stores": false,
+        "screenshots": [],
+        "summary": "Community-driven app that makes SpaceX mission data easier to follow for enthusiasts in a mobile-friendly format.",
+        "id": "spacex-go",
+        "logo_url": "https://github.com/jesusrp98.png?size=200"
+    },
+    {
+        "name": "Pay calculator",
+        "description": "My first complete app — a simple pay calculator",
+        "type": "open-source",
+        "role": "author",
+        "url": null,
+        "repo": "https://github.com/deandreamatias/pay-calculator",
+        "platforms": [
+            "android"
+        ],
+        "technologies": [
+            "Flutter",
+            "Dart"
+        ],
+        "start_date": "2019-07-20",
+        "end_date": "2019-08-02",
+        "featured": false,
+        "available_in_stores": false,
+        "screenshots": [],
+        "summary": "Simple payroll utility app that helps users estimate compensation quickly and reduce manual calculation errors.",
+        "id": "pay-calculator",
+        "logo_url": "https://github.com/deandreamatias.png?size=200"
+    },
+    {
+        "name": "GymRats Statistics",
+        "description": "CLI tool for fun gym statistics, built with GitHub Copilot and vibe coding",
+        "type": "open-source",
+        "role": "author",
+        "url": null,
+        "repo": "https://github.com/deandreamatias/gymrats",
+        "platforms": [
+            "cli"
+        ],
+        "technologies": [
+            "GitHub Copilot",
+            "Dart"
+        ],
+        "start_date": "2025-12-10",
+        "end_date": null,
+        "featured": false,
+        "available_in_stores": false,
+        "screenshots": [],
+        "summary": "CLI utility that turns workout logs into readable stats, helping users track progress and stay motivated.",
+        "id": "gymrats-statistics",
+        "logo_url": "https://github.com/deandreamatias.png?size=200"
+    },
+    {
+        "name": "Flutter Universe",
+        "description": "Community channels on Telegram and WhatsApp for sharing Flutter news, tips, bugfixes and more",
+        "type": "community",
+        "role": "author",
+        "url": "https://t.me/flutteruniverse",
+        "repo": null,
+        "platforms": [
+            "web"
+        ],
+        "technologies": [],
+        "start_date": "2025-07-17",
+        "end_date": null,
+        "featured": false,
+        "available_in_stores": false,
+        "screenshots": [],
+        "summary": "Community channels that curate Flutter updates and practical tips to keep developers informed and connected.",
+        "id": "flutter-universe",
+        "logo_url": "https://github.com/deandreamatias.png?size=200"
+    },
+    {
+        "name": "Universo Flutter Logo",
+        "description": "Logo design for the Universo Flutter podcast and community",
+        "type": "personal",
+        "role": "author",
+        "url": "https://www.behance.net/gallery/102714375/Logo-Universo-Flutter",
+        "repo": null,
+        "platforms": [],
+        "technologies": [
+            "Adobe XD"
+        ],
+        "start_date": "2020-08-18",
+        "end_date": "2020-08-18",
+        "featured": false,
+        "available_in_stores": false,
+        "screenshots": [],
+        "summary": "Brand identity design project that gives the Flutter community initiative a recognizable visual presence.",
+        "id": "universo-flutter-logo",
+        "logo_url": "https://github.com/deandreamatias.png?size=200"
+    },
+    {
+        "name": "flutter_architecture_template",
+        "description": "Flutter architecture template co-created at Worldline",
+        "type": "open-source",
+        "role": "co-author",
+        "url": null,
+        "repo": "https://github.com/worldline-spain/flutter_architecture_template",
+        "platforms": [
+            "android",
+            "ios",
+            "web"
+        ],
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Clean Architecture"
+        ],
+        "start_date": "2023-07-14",
+        "end_date": "2025-01-01",
+        "featured": false,
+        "available_in_stores": false,
+        "screenshots": [],
+        "summary": "Scalable Flutter template co-created to help teams adopt consistent architecture across projects.",
+        "id": "flutter-architecture-template",
+        "logo_url": "https://github.com/worldline-spain.png?size=200"
+    }
+]
