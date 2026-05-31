@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:portfolio/style/context_extensions.dart';
 import 'package:portfolio/shared/navigate_links.dart';
+import 'package:portfolio/style/context_extensions.dart';
 import 'package:portfolio/style/sizes.dart';
 
 class LinkButton extends StatelessWidget {
