@@ -25,14 +25,11 @@ This project has been built using the [Flutter](https://flutter.dev/) framework,
 1. Clone repository with 'git clone' command or just download the zip. `git clone git@github.com:deandreamatias/portfolio.git`
 2. Then, download either Android Studio or Visual Studio Code, with their respective [Flutter editor plugins](https://flutter.dev/docs/get-started/editor). For more information about Flutter installation procedure, check the [official install guide](https://flutter.dev/docs/get-started/install).
 3. Install dependencies from pubspec.yaml by running `flutter pub get` from the project root (see [using packages documentation](https://flutter.dev/docs/development/packages-and-plugins/using-packages#adding-a-package-dependency-to-an-app) for details and how to do this in the editor).
-
-## Run
-
-CLI Debug: `flutter run --dart-define=BIRTHDAY=2000-01-01`
+4. Finally, run the app with `flutter run --dart-define=BIRTHDAY=2000-01-01` command or using the editor's run option.
 
 ## Author
 
-- **Matias de Andrea** - Mobile developer: [Website](https://deandreamatias.com) and [GitHub](https://github.com/deandreamatias).
+- **Matias de Andrea** - Mobile developer: [Website (this one)](https://deandreamatias.com) and [GitHub](https://github.com/deandreamatias).
 
 ## Contributing
 

@@ -17,21 +17,27 @@ flutter build web --dart-define=BIRTHDAY='YYYY-MM-DD'   # production build
 
 FVM is used to pin the Flutter version. Use `fvm flutter …` if `flutter` is not on PATH.
 
-## Architecture
+> **See [ARCHITECTURE.md](ARCHITECTURE.md) for general project structure, navigation, localization, and design patterns.**
 
-Single-page Flutter web app. No routing beyond the root `/` route. No state management library — widgets are mostly `StatelessWidget`.
+This document adds operational guidance and tooling details for AI agents working on this project.
+
+## Architecture Overview (Expanded for Agents)
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for the full architecture and design principles.
+
+**Key for agents**: Single-page Flutter web app with no routing beyond root (`/`). No external state management — rely on `StatelessWidget` and composition. Widget tree is organized by concern:
 
 ```txt
 lib/
-  main.dart               # App entry, MaterialApp + l10n delegates
+  main.dart               # App entry + WidgetsApp + l10n delegates
   shared/                 # Constants, theme, sizes, context extensions, link utils
   views/                  # Full-screen views
-  widgets/                # Reusable widgets
+  widgets/                # Reusable components
     text/                 # Typed text wrappers (DisplayLargeText, BodyLargeText, …)
     home/                 # Home-specific sub-widgets
 ```
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution workflow.
+When modifying or extending: preserve this organization. Add new views to `views/` and reusable widgets to `widgets/`. Keep component-specific widgets in their parent's file unless reused across multiple parents.
 
 ## Key Conventions
 
@@ -49,22 +55,37 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution workflow.
 
 ## Localization (l10n)
 
-ARB files: [lib/l10n/app_en.arb](lib/l10n/app_en.arb), `app_es.arb`, `app_pt.arb` — English, Spanish, Portuguese.  
-Generated API: `AppLocalizations.of(context).<key>`.  
-Config: [l10n.yaml](l10n.yaml). Run `flutter gen-l10n` (or `flutter pub get`) to regenerate after editing ARB files.  
-All user-visible strings must be localized in all three ARB files.
+**See** [ARCHITECTURE.md](ARCHITECTURE.md) for general l10n design.
 
-## Theming
+**Agent guidance**: When adding any user-visible string:
 
-Material Design 3. Light/dark mode via platform brightness. Font: Geologica (body) + Titan One (display) via GoogleFonts.  
-Theme definition: [lib/shared/theme.dart](lib/shared/theme.dart).
+1. Add the key to all three ARB files: `lib/l10n/app_en.arb`, `app_es.arb`, `app_pt.arb`.
+2. Use `AppLocalizations.of(context).keyName` to access.
+3. After ARB edits, run `flutter gen-l10n` to regenerate `lib/l10n/gen_l10n/app_localizations.dart`.
+4. Do not hardcode strings in widgets. Every user-facing text must be localized.
+
+## Theming & Responsive Design
+
+See [ARCHITECTURE.md](ARCHITECTURE.md) for design principles.
+
+**Agent guidance**:
+
+- Use `context.isMedium` (≥768 px) as primary breakpoint for responsive layout.
+- Theme is Material Design 3 with platform brightness detection (light/dark modes).
+- Font: Geologica (body) via GoogleFonts, Titan One (display). Define in [lib/shared/theme.dart](lib/shared/theme.dart).
+- All text widgets must use typed wrappers (`DisplayLargeText`, `BodyMediumText`, etc.) — never raw `Text`.
 
 ## Accessibility
+
+**Agent responsibility**: Every UI change must be accessible by default.
 
 - Wrap semantic headers with `Semantics(header: true, child: …)`.
 - Provide `semanticsLabel` on interactive `TextSpan` links.
 - `SemanticsBinding.instance.ensureSemantics()` is called in `main()` for web.
 - Tests in [test/accessibility_test.dart](test/accessibility_test.dart) cover tap targets, text contrast, and semantic headers — keep them green.
+- Before merge: run tests locally and verify semantics with screen reader on target platform.
+
+See [cross-project mobile accessibility guidelines](mobile-accessibility.instructions.md) for WCAG 2.2 AA baseline and audit checklists.
 
 ## Deployment
 
