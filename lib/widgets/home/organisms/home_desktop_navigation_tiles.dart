@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:portfolio/shared/context_extensions.dart';
 import 'package:portfolio/shared/sizes.dart';
-import 'package:portfolio/widgets/home/atoms/home_navigation_label.dart';
 import 'package:portfolio/widgets/home/models/home_navigation_option.dart';
+import 'package:portfolio/widgets/text/headline_small_text.dart';
 
 class HomeDesktopNavigationTiles extends StatelessWidget {
   const HomeDesktopNavigationTiles({
@@ -18,16 +18,13 @@ class HomeDesktopNavigationTiles extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<Widget> tiles = <Widget>[];
     for (int i = 0; i < options.length; i++) {
-      if (i > 0) {
-        tiles.add(const SizedBox(width: Sizes.extraExtraLarge));
-      }
       tiles.add(
         Expanded(
           child: _NavigationTile(option: options[i], onNavigate: onNavigate),
         ),
       );
     }
-    return Row(children: tiles);
+    return Row(spacing: Sizes.extraLarge, children: tiles);
   }
 }
 
@@ -46,17 +43,17 @@ class _NavigationTile extends StatelessWidget {
         label: option.label,
         child: ClipRRect(
           borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(Sizes.extraLarge),
-            topRight: Radius.circular(Sizes.extraLarge),
+            topLeft: Radius.circular(Sizes.small),
+            topRight: Radius.circular(Sizes.small),
           ),
           child: GestureDetector(
             onTap: () => onNavigate(option.route),
             child: ColoredBox(
               color: context.appColors.surfaceContainerHigh,
               child: Center(
-                child: HomeNavigationLabel(
-                  label: option.label,
-                  isSelected: false,
+                child: HeadlineSmallText(
+                  option.label,
+                  color: context.appColors.onSurface,
                 ),
               ),
             ),

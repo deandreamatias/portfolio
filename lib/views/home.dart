@@ -41,8 +41,8 @@ class HomeView extends StatelessWidget {
                   constraints: const BoxConstraints(maxWidth: 1280),
                   child: Padding(
                     padding: const EdgeInsets.only(
-                      left: Sizes.extraLarge,
-                      right: Sizes.extraLarge,
+                      left: Sizes.large,
+                      right: Sizes.large,
                       top: Sizes.large,
                     ),
                     child: _DesktopLayout(

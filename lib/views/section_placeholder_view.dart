@@ -23,13 +23,16 @@ class SectionPlaceholderView extends StatelessWidget {
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 720),
             child: Padding(
-              padding: const EdgeInsets.all(Sizes.extraLarge),
+              padding: const EdgeInsets.all(Sizes.medium),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Semantics(header: true, child: TitleLargeText(title)),
-                  const SizedBox(height: Sizes.large),
+                  Semantics(
+                    header: true,
+                    child: TitleLargeText(title, textAlign: TextAlign.center),
+                  ),
+                  const SizedBox(height: Sizes.medium),
                   BodyLargeText(message, textAlign: TextAlign.center),
                 ],
               ),

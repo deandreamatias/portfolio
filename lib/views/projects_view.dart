@@ -3,13 +3,12 @@ import 'package:go_router/go_router.dart';
 import 'package:portfolio/data/file_service.dart';
 import 'package:portfolio/data/models/project.dart';
 import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
-import 'package:portfolio/shared/constants.dart';
 import 'package:portfolio/shared/context_extensions.dart';
 import 'package:portfolio/shared/sizes.dart';
 import 'package:portfolio/views/career_view.dart';
+import 'package:portfolio/widgets/brand_name.dart';
 import 'package:portfolio/widgets/next_section_button.dart';
 import 'package:portfolio/widgets/projects/projects_grid.dart';
-import 'package:portfolio/widgets/text/display_large_text.dart';
 import 'package:portfolio/widgets/text/title_large_text.dart';
 
 class ProjectsView extends StatefulWidget {
@@ -44,48 +43,67 @@ class _ProjectsViewState extends State<ProjectsView> {
         child: Center(
           child: ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 1280),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: Sizes.extraLarge),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  const SizedBox(height: Sizes.large),
-                  Semantics(
-                    header: true,
-                    child: Center(child: DisplayLargeText(Constants.name)),
-                  ),
-                  const SizedBox(height: Sizes.large),
-                  Semantics(
-                    header: true,
-                    child: TitleLargeText(
-                      l10n.navProjects,
-                      style: context.appTextStyles.titleLarge.copyWith(
-                        color: context.appColors.onSurface,
+            child: Column(
+              crossAxisAlignment: .start,
+              children: <Widget>[
+                const SizedBox(height: Sizes.large),
+                Semantics(
+                  header: true,
+                  child: const Center(child: BrandName()),
+                ),
+                const SizedBox(height: Sizes.medium),
+                Expanded(
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: context.appColors.surfaceContainerLow,
+                      borderRadius: BorderRadius.vertical(
+                        top: Radius.circular(Sizes.small),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: const .symmetric(
+                        horizontal: Sizes.medium,
+                        vertical: Sizes.small,
+                      ),
+                      child: Column(
+                        mainAxisSize: .min,
+                        children: [
+                          Semantics(
+                            header: true,
+                            child: TitleLargeText(
+                              l10n.navProjects,
+                              color: context.appColors.onSurface,
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          const SizedBox(height: Sizes.large),
+                          Expanded(
+                            child: FutureBuilder<List<Project>>(
+                              future: _projectsFuture,
+                              builder:
+                                  (
+                                    BuildContext ctx,
+                                    AsyncSnapshot<List<Project>> snapshot,
+                                  ) {
+                                    if (!snapshot.hasData) {
+                                      return const SizedBox.shrink();
+                                    }
+                                    return ProjectsGrid(
+                                      projects: snapshot.data!,
+                                    );
+                                  },
+                            ),
+                          ),
+                          NextSectionButton(
+                            label: l10n.navCareer,
+                            onTap: () => context.go(CareerView.route),
+                          ),
+                        ],
                       ),
                     ),
                   ),
-                  const SizedBox(height: Sizes.large),
-                  Expanded(
-                    child: FutureBuilder<List<Project>>(
-                      future: _projectsFuture,
-                      builder:
-                          (
-                            BuildContext ctx,
-                            AsyncSnapshot<List<Project>> snapshot,
-                          ) {
-                            if (!snapshot.hasData) {
-                              return const SizedBox.shrink();
-                            }
-                            return ProjectsGrid(projects: snapshot.data!);
-                          },
-                    ),
-                  ),
-                  NextSectionButton(
-                    label: l10n.navCareer,
-                    onTap: () => context.go(CareerView.route),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),

@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:portfolio/shared/context_extensions.dart';
 
-class TitleMediumText extends StatelessWidget {
-  const TitleMediumText(this.text, {this.color, this.textAlign, super.key});
+class DisplaySmallText extends StatelessWidget {
+  const DisplaySmallText(this.text, {this.color, this.textAlign, super.key});
 
   final String text;
   final Color? color;
@@ -12,9 +12,8 @@ class TitleMediumText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: context.appTextStyles.titleMedium.copyWith(color: color),
       textAlign: textAlign,
-      maxLines: 2,
+      style: context.appTextStyles.displaySmall.copyWith(color: color),
     );
   }
 }

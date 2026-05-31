@@ -25,11 +25,11 @@ class ProjectCard extends StatelessWidget {
               AspectRatio(
                 aspectRatio: 1,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(Sizes.large),
+                  borderRadius: BorderRadius.circular(Sizes.small),
                   child: _ProjectCardImage(logoUrl: project.logoUrl),
                 ),
               ),
-              const SizedBox(height: Sizes.small),
+              const SizedBox(height: Sizes.extraSmall),
               Text(
                 project.name,
                 style: context.appTextStyles.bodyMedium.copyWith(

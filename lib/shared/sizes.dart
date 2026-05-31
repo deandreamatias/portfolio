@@ -1,7 +1,8 @@
 class Sizes {
-  static const double small = 4;
-  static const double medium = 8;
-  static const double large = 16;
-  static const double extraLarge = 32;
-  static const double extraExtraLarge = 64;
+  static const double extraSmall = 5;
+  static const double small = 10;
+  static const double medium = 20;
+  static const double large = 30;
+  static const double extraLarge = 50;
+  static const double extraExtraLarge = 80;
 }

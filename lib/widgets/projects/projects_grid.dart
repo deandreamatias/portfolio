@@ -17,14 +17,14 @@ class ProjectsGrid extends StatelessWidget {
     final SliverGridDelegate delegate = context.isMedium
         ? const SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 160,
-            mainAxisSpacing: Sizes.large,
-            crossAxisSpacing: Sizes.large,
+            mainAxisSpacing: Sizes.medium,
+            crossAxisSpacing: Sizes.medium,
             mainAxisExtent: _mainAxisExtent,
           )
         : const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            mainAxisSpacing: Sizes.large,
-            crossAxisSpacing: Sizes.large,
+            mainAxisSpacing: Sizes.medium,
+            crossAxisSpacing: Sizes.medium,
             mainAxisExtent: _mainAxisExtent,
           );
 

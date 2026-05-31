@@ -2,17 +2,17 @@ import 'package:flutter/widgets.dart';
 import 'package:portfolio/shared/context_extensions.dart';
 
 class BodySmallText extends StatelessWidget {
-  const BodySmallText(this.text, {this.textAlign, this.style, super.key});
+  const BodySmallText(this.text, {this.color, this.textAlign, super.key});
 
   final String text;
+  final Color? color;
   final TextAlign? textAlign;
-  final TextStyle? style;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: style ?? context.appTextStyles.bodySmall,
+      style: context.appTextStyles.bodySmall.copyWith(color: color),
       textAlign: textAlign,
     );
   }

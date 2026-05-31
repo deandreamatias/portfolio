@@ -23,7 +23,7 @@ class NextSectionButton extends StatelessWidget {
         child: GestureDetector(
           onTap: onTap,
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: Sizes.large),
+            padding: const EdgeInsets.symmetric(vertical: Sizes.medium),
             child: Center(
               child: Row(
                 mainAxisSize: MainAxisSize.min,
@@ -36,7 +36,7 @@ class NextSectionButton extends StatelessWidget {
                       color: context.appColors.onSurface,
                     ),
                   ),
-                  const SizedBox(height: Sizes.small),
+                  const SizedBox(height: Sizes.extraSmall),
                   Icon(
                     UniconsLine.angle_right,
                     color: context.appColors.onSurface,

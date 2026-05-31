@@ -2,8 +2,8 @@ import 'package:flutter/widgets.dart';
 import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
 import 'package:portfolio/shared/context_extensions.dart';
 import 'package:portfolio/shared/sizes.dart';
-import 'package:portfolio/widgets/home/atoms/home_navigation_label.dart';
 import 'package:portfolio/widgets/home/models/home_navigation_option.dart';
+import 'package:portfolio/widgets/text/headline_small_text.dart';
 import 'package:unicons/unicons.dart';
 
 class HomeMobileNavigationSwipe extends StatefulWidget {
@@ -98,18 +98,17 @@ class _HomeMobileNavigationSwipeState extends State<HomeMobileNavigationSwipe> {
                         button: true,
                         label: option.label,
                         child: ClipRRect(
-                          borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(Sizes.extraLarge),
-                            topRight: Radius.circular(Sizes.extraLarge),
+                          borderRadius: const BorderRadius.vertical(
+                            top: Radius.circular(Sizes.small),
                           ),
                           child: GestureDetector(
                             onTap: () => widget.onNavigate(option.route),
                             child: ColoredBox(
                               color: context.appColors.surfaceContainerHigh,
                               child: Center(
-                                child: HomeNavigationLabel(
-                                  label: option.label,
-                                  isSelected: true,
+                                child: HeadlineSmallText(
+                                  option.label,
+                                  color: context.appColors.onSecondaryContainer,
                                 ),
                               ),
                             ),

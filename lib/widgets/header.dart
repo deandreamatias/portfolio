@@ -35,7 +35,10 @@ class Header extends StatelessWidget {
                 padding: const .all(Sizes.large),
                 child: Semantics(
                   header: true,
-                  child: const DisplayLargeText(Constants.name),
+                  child: const DisplayLargeText(
+                    Constants.name,
+                    textAlign: TextAlign.center,
+                  ),
                 ),
               ),
               Wrap(

@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'package:portfolio/shared/context_extensions.dart';
 import 'package:portfolio/shared/navigate_links.dart';
 import 'package:portfolio/shared/sizes.dart';
-import 'package:portfolio/widgets/text/body_large_text.dart';
 
 class LinkButton extends StatelessWidget {
   const LinkButton({required this.label, required this.url, super.key});
@@ -24,7 +23,7 @@ class LinkButton extends StatelessWidget {
               horizontal: Sizes.medium,
               vertical: Sizes.small,
             ),
-            child: BodyLargeText(
+            child: Text(
               label,
               textAlign: TextAlign.center,
               style: context.appTextStyles.bodyLarge.copyWith(

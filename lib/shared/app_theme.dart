@@ -161,6 +161,8 @@ class AppColors {
 class AppTextStyles {
   const AppTextStyles({
     required this.displayLarge,
+    required this.displayMedium,
+    required this.displaySmall,
     required this.headlineSmall,
     required this.titleLarge,
     required this.titleMedium,
@@ -180,6 +182,18 @@ class AppTextStyles {
         fontWeight: FontWeight.w400,
         height: 1,
         letterSpacing: -0.25,
+      ),
+      displayMedium: GoogleFonts.getFont(
+        displayFontString,
+        fontSize: 45,
+        fontWeight: FontWeight.w400,
+        height: 1,
+      ),
+      displaySmall: GoogleFonts.getFont(
+        displayFontString,
+        fontSize: 36,
+        fontWeight: FontWeight.w400,
+        height: 1,
       ),
       headlineSmall: GoogleFonts.getFont(
         displayFontString,
@@ -225,6 +239,8 @@ class AppTextStyles {
   }
 
   final TextStyle displayLarge;
+  final TextStyle displayMedium;
+  final TextStyle displaySmall;
   final TextStyle headlineSmall;
   final TextStyle titleLarge;
   final TextStyle titleMedium;
@@ -235,6 +251,8 @@ class AppTextStyles {
   AppTextStyles withColor(Color color) {
     return AppTextStyles(
       displayLarge: displayLarge.copyWith(color: color),
+      displayMedium: displayMedium.copyWith(color: color),
+      displaySmall: displaySmall.copyWith(color: color),
       headlineSmall: headlineSmall.copyWith(color: color),
       titleLarge: titleLarge.copyWith(color: color),
       titleMedium: titleMedium.copyWith(color: color),
@@ -247,6 +265,8 @@ class AppTextStyles {
   AppTextStyles withScale(double scale) {
     return AppTextStyles(
       displayLarge: _scaled(displayLarge, scale),
+      displayMedium: _scaled(displayMedium, scale),
+      displaySmall: _scaled(displaySmall, scale),
       headlineSmall: _scaled(headlineSmall, scale),
       titleLarge: _scaled(titleLarge, scale),
       titleMedium: _scaled(titleMedium, scale),
