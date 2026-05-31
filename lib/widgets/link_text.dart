@@ -1,6 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/widgets.dart';
-import 'package:portfolio/shared/context_extensions.dart';
+import 'package:portfolio/style/context_extensions.dart';
 import 'package:portfolio/shared/navigate_links.dart';
 
 class LinkText extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:portfolio/shared/context_extensions.dart';
+import 'package:portfolio/style/context_extensions.dart';
 
 class TitleLargeText extends StatelessWidget {
   const TitleLargeText(this.text, {this.color, this.textAlign, super.key});

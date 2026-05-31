@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:portfolio/shared/context_extensions.dart';
-import 'package:portfolio/shared/sizes.dart';
+import 'package:portfolio/style/context_extensions.dart';
+import 'package:portfolio/style/sizes.dart';
 import 'package:portfolio/widgets/home/models/home_navigation_option.dart';
 import 'package:portfolio/widgets/text/headline_small_text.dart';
 

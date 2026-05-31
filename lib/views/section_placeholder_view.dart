@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:portfolio/shared/context_extensions.dart';
-import 'package:portfolio/shared/sizes.dart';
+import 'package:portfolio/style/context_extensions.dart';
+import 'package:portfolio/style/sizes.dart';
 import 'package:portfolio/widgets/text/body_large_text.dart';
 import 'package:portfolio/widgets/text/title_large_text.dart';
 

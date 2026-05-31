@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:portfolio/shared/app_theme.dart';
+import 'package:portfolio/style/app_theme.dart';
+import 'package:portfolio/style/breakpoints.dart';
 
 extension MediaQueryExtension on BuildContext {
   double get width {
@@ -21,13 +22,13 @@ extension MediaQueryExtension on BuildContext {
   }
 
   // Breakpoints
-  bool get isExtraExtraSmall => width < 256;
-  bool get isExtraSmall => width < 512;
-  bool get isSmall => width < 768;
-  bool get isMedium => width >= 768;
-  bool get isLarge => width >= 1024;
-  bool get isExtraLarge => width >= 1440;
-  bool get isExtraExtraLarge => width >= 2560;
+  bool get isExtraExtraSmall => width < Breakpoints.extraSmall;
+  bool get isExtraSmall => width < Breakpoints.small;
+  bool get isSmall => width < Breakpoints.medium;
+  bool get isMedium => width >= Breakpoints.medium;
+  bool get isLarge => width >= Breakpoints.large;
+  bool get isExtraLarge => width >= Breakpoints.extraLarge;
+  bool get isExtraExtraLarge => width >= Breakpoints.extraExtraLarge;
 
   AppTypographyVariant get typographyVariant {
     if (isExtraExtraSmall || isExtraSmall) {

@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/data/models/project.dart';
-import 'package:portfolio/shared/context_extensions.dart';
-import 'package:portfolio/shared/sizes.dart';
+import 'package:portfolio/style/context_extensions.dart';
+import 'package:portfolio/style/sizes.dart';
 import 'package:portfolio/widgets/network_image_with_placeholder.dart';
 
 class ProjectCard extends StatelessWidget {

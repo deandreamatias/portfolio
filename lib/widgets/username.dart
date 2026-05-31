@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:portfolio/shared/constants.dart';
-import 'package:portfolio/shared/sizes.dart';
+import 'package:portfolio/style/sizes.dart';
 import 'package:portfolio/widgets/text/title_medium_text.dart';
 
 class Username extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/shared/theme.dart';
+import 'package:portfolio/style/theme.dart';
 
 enum AppTypographyVariant {
   compact(0.8),

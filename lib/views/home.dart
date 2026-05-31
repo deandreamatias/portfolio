@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
-import 'package:portfolio/shared/context_extensions.dart';
-import 'package:portfolio/shared/sizes.dart';
+import 'package:portfolio/style/context_extensions.dart';
+import 'package:portfolio/style/sizes.dart';
 import 'package:portfolio/views/about_view.dart';
 import 'package:portfolio/views/career_view.dart';
 import 'package:portfolio/views/contact_view.dart';

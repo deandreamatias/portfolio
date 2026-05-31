@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:portfolio/data/models/project.dart';
-import 'package:portfolio/shared/context_extensions.dart';
-import 'package:portfolio/shared/sizes.dart';
+import 'package:portfolio/style/context_extensions.dart';
+import 'package:portfolio/style/sizes.dart';
 import 'package:portfolio/widgets/projects/project_card.dart';
 
 // Image square + gap + 2 lines of bodyMedium (≈14*1.43*2) + small padding
