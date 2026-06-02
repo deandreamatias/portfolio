@@ -74,8 +74,13 @@ class _DesktopLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        const Expanded(child: Center(child: HomeHero())),
-        HomeDesktopNavigationTiles(options: options, onNavigate: onNavigate),
+        const Expanded(flex: 4, child: Center(child: HomeHero())),
+        Flexible(
+          child: HomeDesktopNavigationTiles(
+            options: options,
+            onNavigate: onNavigate,
+          ),
+        ),
       ],
     );
   }

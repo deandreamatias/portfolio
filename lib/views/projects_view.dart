@@ -62,10 +62,11 @@ class _ProjectsViewState extends State<ProjectsView> {
                     child: Padding(
                       padding: const .symmetric(
                         horizontal: Sizes.medium,
-                        vertical: Sizes.small,
+                        vertical: Sizes.medium,
                       ),
                       child: Column(
                         mainAxisSize: .min,
+                        crossAxisAlignment: .start,
                         children: [
                           Semantics(
                             header: true,

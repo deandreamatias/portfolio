@@ -1,9 +1,10 @@
 import 'package:flutter/widgets.dart';
 import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
-import 'package:portfolio/style/border_styles.dart';
-import 'package:portfolio/style/context_extensions.dart';
+import 'package:portfolio/shared/buttons/button_icon_transparent.dart';
+import 'package:portfolio/shared/utils/accessibility_utils.dart';
+import 'package:portfolio/style/sizes.dart';
+import 'package:portfolio/widgets/home/home_navigation_button.dart';
 import 'package:portfolio/widgets/home/models/home_navigation_option.dart';
-import 'package:portfolio/widgets/text/headline_small_text.dart';
 import 'package:unicons/unicons.dart';
 
 class HomeMobileNavigationSwipe extends StatefulWidget {
@@ -38,16 +39,28 @@ class _HomeMobileNavigationSwipeState extends State<HomeMobileNavigationSwipe> {
   }
 
   void _goToPrevious() {
-    _pageController.previousPage(
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.easeInOut,
-    );
+    if (_pageController.hasClients && _currentIndex > 0) {
+      _pageController.previousPage(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    }
   }
 
   void _goToNext() {
-    _pageController.nextPage(
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.easeInOut,
+    if (_pageController.hasClients &&
+        _currentIndex < widget.options.length - 1) {
+      _pageController.nextPage(
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeInOut,
+      );
+    }
+  }
+
+  String _getSemanticIndexText(AppLocalizations l10n, int index) {
+    return l10n.homeNavigationPosition(
+      (index + 1).toString(),
+      widget.options.length.toString(),
     );
   }
 
@@ -64,108 +77,60 @@ class _HomeMobileNavigationSwipeState extends State<HomeMobileNavigationSwipe> {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
+            spacing: Sizes.small,
             children: <Widget>[
-              // Left arrow — always occupies space to avoid layout shift
-              SizedBox(
-                width: 48,
-                height: 160,
-                child: hasPrevious
-                    ? Semantics(
-                        button: true,
-                        label: l10n.homeNavigationPrevious,
-                        child: _NavigationArrowButton(
-                          icon: UniconsLine.angle_left,
-                          semanticLabel: l10n.homeNavigationPrevious,
-                          onPressed: _goToPrevious,
-                        ),
-                      )
-                    : null,
+              ButtonIconTransparent(
+                icon: UniconsLine.angle_left,
+                semanticLabel: l10n.homeNavigationPrevious,
+                onPressed: hasPrevious ? _goToPrevious : null,
               ),
-              // Card — fills all remaining space
               Expanded(
                 child: SizedBox(
                   height: 160,
-                  child: PageView.builder(
-                    controller: _pageController,
-                    itemCount: widget.options.length,
-                    onPageChanged: (int index) {
-                      setState(() => _currentIndex = index);
-                    },
-                    itemBuilder: (BuildContext context, int index) {
-                      final HomeNavigationOption option = widget.options[index];
-                      return Semantics(
-                        button: true,
-                        label: option.label,
-                        child: ClipRRect(
-                          borderRadius: BorderStyles.brTop,
-                          child: GestureDetector(
-                            onTap: () => widget.onNavigate(option.route),
-                            child: ColoredBox(
-                              color: context.appColors.surfaceContainerHigh,
-                              child: Center(
-                                child: HeadlineSmallText(
-                                  option.label,
-                                  color: context.appColors.onSecondaryContainer,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      );
-                    },
+                  child: MergeSemantics(
+                    child: Semantics(
+                      slider: true,
+                      container: true,
+                      label: l10n.homeNavigationRegion,
+                      onDecrease: hasPrevious ? _goToPrevious : null,
+                      onIncrease: hasNext ? _goToNext : null,
+                      child: PageView.builder(
+                        controller: _pageController,
+                        itemCount: widget.options.length,
+                        onPageChanged: (int index) {
+                          setState(() => _currentIndex = index);
+                          // Generates system vocalized screen announcements
+                          AccessibilityUtils.announce(
+                            context,
+                            message: _getSemanticIndexText(l10n, index),
+                          );
+                        },
+                        itemBuilder: (BuildContext context, int index) {
+                          final HomeNavigationOption option =
+                              widget.options[index];
+                          final String posText = _getSemanticIndexText(
+                            l10n,
+                            index,
+                          );
+                          return HomeNavigationButton(
+                            label: option.label,
+                            semanticLabel: '$posText, ${option.label}',
+                            onPressed: () => widget.onNavigate(option.route),
+                          );
+                        },
+                      ),
+                    ),
                   ),
                 ),
               ),
-              // Right arrow — always occupies space to avoid layout shift
-              SizedBox(
-                width: 48,
-                height: 160,
-                child: hasNext
-                    ? Semantics(
-                        button: true,
-                        label: l10n.homeNavigationNext,
-                        child: _NavigationArrowButton(
-                          icon: UniconsLine.angle_right,
-                          semanticLabel: l10n.homeNavigationNext,
-                          onPressed: _goToNext,
-                        ),
-                      )
-                    : null,
+              ButtonIconTransparent(
+                icon: UniconsLine.angle_right,
+                semanticLabel: l10n.homeNavigationNext,
+                onPressed: hasNext ? _goToNext : null,
               ),
             ],
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _NavigationArrowButton extends StatelessWidget {
-  const _NavigationArrowButton({
-    required this.icon,
-    required this.semanticLabel,
-    required this.onPressed,
-  });
-
-  final IconData icon;
-  final String semanticLabel;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      child: GestureDetector(
-        onTap: onPressed,
-        child: Center(
-          child: Icon(
-            icon,
-            size: 32,
-            color: context.appColors.onSurface,
-            semanticLabel: semanticLabel,
-          ),
-        ),
       ),
     );
   }

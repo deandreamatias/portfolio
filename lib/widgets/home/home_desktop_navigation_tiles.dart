@@ -1,9 +1,7 @@
 import 'package:flutter/widgets.dart';
-import 'package:portfolio/style/border_styles.dart';
-import 'package:portfolio/style/context_extensions.dart';
 import 'package:portfolio/style/sizes.dart';
+import 'package:portfolio/widgets/home/home_navigation_button.dart';
 import 'package:portfolio/widgets/home/models/home_navigation_option.dart';
-import 'package:portfolio/widgets/text/headline_small_text.dart';
 
 class HomeDesktopNavigationTiles extends StatelessWidget {
   const HomeDesktopNavigationTiles({
@@ -21,43 +19,13 @@ class HomeDesktopNavigationTiles extends StatelessWidget {
     for (int i = 0; i < options.length; i++) {
       tiles.add(
         Expanded(
-          child: _NavigationTile(option: options[i], onNavigate: onNavigate),
+          child: HomeNavigationButton(
+            label: options[i].label,
+            onPressed: () => onNavigate,
+          ),
         ),
       );
     }
     return Row(spacing: Sizes.extraLarge, children: tiles);
-  }
-}
-
-class _NavigationTile extends StatelessWidget {
-  const _NavigationTile({required this.option, required this.onNavigate});
-
-  final HomeNavigationOption option;
-  final ValueChanged<String> onNavigate;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 128,
-      child: Semantics(
-        button: true,
-        label: option.label,
-        child: ClipRRect(
-          borderRadius: BorderStyles.brTop,
-          child: GestureDetector(
-            onTap: () => onNavigate(option.route),
-            child: ColoredBox(
-              color: context.appColors.surfaceContainerHigh,
-              child: Center(
-                child: HeadlineSmallText(
-                  option.label,
-                  color: context.appColors.onSurface,
-                ),
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
   }
 }
