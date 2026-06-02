@@ -1,8 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:portfolio/data/file_service.dart';
-import 'package:portfolio/data/models/project.dart';
 import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
+import 'package:portfolio/notifiers/showcase_notifier.dart';
 import 'package:portfolio/style/border_styles.dart';
 import 'package:portfolio/style/context_extensions.dart';
 import 'package:portfolio/style/sizes.dart';
@@ -22,17 +21,12 @@ class ProjectsView extends StatefulWidget {
 }
 
 class _ProjectsViewState extends State<ProjectsView> {
-  late final Future<List<Project>> _projectsFuture;
+  final ShowcaseNotifier showcaseNotifier = ShowcaseNotifier([]);
 
   @override
   void initState() {
+    showcaseNotifier.loadProjects();
     super.initState();
-    _projectsFuture = _loadProjects();
-  }
-
-  Future<List<Project>> _loadProjects() async {
-    final result = await const FileService().loadProjects();
-    return result.fold((_) => [], (projects) => projects);
   }
 
   @override
@@ -78,20 +72,10 @@ class _ProjectsViewState extends State<ProjectsView> {
                           ),
                           const SizedBox(height: Sizes.large),
                           Expanded(
-                            child: FutureBuilder<List<Project>>(
-                              future: _projectsFuture,
-                              builder:
-                                  (
-                                    BuildContext ctx,
-                                    AsyncSnapshot<List<Project>> snapshot,
-                                  ) {
-                                    if (!snapshot.hasData) {
-                                      return const SizedBox.shrink();
-                                    }
-                                    return ProjectsGrid(
-                                      projects: snapshot.data!,
-                                    );
-                                  },
+                            child: ValueListenableBuilder(
+                              valueListenable: showcaseNotifier,
+                              builder: (context, value, child) =>
+                                  ProjectsGrid(showcases: value),
                             ),
                           ),
                           NextSectionButton(

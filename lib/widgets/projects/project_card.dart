@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:portfolio/data/models/project.dart';
+import 'package:portfolio/data/models/showcase.dart';
 import 'package:portfolio/style/border_styles.dart';
 import 'package:portfolio/style/context_extensions.dart';
 import 'package:portfolio/style/sizes.dart';
@@ -9,7 +9,7 @@ import 'package:portfolio/widgets/network_image_with_placeholder.dart';
 class ProjectCard extends StatelessWidget {
   const ProjectCard({required this.project, super.key});
 
-  final Project project;
+  final Showcase project;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class ProjectCard extends StatelessWidget {
                 aspectRatio: 1,
                 child: ClipRRect(
                   borderRadius: BorderStyles.br,
-                  child: _ProjectCardImage(logoUrl: project.logoUrl),
+                  child: _ProjectCardImage(logoUrl: project.logo ?? Uri()),
                 ),
               ),
               const SizedBox(height: Sizes.extraSmall),
@@ -50,17 +50,10 @@ class ProjectCard extends StatelessWidget {
 class _ProjectCardImage extends StatelessWidget {
   const _ProjectCardImage({required this.logoUrl});
 
-  final String? logoUrl;
+  final Uri logoUrl;
 
   @override
   Widget build(BuildContext context) {
-    final String? url = logoUrl;
-    if (url == null) {
-      return ColoredBox(
-        color: context.appColors.surfaceContainerHigh,
-        child: const SizedBox.expand(),
-      );
-    }
-    return NetworkImageWithPlaceholder(url: url);
+    return NetworkImageWithPlaceholder(url: logoUrl);
   }
 }

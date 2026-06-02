@@ -1,0 +1,548 @@
+[
+    {
+        "enterprise": "Lobo Agencia Digital",
+        "logo": "lobo.jpg",
+        "job_title": "Mobile Developer",
+        "employment_type": "part-time",
+        "location": "Valencia, Spain",
+        "remote": true,
+        "start_date": "2025-05-01",
+        "end_date": null,
+        "description": "Implemented and deployed scalable mobile solutions for major sports clubs. Integrated technical stacks including REST APIs for data and OAuth for security. Utilized Figma and Obsidian to streamline the development lifecycle from design to documentation.",
+        "achievements": [
+            "Delivered mobile solutions for 3+ major sports clubs (CA Osasuna, Valencia CF, CD Leganés)",
+            "Deployed applications with Fastlane",
+            "Integrated Firebase, Google Maps and OAuth"
+        ],
+        "deliverables": [
+            {
+                "id": "ca-osasuna",
+                "name": "CA Osasuna",
+                "links": {
+                    "app_store": "https://apps.apple.com/es/app/osasuna-official-app/id6450509028",
+                    "google_play": "https://play.google.com/store/apps/details?id=com.onefan.osasuna",
+                    "web": null
+                },
+                "available": true,
+                "screenshots": [
+                    "osasuna_ios.png"
+                ],
+                "summary": "Official mobile app for CA Osasuna to engage fans with club content and match-day experiences across iOS and Android.",
+                "logo_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/59/4e/a2/594ea2fe-d629-9e6f-ef7b-46567d354e7e/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/512x512bb.jpg"
+            },
+            {
+                "id": "valencia-cf",
+                "name": "Valencia CF",
+                "links": {
+                    "app_store": "https://apps.apple.com/us/app/valencia-cf-official-app/id1423049571",
+                    "google_play": "https://play.google.com/store/apps/details?id=es.valenciacf.android.app",
+                    "web": null
+                },
+                "available": true,
+                "screenshots": [],
+                "summary": "Official Valencia CF app focused on fan engagement, delivering club updates and digital touchpoints for supporters.",
+                "logo_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ee/b5/fa/eeb5fa4d-db7d-cee7-1f5c-b2cee33156bb/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/512x512bb.jpg"
+            },
+            {
+                "id": "cd-leganes",
+                "name": "CD Leganés",
+                "links": {
+                    "app_store": "https://apps.apple.com/es/app/c-d-legan%C3%A9s-app-oficial/id1538048425",
+                    "google_play": "https://play.google.com/store/apps/details?id=com.yinzcam.lfp.leg",
+                    "web": null
+                },
+                "available": true,
+                "screenshots": [],
+                "summary": "Official CD Leganés mobile app designed to centralize fan communication, club news, and match-related content.",
+                "logo_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/89/00/20/890020ab-6681-e6c0-7931-db698daf6e9c/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/512x512bb.jpg"
+            },
+            {
+                "id": "guia-hedonista",
+                "name": "Guia Hedonista",
+                "links": {
+                    "app_store": "https://apps.apple.com/es/app/gu%C3%ADa-hedonista/id6755107279",
+                    "google_play": "https://play.google.com/store/apps/details?id=com.guiahedonista.app",
+                    "web": null
+                },
+                "available": true,
+                "screenshots": [],
+                "summary": "Lifestyle guide app that helps users discover curated local plans and recommendations through a mobile-first experience.",
+                "logo_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/bd/1e/fe/bd1efe4f-f71a-620d-c942-db184732ae51/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/512x512bb.jpg"
+            }
+        ],
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Figma",
+            "Obsidian",
+            "GitHub Copilot",
+            "Fastlane",
+            "Firebase",
+            "Google Maps API",
+            "OAuth",
+            "REST API"
+        ],
+        "skills": [
+            "Mobile development",
+            "CI/CD",
+            "Accessibility",
+            "App store deployment",
+            "API integration"
+        ],
+        "id": "lobo-agencia-digital"
+    },
+    {
+        "enterprise": "Multiplica Talent",
+        "logo": "multiplica.jpg",
+        "job_title": "Mobile Developer",
+        "employment_type": "full-time",
+        "location": "Barcelona, Spain",
+        "remote": true,
+        "start_date": "2023-06-01",
+        "end_date": "2025-05-01",
+        "description": "Engineered scalable municipal solutions for the Barcelona City Council with Flutter, refactoring core architecture to enhance code quality and maintainability. Optimized application performance and guaranteed compliance with accessibility standards. Automated deployment workflows by collaborating on the integration of Jenkins, Fastlane, and SonarQube, resulting in faster release cycles.",
+        "achievements": [
+            "Planned and executed a complete architectural refactoring of a legacy 2019 codebase (Barcelona a la Butxaca)",
+            "Built Llum BCN from scratch with an architecture that has allowed code reuse across 4 years of the festival",
+            "Led the mobile development team, implementing improvements to management and communication",
+            "Implemented CI/CD workflows with Jenkins, Fastlane and SonarQube"
+        ],
+        "deliverables": [
+            {
+                "id": "llum-bcn",
+                "name": "Llum BCN",
+                "links": {
+                    "app_store": "https://apps.apple.com/es/app/llum-bcn-festival-lum%C3%ADnico/id1497358051",
+                    "google_play": "https://play.google.com/store/apps/details?id=cat.bcn.llumbcn",
+                    "web": null
+                },
+                "available": true,
+                "screenshots": [],
+                "summary": "Festival companion app for Llum BCN, helping visitors discover installations and plan routes during the event.",
+                "logo_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8e/0d/61/8e0d61b2-26d2-f247-6645-8caedc57740a/AppIcon-0-0-1x_U007ephone-0-11-0-85-220.png/512x512bb.jpg"
+            },
+            {
+                "id": "merce",
+                "name": "Mercè",
+                "links": {
+                    "app_store": null,
+                    "google_play": "https://play.google.com/store/apps/details?id=cat.bcn.mobil.merce",
+                    "web": "https://www.barcelona.cat/lamerce/es"
+                },
+                "available": true,
+                "screenshots": [],
+                "summary": "Digital companion for La Mercè festival that gives attendees practical event information and city-linked experiences.",
+                "logo_url": "https://play-lh.googleusercontent.com/qUnFvTr61k2m_m9yXHYiAlGJibK6VCmIdVL5fNCL9oYBtQigcIyXlRygy1gIVHa9sPFJ=w240-h480"
+            },
+            {
+                "id": "barcelona-a-la-butxaca",
+                "name": "Barcelona a la Butxaca",
+                "links": {
+                    "app_store": "https://apps.apple.com/es/app/barcelona-a-la-butxaca/id1465234509",
+                    "google_play": "https://play.google.com/store/apps/details?id=cat.bcn.butxaca",
+                    "web": "https://www.barcelona.cat/bcnalabutxaca/es"
+                },
+                "available": true,
+                "screenshots": [],
+                "summary": "Citizen services app for Barcelona that centralizes useful city information and public digital services in one place.",
+                "logo_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/4b/7b/0f/4b7b0f5d-bc7c-606f-dbf7-4960c75eb77a/AppIcon-0-0-1x_U007ephone-0-11-0-85-220.png/512x512bb.jpg"
+            },
+            {
+                "id": "m-dul-com-osam",
+                "name": "Mòdul comú OSAM",
+                "links": {
+                    "app_store": null,
+                    "google_play": null,
+                    "web": "https://github.com/AjuntamentdeBarcelona/modul_comu_osam"
+                },
+                "available": true,
+                "screenshots": [],
+                "summary": "Shared module initiative to standardize and accelerate delivery across municipal mobile solutions for Barcelona projects.",
+                "logo_url": "https://github.com/AjuntamentdeBarcelona.png?size=200"
+            },
+            {
+                "id": "e-pueyo",
+                "name": "e-pueyo",
+                "links": {
+                    "app_store": "https://apps.apple.com/es/app/e-pueyo/id598308897",
+                    "google_play": "https://play.google.com/store/apps/details?id=com.bancapueyo.epueyomovil",
+                    "web": null
+                },
+                "available": true,
+                "screenshots": [],
+                "summary": "Banking app experience for e-pueyo, focused on giving customers secure and convenient mobile access to financial services.",
+                "logo_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/2c/07/a1/2c07a107-734a-ba7d-0db0-810ce6748754/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/512x512bb.jpg"
+            }
+        ],
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Jenkins",
+            "Fastlane",
+            "SonarQube",
+            "Git",
+            "GitHub",
+            "Gitlab",
+            "Jira",
+            "Confluence"
+        ],
+        "skills": [
+            "Team leadership",
+            "Architecture",
+            "CI/CD",
+            "Accessibility",
+            "Code review",
+            "Tech lead"
+        ],
+        "id": "multiplica-talent"
+    },
+    {
+        "enterprise": "Mr Milú",
+        "logo": "mrmilu.jpg",
+        "job_title": "Mobile Developer",
+        "employment_type": "full-time",
+        "location": "Madrid, Spain",
+        "remote": true,
+        "start_date": "2021-09-01",
+        "end_date": "2023-06-01",
+        "description": "Led the mobile engineering team in delivering cross-platform Flutter solutions for web and mobile. Established and documented coding standards ensuring scalability and maintainability. Mentored junior developers and championed a culture of continuous improvement using Agile methodologies.",
+        "achievements": [
+            "Tech lead of Flutter and mobile team, implementing and documenting best development practices",
+            "Co-created flutter.base, an open-source Flutter architecture template",
+            "Mentored junior developers and guided the mobile team toward continuous improvements"
+        ],
+        "deliverables": [
+            {
+                "id": "flutter-architecture-template",
+                "name": "flutter_architecture_template",
+                "links": {
+                    "app_store": null,
+                    "google_play": null,
+                    "web": "https://github.com/worldline-spain/flutter_architecture_template"
+                },
+                "available": true,
+                "screenshots": [],
+                "summary": "Reusable Flutter architecture template that helps teams start projects with scalable structure and best practices.",
+                "logo_url": "https://github.com/worldline-spain.png?size=200"
+            },
+            {
+                "id": "yepal",
+                "name": "Yepalí",
+                "links": {
+                    "app_store": "https://apps.apple.com/es/app/yepali-usuarios/id1603811275",
+                    "google_play": null,
+                    "web": null
+                },
+                "available": false,
+                "screenshots": [],
+                "summary": "Mobile product for service users, built to streamline user interactions and provide a simpler digital experience.",
+                "logo_url": "https://scontent-mad2-1.cdninstagram.com/v/t51.2885-19/274136367_419557806590330_5224985354685467448_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=104&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDI0LkMzIn0%3D&_nc_ohc=pI41BrvWC18Q7kNvwGFpeuW&_nc_oc=AdpdjJuRuHysfu561iuZIhplO3qNjyy1DN1W6VaZerNe5V3MYvmvIbT21h4fupjbsN4&_nc_zt=24&_nc_ht=scontent-mad2-1.cdninstagram.com&_nc_ss=7b6a8&oh=00_Af6ibklFV8rq3HEMuSOqqtOaFrHW4A7GMnK7XfuDu9JYYg&oe=6A20E0DE"
+            },
+            {
+                "id": "tipead",
+                "name": "Tipead",
+                "links": {
+                    "app_store": "https://apps.apple.com/es/app/tipead-profesional/id1625042174",
+                    "google_play": "https://play.google.com/store/apps/details?id=com.tipead.professionals.live",
+                    "web": "https://tipead.com/"
+                },
+                "available": true,
+                "screenshots": [],
+                "summary": "Platform app connecting professionals and clients, enabling service discovery and interaction across mobile and web.",
+                "logo_url": "https://tipead.com/wp-content/uploads/2022/06/logo-landing.png"
+            }
+        ],
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Clean Architecture",
+            "SOLID",
+            "Atomic Design",
+            "Jira",
+            "Notion",
+            "GitLab",
+            "GitLab CI",
+            "Figma",
+            "Docker",
+            "XCode",
+            "Android Studio",
+            "Insomnia",
+            "VS Code"
+        ],
+        "skills": [
+            "Tech lead",
+            "Mentoring",
+            "Architecture design",
+            "Documentation",
+            "Agile"
+        ],
+        "id": "mr-milu"
+    },
+    {
+        "enterprise": "Evalua",
+        "logo": "evalua.jpg",
+        "job_title": "Mobile Developer",
+        "employment_type": "full-time",
+        "location": "Valencia, Spain",
+        "remote": false,
+        "start_date": "2020-09-01",
+        "end_date": "2021-09-01",
+        "description": "Development of mobile applications with Flutter. Development of frontend applications with Angular 2. Used SCRUM methodology and Jira for project development and version control with Git and Bitbucket.",
+        "achievements": [],
+        "deliverables": [],
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Angular 2",
+            "SCRUM",
+            "Jira",
+            "Bitbucket",
+            "Git",
+            "Adobe XD",
+            "Docker",
+            "Confluence",
+            "Sequel Pro"
+        ],
+        "skills": [
+            "Mobile development",
+            "Frontend development",
+            "Agile",
+            "Documentation"
+        ],
+        "id": "evalua"
+    },
+    {
+        "enterprise": "Telcia Comunicaciones S.L.",
+        "logo": "telcia.jpg",
+        "job_title": "Mobile Developer",
+        "employment_type": "full-time",
+        "location": "Valencia, Spain",
+        "remote": false,
+        "start_date": "2019-07-01",
+        "end_date": "2020-07-01",
+        "description": "Development of internal mobile applications for Android and iOS with Flutter. Design of mobile and web applications using various methodologies and tools. Usability testing and UX research for mobile and web applications. Frontend web development with HTML, CSS and JavaScript.",
+        "achievements": [],
+        "deliverables": [
+            {
+                "id": "ticboard",
+                "name": "Ticboard",
+                "links": {
+                    "app_store": null,
+                    "google_play": null,
+                    "web": "https://www.ticboard.com/"
+                },
+                "available": true,
+                "screenshots": [],
+                "summary": "Web platform concept to organize and present information in a clear, collaborative digital board experience.",
+                "logo_url": "https://www.ticboard.com/asset/img/logo-ticboard.png"
+            },
+            {
+                "id": "notes-app",
+                "name": "Notes App",
+                "links": {
+                    "app_store": null,
+                    "google_play": null,
+                    "web": null
+                },
+                "available": false,
+                "screenshots": [],
+                "summary": "Internal notes application designed for simple team usage and quick information capture across mobile devices.",
+                "logo_url": null
+            }
+        ],
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Android",
+            "iOS",
+            "Adobe XD",
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "skills": [
+            "Mobile development",
+            "UI/UX design",
+            "Usability testing",
+            "Frontend development"
+        ],
+        "id": "telcia-comunicaciones"
+    },
+    {
+        "enterprise": "Dynamox",
+        "logo": "dynamox.jpg",
+        "job_title": "Embedded Systems Developer",
+        "employment_type": "full-time",
+        "location": "Florianópolis, Brazil",
+        "remote": false,
+        "start_date": "2017-03-01",
+        "end_date": "2018-11-01",
+        "description": "Development of electronic boards in Altium Designer for Industry 4.0 products. Structuring large-scale electronic board production processes. Creation of hardware test systems. Development of Android applications in Android Studio with Java. Recreation of user interfaces in apps with Adobe XD and Justinmind. User testing with mobile applications.",
+        "achievements": [],
+        "deliverables": [
+            {
+                "id": "dynapredict",
+                "name": "DynaPredict",
+                "links": {
+                    "app_store": "https://apps.apple.com/es/app/dynamox-app/id1454384964",
+                    "google_play": "https://play.google.com/store/apps/details?id=solutions.dynamox.predict",
+                    "web": null
+                },
+                "available": true,
+                "screenshots": [],
+                "summary": "Industrial maintenance app that supports predictive monitoring workflows and gives teams actionable machine insights.",
+                "logo_url": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0f/4a/fe/0f4afe84-a811-8da6-2884-32f5bc8550f0/AppIcon_Generic_Prod-0-0-1x_U007epad-0-1-0-sRGB-85-220.png/512x512bb.jpg"
+            }
+        ],
+        "technologies": [
+            "Android",
+            "Java",
+            "Altium Designer",
+            "Adobe XD",
+            "Justinmind",
+            "Bitbucket",
+            "Git",
+            "SCRUM"
+        ],
+        "skills": [
+            "Mobile development",
+            "Embedded systems",
+            "UI/UX design",
+            "User testing",
+            "Documentation"
+        ],
+        "id": "dynamox"
+    },
+    {
+        "enterprise": "Dynamox",
+        "logo": "dynamox.jpg",
+        "job_title": "QA Apprentice",
+        "employment_type": "apprentice",
+        "location": "Florianópolis, Brazil",
+        "remote": false,
+        "start_date": "2016-08-01",
+        "end_date": "2017-02-01",
+        "description": "Execution of quality control tests. Creation of test protocols. Product and production line improvement.",
+        "achievements": [],
+        "deliverables": [],
+        "technologies": [
+            "Word",
+            "Excel",
+            "PowerPoint"
+        ],
+        "skills": [
+            "Quality assurance",
+            "Testing",
+            "Process improvement"
+        ],
+        "id": "dynamox"
+    },
+    {
+        "enterprise": "MNZ LTDA - ME",
+        "logo": null,
+        "job_title": "IT Apprentice",
+        "employment_type": "apprentice",
+        "location": "Florianópolis, Brazil",
+        "remote": false,
+        "start_date": "2014-10-01",
+        "end_date": "2016-07-01",
+        "description": "Support for security systems. Support and installation of networks at events. Maintenance of electronic turnstiles at football stadiums and event venues.",
+        "achievements": [],
+        "deliverables": [],
+        "technologies": [
+            "Networking",
+            "Hardware",
+            "Electronics"
+        ],
+        "skills": [
+            "IT support",
+            "Network installation",
+            "Security systems"
+        ],
+        "id": "mnz"
+    },
+    {
+        "enterprise": "Instituto Federal de Educação, Ciência e Tecnologia de Santa Catarina",
+        "logo": null,
+        "job_title": "Research Fellow",
+        "employment_type": "fellowship",
+        "location": "Florianópolis, Brazil",
+        "remote": false,
+        "start_date": "2014-08-01",
+        "end_date": "2014-09-01",
+        "description": "Development of the ViGAS research project.",
+        "achievements": [],
+        "deliverables": [],
+        "technologies": [
+            "OpenCV"
+        ],
+        "skills": [
+            "Research"
+        ],
+        "id": "ifsc-2014"
+    },
+    {
+        "enterprise": "Automatisa - Laser Solutions",
+        "logo": null,
+        "job_title": "Technology Apprentice",
+        "employment_type": "apprentice",
+        "location": "São José, Brazil",
+        "remote": false,
+        "start_date": "2014-02-01",
+        "end_date": "2014-07-01",
+        "description": "Assembly of electro-electronic boards, signal and command cable assembly, board and cable integration into machines, configuration and installation of programs, equipment testing, repairs and customer service.",
+        "achievements": [],
+        "deliverables": [],
+        "technologies": [
+            "Electronics",
+            "Hardware"
+        ],
+        "skills": [
+            "Electronics assembly",
+            "Hardware testing",
+            "Client support"
+        ],
+        "id": "automatisa-laser-solutions"
+    },
+    {
+        "enterprise": "Instituto Federal de Educação, Ciência e Tecnologia de Santa Catarina",
+        "logo": null,
+        "job_title": "Lab Fellow",
+        "employment_type": "fellowship",
+        "location": "Florianópolis, Brazil",
+        "remote": false,
+        "start_date": "2013-11-01",
+        "end_date": "2013-12-01",
+        "description": "Organization of the electronics department prototype laboratory, including loan control and inventory of electronic components.",
+        "achievements": [],
+        "deliverables": [],
+        "technologies": [],
+        "skills": [
+            "Lab management",
+            "Inventory control"
+        ],
+        "id": "ifsc-2013"
+    },
+    {
+        "enterprise": "Cassol Centerlar",
+        "logo": null,
+        "job_title": "Young Apprentice",
+        "employment_type": "apprentice",
+        "location": "Florianópolis, Brazil",
+        "remote": false,
+        "start_date": "2012-10-01",
+        "end_date": "2013-09-01",
+        "description": "Invoice checking, spreadsheets, mystery shopper, data entry, expense control and other activities related to finance and customer relations.",
+        "achievements": [],
+        "deliverables": [],
+        "technologies": [
+            "Excel"
+        ],
+        "skills": [
+            "Finance",
+            "Client relations",
+            "Data management"
+        ],
+        "id": "cassol-centerlar"
+    }
+]

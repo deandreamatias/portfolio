@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:portfolio/data/models/showcase.dart';
 
 part 'project.g.dart';
 
@@ -44,6 +45,14 @@ class Project extends Equatable {
   final String? startDate;
   @JsonKey(name: 'end_date')
   final String? endDate;
+
+  Showcase toShowcase() => Showcase(
+    id: id,
+    name: name,
+    logo: Uri.tryParse(logoUrl ?? ''),
+    startDate: DateTime.tryParse(startDate ?? '') ?? DateTime.now(),
+    endDate: DateTime.tryParse(endDate ?? ''),
+  );
 
   factory Project.fromJson(Map<String, dynamic> json) =>
       _$ProjectFromJson(json);

@@ -10,13 +10,13 @@ class NetworkImageWithPlaceholder extends StatelessWidget {
     super.key,
   });
 
-  final String url;
+  final Uri url;
   final BoxFit fit;
 
   @override
   Widget build(BuildContext context) {
     return Image.network(
-      url,
+      url.toString(),
       fit: fit,
       frameBuilder:
           (
