@@ -7,9 +7,9 @@ import 'package:portfolio/views/about_view.dart';
 import 'package:portfolio/views/career_view.dart';
 import 'package:portfolio/views/contact_view.dart';
 import 'package:portfolio/views/projects_view.dart';
-import 'package:portfolio/widgets/home/home_desktop_navigation_tiles.dart';
 import 'package:portfolio/widgets/home/home_hero.dart';
 import 'package:portfolio/widgets/home/home_mobile_navigation_swipe.dart';
+import 'package:portfolio/widgets/home/home_navigation_button.dart';
 import 'package:portfolio/widgets/home/models/home_navigation_option.dart';
 
 class HomeView extends StatelessWidget {
@@ -33,10 +33,10 @@ class HomeView extends StatelessWidget {
 
     return ColoredBox(
       color: context.appColors.surface,
-      child: context.isMedium
-          ? SafeArea(
-              bottom: false,
-              child: Center(
+      child: SafeArea(
+        bottom: false,
+        child: context.isMedium
+            ? Center(
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 1280),
                   child: Padding(
@@ -51,15 +51,12 @@ class HomeView extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-            )
-          : SafeArea(
-              bottom: false,
-              child: _MobileLayout(
+              )
+            : _MobileLayout(
                 options: options,
                 onNavigate: (String r) => _navigateTo(context, r),
               ),
-            ),
+      ),
     );
   }
 }
@@ -76,9 +73,18 @@ class _DesktopLayout extends StatelessWidget {
       children: <Widget>[
         const Expanded(flex: 4, child: Center(child: HomeHero())),
         Flexible(
-          child: HomeDesktopNavigationTiles(
-            options: options,
-            onNavigate: onNavigate,
+          child: Row(
+            spacing: Sizes.extraLarge,
+            children: options
+                .map(
+                  (e) => Flexible(
+                    child: HomeNavigationButton(
+                      label: e.label,
+                      onPressed: () => onNavigate(e.route),
+                    ),
+                  ),
+                )
+                .toList(),
           ),
         ),
       ],
@@ -95,6 +101,7 @@ class _MobileLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      spacing: Sizes.large,
       children: <Widget>[
         Expanded(
           child: Center(
@@ -104,7 +111,13 @@ class _MobileLayout extends StatelessWidget {
             ),
           ),
         ),
-        HomeMobileNavigationSwipe(options: options, onNavigate: onNavigate),
+        Padding(
+          padding: EdgeInsetsGeometry.symmetric(horizontal: Sizes.small),
+          child: HomeMobileNavigationSwipe(
+            options: options,
+            onNavigate: onNavigate,
+          ),
+        ),
       ],
     );
   }

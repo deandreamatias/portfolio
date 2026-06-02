@@ -10,19 +10,20 @@ class HomeHero extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AppLocalizations l10n = AppLocalizations.of(context);
-
     return Padding(
       padding: const EdgeInsets.all(Sizes.medium),
       child: Column(
+        spacing: Sizes.medium,
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Semantics(
             header: true,
             child: const DisplayLargeText(Constants.name, textAlign: .center),
           ),
-          const SizedBox(height: Sizes.medium),
-          BodyLargeText(l10n.homeSubtitle, textAlign: .center),
+          BodyLargeText(
+            AppLocalizations.of(context).homeSubtitle,
+            textAlign: .center,
+          ),
         ],
       ),
     );
