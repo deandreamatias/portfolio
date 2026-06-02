@@ -2,7 +2,7 @@ import 'package:go_router/go_router.dart';
 import 'package:portfolio/views/about_view.dart';
 import 'package:portfolio/views/career_view.dart';
 import 'package:portfolio/views/contact_view.dart';
-import 'package:portfolio/views/home.dart';
+import 'package:portfolio/views/home_view.dart';
 import 'package:portfolio/views/project_detail_view.dart';
 import 'package:portfolio/views/projects_view.dart';
 
