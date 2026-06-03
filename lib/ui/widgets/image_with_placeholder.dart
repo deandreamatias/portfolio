@@ -3,20 +3,28 @@ import 'package:portfolio/ui/style/context_extensions.dart';
 import 'package:portfolio/ui/style/sizes.dart';
 import 'package:unicons/unicons.dart';
 
-class NetworkImageWithPlaceholder extends StatelessWidget {
-  const NetworkImageWithPlaceholder({
-    required this.url,
+class ImageWithPlaceholder extends StatelessWidget {
+  const ImageWithPlaceholder({
+    required this.uri,
     this.fit = BoxFit.cover,
     super.key,
   });
 
-  final Uri url;
+  final Uri uri;
   final BoxFit fit;
 
   @override
   Widget build(BuildContext context) {
+    if (!uri.hasScheme && uri.path.startsWith('assets/')) {
+      return Image.asset(
+        uri.path,
+        fit: fit,
+        errorBuilder: (context, error, stackTrace) => _Placeholder(),
+      );
+    }
+
     return Image.network(
-      url.toString(),
+      uri.toString(),
       fit: fit,
       frameBuilder:
           (

@@ -4,7 +4,7 @@ import 'package:portfolio/data/models/showcase.dart';
 import 'package:portfolio/ui/style/border_styles.dart';
 import 'package:portfolio/ui/style/context_extensions.dart';
 import 'package:portfolio/ui/style/sizes.dart';
-import 'package:portfolio/ui/widgets/network_image_with_placeholder.dart';
+import 'package:portfolio/ui/widgets/image_with_placeholder.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({required this.project, super.key});
@@ -54,6 +54,6 @@ class _ProjectCardImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return NetworkImageWithPlaceholder(url: logoUrl);
+    return ImageWithPlaceholder(uri: logoUrl);
   }
 }

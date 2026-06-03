@@ -11,7 +11,9 @@ class ShowcaseNotifier extends ValueNotifier<List<Showcase>> {
     final result = await [_loadJobs(), _loadProjects()].wait;
     final showcases = result.fold<List<Showcase>>([], (p, e) => p..addAll(e));
     showcases.sort((a, b) => b.startDate.compareTo(a.startDate));
-    value = showcases;
+    final ids = showcases.map((e) => e.id).toSet();
+    showcases.retainWhere((x) => ids.remove(x.id));
+    value = showcases.toSet().toList();
   }
 
   Future<List<Showcase>> _loadProjects() async {
@@ -29,7 +31,7 @@ class ShowcaseNotifier extends ValueNotifier<List<Showcase>> {
         for (final deliverable in job.deliverables) {
           showcases.add(
             Showcase(
-              id: '${job.id}-${deliverable.id}',
+              id: deliverable.id,
               name: deliverable.name,
               logo: Uri.tryParse(deliverable.logoUrl),
               startDate: DateTime.tryParse(job.startDate) ?? DateTime.now(),

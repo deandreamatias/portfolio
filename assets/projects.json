@@ -24,7 +24,7 @@
         "screenshots": [],
         "summary": "Utility app for TV audiences that increases entertainment value by instantly picking random episodes to watch.",
         "id": "tv-randshow",
-        "logo_url": "https://tvrandshow.com/favicon.png"
+        "logo_url": "assets/images/logos/tv-randshow.png"
     },
     {
         "name": "Flutter Form Builder",
@@ -53,7 +53,7 @@
         "screenshots": [],
         "summary": "Production-ready Flutter package that speeds up form development and reduces implementation effort for app teams.",
         "id": "flutter-form-builder",
-        "logo_url": "https://github.com/flutter-form-builder-ecosystem.png?size=200"
+        "logo_url": "assets/images/logos/flutter-form-builder.png"
     },
     {
         "name": "Portfolio",
@@ -79,7 +79,7 @@
         "screenshots": [],
         "summary": "Personal business portfolio showcasing services, experience, and proof of delivery for potential clients and employers.",
         "id": "portfolio",
-        "logo_url": "https://deandreamatias.com/profile.png"
+        "logo_url": "assets/images/logos/profile-main.png"
     },
     {
         "name": "Brazil Tech Expats Wiki",
@@ -103,7 +103,7 @@
         "screenshots": [],
         "summary": "Community knowledge hub helping Brazilian tech professionals abroad make practical relocation and career decisions.",
         "id": "brazil-tech-expats-wiki",
-        "logo_url": "https://github.com/deandreamatias.png?size=200"
+        "logo_url": "assets/images/logos/github-deandreamatias.png"
     },
     {
         "name": "Dog Grooming Website",
@@ -126,7 +126,7 @@
         "screenshots": [],
         "summary": "Lead-generation website for a local grooming business, focused on visibility, trust, and customer contact conversion.",
         "id": "dog-grooming-website",
-        "logo_url": "https://peluqueriacaninamimos.com/icons/og-image.png"
+        "logo_url": "assets/images/logos/peluqueriacaninamimos.png"
     },
     {
         "name": "Museum Tour App",
@@ -151,7 +151,7 @@
         "screenshots": [],
         "summary": "Concept product for museums to improve visitor engagement through guided mobile experiences and accessible content.",
         "id": "museum-tour-app",
-        "logo_url": "https://github.com/deandreamatias.png?size=200"
+        "logo_url": "assets/images/logos/museum-tour.png"
     },
     {
         "name": "flutter.base",
@@ -177,7 +177,7 @@
         "screenshots": [],
         "summary": "Open-source starter architecture to shorten project onboarding and improve long-term maintainability for Flutter teams.",
         "id": "flutter-base",
-        "logo_url": "https://github.com/mrmilu.png?size=200"
+        "logo_url": "assets/images/logos/github-mrmilu.png"
     },
     {
         "name": "SpaceX Go!",
@@ -201,7 +201,7 @@
         "screenshots": [],
         "summary": "Community-driven app that makes SpaceX mission data easier to follow for enthusiasts in a mobile-friendly format.",
         "id": "spacex-go",
-        "logo_url": "https://github.com/jesusrp98.png?size=200"
+        "logo_url": "assets/images/logos/github-spacex-go.png"
     },
     {
         "name": "Pay calculator",
@@ -224,7 +224,7 @@
         "screenshots": [],
         "summary": "Simple payroll utility app that helps users estimate compensation quickly and reduce manual calculation errors.",
         "id": "pay-calculator",
-        "logo_url": "https://github.com/deandreamatias.png?size=200"
+        "logo_url": "assets/images/logos/github-deandreamatias.png"
     },
     {
         "name": "GymRats Statistics",
@@ -247,7 +247,7 @@
         "screenshots": [],
         "summary": "CLI utility that turns workout logs into readable stats, helping users track progress and stay motivated.",
         "id": "gymrats-statistics",
-        "logo_url": "https://github.com/deandreamatias.png?size=200"
+        "logo_url": "assets/images/logos/gymrats.png"
     },
     {
         "name": "Flutter Universe",
@@ -267,7 +267,7 @@
         "screenshots": [],
         "summary": "Community channels that curate Flutter updates and practical tips to keep developers informed and connected.",
         "id": "flutter-universe",
-        "logo_url": "https://github.com/deandreamatias.png?size=200"
+        "logo_url": "assets/images/logos/flutter-universe.jpg"
     },
     {
         "name": "Universo Flutter Logo",
@@ -287,7 +287,7 @@
         "screenshots": [],
         "summary": "Brand identity design project that gives the Flutter community initiative a recognizable visual presence.",
         "id": "universo-flutter-logo",
-        "logo_url": "https://github.com/deandreamatias.png?size=200"
+        "logo_url": "assets/images/logos/flutter-universe.jpg"
     },
     {
         "name": "flutter_architecture_template",
@@ -313,6 +313,6 @@
         "screenshots": [],
         "summary": "Scalable Flutter template co-created to help teams adopt consistent architecture across projects.",
         "id": "flutter-architecture-template",
-        "logo_url": "https://github.com/worldline-spain.png?size=200"
+        "logo_url": "assets/images/logos/github-worldline-spain.png"
     }
 ]
