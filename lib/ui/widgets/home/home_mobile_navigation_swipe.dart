@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
 import 'package:portfolio/ui/style/sizes.dart';
 import 'package:portfolio/ui/utils/accessibility_utils.dart';
-import 'package:portfolio/ui/widgets/buttons/button_icon_transparent.dart';
+import 'package:portfolio/ui/widgets/buttons/button_transparent.dart';
 import 'package:portfolio/ui/widgets/home/home_navigation_button.dart';
 import 'package:portfolio/ui/widgets/home/models/home_navigation_option.dart';
 import 'package:unicons/unicons.dart';
@@ -79,7 +79,7 @@ class _HomeMobileNavigationSwipeState extends State<HomeMobileNavigationSwipe> {
           Row(
             spacing: Sizes.small,
             children: <Widget>[
-              ButtonIconTransparent(
+              ButtonTransparent(
                 icon: UniconsLine.angle_left,
                 semanticLabel: l10n.homeNavigationPrevious,
                 onPressed: hasPrevious ? _goToPrevious : null,
@@ -123,7 +123,7 @@ class _HomeMobileNavigationSwipeState extends State<HomeMobileNavigationSwipe> {
                   ),
                 ),
               ),
-              ButtonIconTransparent(
+              ButtonTransparent(
                 icon: UniconsLine.angle_right,
                 semanticLabel: l10n.homeNavigationNext,
                 onPressed: hasNext ? _goToNext : null,

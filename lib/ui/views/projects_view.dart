@@ -7,9 +7,10 @@ import 'package:portfolio/ui/style/context_extensions.dart';
 import 'package:portfolio/ui/style/sizes.dart';
 import 'package:portfolio/ui/views/career_view.dart';
 import 'package:portfolio/ui/widgets/brand_name.dart';
-import 'package:portfolio/ui/widgets/next_section_button.dart';
+import 'package:portfolio/ui/widgets/buttons/button_transparent.dart';
 import 'package:portfolio/ui/widgets/projects/projects_grid.dart';
 import 'package:portfolio/ui/widgets/text/title_large_text.dart';
+import 'package:unicons/unicons.dart';
 
 class ProjectsView extends StatefulWidget {
   static const String route = '/projects';
@@ -67,7 +68,7 @@ class _ProjectsViewState extends State<ProjectsView> {
                             child: TitleLargeText(
                               l10n.navProjects,
                               color: context.appColors.onSurface,
-                              textAlign: TextAlign.center,
+                              textAlign: .center,
                             ),
                           ),
                           const SizedBox(height: Sizes.large),
@@ -78,9 +79,12 @@ class _ProjectsViewState extends State<ProjectsView> {
                                   ProjectsGrid(showcases: value),
                             ),
                           ),
-                          NextSectionButton(
-                            label: l10n.navCareer,
-                            onTap: () => context.go(CareerView.route),
+                          Center(
+                            child: ButtonTransparent(
+                              label: l10n.navCareer,
+                              icon: UniconsLine.angle_right,
+                              onPressed: () => context.go(CareerView.route),
+                            ),
                           ),
                         ],
                       ),
