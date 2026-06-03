@@ -32,6 +32,7 @@ class ShowcaseNotifier extends ValueNotifier<List<Showcase>> {
           showcases.add(
             Showcase(
               id: deliverable.id,
+              jobId: job.id,
               name: deliverable.name,
               logo: Uri.tryParse(deliverable.logoUrl),
               startDate: DateTime.tryParse(job.startDate) ?? DateTime.now(),

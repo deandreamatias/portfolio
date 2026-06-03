@@ -28,9 +28,25 @@ final GoRouter appRouter = GoRouter(
           ],
         ),
         GoRoute(
-          path: 'career',
+          path: 'jobs',
           pageBuilder: (context, state) =>
               const NoTransitionPage(child: CareerView()),
+          routes: <RouteBase>[
+            GoRoute(
+              path: ':jobId',
+              pageBuilder: (context, state) => NoTransitionPage(
+                child: ProjectDetailView(id: state.pathParameters['jobId']!),
+              ),
+              routes: <RouteBase>[
+                GoRoute(
+                  path: 'project/:id',
+                  pageBuilder: (context, state) => NoTransitionPage(
+                    child: ProjectDetailView(id: state.pathParameters['id']!),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
         GoRoute(
           path: 'about',

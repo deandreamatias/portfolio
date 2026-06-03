@@ -46,6 +46,8 @@ class Project extends Equatable {
   @JsonKey(name: 'end_date')
   final String? endDate;
 
+  Uri get logoUri => Uri.tryParse(logoUrl ?? '') ?? Uri();
+
   Showcase toShowcase() => Showcase(
     id: id,
     name: name,

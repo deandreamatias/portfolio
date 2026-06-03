@@ -2,6 +2,7 @@ import 'package:equatable/equatable.dart';
 
 class Showcase extends Equatable {
   final String id;
+  final String jobId;
   final String name;
   final Uri? logo;
   final DateTime startDate;
@@ -9,6 +10,7 @@ class Showcase extends Equatable {
 
   const Showcase({
     required this.id,
+    this.jobId = '',
     required this.name,
     required this.logo,
     required this.startDate,
@@ -16,5 +18,5 @@ class Showcase extends Equatable {
   });
 
   @override
-  List<Object?> get props => [id, name, logo, startDate, endDate];
+  List<Object?> get props => [id, jobId, name, logo, startDate, endDate];
 }
