@@ -1,0 +1,31 @@
+import 'package:flutter/widgets.dart';
+import 'package:portfolio/data/constants.dart';
+import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
+import 'package:portfolio/ui/style/sizes.dart';
+import 'package:portfolio/ui/widgets/text/body_large_text.dart';
+import 'package:portfolio/ui/widgets/text/display_large_text.dart';
+
+class HomeHero extends StatelessWidget {
+  const HomeHero({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(Sizes.medium),
+      child: Column(
+        spacing: Sizes.medium,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Semantics(
+            header: true,
+            child: const DisplayLargeText(Constants.name, textAlign: .center),
+          ),
+          BodyLargeText(
+            AppLocalizations.of(context).homeSubtitle,
+            textAlign: .center,
+          ),
+        ],
+      ),
+    );
+  }
+}

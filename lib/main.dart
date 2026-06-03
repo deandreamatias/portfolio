@@ -3,9 +3,9 @@ import 'package:flutter/semantics.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
-import 'package:portfolio/shared/app_router.dart';
-import 'package:portfolio/style/app_theme.dart';
-import 'package:portfolio/style/context_extensions.dart';
+import 'package:portfolio/ui/app_router.dart';
+import 'package:portfolio/ui/style/app_theme.dart';
+import 'package:portfolio/ui/style/context_extensions.dart';
 
 Future<void> main() async {
   usePathUrlStrategy();
