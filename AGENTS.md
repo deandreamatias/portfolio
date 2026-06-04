@@ -1,6 +1,6 @@
 # Portfolio – Agent Instructions
 
-Flutter web portfolio for [Matias de Andrea](https://deandreamatias.com). Single-route app targeting web, built with Flutter stable (managed via FVM).
+Flutter web portfolio for [Matias de Andrea](https://deandreamatias.com). Multi-page Flutter web app using `go_router`, built with Flutter stable (managed via FVM).
 
 ## Build & Test Commands
 
@@ -25,31 +25,57 @@ This document adds operational guidance and tooling details for AI agents workin
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) for the full architecture and design principles.
 
-**Key for agents**: Single-page Flutter web app with no routing beyond root (`/`). No external state management — rely on `StatelessWidget` and composition. Widget tree is organized by concern:
+**Key for agents**: Flutter web app with declarative routes in `lib/ui/app_router.dart`. It does not use an external state-management package; local async state uses `ValueNotifier` classes in `lib/ui/notifiers`, with `StatelessWidget`/composition elsewhere. The project is organized into data, UI, localization, assets, web shell, and tests:
 
 ```txt
 lib/
-  main.dart               # App entry + WidgetsApp + l10n delegates
-  shared/                 # Constants, theme, sizes, context extensions, link utils
-  views/                  # Full-screen views
-  widgets/                # Reusable components
-    text/                 # Typed text wrappers (DisplayLargeText, BodyLargeText, …)
-    home/                 # Home-specific sub-widgets
+  main.dart                     # App entry, WidgetsApp.router, l10n delegates, web semantics
+  data/
+    constants.dart              # URLs, display constants, URL keys
+    file_service.dart           # JSON asset loading for projects/jobs
+    navigate_links.dart         # External link launcher helper
+    models/                     # json_serializable/equatable data models
+  l10n/
+    app_en.arb
+    app_es.arb
+    app_pt.arb
+    gen_l10n/                   # Generated AppLocalizations output
+  ui/
+    app_router.dart             # go_router route tree
+    views/                      # Full-screen route views
+    widgets/                    # Reusable and feature widgets
+      buttons/
+      breadcrumb/
+      home/
+      projects/
+      text/                     # Typed text wrappers
+    style/                      # App theme, breakpoints, sizes, borders, context extensions
+    utils/                      # Platform and accessibility helpers
+    notifiers/                  # ValueNotifier-backed loaders/state
+assets/
+  projects.json                 # Project data
+  jobs.json                     # Career/job data
+  deandreamatias.json           # Profile/CV data
+  images/logos/                 # Logo/image assets
+web/                            # Static web shell, SEO files, icons, profile image
+test/                           # Widget, navigation, and accessibility tests
 ```
 
-When modifying or extending: preserve this organization. Add new views to `views/` and reusable widgets to `widgets/`. Keep component-specific widgets in their parent's file unless reused across multiple parents.
+When modifying or extending: preserve this organization. Add new route views to `lib/ui/views/`, reusable widgets to `lib/ui/widgets/`, style tokens/extensions to `lib/ui/style/`, data loading/model code to `lib/data/`, and static content to `assets/` or `web/` as appropriate. Keep component-specific widgets in their parent's file unless reused across multiple parents.
 
 ## Key Conventions
 
-**Responsive design** — use `context.isMedium` (≥768 px) as the primary breakpoint. Full breakpoint set in [lib/shared/context_extensions.dart](lib/shared/context_extensions.dart).
+**Responsive design** — use `context.isMedium` (≥768 px) as the primary breakpoint. Full breakpoint set in [lib/ui/style/context_extensions.dart](lib/ui/style/context_extensions.dart) and [lib/ui/style/breakpoints.dart](lib/ui/style/breakpoints.dart).
 
-**Spacing** — use constants from [lib/shared/sizes.dart](lib/shared/sizes.dart): `Sizes.small` (4), `Sizes.medium` (8), `Sizes.large` (16), `Sizes.extraLarge` (32), `Sizes.extraExtraLarge` (64). Do not hardcode pixel values.
+**Spacing** — use constants from [lib/ui/style/sizes.dart](lib/ui/style/sizes.dart): `Sizes.small` (4), `Sizes.medium` (8), `Sizes.large` (16), `Sizes.extraLarge` (32), `Sizes.extraExtraLarge` (64). Do not hardcode pixel values.
 
-**URLs & constants** — centralize in [lib/shared/constants.dart](lib/shared/constants.dart) (`Urls`, `UrlKeys`, `Constants`).
+**URLs & constants** — centralize in [lib/data/constants.dart](lib/data/constants.dart) (`Urls`, `UrlKeys`, `Constants`).
 
 **Text widgets** — always use the typed wrappers (`DisplayLargeText`, `TitleLargeText`, `BodyMediumText`, etc.) instead of raw `Text`. They apply `Theme.of(context).textTheme` consistently.
 
-**External links** — use `openLink(Uri)` from [lib/shared/navigate_links.dart](lib/shared/navigate_links.dart).
+**External links** — use `openLink(Uri)` from [lib/data/navigate_links.dart](lib/data/navigate_links.dart).
+
+**JSON data** — projects and jobs are loaded from `assets/projects.json` and `assets/jobs.json` via [lib/data/file_service.dart](lib/data/file_service.dart). Keep model fields in sync with [lib/data/models](lib/data/models), and regenerate `*.g.dart` files after changing `@JsonSerializable()` models.
 
 **Private sub-widgets** — name with `_` prefix (e.g. `_ColumnContent`); keep them in the same file as their parent unless reused.
 
@@ -71,8 +97,8 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for design principles.
 **Agent guidance**:
 
 - Use `context.isMedium` (≥768 px) as primary breakpoint for responsive layout.
-- Theme is Material Design 3 with platform brightness detection (light/dark modes).
-- Font: Geologica (body) via GoogleFonts, Titan One (display). Define in [lib/shared/theme.dart](lib/shared/theme.dart).
+- Theme is custom app theme data with platform brightness and high-contrast detection in [lib/main.dart](lib/main.dart).
+- Font: Geologica (body), Titan One (display). Define and resolve theme typography in [lib/ui/style/app_theme.dart](lib/ui/style/app_theme.dart) and [lib/ui/style/theme.dart](lib/ui/style/theme.dart).
 - All text widgets must use typed wrappers (`DisplayLargeText`, `BodyMediumText`, etc.) — never raw `Text`.
 
 ## Accessibility
@@ -84,8 +110,6 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for design principles.
 - `SemanticsBinding.instance.ensureSemantics()` is called in `main()` for web.
 - Tests in [test/accessibility_test.dart](test/accessibility_test.dart) cover tap targets, text contrast, and semantic headers — keep them green.
 - Before merge: run tests locally and verify semantics with screen reader on target platform.
-
-See [cross-project mobile accessibility guidelines](mobile-accessibility.instructions.md) for WCAG 2.2 AA baseline and audit checklists.
 
 ## Deployment
 
