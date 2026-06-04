@@ -13,8 +13,10 @@ Job _$JobFromJson(Map<String, dynamic> json) => Job(
   employmentType: json['employment_type'] as String,
   location: json['location'] as String,
   remote: json['remote'] as bool? ?? false,
-  startDate: json['start_date'] as String,
-  endDate: json['end_date'] as String? ?? '',
+  startDate: const DateTimeConverter().fromJson(json['start_date'] as String),
+  endDate: const NullableDateTimeConverter().fromJson(
+    json['end_date'] as String?,
+  ),
   description: json['description'] as String,
   achievements:
       (json['achievements'] as List<dynamic>?)
@@ -34,7 +36,7 @@ Job _$JobFromJson(Map<String, dynamic> json) => Job(
   skills:
       (json['skills'] as List<dynamic>?)?.map((e) => e as String).toList() ??
       const [],
-  logo: json['logo'] as String? ?? '',
+  logo: const NullableUriConverter().fromJson(json['logo'] as String?),
 );
 
 Map<String, dynamic> _$JobToJson(Job instance) => <String, dynamic>{
@@ -44,14 +46,14 @@ Map<String, dynamic> _$JobToJson(Job instance) => <String, dynamic>{
   'employment_type': instance.employmentType,
   'location': instance.location,
   'remote': instance.remote,
-  'start_date': instance.startDate,
-  'end_date': instance.endDate,
   'description': instance.description,
   'achievements': instance.achievements,
   'deliverables': instance.deliverables,
   'technologies': instance.technologies,
   'skills': instance.skills,
-  'logo': instance.logo,
+  'logo': const NullableUriConverter().toJson(instance.logo),
+  'start_date': const DateTimeConverter().toJson(instance.startDate),
+  'end_date': const NullableDateTimeConverter().toJson(instance.endDate),
 };
 
 JobDeliverable _$JobDeliverableFromJson(Map<String, dynamic> json) =>
@@ -66,7 +68,7 @@ JobDeliverable _$JobDeliverableFromJson(Map<String, dynamic> json) =>
               .toList() ??
           const [],
       summary: json['summary'] as String,
-      logoUrl: json['logo_url'] as String? ?? '',
+      logo: const NullableUriConverter().fromJson(json['logo_url'] as String?),
     );
 
 Map<String, dynamic> _$JobDeliverableToJson(JobDeliverable instance) =>
@@ -77,17 +79,19 @@ Map<String, dynamic> _$JobDeliverableToJson(JobDeliverable instance) =>
       'available': instance.available,
       'screenshots': instance.screenshots,
       'summary': instance.summary,
-      'logo_url': instance.logoUrl,
+      'logo_url': const NullableUriConverter().toJson(instance.logo),
     };
 
 JobLinks _$JobLinksFromJson(Map<String, dynamic> json) => JobLinks(
-  ios: json['ios'] as String?,
-  android: json['android'] as String?,
-  web: json['web'] as String?,
+  ios: const NullableUriConverter().fromJson(json['app_store'] as String?),
+  android: const NullableUriConverter().fromJson(
+    json['google_play'] as String?,
+  ),
+  web: const NullableUriConverter().fromJson(json['web'] as String?),
 );
 
 Map<String, dynamic> _$JobLinksToJson(JobLinks instance) => <String, dynamic>{
-  'ios': instance.ios,
-  'android': instance.android,
-  'web': instance.web,
+  'app_store': const NullableUriConverter().toJson(instance.ios),
+  'google_play': const NullableUriConverter().toJson(instance.android),
+  'web': const NullableUriConverter().toJson(instance.web),
 };

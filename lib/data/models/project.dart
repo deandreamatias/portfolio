@@ -1,14 +1,17 @@
-import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:portfolio/data/models/json_converters.dart';
 import 'package:portfolio/data/models/showcase.dart';
 
 part 'project.g.dart';
 
 @JsonSerializable()
-class Project extends Equatable {
+class Project extends Showcase {
   const Project({
-    required this.id,
-    required this.name,
+    required super.id,
+    required super.name,
+    @JsonKey(name: 'logo_url') super.logo,
+    @JsonKey(name: 'start_date') required super.startDate,
+    @JsonKey(name: 'end_date') super.endDate,
     required this.description,
     required this.summary,
     required this.type,
@@ -20,13 +23,8 @@ class Project extends Equatable {
     required this.screenshots,
     this.url,
     this.repo,
-    this.logoUrl,
-    this.startDate,
-    this.endDate,
   });
 
-  final String id;
-  final String name;
   final String description;
   final String summary;
   final String type;
@@ -37,24 +35,10 @@ class Project extends Equatable {
   @JsonKey(name: 'available_in_stores')
   final bool availableInStores;
   final List<String> screenshots;
-  final String? url;
-  final String? repo;
-  @JsonKey(name: 'logo_url')
-  final String? logoUrl;
-  @JsonKey(name: 'start_date')
-  final String? startDate;
-  @JsonKey(name: 'end_date')
-  final String? endDate;
-
-  Uri get logoUri => Uri.tryParse(logoUrl ?? '') ?? Uri();
-
-  Showcase toShowcase() => Showcase(
-    id: id,
-    name: name,
-    logo: Uri.tryParse(logoUrl ?? ''),
-    startDate: DateTime.tryParse(startDate ?? '') ?? DateTime.now(),
-    endDate: DateTime.tryParse(endDate ?? ''),
-  );
+  @NullableUriConverter()
+  final Uri? url;
+  @NullableUriConverter()
+  final Uri? repo;
 
   factory Project.fromJson(Map<String, dynamic> json) =>
       _$ProjectFromJson(json);
@@ -63,8 +47,7 @@ class Project extends Equatable {
 
   @override
   List<Object?> get props => [
-    id,
-    name,
+    ...super.props,
     description,
     summary,
     type,
@@ -76,8 +59,5 @@ class Project extends Equatable {
     screenshots,
     url,
     repo,
-    logoUrl,
-    startDate,
-    endDate,
   ];
 }

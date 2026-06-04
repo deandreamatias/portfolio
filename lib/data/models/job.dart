@@ -1,5 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:portfolio/data/models/json_converters.dart';
+import 'package:portfolio/data/models/showcase.dart';
 
 part 'job.g.dart';
 
@@ -8,18 +10,18 @@ class Job extends Equatable {
   const Job({
     required this.id,
     required this.enterprise,
-    required this.jobTitle,
-    required this.employmentType,
+    @JsonKey(name: 'job_title') required this.jobTitle,
+    @JsonKey(name: 'employment_type') required this.employmentType,
     required this.location,
     this.remote = false,
-    required this.startDate,
-    this.endDate = '',
+    @JsonKey(name: 'start_date') required this.startDate,
+    @JsonKey(name: 'end_date') this.endDate,
     required this.description,
     this.achievements = const [],
     this.deliverables = const [],
     this.technologies = const [],
     this.skills = const [],
-    this.logo = '',
+    this.logo,
   });
 
   final String id;
@@ -30,19 +32,22 @@ class Job extends Equatable {
   final String employmentType;
   final String location;
   final bool remote;
-  @JsonKey(name: 'start_date')
-  final String startDate;
-  @JsonKey(name: 'end_date')
-  final String endDate;
   final String description;
   final List<String> achievements;
   final List<JobDeliverable> deliverables;
   final List<String> technologies;
   final List<String> skills;
-  final String logo;
+  @NullableUriConverter()
+  final Uri? logo;
+  @DateTimeConverter()
+  @JsonKey(name: 'start_date')
+  final DateTime startDate;
+  @NullableDateTimeConverter()
+  @JsonKey(name: 'end_date')
+  final DateTime? endDate;
 
-  bool get hasLogo => logo.isNotEmpty;
-  bool get hasEndDate => endDate.isNotEmpty;
+  bool get hasLogo => logo != null;
+  bool get hasEndDate => endDate != null;
 
   factory Job.fromJson(Map<String, dynamic> json) => _$JobFromJson(json);
 
@@ -56,14 +61,14 @@ class Job extends Equatable {
     employmentType,
     location,
     remote,
-    startDate,
-    endDate,
     description,
     achievements,
     deliverables,
     technologies,
     skills,
     logo,
+    startDate,
+    endDate,
   ];
 }
 
@@ -76,7 +81,7 @@ class JobDeliverable extends Equatable {
     required this.available,
     this.screenshots = const [],
     required this.summary,
-    this.logoUrl = '',
+    this.logo,
   });
 
   final String id;
@@ -85,10 +90,20 @@ class JobDeliverable extends Equatable {
   final bool available;
   final List<String> screenshots;
   final String summary;
+  @NullableUriConverter()
   @JsonKey(name: 'logo_url')
-  final String logoUrl;
+  final Uri? logo;
 
-  bool get hasLogo => logoUrl.isNotEmpty;
+  bool get hasLogo => logo != null;
+
+  Showcase toShowcase({required Job job}) => Showcase(
+    id: id,
+    jobId: job.id,
+    name: name,
+    logo: logo,
+    startDate: job.startDate,
+    endDate: job.endDate,
+  );
 
   factory JobDeliverable.fromJson(Map<String, dynamic> json) =>
       _$JobDeliverableFromJson(json);
@@ -103,17 +118,26 @@ class JobDeliverable extends Equatable {
     available,
     screenshots,
     summary,
-    logoUrl,
+    logo,
   ];
 }
 
 @JsonSerializable()
 class JobLinks extends Equatable {
-  const JobLinks({this.ios, this.android, this.web});
+  const JobLinks({
+    @JsonKey(name: 'app_store') this.ios,
+    @JsonKey(name: 'google_play') this.android,
+    this.web,
+  });
 
-  final String? ios;
-  final String? android;
-  final String? web;
+  @NullableUriConverter()
+  @JsonKey(name: 'app_store')
+  final Uri? ios;
+  @NullableUriConverter()
+  @JsonKey(name: 'google_play')
+  final Uri? android;
+  @NullableUriConverter()
+  final Uri? web;
 
   factory JobLinks.fromJson(Map<String, dynamic> json) =>
       _$JobLinksFromJson(json);
