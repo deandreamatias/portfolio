@@ -5,6 +5,7 @@ import 'package:portfolio/ui/style/border_styles.dart';
 import 'package:portfolio/ui/style/context_extensions.dart';
 import 'package:portfolio/ui/style/sizes.dart';
 import 'package:portfolio/ui/widgets/image_with_placeholder.dart';
+import 'package:portfolio/ui/widgets/text/body_medium_text.dart';
 
 class ProjectCard extends StatelessWidget {
   const ProjectCard({required this.project, super.key});
@@ -21,7 +22,7 @@ class ProjectCard extends StatelessWidget {
         child: GestureDetector(
           onTap: () => context.go('/projects/${project.id}'),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: .start,
             children: <Widget>[
               AspectRatio(
                 aspectRatio: 1,
@@ -31,14 +32,7 @@ class ProjectCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: Sizes.extraSmall),
-              Text(
-                project.name,
-                style: context.appTextStyles.bodyMedium.copyWith(
-                  color: context.appColors.onSurface,
-                ),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
+              BodyMediumText(project.name, color: context.appColors.onSurface),
             ],
           ),
         ),
