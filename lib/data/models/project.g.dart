@@ -29,7 +29,7 @@ Project _$ProjectFromJson(Map<String, dynamic> json) => Project(
   screenshots: (json['screenshots'] as List<dynamic>)
       .map((e) => e as String)
       .toList(),
-  url: const NullableUriConverter().fromJson(json['url'] as String?),
+  web: const NullableUriConverter().fromJson(json['url'] as String?),
   repo: const NullableUriConverter().fromJson(json['repo'] as String?),
 );
 
@@ -48,6 +48,6 @@ Map<String, dynamic> _$ProjectToJson(Project instance) => <String, dynamic>{
   'featured': instance.featured,
   'available_in_stores': instance.availableInStores,
   'screenshots': instance.screenshots,
-  'url': const NullableUriConverter().toJson(instance.url),
+  'url': const NullableUriConverter().toJson(instance.web),
   'repo': const NullableUriConverter().toJson(instance.repo),
 };

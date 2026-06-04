@@ -21,7 +21,7 @@ class Project extends Showcase {
     required this.featured,
     required this.availableInStores,
     required this.screenshots,
-    this.url,
+    this.web,
     this.repo,
   });
 
@@ -36,7 +36,7 @@ class Project extends Showcase {
   final bool availableInStores;
   final List<String> screenshots;
   @NullableUriConverter()
-  final Uri? url;
+  final Uri? web;
   @NullableUriConverter()
   final Uri? repo;
 
@@ -57,7 +57,7 @@ class Project extends Showcase {
     featured,
     availableInStores,
     screenshots,
-    url,
+    web,
     repo,
   ];
 }

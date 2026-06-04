@@ -100,6 +100,7 @@ class JobDeliverable extends Equatable {
     id: id,
     jobId: job.id,
     name: name,
+    enterprise: job.enterprise,
     logo: logo,
     startDate: job.startDate,
     endDate: job.endDate,

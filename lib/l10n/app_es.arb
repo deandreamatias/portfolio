@@ -53,5 +53,13 @@
     "homeNavigationNext": "Opción siguiente",
     "homeNavigationRegion": "Opciones de navegación de inicio",
     "homeNavigationPosition": "Opción {current} de {total}",
-    "sectionComingSoon": "La sección {section} estará disponible pronto"
+    "sectionComingSoon": "La sección {section} estará disponible pronto",
+    "showcasePeriodProjectMaintainedSince": "Mantenido desde {month} de {year}",
+    "showcasePeriodProjectDevelopedIn": "Desarrollado en {month} de {year}",
+    "showcasePeriodProjectDevelopedBetweenMonthsSameYear": "Desarrollado entre {startMonth} y {endMonth} de {year}",
+    "showcasePeriodProjectDevelopedBetweenRange": "Desarrollado entre {startMonth} de {startYear} y {endMonth} de {endYear}",
+    "showcasePeriodJobCurrentlyAtSince": "Actualmente trabajando en ello en {enterprise} desde {month} de {year}",
+    "showcasePeriodJobWorkedOnIn": "Trabajé en ello durante mi etapa en {enterprise} en {month} de {year}",
+    "showcasePeriodJobWorkedOnBetweenMonthsSameYear": "Trabajé en ello durante mi etapa en {enterprise} de {startMonth} a {endMonth} de {year}",
+    "showcasePeriodJobWorkedOnBetweenRange": "Trabajé en ello durante mi etapa en {enterprise} de {startMonth} de {startYear} a {endMonth} de {endYear}"
 }
