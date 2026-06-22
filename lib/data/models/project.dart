@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:portfolio/data/models/json_converters.dart';
+import 'package:portfolio/data/models/project_links.dart';
 import 'package:portfolio/data/models/showcase.dart';
 
 part 'project.g.dart';
@@ -12,33 +12,26 @@ class Project extends Showcase {
     @JsonKey(name: 'logo_url') super.logo,
     @JsonKey(name: 'start_date') required super.startDate,
     @JsonKey(name: 'end_date') super.endDate,
+    @JsonKey(name: 'job_id') super.jobId = '',
+    @JsonKey(name: 'enterprise') super.enterprise = '',
     required this.description,
     required this.summary,
     required this.type,
     required this.role,
-    required this.platforms,
     required this.technologies,
     required this.featured,
-    required this.availableInStores,
     required this.screenshots,
-    this.web,
-    this.repo,
+    required this.links,
   });
 
   final String description;
   final String summary;
   final String type;
   final String role;
-  final List<String> platforms;
   final List<String> technologies;
   final bool featured;
-  @JsonKey(name: 'available_in_stores')
-  final bool availableInStores;
   final List<String> screenshots;
-  @NullableUriConverter()
-  final Uri? web;
-  @NullableUriConverter()
-  final Uri? repo;
+  final ProjectLinks links;
 
   factory Project.fromJson(Map<String, dynamic> json) =>
       _$ProjectFromJson(json);
@@ -52,12 +45,9 @@ class Project extends Showcase {
     summary,
     type,
     role,
-    platforms,
     technologies,
     featured,
-    availableInStores,
     screenshots,
-    web,
-    repo,
+    links,
   ];
 }

@@ -4,12 +4,6 @@
         "description": "App to choose a random TV show episode",
         "type": "open-source",
         "role": "author",
-        "web": "https://tvrandshow.com/",
-        "repo": "https://github.com/deandreamatias/tv-randshow",
-        "platforms": [
-            "android",
-            "web"
-        ],
         "technologies": [
             "Flutter",
             "Dart",
@@ -20,25 +14,22 @@
         "start_date": "2019-08-01",
         "end_date": null,
         "featured": true,
-        "available_in_stores": true,
         "screenshots": [],
         "summary": "Utility app for TV audiences that increases entertainment value by instantly picking random episodes to watch.",
         "id": "tv-randshow",
-        "logo_url": "assets/images/logos/tv-randshow.png"
+        "logo_url": "assets/images/logos/tv-randshow.png",
+        "links": {
+            "app_store": null,
+            "google_play": "https://play.google.com/store/apps/details?id=deandrea.matias.tv_randshow",
+            "web": "https://tvrandshow.com/",
+            "repository": "https://github.com/deandreamatias/tv-randshow"
+        }
     },
     {
         "name": "Flutter Form Builder",
         "description": "Simple form maker for Flutter Framework — the community's most popular form package",
         "type": "open-source",
-        "role": "main maintainer",
-        "web": "https://pub.dev/packages/flutter_form_builder",
-        "repo": "https://github.com/flutter-form-builder-ecosystem/flutter_form_builder",
-        "platforms": [
-            "android",
-            "ios",
-            "web",
-            "desktop"
-        ],
+        "role": "maintainer",
         "technologies": [
             "Flutter",
             "Dart",
@@ -49,22 +40,22 @@
         "start_date": "2022-06-01",
         "end_date": null,
         "featured": true,
-        "available_in_stores": false,
         "screenshots": [],
         "summary": "Production-ready Flutter package that speeds up form development and reduces implementation effort for app teams.",
         "id": "flutter-form-builder",
-        "logo_url": "assets/images/logos/flutter-form-builder.png"
+        "logo_url": "assets/images/logos/flutter-form-builder.png",
+        "links": {
+            "app_store": null,
+            "google_play": null,
+            "web": "https://pub.dev/packages/flutter_form_builder",
+            "repository": "https://github.com/flutter-form-builder-ecosystem/flutter_form_builder"
+        }
     },
     {
         "name": "Portfolio",
         "description": "Personal portfolio built with Flutter Web",
         "type": "open-source",
         "role": "author",
-        "web": "https://deandreamatias.com",
-        "repo": "https://github.com/deandreamatias/portfolio",
-        "platforms": [
-            "web"
-        ],
         "technologies": [
             "Flutter",
             "Dart",
@@ -75,22 +66,22 @@
         "start_date": "2020-04-03",
         "end_date": null,
         "featured": true,
-        "available_in_stores": false,
         "screenshots": [],
         "summary": "Personal business portfolio showcasing services, experience, and proof of delivery for potential clients and employers.",
         "id": "portfolio",
-        "logo_url": "assets/images/logos/profile-main.png"
+        "logo_url": "assets/images/logos/profile-main.png",
+        "links": {
+            "app_store": null,
+            "google_play": null,
+            "web": "https://deandreamatias.com",
+            "repository": "https://github.com/deandreamatias/portfolio"
+        }
     },
     {
         "name": "Brazil Tech Expats Wiki",
         "description": "Community wiki for Brazilian tech professionals living abroad",
         "type": "community",
         "role": "author",
-        "web": "https://brazil-tech-expats.deandreamatias.com/home/spain/",
-        "repo": "https://github.com/deandreamatias/brazil-tech-expats-wiki/",
-        "platforms": [
-            "web"
-        ],
         "technologies": [
             "Gitbook",
             "Markdown",
@@ -99,22 +90,22 @@
         "start_date": "2023-05-21",
         "end_date": null,
         "featured": true,
-        "available_in_stores": false,
         "screenshots": [],
         "summary": "Community knowledge hub helping Brazilian tech professionals abroad make practical relocation and career decisions.",
         "id": "brazil-tech-expats-wiki",
-        "logo_url": "assets/images/logos/github-deandreamatias.png"
+        "logo_url": "assets/images/logos/github-deandreamatias.png",
+        "links": {
+            "app_store": null,
+            "google_play": null,
+            "web": "https://brazil-tech-expats.deandreamatias.com/home/spain/",
+            "repository": "https://github.com/deandreamatias/brazil-tech-expats-wiki/"
+        }
     },
     {
         "name": "Dog Grooming Website",
         "description": "Dog grooming website for Mimos",
         "type": "freelance",
         "role": "author",
-        "web": "https://peluqueriacaninamimos.com/",
-        "repo": "https://github.com/deandreamatias/dog-gromming-website",
-        "platforms": [
-            "web"
-        ],
         "technologies": [
             "Flutter",
             "Dart"
@@ -122,23 +113,22 @@
         "start_date": "2023-08-19",
         "end_date": null,
         "featured": false,
-        "available_in_stores": false,
         "screenshots": [],
         "summary": "Lead-generation website for a local grooming business, focused on visibility, trust, and customer contact conversion.",
         "id": "dog-grooming-website",
-        "logo_url": "assets/images/logos/peluqueriacaninamimos.png"
+        "logo_url": "assets/images/logos/peluqueriacaninamimos.png",
+        "links": {
+            "app_store": null,
+            "google_play": null,
+            "web": "https://peluqueriacaninamimos.com/",
+            "repository": "https://github.com/deandreamatias/dog-gromming-website"
+        }
     },
     {
         "name": "Museum Tour App",
         "description": "UX/UI concept for a museum audio guide app",
-        "type": "personal",
+        "type": "design",
         "role": "author",
-        "web": "https://www.behance.net/gallery/102326491/Museum-tour-App",
-        "repo": "https://github.com/deandreamatias/museum_tour",
-        "platforms": [
-            "android",
-            "ios"
-        ],
         "technologies": [
             "Flutter",
             "Dart",
@@ -147,24 +137,22 @@
         "start_date": "2020-08-12",
         "end_date": "2022-02-12",
         "featured": false,
-        "available_in_stores": false,
         "screenshots": [],
         "summary": "Concept product for museums to improve visitor engagement through guided mobile experiences and accessible content.",
         "id": "museum-tour-app",
-        "logo_url": "assets/images/logos/museum-tour.png"
+        "logo_url": "assets/images/logos/museum-tour.png",
+        "links": {
+            "app_store": null,
+            "google_play": null,
+            "web": "https://www.behance.net/gallery/102326491/Museum-tour-App",
+            "repository": "https://github.com/deandreamatias/museum_tour"
+        }
     },
     {
         "name": "flutter.base",
         "description": "Flutter architecture template co-created at Mr Milú",
         "type": "open-source",
-        "role": "co-author",
-        "web": null,
-        "repo": "https://github.com/mrmilu/flutter.base",
-        "platforms": [
-            "android",
-            "ios",
-            "web"
-        ],
+        "role": "developer",
         "technologies": [
             "Flutter",
             "Dart",
@@ -173,23 +161,24 @@
         "start_date": "2022-04-01",
         "end_date": "2023-05-01",
         "featured": false,
-        "available_in_stores": false,
         "screenshots": [],
         "summary": "Open-source starter architecture to shorten project onboarding and improve long-term maintainability for Flutter teams.",
         "id": "flutter-base",
-        "logo_url": "assets/images/logos/github-mrmilu.png"
+        "job_id": "mr-milu",
+        "enterprise": "Mr Milú",
+        "logo_url": "assets/images/logos/github-mrmilu.png",
+        "links": {
+            "app_store": null,
+            "google_play": null,
+            "web": null,
+            "repository": "https://github.com/mrmilu/flutter.base"
+        }
     },
     {
         "name": "SpaceX Go!",
         "description": "Open-source app to follow SpaceX launches, rockets, and missions",
         "type": "open-source",
         "role": "contributor",
-        "web": null,
-        "repo": "https://github.com/jesusrp98/spacex-go",
-        "platforms": [
-            "android",
-            "ios"
-        ],
         "technologies": [
             "Flutter",
             "Dart"
@@ -197,22 +186,22 @@
         "start_date": "2019-04-20",
         "end_date": "2019-05-31",
         "featured": false,
-        "available_in_stores": false,
         "screenshots": [],
         "summary": "Community-driven app that makes SpaceX mission data easier to follow for enthusiasts in a mobile-friendly format.",
         "id": "spacex-go",
-        "logo_url": "assets/images/logos/github-spacex-go.png"
+        "logo_url": "assets/images/logos/github-spacex-go.png",
+        "links": {
+            "app_store": null,
+            "google_play": null,
+            "web": null,
+            "repository": "https://github.com/jesusrp98/spacex-go"
+        }
     },
     {
         "name": "Pay calculator",
         "description": "My first complete app — a simple pay calculator",
         "type": "open-source",
         "role": "author",
-        "web": null,
-        "repo": "https://github.com/deandreamatias/pay-calculator",
-        "platforms": [
-            "android"
-        ],
         "technologies": [
             "Flutter",
             "Dart"
@@ -220,22 +209,22 @@
         "start_date": "2019-07-20",
         "end_date": "2019-08-02",
         "featured": false,
-        "available_in_stores": false,
         "screenshots": [],
         "summary": "Simple payroll utility app that helps users estimate compensation quickly and reduce manual calculation errors.",
         "id": "pay-calculator",
-        "logo_url": "assets/images/logos/github-deandreamatias.png"
+        "logo_url": "assets/images/logos/github-deandreamatias.png",
+        "links": {
+            "app_store": null,
+            "google_play": null,
+            "web": null,
+            "repository": "https://github.com/deandreamatias/pay-calculator"
+        }
     },
     {
         "name": "GymRats Statistics",
         "description": "CLI tool for fun gym statistics, built with GitHub Copilot and vibe coding",
         "type": "open-source",
         "role": "author",
-        "web": null,
-        "repo": "https://github.com/deandreamatias/gymrats",
-        "platforms": [
-            "cli"
-        ],
         "technologies": [
             "GitHub Copilot",
             "Dart"
@@ -243,64 +232,64 @@
         "start_date": "2025-12-10",
         "end_date": null,
         "featured": false,
-        "available_in_stores": false,
         "screenshots": [],
         "summary": "CLI utility that turns workout logs into readable stats, helping users track progress and stay motivated.",
         "id": "gymrats-statistics",
-        "logo_url": "assets/images/logos/gymrats.png"
+        "logo_url": "assets/images/logos/gymrats.png",
+        "links": {
+            "app_store": null,
+            "google_play": null,
+            "web": null,
+            "repository": "https://github.com/deandreamatias/gymrats"
+        }
     },
     {
         "name": "Flutter Universe",
         "description": "Community channels on Telegram and WhatsApp for sharing Flutter news, tips, bugfixes and more",
         "type": "community",
         "role": "author",
-        "web": "https://t.me/flutteruniverse",
-        "repo": null,
-        "platforms": [
-            "web"
-        ],
         "technologies": [],
         "start_date": "2025-07-17",
         "end_date": null,
         "featured": false,
-        "available_in_stores": false,
         "screenshots": [],
         "summary": "Community channels that curate Flutter updates and practical tips to keep developers informed and connected.",
         "id": "flutter-universe",
-        "logo_url": "assets/images/logos/flutter-universe.jpg"
+        "logo_url": "assets/images/logos/flutter-universe.jpg",
+        "links": {
+            "app_store": null,
+            "google_play": null,
+            "web": "https://t.me/flutteruniverse",
+            "repository": null
+        }
     },
     {
         "name": "Universo Flutter Logo",
         "description": "Logo design for the Universo Flutter podcast and community",
-        "type": "personal",
+        "type": "design",
         "role": "author",
-        "web": "https://www.behance.net/gallery/102714375/Logo-Universo-Flutter",
-        "repo": null,
-        "platforms": [],
         "technologies": [
             "Adobe XD"
         ],
         "start_date": "2020-08-18",
         "end_date": "2020-08-18",
         "featured": false,
-        "available_in_stores": false,
         "screenshots": [],
         "summary": "Brand identity design project that gives the Flutter community initiative a recognizable visual presence.",
         "id": "universo-flutter-logo",
-        "logo_url": "assets/images/logos/flutter-universe.jpg"
+        "logo_url": "assets/images/logos/flutter-universe.jpg",
+        "links": {
+            "app_store": null,
+            "google_play": null,
+            "web": "https://www.behance.net/gallery/102714375/Logo-Universo-Flutter",
+            "repository": null
+        }
     },
     {
         "name": "flutter_architecture_template",
         "description": "Flutter architecture template co-created at Worldline",
         "type": "open-source",
-        "role": "co-author",
-        "web": null,
-        "repo": "https://github.com/worldline-spain/flutter_architecture_template",
-        "platforms": [
-            "android",
-            "ios",
-            "web"
-        ],
+        "role": "developer",
         "technologies": [
             "Flutter",
             "Dart",
@@ -309,10 +298,441 @@
         "start_date": "2023-07-14",
         "end_date": "2025-01-01",
         "featured": false,
-        "available_in_stores": false,
         "screenshots": [],
         "summary": "Scalable Flutter template co-created to help teams adopt consistent architecture across projects.",
         "id": "flutter-architecture-template",
-        "logo_url": "assets/images/logos/github-worldline-spain.png"
+        "job_id": "multiplica-talent",
+        "enterprise": "Multiplica Talent",
+        "logo_url": "assets/images/logos/github-worldline-spain.png",
+        "links": {
+            "app_store": null,
+            "google_play": null,
+            "web": null,
+            "repository": "https://github.com/worldline-spain/flutter_architecture_template"
+        }
+    },
+    {
+        "name": "CA Osasuna",
+        "description": "Official mobile app for CA Osasuna",
+        "type": "private",
+        "role": "developer",
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Figma",
+            "GitHub Copilot",
+            "Fastlane",
+            "Firebase",
+            "OAuth",
+            "REST API"
+        ],
+        "start_date": "2025-05-01",
+        "end_date": null,
+        "featured": false,
+        "screenshots": [
+            "osasuna_ios.png"
+        ],
+        "summary": "Official mobile app for CA Osasuna to engage fans with club content and match-day experiences across iOS and Android.",
+        "id": "ca-osasuna",
+        "job_id": "lobo-agencia-digital",
+        "enterprise": "Lobo Agencia Digital",
+        "logo_url": "assets/images/logos/ca-osasuna.jpg",
+        "links": {
+            "app_store": "https://apps.apple.com/es/app/osasuna-official-app/id6450509028",
+            "google_play": "https://play.google.com/store/apps/details?id=com.onefan.osasuna",
+            "web": "https://www.osasuna.es/",
+            "repository": null
+        }
+    },
+    {
+        "name": "Valencia CF",
+        "description": "Official Valencia CF app focused on fan engagement",
+        "type": "private",
+        "role": "developer",
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "GitHub Copilot",
+            "Fastlane",
+            "Firebase",
+            "OAuth",
+            "REST API"
+        ],
+        "start_date": "2025-05-01",
+        "end_date": null,
+        "featured": false,
+        "screenshots": [],
+        "summary": "Official Valencia CF app focused on fan engagement, delivering club updates and digital touchpoints for supporters.",
+        "id": "valencia-cf",
+        "job_id": "lobo-agencia-digital",
+        "enterprise": "Lobo Agencia Digital",
+        "logo_url": "assets/images/logos/valencia-cf.jpg",
+        "links": {
+            "app_store": "https://apps.apple.com/us/app/valencia-cf-official-app/id1423049571",
+            "google_play": "https://play.google.com/store/apps/details?id=es.valenciacf.android.app",
+            "web": "https://www.valenciacf.com/",
+            "repository": null
+        }
+    },
+    {
+        "name": "CD Leganés",
+        "description": "Official CD Leganés app for fan communication",
+        "type": "private",
+        "role": "developer",
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Figma",
+            "GitHub Copilot",
+            "Fastlane",
+            "Firebase",
+            "OAuth",
+            "REST API"
+        ],
+        "start_date": "2025-05-01",
+        "end_date": null,
+        "featured": false,
+        "screenshots": [],
+        "summary": "Official CD Leganés mobile app designed to centralize fan communication, club news, and match-related content.",
+        "id": "cd-leganes",
+        "job_id": "lobo-agencia-digital",
+        "enterprise": "Lobo Agencia Digital",
+        "logo_url": "assets/images/logos/cd-leganes.jpg",
+        "links": {
+            "app_store": "https://apps.apple.com/es/app/c-d-legan%C3%A9s-app-oficial/id1538048425",
+            "google_play": "https://play.google.com/store/apps/details?id=com.yinzcam.lfp.leg",
+            "web": "https://www.cdleganes.com/",
+            "repository": null
+        }
+    },
+    {
+        "name": "Guia Hedonista",
+        "description": "Food guide mobile app",
+        "type": "private",
+        "role": "developer",
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Figma",
+            "GitHub Copilot",
+            "Fastlane",
+            "Firebase",
+            "Google Maps API",
+            "REST API"
+        ],
+        "start_date": "2025-05-01",
+        "end_date": null,
+        "featured": false,
+        "screenshots": [],
+        "summary": "Lifestyle guide app that helps users discover curated local plans and recommendations through a mobile-first experience.",
+        "id": "guia-hedonista",
+        "job_id": "lobo-agencia-digital",
+        "enterprise": "Lobo Agencia Digital",
+        "logo_url": "assets/images/logos/guia-hedonista.jpg",
+        "links": {
+            "app_store": "https://apps.apple.com/es/app/gu%C3%ADa-hedonista/id6755107279",
+            "google_play": "https://play.google.com/store/apps/details?id=com.guiahedonista.app",
+            "web": "https://app.guiahedonista.com/",
+            "repository": null
+        }
+    },
+    {
+        "name": "Llum BCN",
+        "description": "Festival companion app for Llum BCN",
+        "type": "private",
+        "role": "developer",
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Jenkins",
+            "Fastlane",
+            "SonarQube",
+            "Gitlab"
+        ],
+        "start_date": "2023-06-01",
+        "end_date": "2025-05-01",
+        "featured": false,
+        "screenshots": [],
+        "summary": "Festival companion app for Llum BCN, helping visitors discover installations and plan routes during the event.",
+        "id": "llum-bcn",
+        "job_id": "multiplica-talent",
+        "enterprise": "Multiplica Talent",
+        "logo_url": "assets/images/logos/llum-bcn.jpg",
+        "links": {
+            "app_store": "https://apps.apple.com/es/app/llum-bcn-festival-lum%C3%ADnico/id1497358051",
+            "google_play": "https://play.google.com/store/apps/details?id=cat.bcn.llumbcn",
+            "web": "https://www.barcelona.cat/llumbcn/",
+            "repository": null
+        }
+    },
+    {
+        "name": "Mercè",
+        "description": "Digital companion for La Mercè festival",
+        "type": "private",
+        "role": "developer",
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Jenkins",
+            "Fastlane",
+            "SonarQube",
+            "Git",
+            "Gitlab"
+        ],
+        "start_date": "2023-06-01",
+        "end_date": "2025-05-01",
+        "featured": false,
+        "screenshots": [],
+        "summary": "Digital companion for La Mercè festival that gives attendees practical event information and city-linked experiences.",
+        "id": "merce",
+        "job_id": "multiplica-talent",
+        "enterprise": "Multiplica Talent",
+        "logo_url": "assets/images/logos/merce.png",
+        "links": {
+            "app_store": "https://apps.apple.com/es/app/merc%C3%A8-fiesta-de-barcelona/id686632305",
+            "google_play": "https://play.google.com/store/apps/details?id=cat.bcn.mobil.merce",
+            "web": "https://www.barcelona.cat/lamerce/es",
+            "repository": null
+        }
+    },
+    {
+        "name": "Barcelona a la Butxaca",
+        "description": "Citizen services app for Barcelona",
+        "type": "private",
+        "role": "developer",
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Jenkins",
+            "Fastlane",
+            "SonarQube",
+            "Git",
+            "Gitlab"
+        ],
+        "start_date": "2023-06-01",
+        "end_date": "2025-05-01",
+        "featured": false,
+        "screenshots": [],
+        "summary": "Citizen services app for Barcelona that centralizes useful city information and public digital services in one place.",
+        "id": "barcelona-a-la-butxaca",
+        "job_id": "multiplica-talent",
+        "enterprise": "Multiplica Talent",
+        "logo_url": "assets/images/logos/barcelona-a-la-butxaca.jpg",
+        "links": {
+            "app_store": "https://apps.apple.com/es/app/barcelona-a-la-butxaca/id1465234509",
+            "google_play": "https://play.google.com/store/apps/details?id=cat.bcn.butxaca",
+            "web": "https://www.barcelona.cat/bcnalabutxaca/es",
+            "repository": null
+        }
+    },
+    {
+        "name": "Mòdul comú OSAM",
+        "description": "Shared module for municipal mobile solutions",
+        "type": "open-source",
+        "role": "developer",
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Git",
+            "GitHub",
+            "Gitlab"
+        ],
+        "start_date": "2023-06-01",
+        "end_date": "2025-05-01",
+        "featured": false,
+        "screenshots": [],
+        "summary": "Shared module initiative to standardize and accelerate delivery across municipal mobile solutions for Barcelona projects.",
+        "id": "modul-comu-osam",
+        "job_id": "multiplica-talent",
+        "enterprise": "Multiplica Talent",
+        "logo_url": "assets/images/logos/osam.png",
+        "links": {
+            "app_store": null,
+            "google_play": null,
+            "web": "https://ajuntamentdebarcelona.github.io/",
+            "repository": "https://github.com/AjuntamentdeBarcelona/modul_comu_osam"
+        }
+    },
+    {
+        "name": "e-pueyo",
+        "description": "Banking app for e-pueyo",
+        "type": "private",
+        "role": "developer",
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Git",
+            "GitHub"
+        ],
+        "start_date": "2023-06-01",
+        "end_date": "2023-12-01",
+        "featured": false,
+        "screenshots": [],
+        "summary": "Banking app experience for e-pueyo, focused on giving customers secure and convenient mobile access to financial services.",
+        "id": "e-pueyo",
+        "job_id": "multiplica-talent",
+        "enterprise": "Multiplica Talent",
+        "logo_url": "assets/images/logos/e-pueyo.jpg",
+        "links": {
+            "app_store": "https://apps.apple.com/es/app/e-pueyo/id598308897",
+            "google_play": "https://play.google.com/store/apps/details?id=com.bancapueyo.epueyomovil",
+            "web": "https://www.bancapueyo.es/",
+            "repository": null
+        }
+    },
+    {
+        "name": "Yepalí",
+        "description": "Mobile product for service users",
+        "type": "private",
+        "role": "developer",
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "GitLab",
+            "GitLab CI",
+            "Figma",
+            "Docker",
+            "XCode",
+            "Android Studio",
+            "Insomnia",
+            "VS Code"
+        ],
+        "start_date": "2021-09-01",
+        "end_date": "2022-03-01",
+        "featured": false,
+        "screenshots": [],
+        "summary": "Mobile product for service users, built to streamline user interactions and provide a simpler digital experience.",
+        "id": "yepal",
+        "job_id": "mr-milu",
+        "enterprise": "Mr Milú",
+        "logo_url": "assets/images/logos/yepali.jpg",
+        "links": {
+            "app_store": "https://apps.apple.com/es/app/yepali-usuarios/id1603811275",
+            "google_play": null,
+            "web": null,
+            "repository": null
+        }
+    },
+    {
+        "name": "Tipead",
+        "description": "Platform connecting professionals and clients",
+        "type": "private",
+        "role": "developer",
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Clean Architecture",
+            "SOLID",
+            "Atomic Design",
+            "Jira",
+            "Notion",
+            "GitLab",
+            "GitLab CI",
+            "Figma",
+            "Docker",
+            "XCode",
+            "Android Studio",
+            "Insomnia",
+            "VS Code"
+        ],
+        "start_date": "2022-03-01",
+        "end_date": "2022-09-01",
+        "featured": false,
+        "screenshots": [],
+        "summary": "Platform app connecting professionals and clients, enabling service discovery and interaction across mobile and web.",
+        "id": "tipead",
+        "job_id": "mr-milu",
+        "enterprise": "Mr Milú",
+        "logo_url": "assets/images/logos/tipead.png",
+        "links": {
+            "app_store": "https://apps.apple.com/es/app/tipead-profesional/id1625042174",
+            "google_play": "https://play.google.com/store/apps/details?id=com.tipead.professionals.live",
+            "web": "https://tipead.com/",
+            "repository": null
+        }
+    },
+    {
+        "name": "Ticboard",
+        "description": "Web platform for collaborative boards",
+        "type": "private",
+        "role": "developer",
+        "technologies": [
+            "Adobe XD",
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "start_date": "2020-01-01",
+        "end_date": "2020-07-01",
+        "featured": false,
+        "screenshots": [],
+        "summary": "Web platform concept to organize and present information in a clear, collaborative digital board experience.",
+        "id": "ticboard",
+        "job_id": "telcia-comunicaciones",
+        "enterprise": "Telcia Comunicaciones S.L.",
+        "logo_url": "assets/images/logos/ticboard.png",
+        "links": {
+            "app_store": null,
+            "google_play": null,
+            "web": "https://www.ticboard.com/",
+            "repository": null
+        }
+    },
+    {
+        "name": "Notes App",
+        "description": "Internal notes application",
+        "type": "private",
+        "role": "developer",
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Android",
+            "iOS",
+            "Adobe XD"
+        ],
+        "start_date": "2019-07-01",
+        "end_date": "2020-01-01",
+        "featured": false,
+        "screenshots": [],
+        "summary": "Internal notes application designed for simple team usage and quick information capture across mobile devices.",
+        "id": "notes-app",
+        "job_id": "telcia-comunicaciones",
+        "enterprise": "Telcia Comunicaciones S.L.",
+        "logo_url": null,
+        "links": {
+            "app_store": null,
+            "google_play": null,
+            "web": null,
+            "repository": null
+        }
+    },
+    {
+        "name": "DynaPredict",
+        "description": "Industrial predictive maintenance app",
+        "type": "private",
+        "role": "developer",
+        "technologies": [
+            "Android",
+            "Java",
+            "Adobe XD",
+            "Justinmind",
+            "Bitbucket",
+            "Git"
+        ],
+        "start_date": "2018-05-01",
+        "end_date": "2018-11-01",
+        "featured": false,
+        "screenshots": [],
+        "summary": "Industrial maintenance app that supports predictive monitoring workflows and gives teams actionable machine insights.",
+        "id": "dynapredict",
+        "job_id": "dynamox",
+        "enterprise": "Dynamox",
+        "logo_url": "assets/images/logos/dynapredict.jpg",
+        "links": {
+            "app_store": "https://apps.apple.com/es/app/dynamox-app/id1454384964",
+            "google_play": "https://play.google.com/store/apps/details?id=solutions.dynamox.predict",
+            "web": "https://dynamox.net/",
+            "repository": null
+        }
     }
 ]

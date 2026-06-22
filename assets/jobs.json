@@ -15,60 +15,10 @@
             "Integrated Firebase, Google Maps and OAuth"
         ],
         "deliverables": [
-            {
-                "id": "ca-osasuna",
-                "name": "CA Osasuna",
-                "links": {
-                    "app_store": "https://apps.apple.com/es/app/osasuna-official-app/id6450509028",
-                    "google_play": "https://play.google.com/store/apps/details?id=com.onefan.osasuna",
-                    "web": null
-                },
-                "available": true,
-                "screenshots": [
-                    "osasuna_ios.png"
-                ],
-                "summary": "Official mobile app for CA Osasuna to engage fans with club content and match-day experiences across iOS and Android.",
-                "logo_url": "assets/images/logos/ca-osasuna.jpg"
-            },
-            {
-                "id": "valencia-cf",
-                "name": "Valencia CF",
-                "links": {
-                    "app_store": "https://apps.apple.com/us/app/valencia-cf-official-app/id1423049571",
-                    "google_play": "https://play.google.com/store/apps/details?id=es.valenciacf.android.app",
-                    "web": null
-                },
-                "available": true,
-                "screenshots": [],
-                "summary": "Official Valencia CF app focused on fan engagement, delivering club updates and digital touchpoints for supporters.",
-                "logo_url": "assets/images/logos/valencia-cf.jpg"
-            },
-            {
-                "id": "cd-leganes",
-                "name": "CD Leganés",
-                "links": {
-                    "app_store": "https://apps.apple.com/es/app/c-d-legan%C3%A9s-app-oficial/id1538048425",
-                    "google_play": "https://play.google.com/store/apps/details?id=com.yinzcam.lfp.leg",
-                    "web": null
-                },
-                "available": true,
-                "screenshots": [],
-                "summary": "Official CD Leganés mobile app designed to centralize fan communication, club news, and match-related content.",
-                "logo_url": "assets/images/logos/cd-leganes.jpg"
-            },
-            {
-                "id": "guia-hedonista",
-                "name": "Guia Hedonista",
-                "links": {
-                    "app_store": "https://apps.apple.com/es/app/gu%C3%ADa-hedonista/id6755107279",
-                    "google_play": "https://play.google.com/store/apps/details?id=com.guiahedonista.app",
-                    "web": null
-                },
-                "available": true,
-                "screenshots": [],
-                "summary": "Lifestyle guide app that helps users discover curated local plans and recommendations through a mobile-first experience.",
-                "logo_url": "assets/images/logos/guia-hedonista.jpg"
-            }
+            {"project_id": "ca-osasuna"},
+            {"project_id": "valencia-cf"},
+            {"project_id": "cd-leganes"},
+            {"project_id": "guia-hedonista"}
         ],
         "technologies": [
             "Flutter",
@@ -108,84 +58,12 @@
             "Implemented CI/CD workflows with Jenkins, Fastlane and SonarQube"
         ],
         "deliverables": [
-            {
-                "id": "llum-bcn",
-                "name": "Llum BCN",
-                "links": {
-                    "app_store": "https://apps.apple.com/es/app/llum-bcn-festival-lum%C3%ADnico/id1497358051",
-                    "google_play": "https://play.google.com/store/apps/details?id=cat.bcn.llumbcn",
-                    "web": null
-                },
-                "available": true,
-                "screenshots": [],
-                "summary": "Festival companion app for Llum BCN, helping visitors discover installations and plan routes during the event.",
-                "logo_url": "assets/images/logos/llum-bcn.jpg"
-            },
-            {
-                "id": "merce",
-                "name": "Mercè",
-                "links": {
-                    "app_store": null,
-                    "google_play": "https://play.google.com/store/apps/details?id=cat.bcn.mobil.merce",
-                    "web": "https://www.barcelona.cat/lamerce/es"
-                },
-                "available": true,
-                "screenshots": [],
-                "summary": "Digital companion for La Mercè festival that gives attendees practical event information and city-linked experiences.",
-                "logo_url": "assets/images/logos/merce.png"
-            },
-            {
-                "id": "barcelona-a-la-butxaca",
-                "name": "Barcelona a la Butxaca",
-                "links": {
-                    "app_store": "https://apps.apple.com/es/app/barcelona-a-la-butxaca/id1465234509",
-                    "google_play": "https://play.google.com/store/apps/details?id=cat.bcn.butxaca",
-                    "web": "https://www.barcelona.cat/bcnalabutxaca/es"
-                },
-                "available": true,
-                "screenshots": [],
-                "summary": "Citizen services app for Barcelona that centralizes useful city information and public digital services in one place.",
-                "logo_url": "assets/images/logos/barcelona-a-la-butxaca.jpg"
-            },
-            {
-                "id": "modul-comu-osam",
-                "name": "Mòdul comú OSAM",
-                "links": {
-                    "app_store": null,
-                    "google_play": null,
-                    "web": "https://github.com/AjuntamentdeBarcelona/modul_comu_osam"
-                },
-                "available": true,
-                "screenshots": [],
-                "summary": "Shared module initiative to standardize and accelerate delivery across municipal mobile solutions for Barcelona projects.",
-                "logo_url": "assets/images/logos/osam.png"
-            },
-            {
-                "id": "e-pueyo",
-                "name": "e-pueyo",
-                "links": {
-                    "app_store": "https://apps.apple.com/es/app/e-pueyo/id598308897",
-                    "google_play": "https://play.google.com/store/apps/details?id=com.bancapueyo.epueyomovil",
-                    "web": null
-                },
-                "available": true,
-                "screenshots": [],
-                "summary": "Banking app experience for e-pueyo, focused on giving customers secure and convenient mobile access to financial services.",
-                "logo_url": "assets/images/logos/e-pueyo.jpg"
-            },
-            {
-                "name": "flutter_architecture_template",
-                "links": {
-                    "app_store": null,
-                    "google_play": null,
-                    "web": "https://github.com/worldline-spain/flutter_architecture_template"
-                },
-                "available": true,
-                "screenshots": [],
-                "summary": "Scalable Flutter template co-created to help teams adopt consistent architecture across projects.",
-                "id": "flutter-architecture-template",
-                "logo_url": "assets/images/logos/github-worldline-spain.png"
-            }
+            {"project_id": "llum-bcn"},
+            {"project_id": "merce"},
+            {"project_id": "barcelona-a-la-butxaca"},
+            {"project_id": "modul-comu-osam"},
+            {"project_id": "e-pueyo"},
+            {"project_id": "flutter-architecture-template"}
         ],
         "technologies": [
             "Flutter",
@@ -225,45 +103,9 @@
             "Mentored junior developers and guided the mobile team toward continuous improvements"
         ],
         "deliverables": [
-            {
-                "id": "flutter-base",
-                "name": "flutter_architecture_template",
-                "links": {
-                    "app_store": null,
-                    "google_play": null,
-                    "web": "https://github.com/worldline-spain/flutter_architecture_template"
-                },
-                "available": true,
-                "screenshots": [],
-                "summary": "Reusable Flutter architecture template that helps teams start projects with scalable structure and best practices.",
-                "logo_url": "assets/images/logos/github-worldline-spain.png"
-            },
-            {
-                "id": "yepal",
-                "name": "Yepalí",
-                "links": {
-                    "app_store": "https://apps.apple.com/es/app/yepali-usuarios/id1603811275",
-                    "google_play": null,
-                    "web": null
-                },
-                "available": false,
-                "screenshots": [],
-                "summary": "Mobile product for service users, built to streamline user interactions and provide a simpler digital experience.",
-                "logo_url": "assets/images/logos/yepali.jpg"
-            },
-            {
-                "id": "tipead",
-                "name": "Tipead",
-                "links": {
-                    "app_store": "https://apps.apple.com/es/app/tipead-profesional/id1625042174",
-                    "google_play": "https://play.google.com/store/apps/details?id=com.tipead.professionals.live",
-                    "web": "https://tipead.com/"
-                },
-                "available": true,
-                "screenshots": [],
-                "summary": "Platform app connecting professionals and clients, enabling service discovery and interaction across mobile and web.",
-                "logo_url": "assets/images/logos/tipead.png"
-            }
+            {"project_id": "flutter-base"},
+            {"project_id": "yepal"},
+            {"project_id": "tipead"}
         ],
         "technologies": [
             "Flutter",
@@ -336,32 +178,8 @@
         "description": "Development of internal mobile applications for Android and iOS with Flutter. Design of mobile and web applications using various methodologies and tools. Usability testing and UX research for mobile and web applications. Frontend web development with HTML, CSS and JavaScript.",
         "achievements": [],
         "deliverables": [
-            {
-                "id": "ticboard",
-                "name": "Ticboard",
-                "links": {
-                    "app_store": null,
-                    "google_play": null,
-                    "web": "https://www.ticboard.com/"
-                },
-                "available": true,
-                "screenshots": [],
-                "summary": "Web platform concept to organize and present information in a clear, collaborative digital board experience.",
-                "logo_url": "assets/images/logos/ticboard.png"
-            },
-            {
-                "id": "notes-app",
-                "name": "Notes App",
-                "links": {
-                    "app_store": null,
-                    "google_play": null,
-                    "web": null
-                },
-                "available": false,
-                "screenshots": [],
-                "summary": "Internal notes application designed for simple team usage and quick information capture across mobile devices.",
-                "logo_url": null
-            }
+            {"project_id": "ticboard"},
+            {"project_id": "notes-app"}
         ],
         "technologies": [
             "Flutter",
@@ -393,19 +211,7 @@
         "description": "Development of electronic boards in Altium Designer for Industry 4.0 products. Structuring large-scale electronic board production processes. Creation of hardware test systems. Development of Android applications in Android Studio with Java. Recreation of user interfaces in apps with Adobe XD and Justinmind. User testing with mobile applications.",
         "achievements": [],
         "deliverables": [
-            {
-                "id": "dynapredict",
-                "name": "DynaPredict",
-                "links": {
-                    "app_store": "https://apps.apple.com/es/app/dynamox-app/id1454384964",
-                    "google_play": "https://play.google.com/store/apps/details?id=solutions.dynamox.predict",
-                    "web": null
-                },
-                "available": true,
-                "screenshots": [],
-                "summary": "Industrial maintenance app that supports predictive monitoring workflows and gives teams actionable machine insights.",
-                "logo_url": "assets/images/logos/dynapredict.jpg"
-            }
+            {"project_id": "dynapredict"}
         ],
         "technologies": [
             "Android",

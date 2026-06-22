@@ -3,6 +3,7 @@ import 'package:portfolio/ui/views/about_view.dart';
 import 'package:portfolio/ui/views/career_view.dart';
 import 'package:portfolio/ui/views/contact_view.dart';
 import 'package:portfolio/ui/views/home_view.dart';
+import 'package:portfolio/ui/views/job_detail_view.dart';
 import 'package:portfolio/ui/views/project_detail_view.dart';
 import 'package:portfolio/ui/views/projects_view.dart';
 
@@ -33,18 +34,10 @@ final GoRouter appRouter = GoRouter(
               const NoTransitionPage(child: CareerView()),
           routes: <RouteBase>[
             GoRoute(
-              path: ':jobId',
+              path: ':id',
               pageBuilder: (context, state) => NoTransitionPage(
-                child: ProjectDetailView(id: state.pathParameters['jobId']!),
+                child: JobDetailView(id: state.pathParameters['id']!),
               ),
-              routes: <RouteBase>[
-                GoRoute(
-                  path: 'project/:id',
-                  pageBuilder: (context, state) => NoTransitionPage(
-                    child: ProjectDetailView(id: state.pathParameters['id']!),
-                  ),
-                ),
-              ],
             ),
           ],
         ),

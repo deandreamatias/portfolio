@@ -14,28 +14,27 @@ Project _$ProjectFromJson(Map<String, dynamic> json) => Project(
   endDate: json['end_date'] == null
       ? null
       : DateTime.parse(json['end_date'] as String),
+  jobId: json['job_id'] as String? ?? '',
+  enterprise: json['enterprise'] as String? ?? '',
   description: json['description'] as String,
   summary: json['summary'] as String,
   type: json['type'] as String,
   role: json['role'] as String,
-  platforms: (json['platforms'] as List<dynamic>)
-      .map((e) => e as String)
-      .toList(),
   technologies: (json['technologies'] as List<dynamic>)
       .map((e) => e as String)
       .toList(),
   featured: json['featured'] as bool,
-  availableInStores: json['available_in_stores'] as bool,
   screenshots: (json['screenshots'] as List<dynamic>)
       .map((e) => e as String)
       .toList(),
-  web: const NullableUriConverter().fromJson(json['url'] as String?),
-  repo: const NullableUriConverter().fromJson(json['repo'] as String?),
+  links: ProjectLinks.fromJson(json['links'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$ProjectToJson(Project instance) => <String, dynamic>{
   'id': instance.id,
+  'job_id': instance.jobId,
   'name': instance.name,
+  'enterprise': instance.enterprise,
   'logo_url': instance.logo?.toString(),
   'start_date': instance.startDate.toIso8601String(),
   'end_date': instance.endDate?.toIso8601String(),
@@ -43,11 +42,8 @@ Map<String, dynamic> _$ProjectToJson(Project instance) => <String, dynamic>{
   'summary': instance.summary,
   'type': instance.type,
   'role': instance.role,
-  'platforms': instance.platforms,
   'technologies': instance.technologies,
   'featured': instance.featured,
-  'available_in_stores': instance.availableInStores,
   'screenshots': instance.screenshots,
-  'url': const NullableUriConverter().toJson(instance.web),
-  'repo': const NullableUriConverter().toJson(instance.repo),
+  'links': instance.links,
 };

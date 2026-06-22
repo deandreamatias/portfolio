@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:portfolio/data/models/json_converters.dart';
-import 'package:portfolio/data/models/showcase.dart';
 
 part 'job.g.dart';
 
@@ -34,7 +33,7 @@ class Job extends Equatable {
   final bool remote;
   final String description;
   final List<String> achievements;
-  final List<JobDeliverable> deliverables;
+  final List<JobDeliverableRef> deliverables;
   final List<String> technologies;
   final List<String> skills;
   @NullableUriConverter()
@@ -73,78 +72,18 @@ class Job extends Equatable {
 }
 
 @JsonSerializable()
-class JobDeliverable extends Equatable {
-  const JobDeliverable({
-    required this.id,
-    required this.name,
-    required this.links,
-    required this.available,
-    this.screenshots = const [],
-    required this.summary,
-    this.logo,
+class JobDeliverableRef extends Equatable {
+  const JobDeliverableRef({
+    @JsonKey(name: 'project_id') required this.projectId,
   });
 
-  final String id;
-  final String name;
-  final JobLinks links;
-  final bool available;
-  final List<String> screenshots;
-  final String summary;
-  @NullableUriConverter()
-  @JsonKey(name: 'logo_url')
-  final Uri? logo;
+  final String projectId;
 
-  bool get hasLogo => logo != null;
+  factory JobDeliverableRef.fromJson(Map<String, dynamic> json) =>
+      _$JobDeliverableRefFromJson(json);
 
-  Showcase toShowcase({required Job job}) => Showcase(
-    id: id,
-    jobId: job.id,
-    name: name,
-    enterprise: job.enterprise,
-    logo: logo,
-    startDate: job.startDate,
-    endDate: job.endDate,
-  );
-
-  factory JobDeliverable.fromJson(Map<String, dynamic> json) =>
-      _$JobDeliverableFromJson(json);
-
-  Map<String, dynamic> toJson() => _$JobDeliverableToJson(this);
+  Map<String, dynamic> toJson() => _$JobDeliverableRefToJson(this);
 
   @override
-  List<Object?> get props => [
-    id,
-    name,
-    links,
-    available,
-    screenshots,
-    summary,
-    logo,
-  ];
-}
-
-@JsonSerializable()
-class JobLinks extends Equatable {
-  const JobLinks({
-    @JsonKey(name: 'app_store') this.ios,
-    @JsonKey(name: 'google_play') this.android,
-    this.web,
-  });
-
-  @NullableUriConverter()
-  @JsonKey(name: 'app_store')
-  final Uri? ios;
-  @NullableUriConverter()
-  @JsonKey(name: 'google_play')
-  final Uri? android;
-  @NullableUriConverter()
-  final Uri? web;
-
-  factory JobLinks.fromJson(Map<String, dynamic> json) =>
-      _$JobLinksFromJson(json);
-
-  Map<String, dynamic> toJson() => _$JobLinksToJson(this);
-
-  @override
-  List<Object?> get props => [ios, android, web];
+  List<Object?> get props => [projectId];
 }

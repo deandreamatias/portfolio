@@ -75,11 +75,11 @@ Route-level screens live in `lib/ui/views`. Shared route chrome and reusable UI 
 
 Content is stored as JSON under `assets/` and loaded by [lib/data/file_service.dart](lib/data/file_service.dart) through `rootBundle`.
 
-- `assets/projects.json` maps to `Project`.
-- `assets/jobs.json` maps to `Job`, `JobDeliverable`, and `JobLinks`.
-- `Project` and job deliverables can be projected into `Showcase` items for combined project grids.
-- `ProjectNotifier` loads a single project by id.
-- `ShowcaseNotifier` loads jobs and projects, merges them, sorts by start date, and removes duplicate showcase ids.
+- `assets/projects.json` maps to `Project`. Projects with a `job_id` belong to a job and display the job's `enterprise` name.
+- `assets/jobs.json` maps to `Job`. Jobs reference their projects via `deliverables` array of `JobDeliverableRef` (each with a `project_id`).
+- `ShowcaseNotifier` loads all projects, sorts by start date.
+- `JobDetailView` loads a job by ID and filters related projects by `job_id`.
+- `ProjectDetailView` loads a project and, if it has a `job_id`, loads the related job for breadcrumb navigation.
 
 Models use `json_annotation`, `json_serializable`, and `equatable`. When a serializable model changes, regenerate the matching `*.g.dart` files with `build_runner`.
 

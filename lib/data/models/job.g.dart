@@ -25,7 +25,7 @@ Job _$JobFromJson(Map<String, dynamic> json) => Job(
       const [],
   deliverables:
       (json['deliverables'] as List<dynamic>?)
-          ?.map((e) => JobDeliverable.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => JobDeliverableRef.fromJson(e as Map<String, dynamic>))
           .toList() ??
       const [],
   technologies:
@@ -56,42 +56,8 @@ Map<String, dynamic> _$JobToJson(Job instance) => <String, dynamic>{
   'end_date': const NullableDateTimeConverter().toJson(instance.endDate),
 };
 
-JobDeliverable _$JobDeliverableFromJson(Map<String, dynamic> json) =>
-    JobDeliverable(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      links: JobLinks.fromJson(json['links'] as Map<String, dynamic>),
-      available: json['available'] as bool,
-      screenshots:
-          (json['screenshots'] as List<dynamic>?)
-              ?.map((e) => e as String)
-              .toList() ??
-          const [],
-      summary: json['summary'] as String,
-      logo: const NullableUriConverter().fromJson(json['logo_url'] as String?),
-    );
+JobDeliverableRef _$JobDeliverableRefFromJson(Map<String, dynamic> json) =>
+    JobDeliverableRef(projectId: json['project_id'] as String);
 
-Map<String, dynamic> _$JobDeliverableToJson(JobDeliverable instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'links': instance.links,
-      'available': instance.available,
-      'screenshots': instance.screenshots,
-      'summary': instance.summary,
-      'logo_url': const NullableUriConverter().toJson(instance.logo),
-    };
-
-JobLinks _$JobLinksFromJson(Map<String, dynamic> json) => JobLinks(
-  ios: const NullableUriConverter().fromJson(json['app_store'] as String?),
-  android: const NullableUriConverter().fromJson(
-    json['google_play'] as String?,
-  ),
-  web: const NullableUriConverter().fromJson(json['web'] as String?),
-);
-
-Map<String, dynamic> _$JobLinksToJson(JobLinks instance) => <String, dynamic>{
-  'app_store': const NullableUriConverter().toJson(instance.ios),
-  'google_play': const NullableUriConverter().toJson(instance.android),
-  'web': const NullableUriConverter().toJson(instance.web),
-};
+Map<String, dynamic> _$JobDeliverableRefToJson(JobDeliverableRef instance) =>
+    <String, dynamic>{'project_id': instance.projectId};
