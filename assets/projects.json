@@ -14,7 +14,12 @@
         "start_date": "2019-08-01",
         "end_date": null,
         "featured": true,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/tv-randshow/01.webp",
+            "images/screenshots/tv-randshow/02.webp",
+            "images/screenshots/tv-randshow/03.webp",
+            "images/screenshots/tv-randshow/04.webp"
+        ],
         "summary": "Utility app for TV audiences that increases entertainment value by instantly picking random episodes to watch.",
         "id": "tv-randshow",
         "logo_url": "assets/images/logos/tv-randshow.png",
@@ -27,7 +32,7 @@
     },
     {
         "name": "Flutter Form Builder",
-        "description": "Simple form maker for Flutter Framework — the community's most popular form package",
+        "description": "Simple form maker for Flutter Framework \u2014 the community's most popular form package",
         "type": "open-source",
         "role": "maintainer",
         "technologies": [
@@ -40,7 +45,12 @@
         "start_date": "2022-06-01",
         "end_date": null,
         "featured": true,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/flutter-form-builder/01.png",
+            "images/screenshots/flutter-form-builder/02.png",
+            "images/screenshots/flutter-form-builder/03.png",
+            "images/screenshots/flutter-form-builder/04.png"
+        ],
         "summary": "Production-ready Flutter package that speeds up form development and reduces implementation effort for app teams.",
         "id": "flutter-form-builder",
         "logo_url": "assets/images/logos/flutter-form-builder.png",
@@ -113,7 +123,12 @@
         "start_date": "2023-08-19",
         "end_date": null,
         "featured": false,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/dog-grooming-website/01.png",
+            "images/screenshots/dog-grooming-website/02.png",
+            "images/screenshots/dog-grooming-website/03.png",
+            "images/screenshots/dog-grooming-website/04.png"
+        ],
         "summary": "Lead-generation website for a local grooming business, focused on visibility, trust, and customer contact conversion.",
         "id": "dog-grooming-website",
         "logo_url": "assets/images/logos/peluqueriacaninamimos.png",
@@ -137,7 +152,14 @@
         "start_date": "2020-08-12",
         "end_date": "2022-02-12",
         "featured": false,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/museum-tour-app/01.png",
+            "images/screenshots/museum-tour-app/02.png",
+            "images/screenshots/museum-tour-app/03.png",
+            "images/screenshots/museum-tour-app/04.png",
+            "images/screenshots/museum-tour-app/05.png",
+            "images/screenshots/museum-tour-app/06.png"
+        ],
         "summary": "Concept product for museums to improve visitor engagement through guided mobile experiences and accessible content.",
         "id": "museum-tour-app",
         "logo_url": "assets/images/logos/museum-tour.png",
@@ -150,7 +172,7 @@
     },
     {
         "name": "flutter.base",
-        "description": "Flutter architecture template co-created at Mr Milú",
+        "description": "Flutter architecture template co-created at Mr Mil\u00fa",
         "type": "open-source",
         "role": "developer",
         "technologies": [
@@ -165,7 +187,7 @@
         "summary": "Open-source starter architecture to shorten project onboarding and improve long-term maintainability for Flutter teams.",
         "id": "flutter-base",
         "job_id": "mr-milu",
-        "enterprise": "Mr Milú",
+        "enterprise": "Mr Mil\u00fa",
         "logo_url": "assets/images/logos/github-mrmilu.png",
         "links": {
             "app_store": null,
@@ -186,7 +208,11 @@
         "start_date": "2019-04-20",
         "end_date": "2019-05-31",
         "featured": false,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/spacex-go/0.jpg",
+            "images/screenshots/spacex-go/1.jpg",
+            "images/screenshots/spacex-go/2.jpg"
+        ],
         "summary": "Community-driven app that makes SpaceX mission data easier to follow for enthusiasts in a mobile-friendly format.",
         "id": "spacex-go",
         "logo_url": "assets/images/logos/github-spacex-go.png",
@@ -199,7 +225,7 @@
     },
     {
         "name": "Pay calculator",
-        "description": "My first complete app — a simple pay calculator",
+        "description": "My first complete app \u2014 a simple pay calculator",
         "type": "open-source",
         "role": "author",
         "technologies": [
@@ -232,7 +258,11 @@
         "start_date": "2025-12-10",
         "end_date": null,
         "featured": false,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/gymrats-statistics/01.png",
+            "images/screenshots/gymrats-statistics/02.png",
+            "images/screenshots/gymrats-statistics/03.png"
+        ],
         "summary": "CLI utility that turns workout logs into readable stats, helping users track progress and stay motivated.",
         "id": "gymrats-statistics",
         "logo_url": "assets/images/logos/gymrats.png",
@@ -252,7 +282,9 @@
         "start_date": "2025-07-17",
         "end_date": null,
         "featured": false,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/flutter-universe/01.jpg"
+        ],
         "summary": "Community channels that curate Flutter updates and practical tips to keep developers informed and connected.",
         "id": "flutter-universe",
         "logo_url": "assets/images/logos/flutter-universe.jpg",
@@ -274,7 +306,9 @@
         "start_date": "2020-08-18",
         "end_date": "2020-08-18",
         "featured": false,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/universo-flutter-logo/01.png"
+        ],
         "summary": "Brand identity design project that gives the Flutter community initiative a recognizable visual presence.",
         "id": "universo-flutter-logo",
         "logo_url": "assets/images/logos/flutter-universe.jpg",
@@ -330,7 +364,10 @@
         "end_date": null,
         "featured": false,
         "screenshots": [
-            "osasuna_ios.png"
+            "images/screenshots/ca-osasuna/01.png",
+            "images/screenshots/ca-osasuna/02.png",
+            "images/screenshots/ca-osasuna/03.png",
+            "images/screenshots/ca-osasuna/04.png"
         ],
         "summary": "Official mobile app for CA Osasuna to engage fans with club content and match-day experiences across iOS and Android.",
         "id": "ca-osasuna",
@@ -361,7 +398,12 @@
         "start_date": "2025-05-01",
         "end_date": null,
         "featured": false,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/valencia-cf/01.png",
+            "images/screenshots/valencia-cf/02.png",
+            "images/screenshots/valencia-cf/03.png",
+            "images/screenshots/valencia-cf/04.png"
+        ],
         "summary": "Official Valencia CF app focused on fan engagement, delivering club updates and digital touchpoints for supporters.",
         "id": "valencia-cf",
         "job_id": "lobo-agencia-digital",
@@ -375,8 +417,8 @@
         }
     },
     {
-        "name": "CD Leganés",
-        "description": "Official CD Leganés app for fan communication",
+        "name": "CD Legan\u00e9s",
+        "description": "Official CD Legan\u00e9s app for fan communication",
         "type": "private",
         "role": "developer",
         "technologies": [
@@ -392,8 +434,12 @@
         "start_date": "2025-05-01",
         "end_date": null,
         "featured": false,
-        "screenshots": [],
-        "summary": "Official CD Leganés mobile app designed to centralize fan communication, club news, and match-related content.",
+        "screenshots": [
+            "images/screenshots/cd-leganes/01.png",
+            "images/screenshots/cd-leganes/02.png",
+            "images/screenshots/cd-leganes/03.png"
+        ],
+        "summary": "Official CD Legan\u00e9s mobile app designed to centralize fan communication, club news, and match-related content.",
         "id": "cd-leganes",
         "job_id": "lobo-agencia-digital",
         "enterprise": "Lobo Agencia Digital",
@@ -423,7 +469,12 @@
         "start_date": "2025-05-01",
         "end_date": null,
         "featured": false,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/guia-hedonista/01.webp",
+            "images/screenshots/guia-hedonista/02.png",
+            "images/screenshots/guia-hedonista/03.png",
+            "images/screenshots/guia-hedonista/04.png"
+        ],
         "summary": "Lifestyle guide app that helps users discover curated local plans and recommendations through a mobile-first experience.",
         "id": "guia-hedonista",
         "job_id": "lobo-agencia-digital",
@@ -452,7 +503,13 @@
         "start_date": "2023-06-01",
         "end_date": "2025-05-01",
         "featured": false,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/llum-bcn/01.png",
+            "images/screenshots/llum-bcn/02.png",
+            "images/screenshots/llum-bcn/03.png",
+            "images/screenshots/llum-bcn/04.png",
+            "images/screenshots/llum-bcn/05.png"
+        ],
         "summary": "Festival companion app for Llum BCN, helping visitors discover installations and plan routes during the event.",
         "id": "llum-bcn",
         "job_id": "multiplica-talent",
@@ -466,8 +523,8 @@
         }
     },
     {
-        "name": "Mercè",
-        "description": "Digital companion for La Mercè festival",
+        "name": "Merc\u00e8",
+        "description": "Digital companion for La Merc\u00e8 festival",
         "type": "private",
         "role": "developer",
         "technologies": [
@@ -482,15 +539,21 @@
         "start_date": "2023-06-01",
         "end_date": "2025-05-01",
         "featured": false,
-        "screenshots": [],
-        "summary": "Digital companion for La Mercè festival that gives attendees practical event information and city-linked experiences.",
+        "screenshots": [
+            "images/screenshots/merce/01.png",
+            "images/screenshots/merce/02.png",
+            "images/screenshots/merce/03.png",
+            "images/screenshots/merce/04.png",
+            "images/screenshots/merce/05.png"
+        ],
+        "summary": "Digital companion for La Merc\u00e8 festival that gives attendees practical event information and city-linked experiences.",
         "id": "merce",
         "job_id": "multiplica-talent",
         "enterprise": "Multiplica Talent",
         "logo_url": "assets/images/logos/merce.png",
         "links": {
             "app_store": "https://apps.apple.com/es/app/merc%C3%A8-fiesta-de-barcelona/id686632305",
-            "google_play": "https://play.google.com/store/apps/details?id=cat.bcn.mobil.merce",
+            "google_play": "https://play.google.com/store/apps/details?id=cat.bcn.festamerce",
             "web": "https://www.barcelona.cat/lamerce/es",
             "repository": null
         }
@@ -512,7 +575,13 @@
         "start_date": "2023-06-01",
         "end_date": "2025-05-01",
         "featured": false,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/barcelona-a-la-butxaca/01.png",
+            "images/screenshots/barcelona-a-la-butxaca/02.png",
+            "images/screenshots/barcelona-a-la-butxaca/03.png",
+            "images/screenshots/barcelona-a-la-butxaca/04.png",
+            "images/screenshots/barcelona-a-la-butxaca/05.png"
+        ],
         "summary": "Citizen services app for Barcelona that centralizes useful city information and public digital services in one place.",
         "id": "barcelona-a-la-butxaca",
         "job_id": "multiplica-talent",
@@ -526,7 +595,7 @@
         }
     },
     {
-        "name": "Mòdul comú OSAM",
+        "name": "M\u00f2dul com\u00fa OSAM",
         "description": "Shared module for municipal mobile solutions",
         "type": "open-source",
         "role": "developer",
@@ -567,7 +636,11 @@
         "start_date": "2023-06-01",
         "end_date": "2023-12-01",
         "featured": false,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/e-pueyo/01.png",
+            "images/screenshots/e-pueyo/02.png",
+            "images/screenshots/e-pueyo/03.png"
+        ],
         "summary": "Banking app experience for e-pueyo, focused on giving customers secure and convenient mobile access to financial services.",
         "id": "e-pueyo",
         "job_id": "multiplica-talent",
@@ -581,7 +654,7 @@
         }
     },
     {
-        "name": "Yepalí",
+        "name": "Yepal\u00ed",
         "description": "Mobile product for service users",
         "type": "private",
         "role": "developer",
@@ -600,16 +673,19 @@
         "start_date": "2021-09-01",
         "end_date": "2022-03-01",
         "featured": false,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/yepali/01.png",
+            "images/screenshots/yepali/02.png"
+        ],
         "summary": "Mobile product for service users, built to streamline user interactions and provide a simpler digital experience.",
-        "id": "yepal",
+        "id": "yepali",
         "job_id": "mr-milu",
-        "enterprise": "Mr Milú",
+        "enterprise": "Mr Mil\u00fa",
         "logo_url": "assets/images/logos/yepali.jpg",
         "links": {
             "app_store": "https://apps.apple.com/es/app/yepali-usuarios/id1603811275",
             "google_play": null,
-            "web": null,
+            "web": "https://www.instagram.com/yepali.app/",
             "repository": null
         }
     },
@@ -638,11 +714,14 @@
         "start_date": "2022-03-01",
         "end_date": "2022-09-01",
         "featured": false,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/tipead/01.png",
+            "images/screenshots/tipead/02.png"
+        ],
         "summary": "Platform app connecting professionals and clients, enabling service discovery and interaction across mobile and web.",
         "id": "tipead",
         "job_id": "mr-milu",
-        "enterprise": "Mr Milú",
+        "enterprise": "Mr Mil\u00fa",
         "logo_url": "assets/images/logos/tipead.png",
         "links": {
             "app_store": "https://apps.apple.com/es/app/tipead-profesional/id1625042174",
@@ -665,7 +744,9 @@
         "start_date": "2020-01-01",
         "end_date": "2020-07-01",
         "featured": false,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/ticboard/01.png"
+        ],
         "summary": "Web platform concept to organize and present information in a clear, collaborative digital board experience.",
         "id": "ticboard",
         "job_id": "telcia-comunicaciones",
@@ -722,7 +803,12 @@
         "start_date": "2018-05-01",
         "end_date": "2018-11-01",
         "featured": false,
-        "screenshots": [],
+        "screenshots": [
+            "images/screenshots/dynapredict/01.webp",
+            "images/screenshots/dynapredict/02.webp",
+            "images/screenshots/dynapredict/03.webp",
+            "images/screenshots/dynapredict/04.webp"
+        ],
         "summary": "Industrial maintenance app that supports predictive monitoring workflows and gives teams actionable machine insights.",
         "id": "dynapredict",
         "job_id": "dynamox",

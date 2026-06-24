@@ -104,7 +104,7 @@
         ],
         "deliverables": [
             {"project_id": "flutter-base"},
-            {"project_id": "yepal"},
+            {"project_id": "yepali"},
             {"project_id": "tipead"}
         ],
         "technologies": [
