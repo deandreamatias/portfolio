@@ -29,7 +29,7 @@ class LayoutBase extends StatelessWidget {
                 Expanded(
                   child: DecoratedBox(
                     decoration: BoxDecoration(
-                      color: context.appColors.surfaceContainerLow,
+                      color: context.appColors.surfaceContainer,
                       borderRadius: BorderStyles.brTop,
                     ),
                     child: Padding(

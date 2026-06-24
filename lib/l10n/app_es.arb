@@ -61,5 +61,6 @@
     "showcasePeriodJobCurrentlyAtSince": "Actualmente trabajando en ello en {enterprise} desde {month} de {year}",
     "showcasePeriodJobWorkedOnIn": "Trabajé en ello durante mi etapa en {enterprise} en {month} de {year}",
     "showcasePeriodJobWorkedOnBetweenMonthsSameYear": "Trabajé en ello durante mi etapa en {enterprise} de {startMonth} a {endMonth} de {year}",
-    "showcasePeriodJobWorkedOnBetweenRange": "Trabajé en ello durante mi etapa en {enterprise} de {startMonth} de {startYear} a {endMonth} de {endYear}"
+    "showcasePeriodJobWorkedOnBetweenRange": "Trabajé en ello durante mi etapa en {enterprise} de {startMonth} de {startYear} a {endMonth} de {endYear}",
+    "projectDetailMoreProjects": "{projectName} y {count} más"
 }

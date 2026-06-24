@@ -53,11 +53,13 @@ class _Placeholder extends StatelessWidget {
   Widget build(BuildContext context) {
     return ColoredBox(
       color: context.appColors.surfaceContainerHigh,
-      child: Center(
-        child: Icon(
-          UniconsLine.image,
-          color: context.appColors.onSurfaceVariant,
-          size: Sizes.extraLarge,
+      child: SizedBox.expand(
+        child: Center(
+          child: Icon(
+            UniconsLine.image,
+            color: context.appColors.onSurfaceVariant,
+            size: Sizes.extraLarge,
+          ),
         ),
       ),
     );

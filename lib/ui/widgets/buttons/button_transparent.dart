@@ -26,8 +26,8 @@ class ButtonTransparent extends StatelessWidget {
   Widget build(BuildContext context) {
     final bool isEnabled = onPressed != null;
     final color = isEnabled
-        ? context.appColors.onSurface
-        : context.appColors.onSurface.withValues(alpha: 0.38);
+        ? context.appColors.secondary
+        : context.appColors.secondary.withValues(alpha: 0.38);
 
     return Semantics(
       button: true,
@@ -36,7 +36,7 @@ class ButtonTransparent extends StatelessWidget {
       enabled: isEnabled,
       excludeSemantics: true,
       child: FocusBorder(
-        focusedColor: context.appColors.onSurface,
+        focusedColor: context.appColors.secondary,
         onPressed: onPressed,
         enabled: isEnabled,
         child: GestureDetector(
