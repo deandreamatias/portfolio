@@ -3,7 +3,7 @@ import 'package:portfolio/data/models/showcase.dart';
 import 'package:portfolio/l10n/gen_l10n/app_localizations.dart';
 import 'package:portfolio/ui/style/context_extensions.dart';
 import 'package:portfolio/ui/utils/showcase_period_resolver.dart';
-import 'package:portfolio/ui/widgets/text/body_small_text.dart';
+import 'package:portfolio/ui/widgets/text/body_medium_text.dart';
 
 class ShowcasePeriodLabel extends StatelessWidget {
   const ShowcasePeriodLabel({
@@ -39,7 +39,7 @@ class ShowcasePeriodLabel extends StatelessWidget {
 
     return Semantics(
       label: label,
-      child: BodySmallText(label, color: context.appColors.onSurface),
+      child: BodyMediumText(label, color: context.appColors.onSurface),
     );
   }
 }
