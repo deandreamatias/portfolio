@@ -57,6 +57,10 @@
     ],
     "rewrites": [
       {
+        "source": "/busun/privacy-policy",
+        "destination": "/busun/privacy-policy.html"
+      },
+      {
         "source": "/",
         "destination": "/index.html"
       }

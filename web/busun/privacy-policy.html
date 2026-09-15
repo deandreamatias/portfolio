@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BuSun Privacy Policy · BuSun</title>
+    <meta name="description" content="Privacy Policy for BuSun, the EMT Valencia sun-exposure app." />
+    <style>
+      :root { color-scheme: light dark; }
+      body {
+        margin: 0 auto;
+        max-width: 46rem;
+        padding: 2rem 1.25rem 4rem;
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        line-height: 1.6;
+        color: #1a1a1a;
+        background-color: #ffffff;
+      }
+      a { color: #067a49; }
+      footer {
+        margin-top: 3rem;
+        padding-top: 1rem;
+        border-top: 1px solid #00000026;
+        font-size: 0.875rem;
+        opacity: 0.8;
+      }
+      code { font-size: 0.9em; }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.5rem 0;
+        font-size: 0.9375rem;
+      }
+      th, td {
+        border: 1px solid #00000033;
+        padding: 0.5rem 0.75rem;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background-color: #ededed;
+        color: #1a1a1a;
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          color: #e8e8e8;
+          background-color: #121212;
+        }
+        a { color: #4fd18f; }
+        footer { border-top-color: #ffffff26; }
+        th, td { border-color: #ffffff33; }
+        th {
+          background-color: #1f1f1f;
+          color: #e8e8e8;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>BuSun Privacy Policy</h1>
+
+      <p><strong>Effective date:</strong> September 12, 2026</p>
+
+      <p><strong>Last updated:</strong> September 12, 2026</p>
+
+      <p>
+        This Privacy Policy explains how BuSun (the "App") handles information.
+        BuSun is a passenger tool for EMT Valencia that helps users compare sun
+        exposure on the two sides of a direct bus journey.
+      </p>
+
+      <h2>Developer and contact</h2>
+
+      <p>BuSun is developed by <strong>Matias de Andrea</strong>.</p>
+
+      <p>For privacy questions, requests, or concerns, contact:</p>
+
+      <ul>
+        <li>Email: <a href="mailto:contacto@deandreamatias.com">contacto@deandreamatias.com</a></li>
+        <li>App: BuSun (<code>com.deandreamatias.busun</code>)</li>
+      </ul>
+
+      <h2>Scope</h2>
+
+      <p>
+        This policy covers the BuSun App and its handling of information. It
+        does not cover Google Play, your operating system, OpenStreetMap
+        services, Open-Meteo, MobilityDatabase, or other third-party services.
+        Those providers have their own policies and practices.
+      </p>
+
+      <p>
+        BuSun does not require an account and does not operate a
+        developer-managed backend, advertising service, analytics service, or
+        crash-reporting service.
+      </p>
+
+      <h2>Information BuSun processes</h2>
+
+      <h3>Device location</h3>
+
+      <p>
+        If you use the App's location control and grant permission, BuSun
+        obtains one current device position while the request is being handled.
+        The position is used in memory to show your position on the map and help
+        identify nearby stops.
+      </p>
+
+      <p>
+        BuSun does not use background location, continuous location tracking, or
+        a location stream. The position is not saved as an App preference and is
+        not sent to the developer. You can deny or later revoke location
+        permission in your device settings. The App can still be used without
+        this feature.
+      </p>
+
+      <p>
+        The map provider may receive normal tile requests made while viewing the
+        map. Those requests can include your IP address, device or browser
+        request metadata, time of request, and tile coordinates. Tile
+        coordinates can reveal an approximate map area, particularly when the
+        map is centered near your position. The App does not put your raw GPS
+        coordinates in map tile URLs.
+      </p>
+
+      <h3>Feedback</h3>
+
+      <p>If you submit journey feedback, BuSun stores the following on your device:</p>
+
+      <ul>
+        <li>Submission time (UTC)</li>
+        <li>A human-readable journey label, which can include origin, destination, and time</li>
+        <li>Recommended bus side and whether the recommendation was correct</li>
+        <li>Any optional comment you enter</li>
+      </ul>
+
+      <p>
+        Feedback is stored locally using the device's App storage. It is not
+        uploaded to the developer or another BuSun server in the current
+        release. Please do not include passwords, financial information, health
+        information, precise location, or other sensitive information in a
+        comment.
+      </p>
+
+      <h3>Preferences and cached data</h3>
+
+      <p>BuSun stores these items locally:</p>
+
+      <ul>
+        <li>Theme preference</li>
+        <li>Language preference</li>
+        <li>Sun or shade preference</li>
+        <li>Downloaded public GTFS schedule data and parsed schedule caches</li>
+        <li>Map tile cache, subject to the map provider's cache instructions and an approximately seven-day fallback cache</li>
+      </ul>
+
+      <p>
+        These items are used to provide the App and improve startup or offline
+        fallback behavior. They are not sent to the developer.
+      </p>
+
+      <h3>Public schedule data</h3>
+
+      <p>
+        BuSun downloads public GTFS schedule data over HTTPS. The current public
+        feed is hosted through MobilityDatabase infrastructure, including
+        <code>files.mobilitydatabase.org</code>. The App parses the data on the
+        device. It does not send an account token, personal profile, route
+        selection, or device location with this request.
+      </p>
+
+      <p>
+        As with any internet request, the feed host or its infrastructure may
+        receive your IP address and normal request metadata. The current release
+        has no configured GTFS real-time feed request.
+      </p>
+
+      <h3>Weather request data</h3>
+
+      <p>
+        After you select a journey option, BuSun may request cloud-cover
+        forecast data from Open-Meteo. The request includes:
+      </p>
+
+      <ul>
+        <li>Latitude and longitude for the midpoint of the selected route</li>
+        <li>The selected journey date and time range</li>
+        <li><code>cloud_cover</code> and UTC timezone parameters</li>
+      </ul>
+
+      <p>
+        These coordinates are derived from the selected route. They are not
+        taken directly from your device location. BuSun does not send an API key
+        or account identifier. Open-Meteo may also receive your IP address and
+        normal request metadata. Open-Meteo describes its own logging,
+        retention, and use in its
+        <a href="https://open-meteo.com/en/terms">Terms</a>.
+      </p>
+
+      <h3>On-device calculations and diagnostics</h3>
+
+      <p>
+        Sun-exposure calculations and journey processing happen on the device.
+        The App does not send journey selections or calculation results to the
+        developer. BuSun has no remote logging or analytics service that
+        receives those logs in the current release.
+      </p>
+
+      <h2>How information is used</h2>
+
+      <p>BuSun uses information only to:</p>
+
+      <ul>
+        <li>Display maps and nearby stops when you request location-based help</li>
+        <li>Find and compare direct bus journeys</li>
+        <li>Calculate sun exposure and recommendations on the device</li>
+        <li>Request route-related cloud-cover data for the exposure calculation</li>
+        <li>Remember your local preferences</li>
+        <li>Store feedback locally on your device</li>
+        <li>Download and cache public schedule and map data</li>
+      </ul>
+
+      <p>
+        Where applicable law requires a legal basis, these activities are based
+        on providing the functionality you request, your consent for device
+        location, and, where permitted, the developer's legitimate interest in
+        maintaining and protecting the App. Third-party providers determine
+        their own legal bases for their processing.
+      </p>
+
+      <h2>Sharing and third-party services</h2>
+
+      <p>
+        BuSun does not sell personal information and does not share information
+        with advertisers. The App has no developer-operated server to which
+        feedback, location, or journey history is uploaded.
+      </p>
+
+      <p>The App connects to these independent services to function:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Purpose</th>
+            <th>Information that may reach the provider</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://tile.openstreetmap.org/">OpenStreetMap tile service</a></td>
+            <td>Display map tiles</td>
+            <td>IP address, request metadata, time, and tile coordinates that may indicate the viewed map area</td>
+          </tr>
+          <tr>
+            <td><a href="https://open-meteo.com/en/terms">Open-Meteo</a></td>
+            <td>Obtain route-related cloud-cover data</td>
+            <td>IP address, request metadata, route-midpoint coordinates, and selected forecast dates</td>
+          </tr>
+          <tr>
+            <td><a href="https://mobilitydatabase.org/privacy-policy">MobilityDatabase</a> and its public feed host</td>
+            <td>Download public GTFS schedule data</td>
+            <td>IP address and normal request metadata; no BuSun account or location data is sent by the App</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        These providers may process information in countries different from your
+        own and retain it according to their policies. Review their policies
+        before using the related features. BuSun does not control their
+        independent processing, retention, or security practices.
+      </p>
+
+      <p>
+        Relevant provider policies include the
+        <a href="https://osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap Foundation Privacy Policy</a>,
+        <a href="https://open-meteo.com/en/terms">Open-Meteo Terms and Privacy</a>, and
+        <a href="https://mobilitydatabase.org/privacy-policy">MobilityDatabase Privacy Policy</a>.
+      </p>
+
+      <h2>Retention and deletion</h2>
+
+      <h3>On your device</h3>
+
+      <ul>
+        <li>Feedback remains on the device until you clear BuSun's App data or uninstall the App. BuSun keeps at most 100 feedback entries and drops the oldest when that limit is exceeded.</li>
+        <li>Preferences remain until you clear App data or uninstall the App.</li>
+        <li>GTFS and map caches remain until they are removed by the App, the provider's cache rules, clearing App data, or uninstalling the App.</li>
+        <li>Device location used by BuSun is held only in memory for the relevant operation and is not persisted by the App.</li>
+      </ul>
+
+      <p>
+        The current release does not provide an in-App control for clearing
+        stored feedback. Use your operating system's App-data controls or
+        uninstall BuSun to remove locally stored App data.
+      </p>
+
+      <h3>Developer and providers</h3>
+
+      <p>
+        Because BuSun has no developer-managed backend, the developer does not
+        retain a server copy of your feedback, location, preferences, or journey
+        history. Network providers may retain IP addresses, request metadata,
+        coordinates, or other information under their own policies. For
+        example, Open-Meteo's terms describe a possible 90-day retention period
+        for relevant webserver logs. Requests about provider-held information
+        should be sent to the applicable provider.
+      </p>
+
+      <h2>Security</h2>
+
+      <p>
+        BuSun uses HTTPS for its network requests. Information stored locally is
+        protected by the platform's normal App storage mechanisms. BuSun does
+        not represent that locally stored data is separately encrypted by the
+        App. No internet transmission or storage method can be guaranteed
+        completely secure.
+      </p>
+
+      <h2>Children's privacy</h2>
+
+      <p>
+        BuSun is intended for a general audience and is not directed to
+        children. The developer does not knowingly collect children's personal
+        information through a developer-operated service. Contact the developer
+        if you believe a child has provided personal information in a feedback
+        comment.
+      </p>
+
+      <h2>Your choices and rights</h2>
+
+      <p>You may:</p>
+
+      <ul>
+        <li>Decline or revoke device-location permission</li>
+        <li>Use the App without location features</li>
+        <li>Clear local App data or uninstall the App</li>
+        <li>Contact the developer with privacy questions or requests concerning information the developer may hold</li>
+      </ul>
+
+      <p>
+        Depending on where you live, you may have additional rights such as
+        access, correction, deletion, restriction, objection, or data
+        portability. The developer has no server copy of most App data, so local
+        deletion must normally be performed through your device. Requests
+        concerning OpenStreetMap, Open-Meteo, MobilityDatabase, Google Play, or
+        your operating system should be directed to those providers.
+      </p>
+
+      <h2>Changes to this policy</h2>
+
+      <p>
+        This policy may be updated when BuSun's features, data flows, or legal
+        requirements change. The updated policy will be published with a new
+        "Last updated" date. Continued use of the App after an update means the
+        updated policy applies to future use, subject to applicable law.
+      </p>
+
+      <h2>Contact</h2>
+
+      <p>
+        For questions about this policy or BuSun's privacy practices, email
+        <a href="mailto:contacto@deandreamatias.com">contacto@deandreamatias.com</a>.
+      </p>
+    </main>
+    <footer>
+      BuSun · <a href="/busun/privacy-policy">Privacy Policy</a>
+    </footer>
+  </body>
+</html>
